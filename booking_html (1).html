@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Hair by Chenny — Book Appointment</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f5f5f0;color:#1a1a1a;min-height:100vh;}
+.container{max-width:640px;margin:0 auto;padding:24px 16px;}
+
+/* HEADER */
+.header{text-align:center;margin-bottom:32px;}
+.header .logo{display:inline-flex;align-items:center;gap:8px;background:#1a1a1a;color:#fff;padding:8px 20px;border-radius:100px;font-size:13px;font-weight:600;margin-bottom:16px;}
+.header h1{font-size:28px;font-weight:800;letter-spacing:-1px;margin-bottom:8px;}
+.header p{color:#666;font-size:14px;}
+.days-tag{display:inline-flex;gap:8px;margin-top:10px;flex-wrap:wrap;justify-content:center;}
+.days-tag span{background:#fff;border:1px solid #e0e0e0;border-radius:100px;padding:4px 12px;font-size:12px;color:#555;}
+
+/* CARD */
+.card{background:#fff;border-radius:20px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.06);margin-bottom:16px;}
+
+/* STEPS */
+.steps{display:flex;align-items:center;justify-content:center;gap:4px;margin-bottom:28px;flex-wrap:wrap;}
+.step-item{display:flex;align-items:center;gap:4px;}
+.step-dot{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;transition:.2s;}
+.step-dot.done{background:#e8f5e9;color:#2e7d32;}
+.step-dot.active{background:#1a1a1a;color:#fff;}
+.step-dot.pending{background:#f0f0f0;color:#999;}
+.step-label{font-size:11px;display:none;}
+@media(min-width:400px){.step-label{display:inline;color:#999;}}
+.step-label.active-label{color:#1a1a1a;font-weight:600;}
+.step-arrow{color:#ccc;font-size:12px;}
+
+/* CATEGORY TABS */
+.cat-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+.cat-tab{padding:6px 14px;border-radius:100px;font-size:12px;font-weight:600;border:1.5px solid #e0e0e0;background:#fff;cursor:pointer;transition:.2s;color:#555;}
+.cat-tab.active{background:#1a1a1a;color:#fff;border-color:#1a1a1a;}
+
+/* SERVICE CARDS */
+.service-list{display:flex;flex-direction:column;gap:8px;}
+.svc-card{border:1.5px solid #e0e0e0;border-radius:14px;padding:14px 16px;cursor:pointer;transition:.2s;display:flex;justify-content:space-between;align-items:center;}
+.svc-card:hover{border-color:#999;}
+.svc-card.selected{border-color:#1a1a1a;background:#1a1a1a;color:#fff;}
+.svc-card .svc-info h3{font-size:14px;font-weight:600;margin-bottom:3px;}
+.svc-card .svc-info p{font-size:12px;color:#888;}
+.svc-card.selected .svc-info p{color:#ccc;}
+.svc-card .svc-price{text-align:right;}
+.svc-card .svc-price strong{font-size:15px;font-weight:700;}
+.svc-card .svc-price span{font-size:11px;color:#aaa;display:block;}
+.svc-card.selected .svc-price span{color:#aaa;}
+
+/* ADDONS */
+.addon-section{margin-top:16px;padding-top:16px;border-top:1px solid #f0f0f0;}
+.addon-section h4{font-size:12px;font-weight:600;color:#999;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;}
+.addon-chips{display:flex;flex-wrap:wrap;gap:8px;}
+.addon-chip{padding:7px 14px;border-radius:100px;font-size:12px;border:1.5px solid #e0e0e0;cursor:pointer;transition:.2s;background:#fff;}
+.addon-chip.active{background:#1a1a1a;color:#fff;border-color:#1a1a1a;}
+
+/* DAY GRID */
+.day-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:16px;}
+.day-btn{padding:10px 4px;border-radius:12px;font-size:12px;font-weight:600;border:1.5px solid #e0e0e0;background:#fff;cursor:pointer;text-align:center;transition:.2s;}
+.day-btn:hover{border-color:#999;}
+.day-btn.selected{background:#1a1a1a;color:#fff;border-color:#1a1a1a;}
+.day-btn .day-name{display:block;font-size:13px;}
+.day-btn .day-type{display:block;font-size:10px;color:#aaa;margin-top:2px;}
+.day-btn.selected .day-type{color:#aaa;}
+
+/* TIME GRID */
+.time-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.time-btn{padding:10px;border-radius:12px;font-size:13px;font-weight:500;border:1.5px solid #e0e0e0;background:#fff;cursor:pointer;text-align:center;transition:.2s;}
+.time-btn:hover{border-color:#999;}
+.time-btn.selected{background:#1a1a1a;color:#fff;border-color:#1a1a1a;}
+
+/* FORM */
+.form-group{margin-bottom:14px;}
+.form-group label{display:block;font-size:12px;font-weight:600;color:#555;margin-bottom:6px;}
+.form-group label .req{color:#e53935;}
+.form-input{width:100%;height:44px;border:1.5px solid #e0e0e0;border-radius:12px;padding:0 14px;font-size:14px;font-family:inherit;transition:.2s;background:#fff;}
+.form-input:focus{outline:none;border-color:#1a1a1a;}
+.form-textarea{width:100%;border:1.5px solid #e0e0e0;border-radius:12px;padding:10px 14px;font-size:14px;font-family:inherit;min-height:80px;resize:none;transition:.2s;}
+.form-textarea:focus{outline:none;border-color:#1a1a1a;}
+
+/* NOTICES */
+.notice{border-radius:12px;padding:12px 14px;font-size:13px;display:flex;gap:10px;align-items:flex-start;margin-bottom:14px;}
+.notice.green{background:#e8f5e9;color:#2e7d32;}
+.notice.red{background:#ffebee;color:#c62828;border:1px solid #ffcdd2;}
+.notice.blue{background:#e3f2fd;color:#1565c0;}
+.notice.amber{background:#fff8e1;color:#e65100;}
+.notice-icon{font-size:16px;flex-shrink:0;}
+
+/* CARD INPUT */
+.card-inputs{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.card-full{grid-column:1/-1;}
+
+/* CHECKBOX */
+.checkbox-label{display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:13px;color:#555;line-height:1.5;}
+.checkbox-label input{margin-top:2px;width:16px;height:16px;flex-shrink:0;cursor:pointer;}
+
+/* BUTTONS */
+.btn{width:100%;padding:14px;border-radius:14px;font-size:15px;font-weight:700;cursor:pointer;border:none;transition:.2s;font-family:inherit;}
+.btn-primary{background:#1a1a1a;color:#fff;}
+.btn-primary:hover{background:#333;}
+.btn-primary:disabled{background:#e0e0e0;color:#aaa;cursor:not-allowed;}
+.btn-outline{background:#fff;color:#1a1a1a;border:1.5px solid #e0e0e0;margin-top:10px;}
+.btn-outline:hover{border-color:#999;}
+
+/* SUMMARY BOX */
+.summary-box{background:#f8f8f6;border-radius:14px;padding:16px;margin-bottom:16px;}
+.summary-row{display:flex;justify-content:space-between;font-size:14px;padding:5px 0;}
+.summary-row.total{font-weight:700;border-top:1px solid #e0e0e0;margin-top:6px;padding-top:10px;font-size:15px;}
+.summary-label{color:#666;}
+
+/* CHECKOUT TIP */
+.tip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px;}
+.tip-btn{padding:14px;border-radius:14px;border:1.5px solid #e0e0e0;background:#fff;cursor:pointer;text-align:center;transition:.2s;}
+.tip-btn:hover{border-color:#999;}
+.tip-btn.selected{background:#1a1a1a;color:#fff;border-color:#1a1a1a;}
+.tip-btn .tip-pct{font-size:18px;font-weight:800;display:block;}
+.tip-btn .tip-amt{font-size:12px;color:#aaa;display:block;margin-top:2px;}
+.tip-btn.selected .tip-amt{color:#aaa;}
+
+/* CONFIRM PAGE */
+.confirm-icon{width:72px;height:72px;background:#e8f5e9;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 20px;}
+.confirm-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;}
+.confirm-item{background:#f8f8f6;border-radius:12px;padding:12px 14px;}
+.confirm-item .ci-label{font-size:11px;color:#999;margin-bottom:3px;}
+.confirm-item .ci-value{font-size:14px;font-weight:600;color:#1a1a1a;}
+
+/* ADMIN */
+.admin-link{text-align:center;margin-top:24px;}
+.admin-link button{background:none;border:none;font-size:12px;color:#bbb;cursor:pointer;text-decoration:underline;}
+
+/* MODAL OVERLAY */
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:100;align-items:center;justify-content:center;padding:16px;}
+.overlay.show{display:flex;}
+.modal{background:#fff;border-radius:24px;padding:28px;max-width:360px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,0.2);}
+.modal h2{font-size:18px;font-weight:700;margin-bottom:6px;}
+.modal p{font-size:13px;color:#666;margin-bottom:20px;}
+
+/* CHECKOUT MODAL */
+.checkout-total{background:#1a1a1a;color:#fff;border-radius:14px;padding:16px;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center;}
+.checkout-total span{font-size:14px;color:#aaa;}
+.checkout-total strong{font-size:22px;font-weight:800;}
+
+/* NOSHOW BADGE */
+.noshow-badge{background:#ffebee;border:1px solid #ffcdd2;border-radius:10px;padding:10px 14px;font-size:13px;color:#c62828;display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
+
+/* ADMIN DASH */
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:20px;}
+.stat-card{background:#f8f8f6;border-radius:14px;padding:14px;}
+.stat-card .stat-val{font-size:24px;font-weight:800;margin-bottom:2px;}
+.stat-card .stat-label{font-size:12px;color:#999;}
+.booking-item{border:1.5px solid #e0e0e0;border-radius:14px;padding:14px;margin-bottom:10px;}
+.booking-item .bi-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;}
+.booking-item .bi-name{font-size:15px;font-weight:700;}
+.booking-item .bi-svc{font-size:12px;color:#888;margin-top:2px;}
+.booking-item .bi-status{font-size:11px;font-weight:600;padding:3px 10px;border-radius:100px;}
+.status-confirmed{background:#e3f2fd;color:#1565c0;}
+.status-completed{background:#e8f5e9;color:#2e7d32;}
+.status-noshow{background:#ffebee;color:#c62828;}
+.booking-item .bi-actions{display:flex;gap:8px;flex-wrap:wrap;}
+.bi-btn{padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;border:1.5px solid;transition:.2s;font-family:inherit;}
+.bi-btn-checkout{background:#1a1a1a;color:#fff;border-color:#1a1a1a;}
+.bi-btn-noshow{background:#ffebee;color:#c62828;border-color:#ffcdd2;}
+.bi-btn-msg{background:#fff;color:#555;border-color:#e0e0e0;}
+
+/* PASSWORD */
+.pw-input-wrap{position:relative;}
+.pw-toggle{position:absolute;right:14px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:16px;}
+
+.section-title{font-size:13px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px;}
+.back-btn{background:none;border:none;font-size:13px;color:#999;cursor:pointer;display:flex;align-items:center;gap:4px;margin-bottom:16px;font-family:inherit;}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <div class="logo">✂️ Hair by Chenny</div>
+    <h1>Book Your Appointment</h1>
+    <p>Premium Korean Hair & Head Spa · Fairfax, VA</p>
+    <div class="days-tag">
+      <span>✂️ Hair: Mon · Wed · Fri</span>
+      <span>🌿 Head Spa: Tue · Thu</span>
+    </div>
+  </div>
+
+  <!-- BOOKING FORM -->
+  <div id="booking-section">
+    <div class="steps" id="steps-bar"></div>
+    <div class="card" id="step-content"></div>
+    <div class="admin-link"><button onclick="showAdminLogin()">🔒 Admin Login</button></div>
+  </div>
+
+  <!-- ADMIN SECTION -->
+  <div id="admin-section" style="display:none;">
+    <button class="back-btn" onclick="showBooking()">← Back to Booking</button>
+    <div class="card" id="admin-content"></div>
+  </div>
+</div>
+
+<!-- CHECKOUT MODAL -->
+<div class="overlay" id="checkout-modal">
+  <div class="modal">
+    <h2>💰 In-Shop Checkout</h2>
+    <p>Select a tip based on the full service total</p>
+    <div class="summary-box" id="checkout-summary"></div>
+    <div class="section-title">Tip — on full total</div>
+    <div class="tip-grid" id="tip-grid"></div>
+    <div class="checkout-total" id="checkout-total-box">
+      <span>Total to charge</span>
+      <strong id="checkout-final">Select tip</strong>
+    </div>
+    <button class="btn btn-primary" id="checkout-confirm-btn" disabled onclick="completeCheckout()">Confirm Payment</button>
+    <button class="btn btn-outline" onclick="closeCheckout()">Cancel</button>
+  </div>
+</div>
+
+<!-- NOSHOW MODAL -->
+<div class="overlay" id="noshow-modal">
+  <div class="modal">
+    <h2>⚠️ Mark as No-Show?</h2>
+    <p>A $50 fee will be charged to the client's card on file.</p>
+    <div class="noshow-badge" id="noshow-info"></div>
+    <button class="btn btn-primary" style="background:#e53935;" onclick="confirmNoShow()">Charge $50.00</button>
+    <button class="btn btn-outline" onclick="closeNoShow()">Cancel</button>
+  </div>
+</div>
+
+<!-- ADMIN LOGIN MODAL -->
+<div class="overlay" id="admin-login-modal">
+  <div class="modal">
+    <div style="text-align:center;margin-bottom:16px;">
+      <div style="font-size:32px;">🔒</div>
+      <h2 style="margin-top:8px;">Admin Access</h2>
+      <p>Hair by Chenny · Owner Only</p>
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <div class="pw-input-wrap">
+        <input type="password" id="admin-pw" class="form-input" placeholder="Enter password" onkeydown="if(event.key==='Enter')tryAdminLogin()"/>
+        <button class="pw-toggle" onclick="togglePw()" id="pw-eye">👁</button>
+      </div>
+      <p id="pw-error" style="color:#e53935;font-size:12px;margin-top:6px;display:none;">Incorrect password. Try again.</p>
+      <p style="font-size:11px;color:#bbb;margin-top:6px;">Demo: chenny2026</p>
+    </div>
+    <button class="btn btn-primary" onclick="tryAdminLogin()">Log In</button>
+    <button class="btn btn-outline" onclick="closeAdminLogin()">Cancel</button>
+  </div>
+</div>
+
+<script>
+// ── DATA ──
+const SERVICES = {
+  "⭐ Quick Pick": [
+    {id:"sig-cut", name:"Chenny's Signature Cut", mins:45, price:68, days:"Mon·Wed·Fri"},
+    {id:"color-cut", name:"Color & Cut Combo", mins:150, price:194, days:"Mon·Wed·Fri"},
+    {id:"men-tex", name:"Men's Texture Cut", mins:35, price:48, days:"Mon·Wed·Fri"},
+  ],
+  "🌿 K-Head Spa": [
+    {id:"spa30", name:"K-Scalp Detox 30", mins:30, price:70, days:"Tue·Thu"},
+    {id:"spa50", name:"K-Scalp Deep Care 50", mins:50, price:100, days:"Tue·Thu"},
+    {id:"spa80", name:"K-Head Spa Full 80", mins:80, price:130, days:"Tue·Thu"},
+  ],
+  "✂️ Color & Perm": [
+    {id:"full-color", name:"Full Color + Toner", mins:150, price:185, days:"Mon·Wed·Fri"},
+    {id:"root-gloss", name:"Root Touch-Up + Gloss", mins:120, price:155, days:"Mon·Wed·Fri"},
+    {id:"dig-perm", name:"Korean Digital Perm", mins:180, price:250, days:"Mon·Wed·Fri"},
+    {id:"men-perm", name:"Men's Perm Package", mins:120, price:177, days:"Mon·Wed·Fri"},
+    {id:"bleach", name:"Bleach & Tone", mins:180, price:220, days:"Mon·Wed·Fri"},
+  ],
+  "👨 Men's": [
+    {id:"men-cut", name:"Men's Haircut", mins:45, price:48, days:"Mon·Wed·Fri"},
+    {id:"men-color", name:"Men's Color", mins:45, price:85, days:"Mon·Wed·Fri"},
+    {id:"men-spa", name:"Men's Cut + Scalp + Head Spa", mins:75, price:135, days:"Mon·Wed·Fri"},
+  ],
+};
+const ADDONS = [
+  {id:"ampoule", name:"Scalp Care Ampoule", price:45},
+  {id:"treatment", name:"Hair Treatment", price:40},
+  {id:"blowdry", name:"Blowdry Add-on", price:35},
+];
+const DAY_SLOTS = {
+  Monday: ["10:00 AM","11:00 AM","12:30 PM","2:00 PM","3:30 PM"],
+  Wednesday: ["10:00 AM","11:15 AM","12:30 PM","2:00 PM","3:30 PM","5:00 PM"],
+  Friday: ["10:00 AM","11:00 AM","12:15 PM","1:45 PM","3:15 PM","4:45 PM"],
+  Tuesday: ["10:00 AM","11:30 AM","1:00 PM","2:30 PM","4:00 PM"],
+  Thursday: ["10:00 AM","11:30 AM","1:00 PM","2:30 PM","4:00 PM"],
+};
+const ADMIN_PW = "chenny2026";
+const NO_SHOW_FEE = 50;
+
+// ── STATE ──
+let state = {
+  step: 0,
+  cat: "⭐ Quick Pick",
+  selSvc: null,
+  addons: [],
+  day: "",
+  time: "",
+  form: {name:"",phone:"",email:"",hair:"",notes:""},
+  card: {num:"",exp:"",cvc:"",agreed:false},
+  confirmed: false,
+};
+
+let adminBookings = [
+  {id:1, name:"Sarah Kim", phone:"(703)555-0101", service:"Color & Cut Combo", time:"10:00 AM", price:194, status:"confirmed", cardLast4:"4242"},
+  {id:2, name:"Jennifer P.", phone:"(571)555-0202", service:"K-Scalp Deep Care 50", time:"11:30 AM", price:100, status:"confirmed", cardLast4:"1234"},
+  {id:3, name:"Mike Lee", phone:"(703)555-0303", service:"Men's Texture Cut", time:"12:30 PM", price:48, status:"completed", cardLast4:"5678"},
+];
+
+let selectedTip = null;
+let noShowTarget = null;
+let checkoutTarget = null;
+
+const fmt = n => `$${Number(n).toFixed(2)}`;
+const allSvcs = () => Object.values(SERVICES).flat();
+const getSvc = id => allSvcs().find(s => s.id === id);
+
+// ── STEPS ──
+const STEP_LABELS = ["Service","Date & Time","Your Info","Card on File"];
+
+function renderSteps() {
+  const bar = document.getElementById("steps-bar");
+  bar.innerHTML = STEP_LABELS.map((l, i) => {
+    const cls = i < state.step ? "done" : i === state.step ? "active" : "pending";
+    const icon = i < state.step ? "✓" : i + 1;
+    const lCls = i === state.step ? "active-label" : "";
+    return `<div class="step-item">
+      <div class="step-dot ${cls}">${icon}</div>
+      <span class="step-label ${lCls}">${l}</span>
+      ${i < STEP_LABELS.length - 1 ? '<span class="step-arrow">›</span>' : ''}
+    </div>`;
+  }).join("");
+}
+
+// ── RENDER ──
+function render() {
+  renderSteps();
+  const content = document.getElementById("step-content");
+  if (state.confirmed) { renderConfirmed(); return; }
+  if (state.step === 0) renderStep0(content);
+  else if (state.step === 1) renderStep1(content);
+  else if (state.step === 2) renderStep2(content);
+  else if (state.step === 3) renderStep3(content);
+}
+
+function renderStep0(el) {
+  const svc = getSvc(state.selSvc);
+  el.innerHTML = `
+    <div class="section-title">1. Choose a Service</div>
+    <div class="cat-tabs">${Object.keys(SERVICES).map(c =>
+      `<button class="cat-tab ${state.cat===c?'active':''}" onclick="setCat('${c}')">${c}</button>`
+    ).join("")}</div>
+    <div class="service-list">${SERVICES[state.cat].map(s => `
+      <div class="svc-card ${state.selSvc===s.id?'selected':''}" onclick="selectSvc('${s.id}')">
+        <div class="svc-info">
+          <h3>${s.name}</h3>
+          <p>⏱ ${s.mins} min · ${s.days}</p>
+        </div>
+        <div class="svc-price">
+          <strong>${fmt(s.price)}</strong>
+          <span>per service</span>
+        </div>
+      </div>`).join("")}
+    </div>
+    <div class="addon-section">
+      <h4>Add-ons (optional)</h4>
+      <div class="addon-chips">${ADDONS.map(a =>
+        `<div class="addon-chip ${state.addons.includes(a.id)?'active':''}" onclick="toggleAddon('${a.id}')">${state.addons.includes(a.id)?'✓ ':'+'}${a.name} (${fmt(a.price)})</div>`
+      ).join("")}</div>
+    </div>
+    <br/>
+    <button class="btn btn-primary" ${!state.selSvc?'disabled':''} onclick="goStep(1)">
+      Next — Pick Date & Time →
+    </button>
+  `;
+}
+
+function renderStep1(el) {
+  el.innerHTML = `
+    <div class="section-title">2. Pick Date & Time</div>
+    <div style="margin-bottom:12px;font-size:12px;font-weight:600;color:#999;">SELECT A DAY</div>
+    <div class="day-grid">${Object.keys(DAY_SLOTS).map(d => `
+      <button class="day-btn ${state.day===d?'selected':''}" onclick="selectDay('${d}')">
+        <span class="day-name">${d.slice(0,3)}</span>
+        <span class="day-type">${['Tuesday','Thursday'].includes(d)?'Spa':'Hair'}</span>
+      </button>`).join("")}
+    </div>
+    ${state.day ? `
+      <div style="margin-bottom:12px;font-size:12px;font-weight:600;color:#999;">AVAILABLE TIMES — ${state.day.toUpperCase()}</div>
+      <div class="time-grid">${DAY_SLOTS[state.day].map(t =>
+        `<button class="time-btn ${state.time===t?'selected':''}" onclick="selectTime('${t}')">${t}</button>`
+      ).join("")}</div>` :
+      `<div class="notice amber"><span class="notice-icon">📅</span><span>Please select a day first</span></div>`
+    }
+    <br/>
+    <button class="btn btn-primary" ${!state.time?'disabled':''} onclick="goStep(2)">Next — Your Info →</button>
+    <button class="btn btn-outline" onclick="goStep(0)">← Back</button>
+  `;
+}
+
+function renderStep2(el) {
+  const f = state.form;
+  el.innerHTML = `
+    <div class="section-title">3. Your Information</div>
+    <div class="form-group"><label>Full Name <span class="req">*</span></label>
+      <input class="form-input" value="${f.name}" oninput="setForm('name',this.value)" placeholder="Your name"/></div>
+    <div class="form-group"><label>Phone Number <span class="req">*</span></label>
+      <input class="form-input" type="tel" value="${f.phone}" oninput="setForm('phone',this.value)" placeholder="(703) 555-0000"/></div>
+    <div class="form-group"><label>Email</label>
+      <input class="form-input" type="email" value="${f.email}" oninput="setForm('email',this.value)" placeholder="you@email.com"/></div>
+    <div class="form-group"><label>Hair Type / Length</label>
+      <input class="form-input" value="${f.hair}" oninput="setForm('hair',this.value)" placeholder="Long, fine, color-treated..."/></div>
+    <div class="form-group"><label>Notes (optional)</label>
+      <textarea class="form-textarea" oninput="setForm('notes',this.value)" placeholder="Scalp concerns, allergies, inspiration photos...">${f.notes}</textarea></div>
+    <div class="notice blue"><span class="notice-icon">💬</span><span>A confirmation text will be sent to your phone after booking.</span></div>
+    <button class="btn btn-primary" ${!f.name||!f.phone?'disabled':''} onclick="goStep(3)">Next — Card on File →</button>
+    <button class="btn btn-outline" onclick="goStep(1)">← Back</button>
+  `;
+}
+
+function renderStep3(el) {
+  const svc = getSvc(state.selSvc);
+  const addonsTotal = state.addons.reduce((s,id) => s + (ADDONS.find(a=>a.id===id)?.price||0), 0);
+  const total = svc.price + addonsTotal;
+  const c = state.card;
+  const cardOk = c.num.replace(/\s/g,"").length===16 && c.exp.length===5 && c.cvc.length>=3 && c.agreed;
+
+  el.innerHTML = `
+    <div class="section-title">4. Card on File</div>
+    <div class="notice green"><span class="notice-icon">✅</span><div><strong>No charge today</strong><br/>Full payment of ${fmt(total)} is collected at the shop after your service.</div></div>
+    <div class="notice red"><span class="notice-icon">⚠️</span><div><strong>No-Show Policy</strong><br/>Cancel at least 24 hours in advance. No-show or late cancel = <strong>$50 fee</strong> charged to card.</div></div>
+    <div class="form-group"><label>Card Number</label>
+      <input class="form-input" style="font-family:monospace;letter-spacing:2px;" value="${c.num}" oninput="setCard('num',this.value)" placeholder="4242 4242 4242 4242" maxlength="19"/></div>
+    <div class="card-inputs">
+      <div class="form-group"><label>Expiry</label>
+        <input class="form-input" style="font-family:monospace;" value="${c.exp}" oninput="setCard('exp',this.value)" placeholder="MM/YY" maxlength="5"/></div>
+      <div class="form-group"><label>CVC</label>
+        <input class="form-input" style="font-family:monospace;" value="${c.cvc}" oninput="setCard('cvc',this.value)" placeholder="123" maxlength="4"/></div>
+    </div>
+    <div class="notice" style="background:#f5f5f5;color:#555;margin-bottom:14px;"><span class="notice-icon">🔒</span><span>Encrypted & stored securely via Stripe. No charge until service is complete.</span></div>
+    <label class="checkbox-label" style="margin-bottom:16px;">
+      <input type="checkbox" ${c.agreed?'checked':''} onchange="setCard('agreed',this.checked)"/>
+      <span>I agree to the no-show policy. A <strong>$50 fee</strong> will only be charged if I miss my appointment without 24-hour notice.</span>
+    </label>
+    <button class="btn btn-primary" ${!cardOk?'disabled':''} onclick="confirmBooking()">✓ Confirm Booking</button>
+    <button class="btn btn-outline" onclick="goStep(2)">← Back</button>
+  `;
+}
+
+function renderConfirmed() {
+  document.getElementById("steps-bar").innerHTML = "";
+  const svc = getSvc(state.selSvc);
+  const addonsTotal = state.addons.reduce((s,id) => s + (ADDONS.find(a=>a.id===id)?.price||0), 0);
+  const total = svc.price + addonsTotal;
+  const last4 = state.card.num.replace(/\s/g,"").slice(-4) || "0000";
+
+  document.getElementById("step-content").innerHTML = `
+    <div class="confirm-icon">🎉</div>
+    <h2 style="text-align:center;font-size:22px;font-weight:800;margin-bottom:8px;">Booking Confirmed!</h2>
+    <p style="text-align:center;color:#888;font-size:14px;margin-bottom:20px;">Confirmation text sent to <strong>${state.form.phone}</strong></p>
+    <div class="confirm-grid">
+      <div class="confirm-item"><div class="ci-label">Service</div><div class="ci-value">${svc.name}</div></div>
+      <div class="confirm-item"><div class="ci-label">When</div><div class="ci-value">${state.day} · ${state.time}</div></div>
+      <div class="confirm-item"><div class="ci-label">Guest</div><div class="ci-value">${state.form.name}</div></div>
+      <div class="confirm-item"><div class="ci-label">Contact</div><div class="ci-value">${state.form.phone}</div></div>
+    </div>
+    <div class="summary-box">
+      <div class="section-title" style="margin-bottom:10px;">Payment Info</div>
+      <div class="summary-row"><span class="summary-label">Service total</span><span>${fmt(total)}</span></div>
+      <div class="summary-row" style="color:#2e7d32;"><span class="summary-label">Pay at shop (after service)</span><span>${fmt(total)}</span></div>
+    </div>
+    <div class="notice red"><span class="notice-icon">🔒</span><span>Card •••• ${last4} saved for no-show protection only · $50 fee if missed without 24hr notice</span></div>
+    <button class="btn btn-primary" onclick="resetBooking()">Book Another Appointment</button>
+  `;
+}
+
+// ── ACTIONS ──
+function setCat(c) { state.cat = c; render(); }
+function selectSvc(id) { state.selSvc = id; render(); }
+function toggleAddon(id) {
+  state.addons = state.addons.includes(id) ? state.addons.filter(a=>a!==id) : [...state.addons, id];
+  render();
+}
+function selectDay(d) { state.day = d; state.time = ""; render(); }
+function selectTime(t) { state.time = t; render(); }
+function setForm(k, v) { state.form[k] = v; render(); }
+function setCard(k, v) {
+  if (k === "num") v = v.replace(/\D/g,"").slice(0,16).replace(/(.{4})/g,"$1 ").trim();
+  if (k === "exp") { const d=v.replace(/\D/g,"").slice(0,4); v=d.length>2?d.slice(0,2)+"/"+d.slice(2):d; }
+  if (k === "cvc") v = v.replace(/\D/g,"").slice(0,4);
+  state.card[k] = v;
+  render();
+}
+function goStep(n) { state.step = n; render(); window.scrollTo(0,0); }
+function confirmBooking() {
+  state.confirmed = true;
+  adminBookings.unshift({
+    id: Date.now(),
+    name: state.form.name,
+    phone: state.form.phone,
+    service: getSvc(state.selSvc).name,
+    time: state.time,
+    price: getSvc(state.selSvc).price,
+    status: "confirmed",
+    cardLast4: state.card.num.replace(/\s/g,"").slice(-4) || "0000",
+  });
+  render();
+  window.scrollTo(0,0);
+}
+function resetBooking() {
+  state = {step:0, cat:"⭐ Quick Pick", selSvc:null, addons:[], day:"", time:"",
+    form:{name:"",phone:"",email:"",hair:"",notes:""}, card:{num:"",exp:"",cvc:"",agreed:false}, confirmed:false};
+  render();
+  window.scrollTo(0,0);
+}
+
+// ── ADMIN ──
+function showAdminLogin() { document.getElementById("admin-login-modal").classList.add("show"); }
+function closeAdminLogin() { document.getElementById("admin-login-modal").classList.remove("show"); document.getElementById("admin-pw").value=""; document.getElementById("pw-error").style.display="none"; }
+function togglePw() { const i=document.getElementById("admin-pw"); i.type=i.type==="password"?"text":"password"; }
+function tryAdminLogin() {
+  const pw = document.getElementById("admin-pw").value;
+  if (pw === ADMIN_PW) { closeAdminLogin(); showAdmin(); }
+  else { document.getElementById("pw-error").style.display="block"; document.getElementById("admin-pw").value=""; }
+}
+function showAdmin() {
+  document.getElementById("booking-section").style.display="none";
+  document.getElementById("admin-section").style.display="block";
+  renderAdmin();
+}
+function showBooking() {
+  document.getElementById("booking-section").style.display="block";
+  document.getElementById("admin-section").style.display="none";
+}
+function renderAdmin() {
+  const completed = adminBookings.filter(b=>b.status==="completed");
+  const revenue = completed.reduce((s,b)=>s+b.price,0);
+  const noShows = adminBookings.filter(b=>b.status==="noshow").length;
+
+  document.getElementById("admin-content").innerHTML = `
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+      <h2 style="font-size:18px;font-weight:800;">📊 Today's Dashboard</h2>
+      <span style="font-size:11px;background:#e8f5e9;color:#2e7d32;padding:4px 10px;border-radius:100px;font-weight:600;">Admin</span>
+    </div>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-val">${adminBookings.length}</div><div class="stat-label">Total Bookings</div></div>
+      <div class="stat-card"><div class="stat-val">${completed.length}</div><div class="stat-label">Completed</div></div>
+      <div class="stat-card"><div class="stat-val" style="color:#2e7d32;">${fmt(revenue)}</div><div class="stat-label">Revenue Today</div></div>
+      <div class="stat-card"><div class="stat-val" style="color:#e53935;">${noShows}</div><div class="stat-label">No-Shows</div></div>
+    </div>
+    <div class="section-title">Today's Schedule</div>
+    ${adminBookings.map(b => `
+      <div class="booking-item">
+        <div class="bi-top">
+          <div>
+            <div class="bi-name">${b.name}</div>
+            <div class="bi-svc">${b.service} · ${b.time}</div>
+          </div>
+          <span class="bi-status ${b.status==='completed'?'status-completed':b.status==='noshow'?'status-noshow':'status-confirmed'}">
+            ${b.status==='completed'?'✓ Done':b.status==='noshow'?'No-Show':'Confirmed'}
+          </span>
+        </div>
+        <div style="font-size:13px;color:#888;margin-bottom:8px;">Total: <strong style="color:#1a1a1a;">${fmt(b.price)}</strong> · Pay at shop · Card •••• ${b.cardLast4}</div>
+        <div class="bi-actions">
+          ${b.status==='confirmed'?`
+            <button class="bi-btn bi-btn-checkout" onclick="openCheckout(${b.id})">💰 Checkout</button>
+            <button class="bi-btn bi-btn-noshow" onclick="openNoShow(${b.id})">No-Show</button>` : ''}
+          ${b.status==='completed'?`<span style="font-size:12px;color:#2e7d32;font-weight:600;">✓ Payment Complete</span>`:''}
+          ${b.status==='noshow'?`<span style="font-size:12px;color:#e53935;font-weight:600;">$50 Charged</span>`:''}
+          <button class="bi-btn bi-btn-msg" onclick="alert('SMS sent to ${b.phone}!')">📱 SMS</button>
+        </div>
+      </div>`).join("")}
+  `;
+}
+
+// ── CHECKOUT ──
+function openCheckout(id) {
+  checkoutTarget = adminBookings.find(b=>b.id===id);
+  selectedTip = null;
+  const total = checkoutTarget.price;
+  document.getElementById("checkout-summary").innerHTML = `
+    <div class="summary-row"><span class="summary-label">${checkoutTarget.service}</span><span>${fmt(total)}</span></div>
+    <div class="summary-row total"><span>Service Total</span><span>${fmt(total)}</span></div>
+  `;
+  document.getElementById("tip-grid").innerHTML = [15,20,30].map(t => `
+    <div class="tip-btn" onclick="selectTip(${t},${total})">
+      <span class="tip-pct">${t}%</span>
+      <span class="tip-amt">${fmt(total*t/100)}</span>
+    </div>`).join("");
+  document.getElementById("checkout-final").textContent = "Select tip";
+  document.getElementById("checkout-confirm-btn").disabled = true;
+  document.getElementById("checkout-modal").classList.add("show");
+}
+function selectTip(pct, total) {
+  selectedTip = pct;
+  document.querySelectorAll(".tip-btn").forEach(b => b.classList.remove("selected"));
+  event.currentTarget.classList.add("selected");
+  const tip = total * pct / 100;
+  const charge = total + tip;
+  document.getElementById("checkout-final").textContent = fmt(charge);
+  document.getElementById("checkout-confirm-btn").disabled = false;
+}
+function completeCheckout() {
+  adminBookings = adminBookings.map(b => b.id===checkoutTarget.id ? {...b, status:"completed"} : b);
+  closeCheckout();
+  renderAdmin();
+}
+function closeCheckout() { document.getElementById("checkout-modal").classList.remove("show"); }
+
+// ── NO-SHOW ──
+function openNoShow(id) {
+  noShowTarget = adminBookings.find(b=>b.id===id);
+  document.getElementById("noshow-info").innerHTML = `
+    <span><strong>${noShowTarget.name}</strong> · ${noShowTarget.service}</span>
+    <span>Card •••• ${noShowTarget.cardLast4}</span>
+  `;
+  document.getElementById("noshow-modal").classList.add("show");
+}
+function confirmNoShow() {
+  adminBookings = adminBookings.map(b => b.id===noShowTarget.id ? {...b, status:"noshow"} : b);
+  closeNoShow();
+  renderAdmin();
+}
+function closeNoShow() { document.getElementById("noshow-modal").classList.remove("show"); }
+
+// ── INIT ──
+render();
+</script>
+</body>
+</html>
