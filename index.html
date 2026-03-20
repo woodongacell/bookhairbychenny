@@ -7,627 +7,772 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Segoe UI',system-ui,sans-serif;background:#f5f5f0;color:#1a1a1a;min-height:100vh;}
-.container{max-width:640px;margin:0 auto;padding:24px 16px;}
+.container{max-width:600px;margin:0 auto;padding:20px 16px 40px;}
+.header{text-align:center;margin-bottom:20px;}
+.logo{display:inline-flex;align-items:center;gap:8px;background:#1a1a1a;color:#fff;padding:8px 20px;border-radius:100px;font-size:13px;font-weight:600;margin-bottom:12px;}
+h1{font-size:26px;font-weight:800;margin-bottom:6px;}
+.header p{color:#666;font-size:13px;}
+.tags{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:8px;}
+.tag{background:#fff;border:1px solid #e0e0e0;border-radius:100px;padding:3px 12px;font-size:12px;color:#555;}
 
-/* HEADER */
-.header{text-align:center;margin-bottom:32px;}
-.header .logo{display:inline-flex;align-items:center;gap:8px;background:#1a1a1a;color:#fff;padding:8px 20px;border-radius:100px;font-size:13px;font-weight:600;margin-bottom:16px;}
-.header h1{font-size:28px;font-weight:800;letter-spacing:-1px;margin-bottom:8px;}
-.header p{color:#666;font-size:14px;}
-.days-tag{display:inline-flex;gap:8px;margin-top:10px;flex-wrap:wrap;justify-content:center;}
-.days-tag span{background:#fff;border:1px solid #e0e0e0;border-radius:100px;padding:4px 12px;font-size:12px;color:#555;}
+/* PRICING NOTICE - always visible */
+.price-notice{background:#fff8e1;border:1.5px solid #ffe082;border-radius:14px;padding:14px 16px;margin-bottom:14px;}
+.price-notice-title{font-size:13px;font-weight:700;color:#e65100;margin-bottom:8px;display:flex;align-items:center;gap:6px;}
+.price-rows{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.price-row{background:#fff;border-radius:10px;padding:8px 10px;font-size:12px;}
+.price-row .pr-label{color:#888;margin-bottom:2px;}
+.price-row .pr-val{font-weight:700;color:#1a1a1a;font-size:13px;}
 
-/* CARD */
-.card{background:#fff;border-radius:20px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.06);margin-bottom:16px;}
+.card{background:#fff;border-radius:20px;padding:20px;box-shadow:0 2px 12px rgba(0,0,0,0.06);margin-bottom:12px;}
+.sec-title{font-size:11px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.8px;margin-bottom:12px;}
+.page{display:none;}.page.active{display:block;}
 
-/* STEPS */
-.steps{display:flex;align-items:center;justify-content:center;gap:4px;margin-bottom:28px;flex-wrap:wrap;}
-.step-item{display:flex;align-items:center;gap:4px;}
-.step-dot{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;transition:.2s;}
-.step-dot.done{background:#e8f5e9;color:#2e7d32;}
-.step-dot.active{background:#1a1a1a;color:#fff;}
-.step-dot.pending{background:#f0f0f0;color:#999;}
-.step-label{font-size:11px;display:none;}
-@media(min-width:400px){.step-label{display:inline;color:#999;}}
-.step-label.active-label{color:#1a1a1a;font-weight:600;}
-.step-arrow{color:#ccc;font-size:12px;}
+/* TABS */
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
+.tab{padding:7px 14px;border-radius:100px;font-size:12px;font-weight:600;border:1.5px solid #e0e0e0;background:#fff;cursor:pointer;color:#555;transition:.15s;}
+.tab.on{background:#1a1a1a;color:#fff;border-color:#1a1a1a;}
 
-/* CATEGORY TABS */
-.cat-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
-.cat-tab{padding:6px 14px;border-radius:100px;font-size:12px;font-weight:600;border:1.5px solid #e0e0e0;background:#fff;cursor:pointer;transition:.2s;color:#555;}
-.cat-tab.active{background:#1a1a1a;color:#fff;border-color:#1a1a1a;}
-
-/* SERVICE CARDS */
-.service-list{display:flex;flex-direction:column;gap:8px;}
-.svc-card{border:1.5px solid #e0e0e0;border-radius:14px;padding:14px 16px;cursor:pointer;transition:.2s;display:flex;justify-content:space-between;align-items:center;}
-.svc-card:hover{border-color:#999;}
-.svc-card.selected{border-color:#1a1a1a;background:#1a1a1a;color:#fff;}
-.svc-card .svc-info h3{font-size:14px;font-weight:600;margin-bottom:3px;}
-.svc-card .svc-info p{font-size:12px;color:#888;}
-.svc-card.selected .svc-info p{color:#ccc;}
-.svc-card .svc-price{text-align:right;}
-.svc-card .svc-price strong{font-size:15px;font-weight:700;}
-.svc-card .svc-price span{font-size:11px;color:#aaa;display:block;}
-.svc-card.selected .svc-price span{color:#aaa;}
+/* SERVICE */
+.svc{border:1.5px solid #e0e0e0;border-radius:14px;padding:12px 14px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;transition:.15s;}
+.svc:hover{border-color:#999;}
+.svc.on{background:#1a1a1a;color:#fff;border-color:#1a1a1a;}
+.svc-name{font-size:14px;font-weight:600;margin-bottom:2px;}
+.svc-meta{font-size:12px;color:#888;}
+.svc.on .svc-meta{color:#ccc;}
+.svc-price{font-size:15px;font-weight:700;white-space:nowrap;}
+.svc-mins{font-size:11px;color:#aaa;text-align:right;margin-top:1px;}
 
 /* ADDONS */
-.addon-section{margin-top:16px;padding-top:16px;border-top:1px solid #f0f0f0;}
-.addon-section h4{font-size:12px;font-weight:600;color:#999;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;}
-.addon-chips{display:flex;flex-wrap:wrap;gap:8px;}
-.addon-chip{padding:7px 14px;border-radius:100px;font-size:12px;border:1.5px solid #e0e0e0;cursor:pointer;transition:.2s;background:#fff;}
-.addon-chip.active{background:#1a1a1a;color:#fff;border-color:#1a1a1a;}
+.addons{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;}
+.adn{padding:6px 14px;border-radius:100px;font-size:12px;border:1.5px solid #e0e0e0;cursor:pointer;background:#fff;transition:.15s;}
+.adn.on{background:#1a1a1a;color:#fff;border-color:#1a1a1a;}
 
-/* DAY GRID */
-.day-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:16px;}
-.day-btn{padding:10px 4px;border-radius:12px;font-size:12px;font-weight:600;border:1.5px solid #e0e0e0;background:#fff;cursor:pointer;text-align:center;transition:.2s;}
-.day-btn:hover{border-color:#999;}
-.day-btn.selected{background:#1a1a1a;color:#fff;border-color:#1a1a1a;}
-.day-btn .day-name{display:block;font-size:13px;}
-.day-btn .day-type{display:block;font-size:10px;color:#aaa;margin-top:2px;}
-.day-btn.selected .day-type{color:#aaa;}
-
-/* TIME GRID */
-.time-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
-.time-btn{padding:10px;border-radius:12px;font-size:13px;font-weight:500;border:1.5px solid #e0e0e0;background:#fff;cursor:pointer;text-align:center;transition:.2s;}
-.time-btn:hover{border-color:#999;}
-.time-btn.selected{background:#1a1a1a;color:#fff;border-color:#1a1a1a;}
+/* DAYS */
+.days{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:14px;}
+.day{padding:10px 4px;border-radius:12px;border:1.5px solid #e0e0e0;background:#fff;cursor:pointer;text-align:center;transition:.15s;}
+.day:hover{border-color:#999;}
+.day.on{background:#1a1a1a;color:#fff;border-color:#1a1a1a;}
+.day-n{font-size:13px;font-weight:600;display:block;}
+.day-t{font-size:10px;color:#aaa;display:block;margin-top:1px;}
+.day.on .day-t{color:#aaa;}
+.times{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.tim{padding:10px;border-radius:12px;border:1.5px solid #e0e0e0;background:#fff;cursor:pointer;text-align:center;font-size:13px;font-weight:500;transition:.15s;}
+.tim:hover{border-color:#999;}
+.tim.on{background:#1a1a1a;color:#fff;border-color:#1a1a1a;}
 
 /* FORM */
-.form-group{margin-bottom:14px;}
-.form-group label{display:block;font-size:12px;font-weight:600;color:#555;margin-bottom:6px;}
-.form-group label .req{color:#e53935;}
-.form-input{width:100%;height:44px;border:1.5px solid #e0e0e0;border-radius:12px;padding:0 14px;font-size:14px;font-family:inherit;transition:.2s;background:#fff;}
-.form-input:focus{outline:none;border-color:#1a1a1a;}
-.form-textarea{width:100%;border:1.5px solid #e0e0e0;border-radius:12px;padding:10px 14px;font-size:14px;font-family:inherit;min-height:80px;resize:none;transition:.2s;}
-.form-textarea:focus{outline:none;border-color:#1a1a1a;}
+.fg{margin-bottom:12px;}
+.fg label{display:block;font-size:12px;font-weight:600;color:#555;margin-bottom:5px;}
+.req{color:#e53935;}
+.fi{width:100%;height:46px;border:1.5px solid #e0e0e0;border-radius:12px;padding:0 14px;font-size:15px;font-family:inherit;color:#1a1a1a;background:#fff;}
+.fi:focus{outline:none;border-color:#1a1a1a;}
+textarea.fi{height:80px;padding:10px 14px;resize:none;line-height:1.5;}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
 
 /* NOTICES */
-.notice{border-radius:12px;padding:12px 14px;font-size:13px;display:flex;gap:10px;align-items:flex-start;margin-bottom:14px;}
-.notice.green{background:#e8f5e9;color:#2e7d32;}
-.notice.red{background:#ffebee;color:#c62828;border:1px solid #ffcdd2;}
-.notice.blue{background:#e3f2fd;color:#1565c0;}
-.notice.amber{background:#fff8e1;color:#e65100;}
-.notice-icon{font-size:16px;flex-shrink:0;}
-
-/* CARD INPUT */
-.card-inputs{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.card-full{grid-column:1/-1;}
+.nok{background:#e8f5e9;color:#2e7d32;border-radius:12px;padding:10px 14px;font-size:13px;display:flex;gap:8px;margin-bottom:12px;align-items:flex-start;}
+.nerr{background:#ffebee;color:#c62828;border:1px solid #ffcdd2;border-radius:12px;padding:10px 14px;font-size:13px;display:flex;gap:8px;margin-bottom:12px;align-items:flex-start;}
+.nblue{background:#e3f2fd;color:#1565c0;border-radius:12px;padding:10px 14px;font-size:13px;display:flex;gap:8px;margin-bottom:12px;align-items:flex-start;}
+.ngray{background:#f5f5f5;color:#555;border-radius:12px;padding:10px 14px;font-size:13px;display:flex;gap:8px;margin-bottom:12px;align-items:flex-start;}
 
 /* CHECKBOX */
-.checkbox-label{display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:13px;color:#555;line-height:1.5;}
-.checkbox-label input{margin-top:2px;width:16px;height:16px;flex-shrink:0;cursor:pointer;}
+.chk{display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:13px;color:#555;line-height:1.5;margin-bottom:14px;}
+.chk input{margin-top:2px;width:16px;height:16px;flex-shrink:0;}
 
 /* BUTTONS */
-.btn{width:100%;padding:14px;border-radius:14px;font-size:15px;font-weight:700;cursor:pointer;border:none;transition:.2s;font-family:inherit;}
-.btn-primary{background:#1a1a1a;color:#fff;}
-.btn-primary:hover{background:#333;}
-.btn-primary:disabled{background:#e0e0e0;color:#aaa;cursor:not-allowed;}
-.btn-outline{background:#fff;color:#1a1a1a;border:1.5px solid #e0e0e0;margin-top:10px;}
-.btn-outline:hover{border-color:#999;}
+.btn{width:100%;padding:14px;border-radius:14px;font-size:15px;font-weight:700;cursor:pointer;border:none;font-family:inherit;margin-top:8px;transition:.15s;}
+.btn-blk{background:#1a1a1a;color:#fff;}
+.btn-blk:hover{background:#333;}
+.btn-blk:disabled{background:#e0e0e0;color:#aaa;cursor:not-allowed;}
+.btn-out{background:#fff;color:#1a1a1a;border:1.5px solid #e0e0e0;}
+.btn-out:hover{border-color:#999;}
 
-/* SUMMARY BOX */
-.summary-box{background:#f8f8f6;border-radius:14px;padding:16px;margin-bottom:16px;}
-.summary-row{display:flex;justify-content:space-between;font-size:14px;padding:5px 0;}
-.summary-row.total{font-weight:700;border-top:1px solid #e0e0e0;margin-top:6px;padding-top:10px;font-size:15px;}
-.summary-label{color:#666;}
+/* SUMMARY */
+.sumbox{background:#f8f8f6;border-radius:14px;padding:14px;margin-bottom:12px;}
+.sumrow{display:flex;justify-content:space-between;font-size:14px;padding:4px 0;}
+.sumrow.tot{font-weight:700;border-top:1px solid #e0e0e0;margin-top:6px;padding-top:8px;font-size:15px;}
+.sumlbl{color:#666;}
 
-/* CHECKOUT TIP */
-.tip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px;}
-.tip-btn{padding:14px;border-radius:14px;border:1.5px solid #e0e0e0;background:#fff;cursor:pointer;text-align:center;transition:.2s;}
-.tip-btn:hover{border-color:#999;}
-.tip-btn.selected{background:#1a1a1a;color:#fff;border-color:#1a1a1a;}
-.tip-btn .tip-pct{font-size:18px;font-weight:800;display:block;}
-.tip-btn .tip-amt{font-size:12px;color:#aaa;display:block;margin-top:2px;}
-.tip-btn.selected .tip-amt{color:#aaa;}
-
-/* CONFIRM PAGE */
-.confirm-icon{width:72px;height:72px;background:#e8f5e9;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 20px;}
-.confirm-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;}
-.confirm-item{background:#f8f8f6;border-radius:12px;padding:12px 14px;}
-.confirm-item .ci-label{font-size:11px;color:#999;margin-bottom:3px;}
-.confirm-item .ci-value{font-size:14px;font-weight:600;color:#1a1a1a;}
+/* CONFIRM */
+.conf-ico{width:68px;height:68px;background:#e8f5e9;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;margin:0 auto 16px;}
+.conf-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;}
+.conf-item{background:#f8f8f6;border-radius:12px;padding:12px;}
+.ci-lbl{font-size:11px;color:#999;margin-bottom:2px;}
+.ci-val{font-size:14px;font-weight:600;}
 
 /* ADMIN */
-.admin-link{text-align:center;margin-top:24px;}
-.admin-link button{background:none;border:none;font-size:12px;color:#bbb;cursor:pointer;text-decoration:underline;}
-
-/* MODAL OVERLAY */
 .overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:100;align-items:center;justify-content:center;padding:16px;}
 .overlay.show{display:flex;}
-.modal{background:#fff;border-radius:24px;padding:28px;max-width:360px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,0.2);}
-.modal h2{font-size:18px;font-weight:700;margin-bottom:6px;}
-.modal p{font-size:13px;color:#666;margin-bottom:20px;}
-
-/* CHECKOUT MODAL */
-.checkout-total{background:#1a1a1a;color:#fff;border-radius:14px;padding:16px;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center;}
-.checkout-total span{font-size:14px;color:#aaa;}
-.checkout-total strong{font-size:22px;font-weight:800;}
-
-/* NOSHOW BADGE */
-.noshow-badge{background:#ffebee;border:1px solid #ffcdd2;border-radius:10px;padding:10px 14px;font-size:13px;color:#c62828;display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
-
-/* ADMIN DASH */
-.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:20px;}
-.stat-card{background:#f8f8f6;border-radius:14px;padding:14px;}
-.stat-card .stat-val{font-size:24px;font-weight:800;margin-bottom:2px;}
-.stat-card .stat-label{font-size:12px;color:#999;}
-.booking-item{border:1.5px solid #e0e0e0;border-radius:14px;padding:14px;margin-bottom:10px;}
-.booking-item .bi-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;}
-.booking-item .bi-name{font-size:15px;font-weight:700;}
-.booking-item .bi-svc{font-size:12px;color:#888;margin-top:2px;}
-.booking-item .bi-status{font-size:11px;font-weight:600;padding:3px 10px;border-radius:100px;}
-.status-confirmed{background:#e3f2fd;color:#1565c0;}
-.status-completed{background:#e8f5e9;color:#2e7d32;}
-.status-noshow{background:#ffebee;color:#c62828;}
-.booking-item .bi-actions{display:flex;gap:8px;flex-wrap:wrap;}
-.bi-btn{padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;border:1.5px solid;transition:.2s;font-family:inherit;}
-.bi-btn-checkout{background:#1a1a1a;color:#fff;border-color:#1a1a1a;}
-.bi-btn-noshow{background:#ffebee;color:#c62828;border-color:#ffcdd2;}
-.bi-btn-msg{background:#fff;color:#555;border-color:#e0e0e0;}
-
-/* PASSWORD */
-.pw-input-wrap{position:relative;}
-.pw-toggle{position:absolute;right:14px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:16px;}
-
-.section-title{font-size:13px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px;}
-.back-btn{background:none;border:none;font-size:13px;color:#999;cursor:pointer;display:flex;align-items:center;gap:4px;margin-bottom:16px;font-family:inherit;}
+.modal{background:#fff;border-radius:24px;padding:24px;max-width:340px;width:100%;max-height:90vh;overflow-y:auto;}
+.modal h2{font-size:18px;font-weight:700;margin-bottom:4px;}
+.modal p{font-size:13px;color:#666;margin-bottom:16px;}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;}
+.stat{background:#f8f8f6;border-radius:12px;padding:12px;}
+.stat-v{font-size:22px;font-weight:800;margin-bottom:2px;}
+.stat-l{font-size:11px;color:#999;}
+.bk{border:1.5px solid #e0e0e0;border-radius:14px;padding:12px;margin-bottom:8px;}
+.bk-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;}
+.bk-name{font-size:14px;font-weight:700;}
+.bk-svc{font-size:12px;color:#888;margin-top:1px;}
+.bk-badge{font-size:11px;font-weight:600;padding:3px 10px;border-radius:100px;white-space:nowrap;}
+.bc{background:#e3f2fd;color:#1565c0;}
+.bd{background:#e8f5e9;color:#2e7d32;}
+.bn{background:#ffebee;color:#c62828;}
+.bk-acts{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;}
+.ba{padding:6px 12px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;border:1.5px solid;font-family:inherit;transition:.15s;}
+.ba-co{background:#1a1a1a;color:#fff;border-color:#1a1a1a;}
+.ba-ns{background:#ffebee;color:#c62828;border-color:#ffcdd2;}
+.ba-sm{background:#fff;color:#555;border-color:#e0e0e0;}
+.tip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px;}
+.tip{padding:12px;border-radius:12px;border:1.5px solid #e0e0e0;background:#fff;cursor:pointer;text-align:center;transition:.15s;}
+.tip:hover{border-color:#999;}
+.tip.on{background:#1a1a1a;color:#fff;border-color:#1a1a1a;}
+.tip-p{font-size:18px;font-weight:800;display:block;}
+.tip-a{font-size:12px;color:#aaa;display:block;margin-top:1px;}
+.tip.on .tip-a{color:#aaa;}
+.tot-box{background:#1a1a1a;color:#fff;border-radius:12px;padding:14px;display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
+.admin-lnk{text-align:center;margin-top:20px;}
+.admin-lnk button{background:none;border:none;font-size:12px;color:#bbb;cursor:pointer;text-decoration:underline;font-family:inherit;}
+.back-btn{background:none;border:none;font-size:13px;color:#999;cursor:pointer;margin-bottom:12px;font-family:inherit;display:flex;align-items:center;gap:4px;}
+.pw-wrap{position:relative;}
+.pw-eye{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:15px;}
 </style>
 </head>
 <body>
-
 <div class="container">
+
+  <!-- HEADER -->
   <div class="header">
     <div class="logo">✂️ Hair by Chenny</div>
     <h1>Book Your Appointment</h1>
     <p>Premium Korean Hair & Head Spa · Fairfax, VA</p>
-    <div class="days-tag">
-      <span>✂️ Hair: Mon · Wed · Fri</span>
-      <span>🌿 Head Spa: Tue · Thu</span>
+    <div class="tags">
+      <span class="tag">✂️ Hair: Mon · Wed · Fri</span>
+      <span class="tag">🌿 Head Spa: Tue · Thu</span>
     </div>
   </div>
 
-  <!-- BOOKING FORM -->
-  <div id="booking-section">
-    <div class="steps" id="steps-bar"></div>
-    <div class="card" id="step-content"></div>
-    <div class="admin-link"><button onclick="showAdminLogin()">🔒 Admin Login</button></div>
+
+
+  <!-- OPENING SPECIAL -->
+  <div style="background:linear-gradient(135deg,#1a1a2e,#2d1b4e);border-radius:16px;padding:16px 18px;margin-bottom:14px;text-align:center;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:-10px;right:-10px;font-size:60px;opacity:.08;">✨</div>
+    <div style="font-size:11px;font-weight:700;color:#ffd700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;">🎊 Grand Opening</div>
+    <div style="font-size:17px;font-weight:800;color:#fff;margin-bottom:4px;">K-Head Spa Now Open!</div>
+    <div style="font-size:12px;color:#ccc;">Experience premium Korean scalp care in Fairfax, VA</div>
+  </div>
+  <div style="background:#fff;border-radius:16px;padding:16px 18px;margin-bottom:14px;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
+    <div style="font-size:11px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px;">📍 Salon Info</div>
+    <div style="font-size:13px;color:#444;line-height:1.9;">
+      <div>🏢 <strong>Sola Salon</strong> — University Mall, Fairfax</div>
+      <div>📌 10621 Braddock Road, Suite K, Studio #17</div>
+      <div>📌 Fairfax, VA 22032</div>
+      <div>📞 <a href="tel:7034988836" style="color:#1a1a1a;font-weight:600;text-decoration:none;">703-498-8836</a></div>
+      <div>✉️ <a href="mailto:hairbychenny@gmail.com" style="color:#1a1a1a;font-weight:600;text-decoration:none;">hairbychenny@gmail.com</a></div>
+    </div>
+    <div style="margin-top:10px;background:#f0f4ff;border-radius:10px;padding:8px 12px;font-size:12px;color:#3949ab;">
+      💬 For questions or consultations, please call or email us directly.
+    </div>
+  </div>
+  <div id="booking">
+
+    <!-- PAGE 1: SERVICE -->
+    <div class="page active" id="p1">
+      <div class="card">
+        <div class="sec-title">1. Choose a Service</div>
+        <div class="tabs" id="cat-tabs"></div>
+        <div id="svc-list"></div>
+        <div style="border-top:1px solid #f0f0f0;margin-top:14px;padding-top:14px;">
+          <div class="sec-title" style="margin-bottom:8px;">Add-ons (optional)</div>
+          <div class="addons" id="addon-list"></div>
+        </div>
+      </div>
+      <button class="btn btn-blk" id="btn1" disabled onclick="goTo('p2')">Next — Pick Date & Time →</button>
+    </div>
+
+    <!-- PAGE 2: DATE/TIME -->
+    <div class="page" id="p2">
+      <div class="card">
+        <div class="sec-title">2. Pick Date & Time</div>
+      <!-- 💡 PRICING NOTICE - page 2 only -->
+      <div class="price-notice" style="margin-bottom:14px;">
+        <div class="price-notice-title">💡 Additional charges may apply based on your hair</div>
+        <div class="price-rows">
+          <div class="price-row"><div class="pr-label">✂️ Hair Length</div><div class="pr-val">+$25 up</div></div>
+          <div class="price-row"><div class="pr-label">🌀 Curl / Wave</div><div class="pr-val">+$25 up</div></div>
+          <div class="price-row"><div class="pr-label">💇 Thickness</div><div class="pr-val">+$25 up</div></div>
+          <div class="price-row"><div class="pr-label">📋 Consultation</div><div class="pr-val">Final price confirmed at shop</div></div>
+        </div>
+      </div>
+      <div id="cal-grid"></div>
+      <div id="time-section"></div>
+      </div>
+      <button class="btn btn-blk" id="btn2" disabled onclick="goTo('p3')">Next — Your Info →</button>
+      <button class="btn btn-out" onclick="goTo('p1')">← Back</button>
+    </div>
+
+    <!-- PAGE 3: INFO -->
+    <div class="page" id="p3">
+      <div class="card">
+        <div class="sec-title">3. Your Information</div>
+        <div class="fg"><label>Full Name <span class="req">*</span></label><input class="fi" id="f-name" placeholder="Your name" type="text" autocomplete="name"/></div>
+        <div class="fg"><label>Phone Number <span class="req">*</span></label><input class="fi" id="f-phone" placeholder="(703) 555-0000" type="tel" autocomplete="tel"/></div>
+        <div class="fg"><label>Email</label><input class="fi" id="f-email" placeholder="you@email.com" type="email" autocomplete="email"/></div>
+        <div class="fg"><label>Hair Length & Type <span style="color:#e65100;font-size:11px;">(helps estimate final price)</span></label>
+          <input class="fi" id="f-hair" placeholder="e.g. Long, thick, curly — shoulder length..."/></div>
+        <div class="fg"><label>Notes (optional)</label><textarea class="fi" id="f-notes" placeholder="Scalp concerns, allergies, inspiration photos..."></textarea></div>
+        <div class="nblue"><span>💬</span><span>Confirmation text sent to your phone after booking.</span></div>
+      </div>
+      <button class="btn btn-blk" onclick="checkStep3()">Next — Card on File →</button>
+      <button class="btn btn-out" onclick="goTo('p2')">← Back</button>
+    </div>
+
+    <!-- PAGE 4: CARD -->
+    <div class="page" id="p4">
+      <div class="card">
+        <div class="sec-title">4. Card on File</div>
+        <div class="nok"><span>✅</span><div><strong>No charge today</strong><br/><span id="total-notice" style="font-size:12px;"></span></div></div>
+        <div class="nerr"><span>⚠️</span><div><strong>No-Show Policy</strong><br/>Cancel at least 24 hours in advance. No-show or late cancel = <strong>$50 fee</strong> charged to card.</div></div>
+        <div class="fg"><label>Card Number</label>
+          <input class="fi" id="c-num" placeholder="4242 4242 4242 4242" maxlength="19" style="font-family:monospace;letter-spacing:2px;" oninput="fmtCardNum(this)"/></div>
+        <div class="two">
+          <div class="fg"><label>Expiry</label><input class="fi" id="c-exp" placeholder="MM/YY" maxlength="5" style="font-family:monospace;" oninput="fmtExp(this)"/></div>
+          <div class="fg"><label>CVC</label><input class="fi" id="c-cvc" placeholder="123" maxlength="4" style="font-family:monospace;" oninput="this.value=this.value.replace(/\D/g,'').slice(0,4)"/></div>
+        </div>
+        <div class="ngray"><span>🔒</span><span>Encrypted via Stripe. No charge until service is complete at the shop.</span></div>
+        <label class="chk"><input type="checkbox" id="c-agree"/><span>I agree to the no-show policy. A <strong>$50 fee</strong> will only be charged if I miss my appointment without 24-hour notice.</span></label>
+      </div>
+      <button class="btn btn-blk" onclick="confirmBooking()">✓ Confirm Booking</button>
+      <button class="btn btn-out" onclick="goTo('p3')">← Back</button>
+    </div>
+
+    <!-- PAGE 5: CONFIRMED -->
+    <div class="page" id="p5">
+      <div class="card" style="text-align:center;">
+        <div class="conf-ico">🎉</div>
+        <h2 style="font-size:22px;font-weight:800;margin-bottom:6px;">Booking Confirmed!</h2>
+        <p style="color:#888;font-size:14px;margin-bottom:18px;" id="conf-sub"></p>
+        <div class="conf-grid" id="conf-grid"></div>
+        <div class="sumbox" id="conf-sum"></div>
+        <div class="nerr" style="text-align:left;"><span>🔒</span><span id="conf-card" style="font-size:12px;"></span></div>
+        <div class="nerr" id="late-policy" style="display:none;text-align:left;background:#fff3e0;border-color:#ffe0b2;color:#e65100;">
+          <span>⏰</span>
+          <div style="font-size:12px;">
+            <strong>Late Arrival Policy</strong><br/>
+            If you arrive <strong>15 minutes or more late</strong>, a <strong>$20 credit</strong> will automatically be given to the next waiting client on your behalf. Please plan accordingly and text us if you're running late.
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-blk" onclick="resetAll()">Book Another Appointment</button>
+    </div>
+
+    <div class="admin-lnk"><button onclick="showLogin()">🔒 Admin Login</button></div>
   </div>
 
-  <!-- ADMIN SECTION -->
-  <div id="admin-section" style="display:none;">
+  <!-- ADMIN -->
+  <div id="admin" style="display:none;">
     <button class="back-btn" onclick="showBooking()">← Back to Booking</button>
-    <div class="card" id="admin-content"></div>
+    <div class="card" id="admin-dash"></div>
+  </div>
+</div>
+
+<!-- ADMIN LOGIN -->
+<div class="overlay" id="modal-login">
+  <div class="modal">
+    <div style="text-align:center;margin-bottom:14px;"><div style="font-size:28px;">🔒</div>
+      <h2 style="margin-top:6px;">Admin Access</h2><p>Hair by Chenny · Owner Only</p></div>
+    <div class="fg"><label>Password</label>
+      <div class="pw-wrap"><input type="password" id="pw" class="fi" placeholder="Enter password" onkeydown="if(event.key==='Enter')tryLogin()"/>
+        <button class="pw-eye" onclick="togglePw()">👁</button></div>
+      <p id="pw-err" style="color:#e53935;font-size:12px;margin-top:4px;display:none;">Incorrect password.</p>
+      <p style="font-size:11px;color:#bbb;margin-top:4px;">Demo: chenny2026</p></div>
+    <button class="btn btn-blk" onclick="tryLogin()">Log In</button>
+    <button class="btn btn-out" onclick="closeLogin()">Cancel</button>
   </div>
 </div>
 
 <!-- CHECKOUT MODAL -->
-<div class="overlay" id="checkout-modal">
+<div class="overlay" id="modal-co">
   <div class="modal">
     <h2>💰 In-Shop Checkout</h2>
-    <p>Select a tip based on the full service total</p>
-    <div class="summary-box" id="checkout-summary"></div>
-    <div class="section-title">Tip — on full total</div>
-    <div class="tip-grid" id="tip-grid"></div>
-    <div class="checkout-total" id="checkout-total-box">
-      <span>Total to charge</span>
-      <strong id="checkout-final">Select tip</strong>
-    </div>
-    <button class="btn btn-primary" id="checkout-confirm-btn" disabled onclick="completeCheckout()">Confirm Payment</button>
-    <button class="btn btn-outline" onclick="closeCheckout()">Cancel</button>
+    <p>Tip is based on the full service total</p>
+    <div class="sumbox" id="co-sum"></div>
+    <div class="sec-title">Select Tip</div>
+    <div class="tip-grid" id="co-tips"></div>
+    <div class="tot-box"><span style="color:#aaa;font-size:14px;">Total to charge</span><strong style="font-size:20px;" id="co-total">Select tip</strong></div>
+    <button class="btn btn-blk" id="co-btn" disabled onclick="doCheckout()">Confirm Payment</button>
+    <button class="btn btn-out" onclick="closeCo()">Cancel</button>
   </div>
 </div>
 
-<!-- NOSHOW MODAL -->
-<div class="overlay" id="noshow-modal">
+<!-- NO SHOW MODAL -->
+<div class="overlay" id="modal-ns">
   <div class="modal">
     <h2>⚠️ Mark as No-Show?</h2>
-    <p>A $50 fee will be charged to the client's card on file.</p>
-    <div class="noshow-badge" id="noshow-info"></div>
-    <button class="btn btn-primary" style="background:#e53935;" onclick="confirmNoShow()">Charge $50.00</button>
-    <button class="btn btn-outline" onclick="closeNoShow()">Cancel</button>
-  </div>
-</div>
-
-<!-- ADMIN LOGIN MODAL -->
-<div class="overlay" id="admin-login-modal">
-  <div class="modal">
-    <div style="text-align:center;margin-bottom:16px;">
-      <div style="font-size:32px;">🔒</div>
-      <h2 style="margin-top:8px;">Admin Access</h2>
-      <p>Hair by Chenny · Owner Only</p>
-    </div>
-    <div class="form-group">
-      <label>Password</label>
-      <div class="pw-input-wrap">
-        <input type="password" id="admin-pw" class="form-input" placeholder="Enter password" onkeydown="if(event.key==='Enter')tryAdminLogin()"/>
-        <button class="pw-toggle" onclick="togglePw()" id="pw-eye">👁</button>
-      </div>
-      <p id="pw-error" style="color:#e53935;font-size:12px;margin-top:6px;display:none;">Incorrect password. Try again.</p>
-      <p style="font-size:11px;color:#bbb;margin-top:6px;">Demo: chenny2026</p>
-    </div>
-    <button class="btn btn-primary" onclick="tryAdminLogin()">Log In</button>
-    <button class="btn btn-outline" onclick="closeAdminLogin()">Cancel</button>
+    <p>$50 will be charged to the client's card on file.</p>
+    <div style="background:#ffebee;border:1px solid #ffcdd2;border-radius:10px;padding:10px 14px;font-size:13px;color:#c62828;display:flex;justify-content:space-between;margin-bottom:14px;" id="ns-info"></div>
+    <button class="btn btn-blk" style="background:#e53935;" onclick="doNoShow()">Charge $50.00</button>
+    <button class="btn btn-out" onclick="closeNs()">Cancel</button>
   </div>
 </div>
 
 <script>
-// ── DATA ──
-const SERVICES = {
+const SVCS = {
   "⭐ Quick Pick": [
-    {id:"sig-cut", name:"Chenny's Signature Cut", mins:45, price:68, days:"Mon·Wed·Fri"},
-    {id:"color-cut", name:"Color & Cut Combo", mins:150, price:194, days:"Mon·Wed·Fri"},
-    {id:"men-tex", name:"Men's Texture Cut", mins:35, price:48, days:"Mon·Wed·Fri"},
+    {id:"sig", name:"Chenny's Signature Cut", mins:45, price:68, days:"Mon·Wed·Fri"},
+    {id:"cc",  name:"Color & Cut Combo",       mins:150,price:194,days:"Mon·Wed·Fri"},
+    {id:"mt",  name:"Men's Texture Cut",        mins:35, price:48, days:"Mon·Wed·Fri"},
   ],
   "🌿 K-Head Spa": [
-    {id:"spa30", name:"K-Scalp Detox 30", mins:30, price:70, days:"Tue·Thu"},
-    {id:"spa50", name:"K-Scalp Deep Care 50", mins:50, price:100, days:"Tue·Thu"},
-    {id:"spa80", name:"K-Head Spa Full 80", mins:80, price:130, days:"Tue·Thu"},
+    {id:"s30", name:"K-Scalp Detox 30",               mins:30,  price:70,  days:"Tue·Thu"},
+    {id:"s50", name:"K-Scalp Deep Care 50",           mins:50,  price:100, days:"Tue·Thu"},
+    {id:"s80", name:"K-Head Spa Full 80",             mins:80,  price:130, days:"Tue·Thu"},
+
   ],
   "✂️ Color & Perm": [
-    {id:"full-color", name:"Full Color + Toner", mins:150, price:185, days:"Mon·Wed·Fri"},
-    {id:"root-gloss", name:"Root Touch-Up + Gloss", mins:120, price:155, days:"Mon·Wed·Fri"},
-    {id:"dig-perm", name:"Korean Digital Perm", mins:180, price:250, days:"Mon·Wed·Fri"},
-    {id:"men-perm", name:"Men's Perm Package", mins:120, price:177, days:"Mon·Wed·Fri"},
-    {id:"bleach", name:"Bleach & Tone", mins:180, price:220, days:"Mon·Wed·Fri"},
+    {id:"fc",  name:"Full Color + Toner",                    mins:150,price:185,days:"Mon·Wed·Fri"},
+    {id:"rg",  name:"Root Touch-Up + Gloss",                mins:120,price:155,days:"Mon·Wed·Fri"},
+    {id:"dp",  name:"Korean Digital Perm",                  mins:180,price:250,days:"Mon·Wed·Fri"},
+    {id:"rp",  name:"Regular Perm",                         mins:120,price:165,days:"Mon·Wed·Fri"},
+    {id:"rvp", name:"Root Volume Perm",                     mins:90, price:105,days:"Mon·Wed·Fri"},
+    {id:"mpe", name:"Men's Perm Package",                   mins:120,price:177,days:"Mon·Wed·Fri"},
+    {id:"bt",  name:"Bleach & Tone",                        mins:180,price:220,days:"Mon·Wed·Fri"},
+    {id:"rct", name:"Recovery Treatment (Keratin-like)",    mins:120,price:200,days:"Mon·Wed·Fri"},
   ],
   "👨 Men's": [
-    {id:"men-cut", name:"Men's Haircut", mins:45, price:48, days:"Mon·Wed·Fri"},
-    {id:"men-color", name:"Men's Color", mins:45, price:85, days:"Mon·Wed·Fri"},
-    {id:"men-spa", name:"Men's Cut + Scalp + Head Spa", mins:75, price:135, days:"Mon·Wed·Fri"},
+    {id:"mc",   name:"Men's Haircut",                  mins:45, price:48,  days:"Mon·Wed·Fri"},
+    {id:"mcol", name:"Men's Color",                    mins:45, price:85,  days:"Mon·Wed·Fri"},
+    {id:"msp",  name:"Men's Cut + Scalp + Head Spa",  mins:75, price:135, days:"Mon·Wed·Fri"},
+
   ],
 };
+
 const ADDONS = [
-  {id:"ampoule", name:"Scalp Care Ampoule", price:45},
-  {id:"treatment", name:"Hair Treatment", price:40},
-  {id:"blowdry", name:"Blowdry Add-on", price:35},
+  {id:"amp", name:"Scalp Care Ampoule", price:45},
+  {id:"trt", name:"Hair Treatment",     price:40},
+  {id:"blo", name:"Blowdry Add-on",     price:35},
+  {id:"adp", name:"Down Perm",          price:55},
+  {id:"arp", name:"Root Volume Perm",   price:105},
 ];
-const DAY_SLOTS = {
-  Monday: ["10:00 AM","11:00 AM","12:30 PM","2:00 PM","3:30 PM"],
+
+const SLOTS = {
+  Monday:    ["10:00 AM","11:00 AM","12:30 PM","2:00 PM","3:30 PM"],
   Wednesday: ["10:00 AM","11:15 AM","12:30 PM","2:00 PM","3:30 PM","5:00 PM"],
-  Friday: ["10:00 AM","11:00 AM","12:15 PM","1:45 PM","3:15 PM","4:45 PM"],
-  Tuesday: ["10:00 AM","11:30 AM","1:00 PM","2:30 PM","4:00 PM"],
-  Thursday: ["10:00 AM","11:30 AM","1:00 PM","2:30 PM","4:00 PM"],
+  Friday:    ["10:00 AM","11:00 AM","12:15 PM","1:45 PM","3:15 PM","4:45 PM"],
+  Tuesday:   ["10:00 AM","11:30 AM","1:00 PM","2:30 PM","4:00 PM"],
+  Thursday:  ["10:00 AM","11:30 AM","1:00 PM","2:30 PM","4:00 PM"],
 };
+
 const ADMIN_PW = "chenny2026";
-const NO_SHOW_FEE = 50;
+const fmt = n => `$${Number(n).toFixed(2)}`;
+const allSvcs = () => Object.values(SVCS).flat();
 
-// ── STATE ──
-let state = {
-  step: 0,
-  cat: "⭐ Quick Pick",
-  selSvc: null,
-  addons: [],
-  day: "",
-  time: "",
-  form: {name:"",phone:"",email:"",hair:"",notes:""},
-  card: {num:"",exp:"",cvc:"",agreed:false},
-  confirmed: false,
-};
+let selCat = "⭐ Quick Pick";
+let selSvc = null;
+let selAddons = [];
+let selDateStr = "";
+let selDay = "";
+let selTime = "";
+let tipPct = null;
+let coTarget = null;
+let nsTarget = null;
 
-let adminBookings = [
-  {id:1, name:"Sarah Kim", phone:"(703)555-0101", service:"Color & Cut Combo", time:"10:00 AM", price:194, status:"confirmed", cardLast4:"4242"},
-  {id:2, name:"Jennifer P.", phone:"(571)555-0202", service:"K-Scalp Deep Care 50", time:"11:30 AM", price:100, status:"confirmed", cardLast4:"1234"},
-  {id:3, name:"Mike Lee", phone:"(703)555-0303", service:"Men's Texture Cut", time:"12:30 PM", price:48, status:"completed", cardLast4:"5678"},
+let bookings = [
+  {id:1, name:"Sarah Kim",   phone:"(703)555-0101", service:"Color & Cut Combo",     time:"10:00 AM", price:194, status:"confirmed", card:"4242"},
+  {id:2, name:"Jennifer P.", phone:"(571)555-0202", service:"K-Scalp Deep Care 50",  time:"11:30 AM", price:100, status:"confirmed", card:"1234"},
+  {id:3, name:"Mike Lee",    phone:"(703)555-0303", service:"Men's Texture Cut",      time:"12:30 PM", price:48,  status:"completed", card:"5678"},
 ];
 
-let selectedTip = null;
-let noShowTarget = null;
-let checkoutTarget = null;
+function goTo(pg) {
+  document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+  document.getElementById(pg).classList.add("active");
+  window.scrollTo(0, 0);
+}
 
-const fmt = n => `$${Number(n).toFixed(2)}`;
-const allSvcs = () => Object.values(SERVICES).flat();
-const getSvc = id => allSvcs().find(s => s.id === id);
+// ── PAGE 1 ──
+function initP1() {
+  const catKeys = Object.keys(SVCS);
+  document.getElementById("cat-tabs").innerHTML = catKeys.map(c =>
+    `<button class="tab${c === selCat ? " on" : ""}" onclick="switchCat(event)">${c}</button>`
+  ).join("");
 
-// ── STEPS ──
-const STEP_LABELS = ["Service","Date & Time","Your Info","Card on File"];
-
-function renderSteps() {
-  const bar = document.getElementById("steps-bar");
-  bar.innerHTML = STEP_LABELS.map((l, i) => {
-    const cls = i < state.step ? "done" : i === state.step ? "active" : "pending";
-    const icon = i < state.step ? "✓" : i + 1;
-    const lCls = i === state.step ? "active-label" : "";
-    return `<div class="step-item">
-      <div class="step-dot ${cls}">${icon}</div>
-      <span class="step-label ${lCls}">${l}</span>
-      ${i < STEP_LABELS.length - 1 ? '<span class="step-arrow">›</span>' : ''}
+  document.getElementById("svc-list").innerHTML = SVCS[selCat].map(s => {
+    const isPkg = s.pkg;
+    const saving = isPkg && s.original > s.price ? `<span style="background:#e8f5e9;color:#2e7d32;font-size:10px;font-weight:700;padding:2px 7px;border-radius:100px;margin-left:6px;">Save ${fmt(s.original - s.price)}</span>` : "";
+    const pkgBadge = isPkg ? `<div style="font-size:11px;color:#7b1fa2;font-weight:600;margin-bottom:2px;">5 sessions · Pay once, use anytime</div>` : "";
+    const origPrice = isPkg && s.original > s.price ? `<div style="font-size:11px;text-decoration:line-through;color:#aaa;">${fmt(s.original)}</div>` : "";
+    return `<div class="svc${selSvc === s.id ? " on" : ""}" onclick="pickSvc(event)" style="${isPkg ? "border-color:#ce93d8;background:${selSvc===s.id?'#1a1a1a':'#fce4ec'}" : ""}">
+      <div>
+        ${pkgBadge}
+        <div class="svc-name">${s.name}${saving}</div>
+        <div class="svc-meta">⏱ ${s.mins}min · ${s.days}</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0;margin-left:10px;">
+        ${origPrice}
+        <div class="svc-price">${fmt(s.price)}</div>
+        <div class="svc-mins">${isPkg ? "package price" : "starting price"}</div>
+      </div>
     </div>`;
   }).join("");
+
+  document.getElementById("addon-list").innerHTML = ADDONS.map(a =>
+    `<div class="adn${selAddons.includes(a.id) ? " on" : ""}" onclick="toggleAddon(event)">${selAddons.includes(a.id) ? "✓ " : "+ "}${a.name} (${fmt(a.price)})</div>`
+  ).join("");
+
+  document.getElementById("btn1").disabled = !selSvc;
 }
 
-// ── RENDER ──
-function render() {
-  renderSteps();
-  const content = document.getElementById("step-content");
-  if (state.confirmed) { renderConfirmed(); return; }
-  if (state.step === 0) renderStep0(content);
-  else if (state.step === 1) renderStep1(content);
-  else if (state.step === 2) renderStep2(content);
-  else if (state.step === 3) renderStep3(content);
+function switchCat(e) {
+  selCat = e.currentTarget.textContent;
+  initP1();
 }
 
-function renderStep0(el) {
-  const svc = getSvc(state.selSvc);
-  el.innerHTML = `
-    <div class="section-title">1. Choose a Service</div>
-    <div class="cat-tabs">${Object.keys(SERVICES).map(c =>
-      `<button class="cat-tab ${state.cat===c?'active':''}" onclick="setCat('${c}')">${c}</button>`
-    ).join("")}</div>
-    <div class="service-list">${SERVICES[state.cat].map(s => `
-      <div class="svc-card ${state.selSvc===s.id?'selected':''}" onclick="selectSvc('${s.id}')">
-        <div class="svc-info">
-          <h3>${s.name}</h3>
-          <p>⏱ ${s.mins} min · ${s.days}</p>
-        </div>
-        <div class="svc-price">
-          <strong>${fmt(s.price)}</strong>
-          <span>per service</span>
-        </div>
-      </div>`).join("")}
-    </div>
-    <div class="addon-section">
-      <h4>Add-ons (optional)</h4>
-      <div class="addon-chips">${ADDONS.map(a =>
-        `<div class="addon-chip ${state.addons.includes(a.id)?'active':''}" onclick="toggleAddon('${a.id}')">${state.addons.includes(a.id)?'✓ ':'+'}${a.name} (${fmt(a.price)})</div>`
-      ).join("")}</div>
-    </div>
-    <br/>
-    <button class="btn btn-primary" ${!state.selSvc?'disabled':''} onclick="goStep(1)">
-      Next — Pick Date & Time →
-    </button>
-  `;
+function pickSvc(e) {
+  const card = e.currentTarget;
+  const name = card.querySelector(".svc-name").textContent;
+  const found = allSvcs().find(s => s.name === name);
+  if (found) { selSvc = found.id; initP1(); }
 }
 
-function renderStep1(el) {
-  el.innerHTML = `
-    <div class="section-title">2. Pick Date & Time</div>
-    <div style="margin-bottom:12px;font-size:12px;font-weight:600;color:#999;">SELECT A DAY</div>
-    <div class="day-grid">${Object.keys(DAY_SLOTS).map(d => `
-      <button class="day-btn ${state.day===d?'selected':''}" onclick="selectDay('${d}')">
-        <span class="day-name">${d.slice(0,3)}</span>
-        <span class="day-type">${['Tuesday','Thursday'].includes(d)?'Spa':'Hair'}</span>
-      </button>`).join("")}
-    </div>
-    ${state.day ? `
-      <div style="margin-bottom:12px;font-size:12px;font-weight:600;color:#999;">AVAILABLE TIMES — ${state.day.toUpperCase()}</div>
-      <div class="time-grid">${DAY_SLOTS[state.day].map(t =>
-        `<button class="time-btn ${state.time===t?'selected':''}" onclick="selectTime('${t}')">${t}</button>`
-      ).join("")}</div>` :
-      `<div class="notice amber"><span class="notice-icon">📅</span><span>Please select a day first</span></div>`
+function toggleAddon(e) {
+  const chip = e.currentTarget;
+  const label = chip.textContent.replace(/^[✓+] /, "").split(" (")[0];
+  const found = ADDONS.find(a => a.name === label);
+  if (found) {
+    selAddons = selAddons.includes(found.id)
+      ? selAddons.filter(a => a !== found.id)
+      : [...selAddons, found.id];
+    initP1();
+  }
+}
+
+// ── PAGE 2 — CALENDAR ──
+function initP2() {
+  const cal = document.getElementById("cal-grid");
+  const today = new Date();
+  let curYear = today.getFullYear();
+  let curMonth = today.getMonth();
+
+  function isAvailable(d) {
+    const day = d.getDay(); // 0=Sun,1=Mon,2=Tue,3=Wed,4=Thu,5=Fri,6=Sat
+    return [1,2,3,4,5].includes(day); // Mon~Fri only
+  }
+
+  function isSpa(d) {
+    const day = d.getDay();
+    return day === 2 || day === 4; // Tue, Thu
+  }
+
+  function isHair(d) {
+    const day = d.getDay();
+    return day === 1 || day === 3 || day === 5; // Mon, Wed, Fri
+  }
+
+  function renderCal(year, month) {
+    const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    const firstDay = new Date(year, month, 1).getDay();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    const todayStr = `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}`;
+
+    let html = `
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+        <button onclick="prevMonth()" style="background:none;border:1.5px solid #e0e0e0;border-radius:10px;width:34px;height:34px;cursor:pointer;font-size:16px;">‹</button>
+        <span style="font-size:15px;font-weight:700;">${monthNames[month]} ${year}</span>
+        <button onclick="nextMonth()" style="background:none;border:1.5px solid #e0e0e0;border-radius:10px;width:34px;height:34px;cursor:pointer;font-size:16px;">›</button>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:6px;">
+        ${["Su","Mo","Tu","We","Th","Fr","Sa"].map((d,i) => {
+          let color = "#999";
+          if (i===1||i===3||i===5) color = "#1a1a1a";
+          if (i===2||i===4) color = "#0d7055";
+          return `<div style="text-align:center;font-size:11px;font-weight:700;color:${color};padding:4px 0;">${d}</div>`;
+        }).join("")}
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;">`;
+
+    for (let i = 0; i < firstDay; i++) html += `<div></div>`;
+
+    for (let d = 1; d <= daysInMonth; d++) {
+      const date = new Date(year, month, d);
+      const isPast = date < new Date(today.getFullYear(), today.getMonth(), today.getDate());
+      const avail = isAvailable(date) && !isPast;
+      const dateStr = `${year}-${String(month+1).padStart(2,"0")}-${String(d).padStart(2,"0")}`;
+      const isSelected = selDateStr === dateStr;
+      const spa = isSpa(date);
+      const hair = isHair(date);
+
+      let bg = "#f5f5f5";
+      let color = "#ccc";
+      let cursor = "default";
+      let border = "1.5px solid transparent";
+
+      if (avail) {
+        bg = spa ? "#e8f5e9" : "#e3f2fd";
+        color = spa ? "#2e7d32" : "#1565c0";
+        cursor = "pointer";
+        border = spa ? "1.5px solid #a5d6a7" : "1.5px solid #90caf9";
+      }
+      if (isSelected) {
+        bg = "#1a1a1a";
+        color = "#fff";
+        border = "1.5px solid #1a1a1a";
+      }
+
+      html += `<div onclick="${avail ? `pickDate('${dateStr}')` : ''}"
+        style="text-align:center;padding:8px 2px;border-radius:10px;font-size:13px;font-weight:600;
+        background:${bg};color:${color};cursor:${cursor};border:${border};transition:.15s;">
+        ${d}
+      </div>`;
     }
-    <br/>
-    <button class="btn btn-primary" ${!state.time?'disabled':''} onclick="goStep(2)">Next — Your Info →</button>
-    <button class="btn btn-outline" onclick="goStep(0)">← Back</button>
-  `;
+
+    html += `</div>
+      <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap;">
+        <span style="display:flex;align-items:center;gap:5px;font-size:11px;color:#1565c0;"><span style="width:10px;height:10px;border-radius:3px;background:#e3f2fd;border:1px solid #90caf9;display:inline-block;"></span>✂️ Hair (Mon·Wed·Fri)</span>
+        <span style="display:flex;align-items:center;gap:5px;font-size:11px;color:#2e7d32;"><span style="width:10px;height:10px;border-radius:3px;background:#e8f5e9;border:1px solid #a5d6a7;display:inline-block;"></span>🌿 Head Spa (Tue·Thu)</span>
+      </div>`;
+
+    cal.innerHTML = html;
+
+    // Times
+    const ts = document.getElementById("time-section");
+    if (selDateStr) {
+      const d = new Date(selDateStr + "T12:00:00");
+      const dayName = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][d.getDay()];
+      const slots = SLOTS[dayName] || [];
+      ts.innerHTML = `
+        <div class="sec-title" style="margin-top:14px;margin-bottom:8px;">
+          Available Times — ${dayName}, ${selDateStr}
+        </div>
+        <div class="times">${slots.map(t =>
+          `<button class="tim${selTime===t?" on":""}" onclick="pickTime(event)">${t}</button>`
+        ).join("")}</div>`;
+    } else {
+      ts.innerHTML = `<div style="background:#fff8e1;color:#e65100;border-radius:12px;padding:10px 14px;font-size:13px;display:flex;gap:8px;margin-top:12px;"><span>📅</span><span>Please select a date from the calendar above.</span></div>`;
+    }
+
+    document.getElementById("btn2").disabled = !selTime;
+  }
+
+  window.prevMonth = () => {
+    curMonth--;
+    if (curMonth < 0) { curMonth = 11; curYear--; }
+    renderCal(curYear, curMonth);
+  };
+  window.nextMonth = () => {
+    curMonth++;
+    if (curMonth > 11) { curMonth = 0; curYear++; }
+    renderCal(curYear, curMonth);
+  };
+  window.pickDate = (ds) => {
+    selDateStr = ds;
+    selTime = "";
+    renderCal(curYear, curMonth);
+  };
+
+  renderCal(curYear, curMonth);
 }
 
-function renderStep2(el) {
-  const f = state.form;
-  el.innerHTML = `
-    <div class="section-title">3. Your Information</div>
-    <div class="form-group"><label>Full Name <span class="req">*</span></label>
-      <input class="form-input" value="${f.name}" oninput="setForm('name',this.value)" placeholder="Your name"/></div>
-    <div class="form-group"><label>Phone Number <span class="req">*</span></label>
-      <input class="form-input" type="tel" value="${f.phone}" oninput="setForm('phone',this.value)" placeholder="(703) 555-0000"/></div>
-    <div class="form-group"><label>Email</label>
-      <input class="form-input" type="email" value="${f.email}" oninput="setForm('email',this.value)" placeholder="you@email.com"/></div>
-    <div class="form-group"><label>Hair Type / Length</label>
-      <input class="form-input" value="${f.hair}" oninput="setForm('hair',this.value)" placeholder="Long, fine, color-treated..."/></div>
-    <div class="form-group"><label>Notes (optional)</label>
-      <textarea class="form-textarea" oninput="setForm('notes',this.value)" placeholder="Scalp concerns, allergies, inspiration photos...">${f.notes}</textarea></div>
-    <div class="notice blue"><span class="notice-icon">💬</span><span>A confirmation text will be sent to your phone after booking.</span></div>
-    <button class="btn btn-primary" ${!f.name||!f.phone?'disabled':''} onclick="goStep(3)">Next — Card on File →</button>
-    <button class="btn btn-outline" onclick="goStep(1)">← Back</button>
-  `;
+function pickTime(e) {
+  selTime = e.currentTarget.textContent.trim();
+  document.getElementById("btn2").disabled = false;
+  // re-highlight selected time
+  document.querySelectorAll(".tim").forEach(t => t.classList.remove("on"));
+  e.currentTarget.classList.add("on");
 }
 
-function renderStep3(el) {
-  const svc = getSvc(state.selSvc);
-  const addonsTotal = state.addons.reduce((s,id) => s + (ADDONS.find(a=>a.id===id)?.price||0), 0);
-  const total = svc.price + addonsTotal;
-  const c = state.card;
-  const cardOk = c.num.replace(/\s/g,"").length===16 && c.exp.length===5 && c.cvc.length>=3 && c.agreed;
-
-  el.innerHTML = `
-    <div class="section-title">4. Card on File</div>
-    <div class="notice green"><span class="notice-icon">✅</span><div><strong>No charge today</strong><br/>Full payment of ${fmt(total)} is collected at the shop after your service.</div></div>
-    <div class="notice red"><span class="notice-icon">⚠️</span><div><strong>No-Show Policy</strong><br/>Cancel at least 24 hours in advance. No-show or late cancel = <strong>$50 fee</strong> charged to card.</div></div>
-    <div class="form-group"><label>Card Number</label>
-      <input class="form-input" style="font-family:monospace;letter-spacing:2px;" value="${c.num}" oninput="setCard('num',this.value)" placeholder="4242 4242 4242 4242" maxlength="19"/></div>
-    <div class="card-inputs">
-      <div class="form-group"><label>Expiry</label>
-        <input class="form-input" style="font-family:monospace;" value="${c.exp}" oninput="setCard('exp',this.value)" placeholder="MM/YY" maxlength="5"/></div>
-      <div class="form-group"><label>CVC</label>
-        <input class="form-input" style="font-family:monospace;" value="${c.cvc}" oninput="setCard('cvc',this.value)" placeholder="123" maxlength="4"/></div>
-    </div>
-    <div class="notice" style="background:#f5f5f5;color:#555;margin-bottom:14px;"><span class="notice-icon">🔒</span><span>Encrypted & stored securely via Stripe. No charge until service is complete.</span></div>
-    <label class="checkbox-label" style="margin-bottom:16px;">
-      <input type="checkbox" ${c.agreed?'checked':''} onchange="setCard('agreed',this.checked)"/>
-      <span>I agree to the no-show policy. A <strong>$50 fee</strong> will only be charged if I miss my appointment without 24-hour notice.</span>
-    </label>
-    <button class="btn btn-primary" ${!cardOk?'disabled':''} onclick="confirmBooking()">✓ Confirm Booking</button>
-    <button class="btn btn-outline" onclick="goStep(2)">← Back</button>
-  `;
+// ── PAGE 3 ──
+function checkStep3() {
+  const name = document.getElementById("f-name").value.trim();
+  const phone = document.getElementById("f-phone").value.trim();
+  if (!name || !phone) { alert("Please enter your name and phone number."); return; }
+  const svc = allSvcs().find(s => s.id === selSvc);
+  const addonTotal = selAddons.reduce((s, id) => s + (ADDONS.find(a => a.id === id)?.price || 0), 0);
+  const d = new Date(selDateStr + "T12:00:00");
+  selDay = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][d.getDay()];
+  document.getElementById("total-notice").textContent =
+    `Full payment of ${fmt(svc.price + addonTotal)}+ collected at the shop. Final price may vary based on hair length and thickness.`;
+  goTo("p4");
 }
 
-function renderConfirmed() {
-  document.getElementById("steps-bar").innerHTML = "";
-  const svc = getSvc(state.selSvc);
-  const addonsTotal = state.addons.reduce((s,id) => s + (ADDONS.find(a=>a.id===id)?.price||0), 0);
-  const total = svc.price + addonsTotal;
-  const last4 = state.card.num.replace(/\s/g,"").slice(-4) || "0000";
-
-  document.getElementById("step-content").innerHTML = `
-    <div class="confirm-icon">🎉</div>
-    <h2 style="text-align:center;font-size:22px;font-weight:800;margin-bottom:8px;">Booking Confirmed!</h2>
-    <p style="text-align:center;color:#888;font-size:14px;margin-bottom:20px;">Confirmation text sent to <strong>${state.form.phone}</strong></p>
-    <div class="confirm-grid">
-      <div class="confirm-item"><div class="ci-label">Service</div><div class="ci-value">${svc.name}</div></div>
-      <div class="confirm-item"><div class="ci-label">When</div><div class="ci-value">${state.day} · ${state.time}</div></div>
-      <div class="confirm-item"><div class="ci-label">Guest</div><div class="ci-value">${state.form.name}</div></div>
-      <div class="confirm-item"><div class="ci-label">Contact</div><div class="ci-value">${state.form.phone}</div></div>
-    </div>
-    <div class="summary-box">
-      <div class="section-title" style="margin-bottom:10px;">Payment Info</div>
-      <div class="summary-row"><span class="summary-label">Service total</span><span>${fmt(total)}</span></div>
-      <div class="summary-row" style="color:#2e7d32;"><span class="summary-label">Pay at shop (after service)</span><span>${fmt(total)}</span></div>
-    </div>
-    <div class="notice red"><span class="notice-icon">🔒</span><span>Card •••• ${last4} saved for no-show protection only · $50 fee if missed without 24hr notice</span></div>
-    <button class="btn btn-primary" onclick="resetBooking()">Book Another Appointment</button>
-  `;
+// ── PAGE 4 ──
+function fmtCardNum(el) {
+  el.value = el.value.replace(/\D/g, "").slice(0, 16).replace(/(.{4})/g, "$1 ").trim();
+}
+function fmtExp(el) {
+  const d = el.value.replace(/\D/g, "").slice(0, 4);
+  el.value = d.length > 2 ? d.slice(0, 2) + "/" + d.slice(2) : d;
 }
 
-// ── ACTIONS ──
-function setCat(c) { state.cat = c; render(); }
-function selectSvc(id) { state.selSvc = id; render(); }
-function toggleAddon(id) {
-  state.addons = state.addons.includes(id) ? state.addons.filter(a=>a!==id) : [...state.addons, id];
-  render();
+// Luhn algorithm check
+function luhn(n) {
+  let s = 0, alt = false;
+  for (let i = n.length - 1; i >= 0; i--) {
+    let d = parseInt(n[i]);
+    if (alt) { d *= 2; if (d > 9) d -= 9; }
+    s += d; alt = !alt;
+  }
+  return s % 10 === 0;
 }
-function selectDay(d) { state.day = d; state.time = ""; render(); }
-function selectTime(t) { state.time = t; render(); }
-function setForm(k, v) { state.form[k] = v; render(); }
-function setCard(k, v) {
-  if (k === "num") v = v.replace(/\D/g,"").slice(0,16).replace(/(.{4})/g,"$1 ").trim();
-  if (k === "exp") { const d=v.replace(/\D/g,"").slice(0,4); v=d.length>2?d.slice(0,2)+"/"+d.slice(2):d; }
-  if (k === "cvc") v = v.replace(/\D/g,"").slice(0,4);
-  state.card[k] = v;
-  render();
-}
-function goStep(n) { state.step = n; render(); window.scrollTo(0,0); }
+
 function confirmBooking() {
-  state.confirmed = true;
-  adminBookings.unshift({
-    id: Date.now(),
-    name: state.form.name,
-    phone: state.form.phone,
-    service: getSvc(state.selSvc).name,
-    time: state.time,
-    price: getSvc(state.selSvc).price,
-    status: "confirmed",
-    cardLast4: state.card.num.replace(/\s/g,"").slice(-4) || "0000",
-  });
-  render();
-  window.scrollTo(0,0);
+  const num = document.getElementById("c-num").value.replace(/\s/g, "");
+  const exp = document.getElementById("c-exp").value;
+  const cvc = document.getElementById("c-cvc").value;
+  const agreed = document.getElementById("c-agree").checked;
+
+  // 카드 번호 검증
+  if (num.length !== 16) { alert("Please enter a valid 16-digit card number."); return; }
+  if (!luhn(num)) { alert("Invalid card number. Please check and try again."); return; }
+
+  // 만료일 검증
+  if (exp.length < 5) { alert("Please enter a valid expiry date (MM/YY)."); return; }
+  const [mm, yy] = exp.split("/").map(Number);
+  if (mm < 1 || mm > 12) { alert("Invalid expiry month. Please check your card."); return; }
+  const now = new Date();
+  const expDate = new Date(2000 + yy, mm - 1, 1);
+  if (expDate < new Date(now.getFullYear(), now.getMonth(), 1)) { alert("Your card has expired. Please use a different card."); return; }
+
+  // CVC 검증
+  if (cvc.length < 3) { alert("Please enter a valid CVC (3-4 digits)."); return; }
+  if (!agreed) { alert("Please agree to the no-show policy."); return; }
+
+  const name = document.getElementById("f-name").value.trim();
+  const phone = document.getElementById("f-phone").value.trim();
+  const svc = allSvcs().find(s => s.id === selSvc);
+  const addonTotal = selAddons.reduce((s, id) => s + (ADDONS.find(a => a.id === id)?.price || 0), 0);
+  const total = svc.price + addonTotal;
+  const last4 = num.slice(-4);
+
+  bookings.unshift({ id: Date.now(), name, phone, service: svc.name, time: selTime, price: total, status: "confirmed", card: last4 });
+
+  document.getElementById("conf-sub").textContent = `Confirmation text sent to ${phone}`;
+  document.getElementById("conf-grid").innerHTML = [
+    ["Service", svc.name], ["When", `${selDay} · ${selTime}`],
+    ["Guest", name], ["Contact", phone]
+  ].map(([l,v]) => `<div class="conf-item"><div class="ci-lbl">${l}</div><div class="ci-val">${v}</div></div>`).join("");
+  document.getElementById("conf-sum").innerHTML = `
+    <div class="sumrow"><span class="sumlbl">Service starting price</span><span>${fmt(total)}</span></div>
+    <div class="sumrow" style="color:#e65100;font-size:12px;"><span class="sumlbl">Final price may vary by hair length/thickness</span><span>at shop</span></div>
+    <div class="sumrow tot"><span>Pay at shop after service</span><span>${fmt(total)}+</span></div>`;
+  document.getElementById("conf-card").textContent = `Card •••• ${last4} saved for no-show protection · $50 fee if missed without 24hr notice`;
+
+  // Late policy notice
+  document.getElementById("late-policy").style.display = "flex";
+  goTo("p5");
 }
-function resetBooking() {
-  state = {step:0, cat:"⭐ Quick Pick", selSvc:null, addons:[], day:"", time:"",
-    form:{name:"",phone:"",email:"",hair:"",notes:""}, card:{num:"",exp:"",cvc:"",agreed:false}, confirmed:false};
-  render();
-  window.scrollTo(0,0);
+
+function resetAll() {
+  selSvc = null; selAddons = []; selDateStr = ""; selDay = ""; selTime = ""; tipPct = null;
+  selCat = "⭐ Quick Pick";
+  ["f-name","f-phone","f-email","f-hair","f-notes","c-num","c-exp","c-cvc"].forEach(id => {
+    const el = document.getElementById(id); if (el) el.value = "";
+  });
+  const ag = document.getElementById("c-agree"); if (ag) ag.checked = false;
+  initP1(); initP2(); goTo("p1");
 }
 
 // ── ADMIN ──
-function showAdminLogin() { document.getElementById("admin-login-modal").classList.add("show"); }
-function closeAdminLogin() { document.getElementById("admin-login-modal").classList.remove("show"); document.getElementById("admin-pw").value=""; document.getElementById("pw-error").style.display="none"; }
-function togglePw() { const i=document.getElementById("admin-pw"); i.type=i.type==="password"?"text":"password"; }
-function tryAdminLogin() {
-  const pw = document.getElementById("admin-pw").value;
-  if (pw === ADMIN_PW) { closeAdminLogin(); showAdmin(); }
-  else { document.getElementById("pw-error").style.display="block"; document.getElementById("admin-pw").value=""; }
+function showLogin() { document.getElementById("modal-login").classList.add("show"); }
+function closeLogin() {
+  document.getElementById("modal-login").classList.remove("show");
+  document.getElementById("pw").value = "";
+  document.getElementById("pw-err").style.display = "none";
+}
+function togglePw() { const i = document.getElementById("pw"); i.type = i.type === "password" ? "text" : "password"; }
+function tryLogin() {
+  if (document.getElementById("pw").value === ADMIN_PW) { closeLogin(); showAdmin(); }
+  else { document.getElementById("pw-err").style.display = "block"; document.getElementById("pw").value = ""; }
 }
 function showAdmin() {
-  document.getElementById("booking-section").style.display="none";
-  document.getElementById("admin-section").style.display="block";
+  document.getElementById("booking").style.display = "none";
+  document.getElementById("admin").style.display = "block";
   renderAdmin();
 }
 function showBooking() {
-  document.getElementById("booking-section").style.display="block";
-  document.getElementById("admin-section").style.display="none";
+  document.getElementById("booking").style.display = "block";
+  document.getElementById("admin").style.display = "none";
 }
-function renderAdmin() {
-  const completed = adminBookings.filter(b=>b.status==="completed");
-  const revenue = completed.reduce((s,b)=>s+b.price,0);
-  const noShows = adminBookings.filter(b=>b.status==="noshow").length;
 
-  document.getElementById("admin-content").innerHTML = `
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+function renderAdmin() {
+  const done = bookings.filter(b => b.status === "completed");
+  const rev = done.reduce((s, b) => s + b.price, 0);
+  const ns = bookings.filter(b => b.status === "noshow").length;
+  document.getElementById("admin-dash").innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
       <h2 style="font-size:18px;font-weight:800;">📊 Today's Dashboard</h2>
-      <span style="font-size:11px;background:#e8f5e9;color:#2e7d32;padding:4px 10px;border-radius:100px;font-weight:600;">Admin</span>
+      <span style="font-size:11px;background:#e8f5e9;color:#2e7d32;padding:3px 10px;border-radius:100px;font-weight:600;">Admin</span>
     </div>
     <div class="stat-grid">
-      <div class="stat-card"><div class="stat-val">${adminBookings.length}</div><div class="stat-label">Total Bookings</div></div>
-      <div class="stat-card"><div class="stat-val">${completed.length}</div><div class="stat-label">Completed</div></div>
-      <div class="stat-card"><div class="stat-val" style="color:#2e7d32;">${fmt(revenue)}</div><div class="stat-label">Revenue Today</div></div>
-      <div class="stat-card"><div class="stat-val" style="color:#e53935;">${noShows}</div><div class="stat-label">No-Shows</div></div>
+      <div class="stat"><div class="stat-v">${bookings.length}</div><div class="stat-l">Bookings</div></div>
+      <div class="stat"><div class="stat-v">${done.length}</div><div class="stat-l">Completed</div></div>
+      <div class="stat"><div class="stat-v" style="color:#2e7d32;">${fmt(rev)}</div><div class="stat-l">Revenue</div></div>
+      <div class="stat"><div class="stat-v" style="color:#e53935;">${ns}</div><div class="stat-l">No-Shows</div></div>
     </div>
-    <div class="section-title">Today's Schedule</div>
-    ${adminBookings.map(b => `
-      <div class="booking-item">
-        <div class="bi-top">
-          <div>
-            <div class="bi-name">${b.name}</div>
-            <div class="bi-svc">${b.service} · ${b.time}</div>
-          </div>
-          <span class="bi-status ${b.status==='completed'?'status-completed':b.status==='noshow'?'status-noshow':'status-confirmed'}">
-            ${b.status==='completed'?'✓ Done':b.status==='noshow'?'No-Show':'Confirmed'}
+    <div class="sec-title">Schedule</div>
+    ${bookings.map(b => `
+      <div class="bk">
+        <div class="bk-top">
+          <div><div class="bk-name">${b.name}</div><div class="bk-svc">${b.service} · ${b.time}</div></div>
+          <span class="bk-badge ${b.status === "completed" ? "bd" : b.status === "noshow" ? "bn" : "bc"}">
+            ${b.status === "completed" ? "✓ Done" : b.status === "noshow" ? "No-Show" : "Confirmed"}
           </span>
         </div>
-        <div style="font-size:13px;color:#888;margin-bottom:8px;">Total: <strong style="color:#1a1a1a;">${fmt(b.price)}</strong> · Pay at shop · Card •••• ${b.cardLast4}</div>
-        <div class="bi-actions">
-          ${b.status==='confirmed'?`
-            <button class="bi-btn bi-btn-checkout" onclick="openCheckout(${b.id})">💰 Checkout</button>
-            <button class="bi-btn bi-btn-noshow" onclick="openNoShow(${b.id})">No-Show</button>` : ''}
-          ${b.status==='completed'?`<span style="font-size:12px;color:#2e7d32;font-weight:600;">✓ Payment Complete</span>`:''}
-          ${b.status==='noshow'?`<span style="font-size:12px;color:#e53935;font-weight:600;">$50 Charged</span>`:''}
-          <button class="bi-btn bi-btn-msg" onclick="alert('SMS sent to ${b.phone}!')">📱 SMS</button>
+        <div style="font-size:12px;color:#888;margin-bottom:6px;">Total: <strong style="color:#1a1a1a;">${fmt(b.price)}</strong> · Pay at shop · Card ••••${b.card}</div>
+        <div class="bk-acts">
+          ${b.status === "confirmed" ? `<button class="ba ba-co" onclick="openCo(${b.id})">💰 Checkout</button><button class="ba ba-ns" onclick="openNs(${b.id})">No-Show</button>` : ""}
+          ${b.status === "completed" ? '<span style="font-size:12px;color:#2e7d32;font-weight:600;">✓ Payment Complete</span>' : ""}
+          ${b.status === "noshow" ? '<span style="font-size:12px;color:#e53935;font-weight:600;">$50 Charged</span>' : ""}
+          <button class="ba ba-sm" onclick="alert('SMS sent to ${b.phone}!')">📱 SMS</button>
         </div>
-      </div>`).join("")}
-  `;
+      </div>`).join("")}`;
 }
 
 // ── CHECKOUT ──
-function openCheckout(id) {
-  checkoutTarget = adminBookings.find(b=>b.id===id);
-  selectedTip = null;
-  const total = checkoutTarget.price;
-  document.getElementById("checkout-summary").innerHTML = `
-    <div class="summary-row"><span class="summary-label">${checkoutTarget.service}</span><span>${fmt(total)}</span></div>
-    <div class="summary-row total"><span>Service Total</span><span>${fmt(total)}</span></div>
-  `;
-  document.getElementById("tip-grid").innerHTML = [15,20,30].map(t => `
-    <div class="tip-btn" onclick="selectTip(${t},${total})">
-      <span class="tip-pct">${t}%</span>
-      <span class="tip-amt">${fmt(total*t/100)}</span>
+function openCo(id) {
+  coTarget = bookings.find(b => b.id === id);
+  tipPct = null;
+  document.getElementById("co-sum").innerHTML = `
+    <div class="sumrow"><span class="sumlbl">${coTarget.service}</span><span>${fmt(coTarget.price)}</span></div>
+    <div class="sumrow tot"><span>Service Total</span><span>${fmt(coTarget.price)}</span></div>`;
+  document.getElementById("co-tips").innerHTML = [15, 20, 30].map(t =>
+    `<div class="tip" onclick="pickTip(${t}, ${coTarget.price}, this)">
+      <span class="tip-p">${t}%</span>
+      <span class="tip-a">${fmt(coTarget.price * t / 100)}</span>
     </div>`).join("");
-  document.getElementById("checkout-final").textContent = "Select tip";
-  document.getElementById("checkout-confirm-btn").disabled = true;
-  document.getElementById("checkout-modal").classList.add("show");
+  document.getElementById("co-total").textContent = "Select tip";
+  document.getElementById("co-btn").disabled = true;
+  document.getElementById("modal-co").classList.add("show");
 }
-function selectTip(pct, total) {
-  selectedTip = pct;
-  document.querySelectorAll(".tip-btn").forEach(b => b.classList.remove("selected"));
-  event.currentTarget.classList.add("selected");
-  const tip = total * pct / 100;
-  const charge = total + tip;
-  document.getElementById("checkout-final").textContent = fmt(charge);
-  document.getElementById("checkout-confirm-btn").disabled = false;
-}
-function completeCheckout() {
-  adminBookings = adminBookings.map(b => b.id===checkoutTarget.id ? {...b, status:"completed"} : b);
-  closeCheckout();
-  renderAdmin();
-}
-function closeCheckout() { document.getElementById("checkout-modal").classList.remove("show"); }
 
-// ── NO-SHOW ──
-function openNoShow(id) {
-  noShowTarget = adminBookings.find(b=>b.id===id);
-  document.getElementById("noshow-info").innerHTML = `
-    <span><strong>${noShowTarget.name}</strong> · ${noShowTarget.service}</span>
-    <span>Card •••• ${noShowTarget.cardLast4}</span>
-  `;
-  document.getElementById("noshow-modal").classList.add("show");
+function pickTip(pct, total, el) {
+  tipPct = pct;
+  document.querySelectorAll(".tip").forEach(t => t.classList.remove("on"));
+  el.classList.add("on");
+  document.getElementById("co-total").textContent = fmt(total + total * pct / 100);
+  document.getElementById("co-btn").disabled = false;
 }
-function confirmNoShow() {
-  adminBookings = adminBookings.map(b => b.id===noShowTarget.id ? {...b, status:"noshow"} : b);
-  closeNoShow();
-  renderAdmin();
+
+function doCheckout() {
+  bookings = bookings.map(b => b.id === coTarget.id ? {...b, status: "completed"} : b);
+  closeCo(); renderAdmin();
 }
-function closeNoShow() { document.getElementById("noshow-modal").classList.remove("show"); }
+function closeCo() { document.getElementById("modal-co").classList.remove("show"); }
+
+// ── NO SHOW ──
+function openNs(id) {
+  nsTarget = bookings.find(b => b.id === id);
+  document.getElementById("ns-info").innerHTML = `<span><strong>${nsTarget.name}</strong> · ${nsTarget.service}</span><span>Card ••••${nsTarget.card}</span>`;
+  document.getElementById("modal-ns").classList.add("show");
+}
+function doNoShow() {
+  bookings = bookings.map(b => b.id === nsTarget.id ? {...b, status: "noshow"} : b);
+  closeNs(); renderAdmin();
+}
+function closeNs() { document.getElementById("modal-ns").classList.remove("show"); }
 
 // ── INIT ──
-render();
+initP1();
+initP2();
 </script>
 </body>
 </html>
