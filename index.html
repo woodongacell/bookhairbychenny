@@ -2,147 +2,173 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Hair by Chenny — Book Appointment</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Hair by Chenny</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Segoe UI',system-ui,sans-serif;background:#f5f5f0;color:#1a1a1a;min-height:100vh;}
-.container{max-width:600px;margin:0 auto;padding:20px 16px 40px;}
-.header{text-align:center;margin-bottom:20px;}
-.logo{display:inline-flex;align-items:center;gap:8px;background:#1a1a1a;color:#fff;padding:8px 20px;border-radius:100px;font-size:13px;font-weight:600;margin-bottom:12px;}
-h1{font-size:26px;font-weight:800;margin-bottom:6px;}
-.header p{color:#666;font-size:13px;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f2f2ef;color:#1a1a1a;min-height:100vh;}
+.wrap{max-width:600px;margin:0 auto;padding:20px 16px 60px;}
+.hdr{text-align:center;margin-bottom:16px;}
+.logo{display:inline-flex;align-items:center;gap:8px;background:#111;color:#fff;padding:8px 20px;border-radius:100px;font-size:13px;font-weight:700;margin-bottom:10px;}
+.hdr h1{font-size:26px;font-weight:800;letter-spacing:-1px;margin-bottom:5px;}
+.hdr p{color:#777;font-size:13px;}
 .tags{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:8px;}
-.tag{background:#fff;border:1px solid #e0e0e0;border-radius:100px;padding:3px 12px;font-size:12px;color:#555;}
+.tag{background:#fff;border:1px solid #e4e4e4;border-radius:100px;padding:4px 14px;font-size:12px;color:#555;font-weight:500;}
+.banner{background:#1a1a2e;border-radius:18px;padding:16px 20px;margin-bottom:14px;text-align:center;}
+.banner .bt{font-size:10px;font-weight:800;color:#ffd700;letter-spacing:2px;text-transform:uppercase;margin-bottom:5px;}
+.banner h3{font-size:18px;font-weight:800;color:#fff;margin-bottom:3px;}
+.banner p{font-size:12px;color:#bbb;}
+.contact-box{background:#fff;border-radius:18px;padding:16px;margin-bottom:14px;box-shadow:0 1px 8px rgba(0,0,0,.07);}
+.stitle{font-size:11px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px;}
+.contact-box .row{font-size:13px;color:#444;line-height:2.1;}
+.contact-box a{color:#111;font-weight:700;text-decoration:none;}
+.cnote{margin-top:10px;background:#eff3ff;border-radius:10px;padding:8px 12px;font-size:12px;color:#3949ab;font-weight:500;}
+.card{background:#fff;border-radius:20px;padding:20px;box-shadow:0 1px 8px rgba(0,0,0,.07);margin-bottom:12px;}
+.pg{display:none;}.pg.on{display:block;}
 
-/* PRICING NOTICE - always visible */
-.price-notice{background:#fff8e1;border:1.5px solid #ffe082;border-radius:14px;padding:14px 16px;margin-bottom:14px;}
-.price-notice-title{font-size:13px;font-weight:700;color:#e65100;margin-bottom:8px;display:flex;align-items:center;gap:6px;}
-.price-rows{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
-.price-row{background:#fff;border-radius:10px;padding:8px 10px;font-size:12px;}
-.price-row .pr-label{color:#888;margin-bottom:2px;}
-.price-row .pr-val{font-weight:700;color:#1a1a1a;font-size:13px;}
-
-.card{background:#fff;border-radius:20px;padding:20px;box-shadow:0 2px 12px rgba(0,0,0,0.06);margin-bottom:12px;}
-.sec-title{font-size:11px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.8px;margin-bottom:12px;}
-.page{display:none;}.page.active{display:block;}
-
-/* TABS */
-.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
-.tab{padding:7px 14px;border-radius:100px;font-size:12px;font-weight:600;border:1.5px solid #e0e0e0;background:#fff;cursor:pointer;color:#555;transition:.15s;}
-.tab.on{background:#1a1a1a;color:#fff;border-color:#1a1a1a;}
+/* SEGMENT TABS */
+.seg{display:flex;background:#f0f0ed;border-radius:14px;padding:4px;margin-bottom:16px;gap:2px;overflow-x:auto;}
+.seg button{flex:1;min-width:fit-content;white-space:nowrap;padding:8px 12px;border-radius:11px;font-size:12px;font-weight:600;border:none;background:transparent;cursor:pointer;color:#888;font-family:inherit;}
+.seg button.on{background:#fff;color:#111;box-shadow:0 1px 6px rgba(0,0,0,.12);}
 
 /* SERVICE */
-.svc{border:1.5px solid #e0e0e0;border-radius:14px;padding:12px 14px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;transition:.15s;}
-.svc:hover{border-color:#999;}
-.svc.on{background:#1a1a1a;color:#fff;border-color:#1a1a1a;}
-.svc-name{font-size:14px;font-weight:600;margin-bottom:2px;}
-.svc-meta{font-size:12px;color:#888;}
-.svc.on .svc-meta{color:#ccc;}
-.svc-price{font-size:15px;font-weight:700;white-space:nowrap;}
-.svc-mins{font-size:11px;color:#aaa;text-align:right;margin-top:1px;}
+.svc{border:1.5px solid #ececec;border-radius:16px;padding:14px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;background:#fafafa;}
+.svc:hover{border-color:#bbb;background:#fff;box-shadow:0 3px 14px rgba(0,0,0,.08);}
+.svc.on{background:#111;color:#fff;border-color:#111;box-shadow:0 4px 18px rgba(0,0,0,.22);}
+.svc-name{font-size:14px;font-weight:600;margin-bottom:3px;}
+.svc-meta{font-size:12px;color:#999;}
+.svc.on .svc-meta{color:#aaa;}
+.svc-price{font-size:15px;font-weight:700;text-align:right;}
+.svc-sub{font-size:11px;color:#bbb;margin-top:1px;text-align:right;}
+.pkg-lbl{font-size:11px;color:#9c27b0;font-weight:700;margin-bottom:3px;}
+.save-pill{background:#dcfce7;color:#15803d;font-size:10px;font-weight:700;padding:2px 7px;border-radius:100px;margin-left:5px;vertical-align:middle;}
+.orig-p{font-size:11px;text-decoration:line-through;color:#bbb;text-align:right;}
 
 /* ADDONS */
-.addons{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;}
-.adn{padding:6px 14px;border-radius:100px;font-size:12px;border:1.5px solid #e0e0e0;cursor:pointer;background:#fff;transition:.15s;}
-.adn.on{background:#1a1a1a;color:#fff;border-color:#1a1a1a;}
+.adns{display:flex;flex-wrap:wrap;gap:8px;}
+.adn{display:inline-flex;align-items:center;gap:5px;padding:8px 16px;border-radius:100px;font-size:12px;font-weight:600;border:1.5px solid #e4e4e4;cursor:pointer;background:#fff;color:#555;}
+.adn:hover{border-color:#999;}
+.adn.on{background:#111;color:#fff;border-color:#111;}
 
-/* DAYS */
-.days{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:14px;}
-.day{padding:10px 4px;border-radius:12px;border:1.5px solid #e0e0e0;background:#fff;cursor:pointer;text-align:center;transition:.15s;}
-.day:hover{border-color:#999;}
-.day.on{background:#1a1a1a;color:#fff;border-color:#1a1a1a;}
-.day-n{font-size:13px;font-weight:600;display:block;}
-.day-t{font-size:10px;color:#aaa;display:block;margin-top:1px;}
-.day.on .day-t{color:#aaa;}
-.times{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
-.tim{padding:10px;border-radius:12px;border:1.5px solid #e0e0e0;background:#fff;cursor:pointer;text-align:center;font-size:13px;font-weight:500;transition:.15s;}
-.tim:hover{border-color:#999;}
-.tim.on{background:#1a1a1a;color:#fff;border-color:#1a1a1a;}
+/* PRICE NOTICE */
+.pbox{background:#fffbeb;border:1.5px solid #fde68a;border-radius:16px;padding:14px 16px;margin-bottom:14px;}
+.pt{font-size:13px;font-weight:700;color:#d97706;margin-bottom:10px;}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.pi{background:#fff;border-radius:10px;padding:8px 10px;border:1px solid #fde68a;}
+.pil{font-size:11px;color:#999;margin-bottom:2px;}
+.piv{font-size:13px;font-weight:700;}
+
+/* CALENDAR */
+.cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.cal-nav button{background:#f5f5f5;border:none;border-radius:10px;width:36px;height:36px;cursor:pointer;font-size:16px;font-weight:700;}
+.cal-nav span{font-size:16px;font-weight:700;}
+.cal-head{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:4px;}
+.cal-dn{text-align:center;font-size:11px;font-weight:700;padding:4px 0;}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;}
+.cd{text-align:center;padding:9px 2px;border-radius:11px;font-size:13px;font-weight:600;border:1.5px solid transparent;}
+.cd.hair{background:#eff6ff;color:#1d4ed8;border-color:#bfdbfe;cursor:pointer;}
+.cd.hair:hover{background:#dbeafe;}
+.cd.spa{background:#f0fdf4;color:#15803d;border-color:#bbf7d0;cursor:pointer;}
+.cd.spa:hover{background:#dcfce7;}
+.cd.off{background:#f9f9f9;color:#ddd;}
+.cd.sel{background:#111!important;color:#fff!important;border-color:#111!important;}
+.cal-legend{display:flex;gap:14px;margin-top:12px;flex-wrap:wrap;}
+.cal-legend span{font-size:11px;display:flex;align-items:center;gap:5px;font-weight:500;}
+.leg-h{width:10px;height:10px;border-radius:3px;background:#eff6ff;border:1px solid #bfdbfe;display:inline-block;}
+.leg-s{width:10px;height:10px;border-radius:3px;background:#f0fdf4;border:1px solid #bbf7d0;display:inline-block;}
+
+/* TIMES */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:4px;}
+.tim{padding:12px;border-radius:14px;border:1.5px solid #ececec;background:#fafafa;cursor:pointer;text-align:center;font-size:13px;font-weight:600;}
+.tim:hover{border-color:#bbb;background:#fff;}
+.tim.on{background:#111;color:#fff;border-color:#111;}
 
 /* FORM */
-.fg{margin-bottom:12px;}
-.fg label{display:block;font-size:12px;font-weight:600;color:#555;margin-bottom:5px;}
-.req{color:#e53935;}
-.fi{width:100%;height:46px;border:1.5px solid #e0e0e0;border-radius:12px;padding:0 14px;font-size:15px;font-family:inherit;color:#1a1a1a;background:#fff;}
-.fi:focus{outline:none;border-color:#1a1a1a;}
-textarea.fi{height:80px;padding:10px 14px;resize:none;line-height:1.5;}
+.fg{margin-bottom:13px;}
+.fg label{display:block;font-size:12px;font-weight:700;color:#555;margin-bottom:5px;}
+.req{color:#ef4444;}
+.fi{width:100%;height:48px;border:1.5px solid #e4e4e4;border-radius:13px;padding:0 14px;font-size:15px;font-family:inherit;color:#1a1a1a;background:#fafafa;}
+.fi:focus{outline:none;border-color:#111;background:#fff;}
+.fi.err{border-color:#ef4444!important;background:#fff5f5!important;}
+textarea.fi{height:80px;padding:12px 14px;resize:none;line-height:1.5;}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.ferr{color:#ef4444;font-size:12px;font-weight:600;margin-top:5px;}
 
 /* NOTICES */
-.nok{background:#e8f5e9;color:#2e7d32;border-radius:12px;padding:10px 14px;font-size:13px;display:flex;gap:8px;margin-bottom:12px;align-items:flex-start;}
-.nerr{background:#ffebee;color:#c62828;border:1px solid #ffcdd2;border-radius:12px;padding:10px 14px;font-size:13px;display:flex;gap:8px;margin-bottom:12px;align-items:flex-start;}
-.nblue{background:#e3f2fd;color:#1565c0;border-radius:12px;padding:10px 14px;font-size:13px;display:flex;gap:8px;margin-bottom:12px;align-items:flex-start;}
-.ngray{background:#f5f5f5;color:#555;border-radius:12px;padding:10px 14px;font-size:13px;display:flex;gap:8px;margin-bottom:12px;align-items:flex-start;}
+.nok{background:#f0fdf4;color:#166534;border:1px solid #bbf7d0;border-radius:13px;padding:12px 14px;font-size:13px;display:flex;gap:9px;margin-bottom:12px;align-items:flex-start;}
+.nerr{background:#fef2f2;color:#991b1b;border:1px solid #fecaca;border-radius:13px;padding:12px 14px;font-size:13px;display:flex;gap:9px;margin-bottom:12px;align-items:flex-start;}
+.nblue{background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;border-radius:13px;padding:12px 14px;font-size:13px;display:flex;gap:9px;margin-bottom:12px;align-items:flex-start;}
+.ngray{background:#f9fafb;color:#374151;border:1px solid #e5e7eb;border-radius:13px;padding:12px 14px;font-size:13px;display:flex;gap:9px;margin-bottom:12px;align-items:flex-start;}
+.namb{background:#fffbeb;color:#92400e;border:1px solid #fde68a;border-radius:13px;padding:12px 14px;font-size:13px;display:flex;gap:9px;margin-bottom:12px;align-items:flex-start;}
+.nlate{background:#fff7ed;color:#c2410c;border:1px solid #fed7aa;border-radius:13px;padding:12px 14px;font-size:13px;display:flex;gap:9px;margin-bottom:12px;align-items:flex-start;}
 
 /* CHECKBOX */
-.chk{display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:13px;color:#555;line-height:1.5;margin-bottom:14px;}
-.chk input{margin-top:2px;width:16px;height:16px;flex-shrink:0;}
+.chk{display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:13px;color:#555;line-height:1.6;margin-bottom:14px;}
+.chk input{margin-top:2px;width:18px;height:18px;flex-shrink:0;accent-color:#111;cursor:pointer;}
 
 /* BUTTONS */
-.btn{width:100%;padding:14px;border-radius:14px;font-size:15px;font-weight:700;cursor:pointer;border:none;font-family:inherit;margin-top:8px;transition:.15s;}
-.btn-blk{background:#1a1a1a;color:#fff;}
+.btn{width:100%;padding:15px;border-radius:15px;font-size:15px;font-weight:700;cursor:pointer;border:none;font-family:inherit;margin-top:8px;}
+.btn-blk{background:#111;color:#fff;}
 .btn-blk:hover{background:#333;}
 .btn-blk:disabled{background:#e0e0e0;color:#aaa;cursor:not-allowed;}
-.btn-out{background:#fff;color:#1a1a1a;border:1.5px solid #e0e0e0;}
+.btn-out{background:#fff;color:#111;border:1.5px solid #e0e0e0;}
 .btn-out:hover{border-color:#999;}
 
-/* SUMMARY */
-.sumbox{background:#f8f8f6;border-radius:14px;padding:14px;margin-bottom:12px;}
-.sumrow{display:flex;justify-content:space-between;font-size:14px;padding:4px 0;}
-.sumrow.tot{font-weight:700;border-top:1px solid #e0e0e0;margin-top:6px;padding-top:8px;font-size:15px;}
-.sumlbl{color:#666;}
-
 /* CONFIRM */
-.conf-ico{width:68px;height:68px;background:#e8f5e9;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;margin:0 auto 16px;}
-.conf-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;}
-.conf-item{background:#f8f8f6;border-radius:12px;padding:12px;}
-.ci-lbl{font-size:11px;color:#999;margin-bottom:2px;}
-.ci-val{font-size:14px;font-weight:600;}
+.cico{width:72px;height:72px;background:#f0fdf4;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 16px;border:3px solid #bbf7d0;}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;}
+.ci{background:#f9f9f9;border-radius:13px;padding:12px 14px;}
+.cil{font-size:11px;color:#999;margin-bottom:2px;font-weight:600;}
+.civ{font-size:14px;font-weight:700;}
+.sumbox{background:#f9f9f9;border-radius:14px;padding:14px;margin-bottom:12px;}
+.srow{display:flex;justify-content:space-between;font-size:14px;padding:4px 0;}
+.srow.tot{font-weight:700;border-top:1px solid #e8e8e8;margin-top:7px;padding-top:10px;font-size:15px;}
+.slbl{color:#777;}
 
-/* ADMIN */
-.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:100;align-items:center;justify-content:center;padding:16px;}
+/* ADMIN LINK */
+.adminlnk{text-align:center;margin-top:24px;padding-top:20px;border-top:1px solid #e8e8e8;}
+.adminlnk button{background:#111;border:none;font-size:13px;color:#fff;cursor:pointer;font-family:inherit;padding:11px 28px;border-radius:100px;font-weight:700;display:inline-flex;align-items:center;gap:7px;}
+.adminlnk button:hover{background:#333;}
+
+/* MODALS */
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:100;align-items:center;justify-content:center;padding:16px;}
 .overlay.show{display:flex;}
-.modal{background:#fff;border-radius:24px;padding:24px;max-width:340px;width:100%;max-height:90vh;overflow-y:auto;}
-.modal h2{font-size:18px;font-weight:700;margin-bottom:4px;}
-.modal p{font-size:13px;color:#666;margin-bottom:16px;}
-.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;}
-.stat{background:#f8f8f6;border-radius:12px;padding:12px;}
-.stat-v{font-size:22px;font-weight:800;margin-bottom:2px;}
-.stat-l{font-size:11px;color:#999;}
-.bk{border:1.5px solid #e0e0e0;border-radius:14px;padding:12px;margin-bottom:8px;}
-.bk-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;}
-.bk-name{font-size:14px;font-weight:700;}
-.bk-svc{font-size:12px;color:#888;margin-top:1px;}
-.bk-badge{font-size:11px;font-weight:600;padding:3px 10px;border-radius:100px;white-space:nowrap;}
-.bc{background:#e3f2fd;color:#1565c0;}
-.bd{background:#e8f5e9;color:#2e7d32;}
-.bn{background:#ffebee;color:#c62828;}
-.bk-acts{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;}
-.ba{padding:6px 12px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;border:1.5px solid;font-family:inherit;transition:.15s;}
-.ba-co{background:#1a1a1a;color:#fff;border-color:#1a1a1a;}
-.ba-ns{background:#ffebee;color:#c62828;border-color:#ffcdd2;}
-.ba-sm{background:#fff;color:#555;border-color:#e0e0e0;}
-.tip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px;}
-.tip{padding:12px;border-radius:12px;border:1.5px solid #e0e0e0;background:#fff;cursor:pointer;text-align:center;transition:.15s;}
-.tip:hover{border-color:#999;}
-.tip.on{background:#1a1a1a;color:#fff;border-color:#1a1a1a;}
-.tip-p{font-size:18px;font-weight:800;display:block;}
-.tip-a{font-size:12px;color:#aaa;display:block;margin-top:1px;}
-.tip.on .tip-a{color:#aaa;}
-.tot-box{background:#1a1a1a;color:#fff;border-radius:12px;padding:14px;display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
-.admin-lnk{text-align:center;margin-top:20px;}
-.admin-lnk button{background:none;border:none;font-size:12px;color:#bbb;cursor:pointer;text-decoration:underline;font-family:inherit;}
-.back-btn{background:none;border:none;font-size:13px;color:#999;cursor:pointer;margin-bottom:12px;font-family:inherit;display:flex;align-items:center;gap:4px;}
-.pw-wrap{position:relative;}
-.pw-eye{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:15px;}
+.modal{background:#fff;border-radius:24px;padding:26px;max-width:340px;width:100%;max-height:90vh;overflow-y:auto;}
+.modal h2{font-size:18px;font-weight:800;margin-bottom:4px;}
+.modal > p{font-size:13px;color:#777;margin-bottom:16px;}
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;}
+.sc{background:#f9f9f9;border-radius:13px;padding:13px;}
+.sv{font-size:22px;font-weight:800;margin-bottom:2px;}
+.sl{font-size:11px;color:#999;font-weight:600;}
+.bk{border:1.5px solid #ececec;border-radius:15px;padding:13px;margin-bottom:9px;background:#fafafa;}
+.bktop{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:7px;}
+.bkn{font-size:14px;font-weight:700;}
+.bks{font-size:12px;color:#999;margin-top:1px;}
+.badge{font-size:11px;font-weight:700;padding:4px 11px;border-radius:100px;white-space:nowrap;}
+.bc{background:#eff6ff;color:#1d4ed8;}
+.bd{background:#f0fdf4;color:#15803d;}
+.bn{background:#fef2f2;color:#991b1b;}
+.bkacts{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px;}
+.ba{padding:7px 13px;border-radius:9px;font-size:12px;font-weight:700;cursor:pointer;border:1.5px solid;font-family:inherit;}
+.baco{background:#111;color:#fff;border-color:#111;}
+.bans{background:#fef2f2;color:#991b1b;border-color:#fecaca;}
+.basm{background:#fff;color:#555;border-color:#e0e0e0;}
+.tipgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px;}
+.tip{padding:13px;border-radius:13px;border:1.5px solid #ececec;background:#fafafa;cursor:pointer;text-align:center;}
+.tip:hover{border-color:#bbb;background:#fff;}
+.tip.on{background:#111;color:#fff;border-color:#111;}
+.tp{font-size:19px;font-weight:800;display:block;}
+.ta{font-size:12px;color:#aaa;display:block;margin-top:1px;}
+.tip.on .ta{color:#aaa;}
+.totbox{background:#111;color:#fff;border-radius:13px;padding:15px;display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
+.back-btn{background:none;border:none;font-size:13px;color:#999;cursor:pointer;margin-bottom:12px;font-family:inherit;font-weight:600;}
+.pwrap{position:relative;}
+.peye{position:absolute;right:13px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:16px;}
 </style>
 </head>
 <body>
-<div class="container">
-
-  <!-- HEADER -->
-  <div class="header">
+<div class="wrap">
+  <div class="hdr">
     <div class="logo">✂️ Hair by Chenny</div>
     <h1>Book Your Appointment</h1>
     <p>Premium Korean Hair & Head Spa · Fairfax, VA</p>
@@ -152,627 +178,547 @@ textarea.fi{height:80px;padding:10px 14px;resize:none;line-height:1.5;}
     </div>
   </div>
 
-
-
-  <!-- OPENING SPECIAL -->
-  <div style="background:linear-gradient(135deg,#1a1a2e,#2d1b4e);border-radius:16px;padding:16px 18px;margin-bottom:14px;text-align:center;position:relative;overflow:hidden;">
-    <div style="position:absolute;top:-10px;right:-10px;font-size:60px;opacity:.08;">✨</div>
-    <div style="font-size:11px;font-weight:700;color:#ffd700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;">🎊 Grand Opening</div>
-    <div style="font-size:17px;font-weight:800;color:#fff;margin-bottom:4px;">K-Head Spa Now Open!</div>
-    <div style="font-size:12px;color:#ccc;">Experience premium Korean scalp care in Fairfax, VA</div>
+  <div class="banner">
+    <div class="bt">🎊 Grand Opening</div>
+    <h3>K-Head Spa Now Open!</h3>
+    <p>Experience premium Korean scalp care in Fairfax, VA</p>
   </div>
-  <div style="background:#fff;border-radius:16px;padding:16px 18px;margin-bottom:14px;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-    <div style="font-size:11px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px;">📍 Salon Info</div>
-    <div style="font-size:13px;color:#444;line-height:1.9;">
+
+  <div class="contact-box">
+    <div class="stitle">📍 Salon Info</div>
+    <div class="row">
       <div>🏢 <strong>Sola Salon</strong> — University Mall, Fairfax</div>
-      <div>📌 10621 Braddock Road, Suite K, Studio #17</div>
-      <div>📌 Fairfax, VA 22032</div>
-      <div>📞 <a href="tel:7034988836" style="color:#1a1a1a;font-weight:600;text-decoration:none;">703-498-8836</a></div>
-      <div>✉️ <a href="mailto:hairbychenny@gmail.com" style="color:#1a1a1a;font-weight:600;text-decoration:none;">hairbychenny@gmail.com</a></div>
+      <div>📌 10621 Braddock Road, Suite K, Studio #17, Fairfax, VA 22032</div>
+      <div>📞 <a href="tel:7034988836">703-498-8836</a></div>
+      <div>✉️ <a href="mailto:hairbychenny@gmail.com">hairbychenny@gmail.com</a></div>
     </div>
-    <div style="margin-top:10px;background:#f0f4ff;border-radius:10px;padding:8px 12px;font-size:12px;color:#3949ab;">
-      💬 For questions or consultations, please call or email us directly.
-    </div>
+    <div class="cnote">💬 For questions or consultations, please call or email us directly.</div>
   </div>
-  <div id="booking">
 
-    <!-- PAGE 1: SERVICE -->
-    <div class="page active" id="p1">
+  <div id="booking">
+    <!-- P1 -->
+    <div class="pg on" id="p1">
       <div class="card">
-        <div class="sec-title">1. Choose a Service</div>
-        <div class="tabs" id="cat-tabs"></div>
-        <div id="svc-list"></div>
+        <div class="stitle">1. Choose a Service</div>
+        <div class="seg" id="cattabs"></div>
+        <div id="svclist"></div>
         <div style="border-top:1px solid #f0f0f0;margin-top:14px;padding-top:14px;">
-          <div class="sec-title" style="margin-bottom:8px;">Add-ons (optional)</div>
-          <div class="addons" id="addon-list"></div>
+          <div class="stitle" style="margin-bottom:10px;">Add-ons (optional)</div>
+          <div class="adns" id="adnlist"></div>
         </div>
       </div>
       <button class="btn btn-blk" id="btn1" disabled onclick="goTo('p2')">Next — Pick Date & Time →</button>
     </div>
 
-    <!-- PAGE 2: DATE/TIME -->
-    <div class="page" id="p2">
+    <!-- P2 -->
+    <div class="pg" id="p2">
       <div class="card">
-        <div class="sec-title">2. Pick Date & Time</div>
-      <!-- 💡 PRICING NOTICE - page 2 only -->
-      <div class="price-notice" style="margin-bottom:14px;">
-        <div class="price-notice-title">💡 Additional charges may apply based on your hair</div>
-        <div class="price-rows">
-          <div class="price-row"><div class="pr-label">✂️ Hair Length</div><div class="pr-val">+$25 up</div></div>
-          <div class="price-row"><div class="pr-label">🌀 Curl / Wave</div><div class="pr-val">+$25 up</div></div>
-          <div class="price-row"><div class="pr-label">💇 Thickness</div><div class="pr-val">+$25 up</div></div>
-          <div class="price-row"><div class="pr-label">📋 Consultation</div><div class="pr-val">Final price confirmed at shop</div></div>
+        <div class="stitle">2. Pick Date & Time</div>
+        <div class="pbox">
+          <div class="pt">💡 Additional charges may apply</div>
+          <div class="pgrid">
+            <div class="pi"><div class="pil">✂️ Hair Length</div><div class="piv">+$25 up</div></div>
+            <div class="pi"><div class="pil">🌀 Curl / Wave</div><div class="piv">+$25 up</div></div>
+            <div class="pi"><div class="pil">💇 Thickness</div><div class="piv">+$25 up</div></div>
+            <div class="pi"><div class="pil">📋 Final price</div><div class="piv">Confirmed at shop</div></div>
+          </div>
         </div>
-      </div>
-      <div id="cal-grid"></div>
-      <div id="time-section"></div>
+        <div id="calgrid"></div>
+        <div id="timesec"></div>
       </div>
       <button class="btn btn-blk" id="btn2" disabled onclick="goTo('p3')">Next — Your Info →</button>
       <button class="btn btn-out" onclick="goTo('p1')">← Back</button>
     </div>
 
-    <!-- PAGE 3: INFO -->
-    <div class="page" id="p3">
+    <!-- P3 -->
+    <div class="pg" id="p3">
       <div class="card">
-        <div class="sec-title">3. Your Information</div>
-        <div class="fg"><label>Full Name <span class="req">*</span></label><input class="fi" id="f-name" placeholder="Your name" type="text" autocomplete="name"/></div>
-        <div class="fg"><label>Phone Number <span class="req">*</span></label><input class="fi" id="f-phone" placeholder="(703) 555-0000" type="tel" autocomplete="tel"/></div>
-        <div class="fg"><label>Email</label><input class="fi" id="f-email" placeholder="you@email.com" type="email" autocomplete="email"/></div>
-        <div class="fg"><label>Hair Length & Type <span style="color:#e65100;font-size:11px;">(helps estimate final price)</span></label>
-          <input class="fi" id="f-hair" placeholder="e.g. Long, thick, curly — shoulder length..."/></div>
-        <div class="fg"><label>Notes (optional)</label><textarea class="fi" id="f-notes" placeholder="Scalp concerns, allergies, inspiration photos..."></textarea></div>
+        <div class="stitle">3. Your Information</div>
+        <div class="fg"><label>Full Name <span class="req">*</span></label><input class="fi" id="fn" placeholder="Your name" type="text"/></div>
+        <div class="fg"><label>Phone <span class="req">*</span></label><input class="fi" id="fp" placeholder="(703) 555-0000" type="tel"/></div>
+        <div class="fg"><label>Email</label><input class="fi" id="fe" placeholder="you@email.com" type="email"/></div>
+        <div class="fg"><label>Hair Length & Type <span style="color:#d97706;font-size:11px;font-weight:600;">(helps estimate final price)</span></label>
+          <input class="fi" id="fh" placeholder="e.g. Long, thick, curly..."/></div>
+        <div class="fg"><label>Notes (optional)</label><textarea class="fi" id="fo" placeholder="Scalp concerns, allergies, inspiration photos..."></textarea></div>
         <div class="nblue"><span>💬</span><span>Confirmation text sent to your phone after booking.</span></div>
       </div>
-      <button class="btn btn-blk" onclick="checkStep3()">Next — Card on File →</button>
+      <button class="btn btn-blk" onclick="doStep3()">Next — Card on File →</button>
       <button class="btn btn-out" onclick="goTo('p2')">← Back</button>
     </div>
 
-    <!-- PAGE 4: CARD -->
-    <div class="page" id="p4">
+    <!-- P4 -->
+    <div class="pg" id="p4">
       <div class="card">
-        <div class="sec-title">4. Card on File</div>
-        <div class="nok"><span>✅</span><div><strong>No charge today</strong><br/><span id="total-notice" style="font-size:12px;"></span></div></div>
-        <div class="nerr"><span>⚠️</span><div><strong>No-Show Policy</strong><br/>Cancel at least 24 hours in advance. No-show or late cancel = <strong>$50 fee</strong> charged to card.</div></div>
-        <div class="fg"><label>Card Number</label>
-          <input class="fi" id="c-num" placeholder="4242 4242 4242 4242" maxlength="19" style="font-family:monospace;letter-spacing:2px;" oninput="fmtCardNum(this)"/></div>
+        <div class="stitle">4. Card on File</div>
+        <div class="nok"><span>✅</span><div><strong>No charge today</strong><br/><span id="totnotice" style="font-size:12px;color:#166534;"></span></div></div>
+        <div class="nerr"><span>⚠️</span><div><strong>No-Show Policy</strong><br/>Cancel 24hrs in advance. No-show or late cancel = <strong>$50 fee</strong>.</div></div>
+        <div class="fg">
+          <label>Card Number</label>
+          <input class="fi" id="cnum" placeholder="4242 4242 4242 4242" maxlength="19" style="font-family:monospace;letter-spacing:2px;" oninput="fmtCN(this)"/>
+          <p class="ferr" id="err-cnum" style="display:none;"></p>
+        </div>
         <div class="two">
-          <div class="fg"><label>Expiry</label><input class="fi" id="c-exp" placeholder="MM/YY" maxlength="5" style="font-family:monospace;" oninput="fmtExp(this)"/></div>
-          <div class="fg"><label>CVC</label><input class="fi" id="c-cvc" placeholder="123" maxlength="4" style="font-family:monospace;" oninput="this.value=this.value.replace(/\D/g,'').slice(0,4)"/></div>
+          <div class="fg">
+            <label>Expiry (MM/YY)</label>
+            <input class="fi" id="cexp" placeholder="12/26" maxlength="5" style="font-family:monospace;" oninput="fmtEX(this)"/>
+            <p class="ferr" id="err-cexp" style="display:none;"></p>
+          </div>
+          <div class="fg">
+            <label>CVC</label>
+            <input class="fi" id="ccvc" placeholder="123" maxlength="4" style="font-family:monospace;" oninput="this.value=this.value.replace(/\D/g,'').slice(0,4)"/>
+            <p class="ferr" id="err-ccvc" style="display:none;"></p>
+          </div>
         </div>
         <div class="ngray"><span>🔒</span><span>Encrypted via Stripe. No charge until service is complete at the shop.</span></div>
-        <label class="chk"><input type="checkbox" id="c-agree"/><span>I agree to the no-show policy. A <strong>$50 fee</strong> will only be charged if I miss my appointment without 24-hour notice.</span></label>
+        <label class="chk"><input type="checkbox" id="cagr"/><span>I agree to the no-show policy. A <strong>$50 fee</strong> will only be charged if I miss my appointment without 24-hour notice.</span></label>
+        <p class="ferr" id="err-cagr" style="display:none;"></p>
       </div>
-      <button class="btn btn-blk" onclick="confirmBooking()">✓ Confirm Booking</button>
+      <button class="btn btn-blk" onclick="doConfirm()">✓ Confirm Booking</button>
       <button class="btn btn-out" onclick="goTo('p3')">← Back</button>
     </div>
 
-    <!-- PAGE 5: CONFIRMED -->
-    <div class="page" id="p5">
+    <!-- P5 -->
+    <div class="pg" id="p5">
       <div class="card" style="text-align:center;">
-        <div class="conf-ico">🎉</div>
+        <div class="cico">🎉</div>
         <h2 style="font-size:22px;font-weight:800;margin-bottom:6px;">Booking Confirmed!</h2>
-        <p style="color:#888;font-size:14px;margin-bottom:18px;" id="conf-sub"></p>
-        <div class="conf-grid" id="conf-grid"></div>
-        <div class="sumbox" id="conf-sum"></div>
-        <div class="nerr" style="text-align:left;"><span>🔒</span><span id="conf-card" style="font-size:12px;"></span></div>
-        <div class="nerr" id="late-policy" style="display:none;text-align:left;background:#fff3e0;border-color:#ffe0b2;color:#e65100;">
-          <span>⏰</span>
-          <div style="font-size:12px;">
-            <strong>Late Arrival Policy</strong><br/>
-            If you arrive <strong>15 minutes or more late</strong>, a <strong>$20 credit</strong> will automatically be given to the next waiting client on your behalf. Please plan accordingly and text us if you're running late.
-          </div>
-        </div>
+        <p id="csub" style="color:#888;font-size:14px;margin-bottom:18px;"></p>
+        <div class="cgrid" id="cgrid"></div>
+        <div class="sumbox" id="csum"></div>
+        <div class="nerr" style="text-align:left;"><span>🔒</span><span id="ccard" style="font-size:12px;"></span></div>
+        <div class="nlate" style="text-align:left;"><span>⏰</span><div style="font-size:12px;"><strong>Late Arrival Policy</strong><br/>If you arrive <strong>15+ minutes late</strong>, a <strong>$20 credit</strong> will be given to the next waiting client. Please text us if running late.</div></div>
       </div>
-      <button class="btn btn-blk" onclick="resetAll()">Book Another Appointment</button>
+      <button class="btn btn-blk" onclick="doReset()">Book Another Appointment</button>
     </div>
 
-    <div class="admin-lnk"><button onclick="showLogin()">🔒 Admin Login</button></div>
+    <div class="adminlnk"><button onclick="openLogin()">🔒 Admin Login</button></div>
   </div>
 
-  <!-- ADMIN -->
   <div id="admin" style="display:none;">
-    <button class="back-btn" onclick="showBooking()">← Back to Booking</button>
-    <div class="card" id="admin-dash"></div>
+    <button class="back-btn" onclick="closeAdmin()">← Back to Booking</button>
+    <div class="card" id="admindash"></div>
   </div>
 </div>
 
-<!-- ADMIN LOGIN -->
-<div class="overlay" id="modal-login">
+<!-- LOGIN MODAL -->
+<div class="overlay" id="mlogin">
   <div class="modal">
-    <div style="text-align:center;margin-bottom:14px;"><div style="font-size:28px;">🔒</div>
-      <h2 style="margin-top:6px;">Admin Access</h2><p>Hair by Chenny · Owner Only</p></div>
-    <div class="fg"><label>Password</label>
-      <div class="pw-wrap"><input type="password" id="pw" class="fi" placeholder="Enter password" onkeydown="if(event.key==='Enter')tryLogin()"/>
-        <button class="pw-eye" onclick="togglePw()">👁</button></div>
-      <p id="pw-err" style="color:#e53935;font-size:12px;margin-top:4px;display:none;">Incorrect password.</p>
-      <p style="font-size:11px;color:#bbb;margin-top:4px;">Demo: chenny2026</p></div>
-    <button class="btn btn-blk" onclick="tryLogin()">Log In</button>
-    <button class="btn btn-out" onclick="closeLogin()">Cancel</button>
+    <div style="text-align:center;margin-bottom:16px;">
+      <div style="font-size:32px;margin-bottom:8px;">🔒</div>
+      <h2>Admin Access</h2>
+      <p>Hair by Chenny · Owner Only</p>
+    </div>
+    <div class="fg">
+      <label style="font-size:12px;font-weight:700;color:#555;display:block;margin-bottom:5px;">Password</label>
+      <div class="pwrap">
+        <input type="password" id="pwi" class="fi" placeholder="Enter password" onkeydown="if(event.key==='Enter')doLogin()"/>
+        <button class="peye" onclick="togglePw()">👁</button>
+      </div>
+      <p id="pwerr" style="color:#ef4444;font-size:12px;margin-top:5px;display:none;">❌ Incorrect password.</p>
+      <p style="font-size:11px;color:#bbb;margin-top:5px;">Demo: chenny2026</p>
+    </div>
+    <button class="btn btn-blk" onclick="doLogin()">Log In</button>
+    <button class="btn btn-out" onclick="closeModal('mlogin')">Cancel</button>
   </div>
 </div>
 
 <!-- CHECKOUT MODAL -->
-<div class="overlay" id="modal-co">
+<div class="overlay" id="mco">
   <div class="modal">
     <h2>💰 In-Shop Checkout</h2>
     <p>Tip is based on the full service total</p>
-    <div class="sumbox" id="co-sum"></div>
-    <div class="sec-title">Select Tip</div>
-    <div class="tip-grid" id="co-tips"></div>
-    <div class="tot-box"><span style="color:#aaa;font-size:14px;">Total to charge</span><strong style="font-size:20px;" id="co-total">Select tip</strong></div>
-    <button class="btn btn-blk" id="co-btn" disabled onclick="doCheckout()">Confirm Payment</button>
-    <button class="btn btn-out" onclick="closeCo()">Cancel</button>
+    <div class="sumbox" id="cosum"></div>
+    <div class="stitle" style="margin-bottom:8px;">Select Tip</div>
+    <div class="tipgrid" id="cotips"></div>
+    <div class="totbox"><span style="color:#aaa;font-size:14px;">Total to charge</span><strong style="font-size:21px;" id="cotot">Select tip</strong></div>
+    <button class="btn btn-blk" id="cobtn" disabled onclick="doCheckout()">Confirm Payment</button>
+    <button class="btn btn-out" onclick="closeModal('mco')">Cancel</button>
   </div>
 </div>
 
 <!-- NO SHOW MODAL -->
-<div class="overlay" id="modal-ns">
+<div class="overlay" id="mns">
   <div class="modal">
     <h2>⚠️ Mark as No-Show?</h2>
     <p>$50 will be charged to the client's card on file.</p>
-    <div style="background:#ffebee;border:1px solid #ffcdd2;border-radius:10px;padding:10px 14px;font-size:13px;color:#c62828;display:flex;justify-content:space-between;margin-bottom:14px;" id="ns-info"></div>
-    <button class="btn btn-blk" style="background:#e53935;" onclick="doNoShow()">Charge $50.00</button>
-    <button class="btn btn-out" onclick="closeNs()">Cancel</button>
+    <div style="background:#fef2f2;border:1px solid #fecaca;border-radius:12px;padding:12px 14px;font-size:13px;color:#991b1b;display:flex;justify-content:space-between;margin-bottom:16px;" id="nsinfo"></div>
+    <button class="btn btn-blk" style="background:#dc2626;" onclick="doNS()">Charge $50.00</button>
+    <button class="btn btn-out" onclick="closeModal('mns')">Cancel</button>
   </div>
 </div>
 
 <script>
-const SVCS = {
-  "⭐ Quick Pick": [
-    {id:"sig", name:"Chenny's Signature Cut", mins:45, price:68, days:"Mon·Wed·Fri"},
-    {id:"cc",  name:"Color & Cut Combo",       mins:150,price:194,days:"Mon·Wed·Fri"},
-    {id:"mt",  name:"Men's Texture Cut",        mins:35, price:48, days:"Mon·Wed·Fri"},
+var SVCS = {
+  "⭐ Quick Pick":[
+    {id:"sig",name:"Chenny's Signature Cut",mins:45,price:68,days:"Mon·Wed·Fri"},
+    {id:"cc",name:"Color & Cut Combo",mins:150,price:194,days:"Mon·Wed·Fri"},
+    {id:"mt",name:"Men's Texture Cut",mins:35,price:48,days:"Mon·Wed·Fri"}
   ],
-  "🌿 K-Head Spa": [
-    {id:"s30", name:"K-Scalp Detox 30",               mins:30,  price:70,  days:"Tue·Thu"},
-    {id:"s50", name:"K-Scalp Deep Care 50",           mins:50,  price:100, days:"Tue·Thu"},
-    {id:"s80", name:"K-Head Spa Full 80",             mins:80,  price:130, days:"Tue·Thu"},
-
+  "🌿 K-Head Spa":[
+    {id:"s30",name:"K-Scalp Detox 30",mins:30,price:70,days:"Tue·Thu"},
+    {id:"s50",name:"K-Scalp Deep Care 50",mins:50,price:100,days:"Tue·Thu"},
+    {id:"s80",name:"K-Head Spa Full 80",mins:80,price:130,days:"Tue·Thu"},
+    {id:"pk1",name:"📦 5-Session — Scalp Detox 30",mins:30,price:300,days:"Tue·Thu",pkg:true,orig:350},
+    {id:"pk2",name:"📦 5-Session — Deep Care 50",mins:50,price:450,days:"Tue·Thu",pkg:true,orig:500},
+    {id:"pk3",name:"📦 5-Session — Full Spa 80",mins:80,price:650,days:"Tue·Thu",pkg:true,orig:650}
   ],
-  "✂️ Color & Perm": [
-    {id:"fc",  name:"Full Color + Toner",                    mins:150,price:185,days:"Mon·Wed·Fri"},
-    {id:"rg",  name:"Root Touch-Up + Gloss",                mins:120,price:155,days:"Mon·Wed·Fri"},
-    {id:"dp",  name:"Korean Digital Perm",                  mins:180,price:250,days:"Mon·Wed·Fri"},
-    {id:"rp",  name:"Regular Perm",                         mins:120,price:165,days:"Mon·Wed·Fri"},
-    {id:"rvp", name:"Root Volume Perm",                     mins:90, price:105,days:"Mon·Wed·Fri"},
-    {id:"mpe", name:"Men's Perm Package",                   mins:120,price:177,days:"Mon·Wed·Fri"},
-    {id:"bt",  name:"Bleach & Tone",                        mins:180,price:220,days:"Mon·Wed·Fri"},
-    {id:"rct", name:"Recovery Treatment (Keratin-like)",    mins:120,price:200,days:"Mon·Wed·Fri"},
+  "✂️ Color & Perm":[
+    {id:"fc",name:"Full Color + Toner",mins:150,price:185,days:"Mon·Wed·Fri"},
+    {id:"rg",name:"Root Touch-Up + Gloss",mins:120,price:155,days:"Mon·Wed·Fri"},
+    {id:"dp",name:"Korean Digital Perm",mins:180,price:250,days:"Mon·Wed·Fri"},
+    {id:"rp",name:"Regular Perm",mins:120,price:165,days:"Mon·Wed·Fri"},
+    {id:"rvp",name:"Root Volume Perm",mins:90,price:105,days:"Mon·Wed·Fri"},
+    {id:"mpe",name:"Men's Perm Package",mins:120,price:177,days:"Mon·Wed·Fri"},
+    {id:"bt",name:"Bleach & Tone",mins:180,price:220,days:"Mon·Wed·Fri"},
+    {id:"rct",name:"Recovery Treatment (Keratin-like)",mins:120,price:200,days:"Mon·Wed·Fri"}
   ],
-  "👨 Men's": [
-    {id:"mc",   name:"Men's Haircut",                  mins:45, price:48,  days:"Mon·Wed·Fri"},
-    {id:"mcol", name:"Men's Color",                    mins:45, price:85,  days:"Mon·Wed·Fri"},
-    {id:"msp",  name:"Men's Cut + Scalp + Head Spa",  mins:75, price:135, days:"Mon·Wed·Fri"},
-
-  ],
+  "👨 Men's":[
+    {id:"mc",name:"Men's Haircut",mins:45,price:48,days:"Mon·Wed·Fri"},
+    {id:"mcol",name:"Men's Color",mins:45,price:85,days:"Mon·Wed·Fri"},
+    {id:"msp",name:"Men's Cut + Scalp + Head Spa",mins:75,price:135,days:"Mon·Wed·Fri"}
+  ]
 };
 
-const ADDONS = [
-  {id:"amp", name:"Scalp Care Ampoule", price:45},
-  {id:"trt", name:"Hair Treatment",     price:40},
-  {id:"blo", name:"Blowdry Add-on",     price:35},
-  {id:"adp", name:"Down Perm",          price:55},
-  {id:"arp", name:"Root Volume Perm",   price:105},
+var ADDONS = [
+  {id:"amp",name:"Scalp Care Ampoule",price:45},
+  {id:"trt",name:"Hair Treatment",price:40},
+  {id:"blo",name:"Blowdry Add-on",price:35},
+  {id:"adp",name:"Down Perm",price:55},
+  {id:"arp",name:"Root Volume Perm",price:105}
 ];
 
-const SLOTS = {
-  Monday:    ["10:00 AM","11:00 AM","12:30 PM","2:00 PM","3:30 PM"],
-  Wednesday: ["10:00 AM","11:15 AM","12:30 PM","2:00 PM","3:30 PM","5:00 PM"],
-  Friday:    ["10:00 AM","11:00 AM","12:15 PM","1:45 PM","3:15 PM","4:45 PM"],
-  Tuesday:   ["10:00 AM","11:30 AM","1:00 PM","2:30 PM","4:00 PM"],
-  Thursday:  ["10:00 AM","11:30 AM","1:00 PM","2:30 PM","4:00 PM"],
+var SLOTS = {
+  Monday:["10:00 AM","11:00 AM","12:30 PM","2:00 PM","3:30 PM"],
+  Wednesday:["10:00 AM","11:15 AM","12:30 PM","2:00 PM","3:30 PM","5:00 PM"],
+  Friday:["10:00 AM","11:00 AM","12:15 PM","1:45 PM","3:15 PM","4:45 PM"],
+  Tuesday:["10:00 AM","11:30 AM","1:00 PM","2:30 PM","4:00 PM"],
+  Thursday:["10:00 AM","11:30 AM","1:00 PM","2:30 PM","4:00 PM"]
 };
 
-const ADMIN_PW = "chenny2026";
-const fmt = n => `$${Number(n).toFixed(2)}`;
-const allSvcs = () => Object.values(SVCS).flat();
+var DNAMES = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+var MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
-let selCat = "⭐ Quick Pick";
-let selSvc = null;
-let selAddons = [];
-let selDateStr = "";
-let selDay = "";
-let selTime = "";
-let tipPct = null;
-let coTarget = null;
-let nsTarget = null;
+function fmt(n){ return "$" + Number(n).toFixed(2); }
+function allS(){ var r=[]; Object.keys(SVCS).forEach(function(k){ SVCS[k].forEach(function(s){ r.push(s); }); }); return r; }
 
-let bookings = [
-  {id:1, name:"Sarah Kim",   phone:"(703)555-0101", service:"Color & Cut Combo",     time:"10:00 AM", price:194, status:"confirmed", card:"4242"},
-  {id:2, name:"Jennifer P.", phone:"(571)555-0202", service:"K-Scalp Deep Care 50",  time:"11:30 AM", price:100, status:"confirmed", card:"1234"},
-  {id:3, name:"Mike Lee",    phone:"(703)555-0303", service:"Men's Texture Cut",      time:"12:30 PM", price:48,  status:"completed", card:"5678"},
+var selCat = "⭐ Quick Pick";
+var selSvc = null;
+var selAddons = [];
+var selDate = "";
+var selTime = "";
+var calY, calM;
+var coTarget = null;
+var nsTarget = null;
+var tipPct = null;
+
+var bookings = [
+  {id:1,name:"Sarah Kim",phone:"(703)555-0101",service:"Color & Cut Combo",time:"10:00 AM",price:194,status:"confirmed",card:"4242"},
+  {id:2,name:"Jennifer P.",phone:"(571)555-0202",service:"K-Scalp Deep Care 50",time:"11:30 AM",price:100,status:"confirmed",card:"1234"},
+  {id:3,name:"Mike Lee",phone:"(703)555-0303",service:"Men's Texture Cut",time:"12:30 PM",price:48,status:"completed",card:"5678"}
 ];
 
-function goTo(pg) {
-  document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
-  document.getElementById(pg).classList.add("active");
-  window.scrollTo(0, 0);
+function goTo(p){
+  document.querySelectorAll(".pg").forEach(function(x){ x.classList.remove("on"); });
+  document.getElementById(p).classList.add("on");
+  window.scrollTo(0,0);
 }
 
-// ── PAGE 1 ──
-function initP1() {
-  const catKeys = Object.keys(SVCS);
-  document.getElementById("cat-tabs").innerHTML = catKeys.map(c =>
-    `<button class="tab${c === selCat ? " on" : ""}" onclick="switchCat(event)">${c}</button>`
-  ).join("");
+function closeModal(id){ document.getElementById(id).classList.remove("show"); }
+function openLogin(){ document.getElementById("mlogin").classList.add("show"); }
+function togglePw(){ var i=document.getElementById("pwi"); i.type = i.type==="password"?"text":"password"; }
 
-  document.getElementById("svc-list").innerHTML = SVCS[selCat].map(s => {
-    const isPkg = s.pkg;
-    const saving = isPkg && s.original > s.price ? `<span style="background:#e8f5e9;color:#2e7d32;font-size:10px;font-weight:700;padding:2px 7px;border-radius:100px;margin-left:6px;">Save ${fmt(s.original - s.price)}</span>` : "";
-    const pkgBadge = isPkg ? `<div style="font-size:11px;color:#7b1fa2;font-weight:600;margin-bottom:2px;">5 sessions · Pay once, use anytime</div>` : "";
-    const origPrice = isPkg && s.original > s.price ? `<div style="font-size:11px;text-decoration:line-through;color:#aaa;">${fmt(s.original)}</div>` : "";
-    return `<div class="svc${selSvc === s.id ? " on" : ""}" onclick="pickSvc(event)" style="${isPkg ? "border-color:#ce93d8;background:${selSvc===s.id?'#1a1a1a':'#fce4ec'}" : ""}">
-      <div>
-        ${pkgBadge}
-        <div class="svc-name">${s.name}${saving}</div>
-        <div class="svc-meta">⏱ ${s.mins}min · ${s.days}</div>
-      </div>
-      <div style="text-align:right;flex-shrink:0;margin-left:10px;">
-        ${origPrice}
-        <div class="svc-price">${fmt(s.price)}</div>
-        <div class="svc-mins">${isPkg ? "package price" : "starting price"}</div>
-      </div>
-    </div>`;
+function doLogin(){
+  if(document.getElementById("pwi").value === "chenny2026"){
+    closeModal("mlogin");
+    document.getElementById("booking").style.display="none";
+    document.getElementById("admin").style.display="block";
+    renderAdmin();
+  } else {
+    document.getElementById("pwerr").style.display="block";
+    document.getElementById("pwi").value="";
+  }
+}
+
+function closeAdmin(){
+  document.getElementById("booking").style.display="block";
+  document.getElementById("admin").style.display="none";
+}
+
+function initP1(){
+  var cats = Object.keys(SVCS);
+  document.getElementById("cattabs").innerHTML = cats.map(function(c){
+    return '<button class="'+(c===selCat?"on":"")+'" onclick="setCat(this)">'+c+'</button>';
   }).join("");
 
-  document.getElementById("addon-list").innerHTML = ADDONS.map(a =>
-    `<div class="adn${selAddons.includes(a.id) ? " on" : ""}" onclick="toggleAddon(event)">${selAddons.includes(a.id) ? "✓ " : "+ "}${a.name} (${fmt(a.price)})</div>`
-  ).join("");
+  document.getElementById("svclist").innerHTML = SVCS[selCat].map(function(s){
+    var hasSave = s.pkg && s.orig > s.price;
+    return '<div class="svc'+(selSvc===s.id?" on":"")+'" data-id="'+s.id+'" onclick="setSvc(this)"'+(s.pkg?' style="border-color:#e9d5ff;"':'')+'>'+
+      '<div class="svc-l">'+
+        (s.pkg?'<div class="pkg-lbl">5 sessions · Pay once, use anytime</div>':'')+
+        '<div class="svc-name">'+s.name+(hasSave?'<span class="save-pill">Save '+fmt(s.orig-s.price)+'</span>':'')+
+        '</div><div class="svc-meta">⏱ '+s.mins+'min · '+s.days+'</div>'+
+      '</div>'+
+      '<div style="text-align:right;flex-shrink:0;margin-left:12px;">'+
+        (hasSave?'<div class="orig-p">'+fmt(s.orig)+'</div>':'')+
+        '<div class="svc-price">'+fmt(s.price)+'</div>'+
+        '<div class="svc-sub">'+(s.pkg?"package":"starting")+' price</div>'+
+      '</div></div>';
+  }).join("");
+
+  document.getElementById("adnlist").innerHTML = ADDONS.map(function(a){
+    var on = selAddons.indexOf(a.id) >= 0;
+    return '<div class="adn'+(on?" on":"")+'" data-id="'+a.id+'" onclick="togAddon(this)">'+(on?"✓ ":"+ ")+a.name+' ('+fmt(a.price)+')</div>';
+  }).join("");
 
   document.getElementById("btn1").disabled = !selSvc;
 }
 
-function switchCat(e) {
-  selCat = e.currentTarget.textContent;
+function setCat(el){ selCat = el.textContent; initP1(); }
+function setSvc(el){ selSvc = el.dataset.id; initP1(); }
+function togAddon(el){
+  var id = el.dataset.id;
+  var idx = selAddons.indexOf(id);
+  if(idx >= 0) selAddons.splice(idx,1); else selAddons.push(id);
   initP1();
 }
 
-function pickSvc(e) {
-  const card = e.currentTarget;
-  const name = card.querySelector(".svc-name").textContent;
-  const found = allSvcs().find(s => s.name === name);
-  if (found) { selSvc = found.id; initP1(); }
+function initCal(){
+  var t = new Date();
+  calY = t.getFullYear();
+  calM = t.getMonth();
+  renderCal();
 }
 
-function toggleAddon(e) {
-  const chip = e.currentTarget;
-  const label = chip.textContent.replace(/^[✓+] /, "").split(" (")[0];
-  const found = ADDONS.find(a => a.name === label);
-  if (found) {
-    selAddons = selAddons.includes(found.id)
-      ? selAddons.filter(a => a !== found.id)
-      : [...selAddons, found.id];
-    initP1();
+function renderCal(){
+  var today = new Date(); today.setHours(0,0,0,0);
+  var first = new Date(calY,calM,1).getDay();
+  var dim = new Date(calY,calM+1,0).getDate();
+  var h = '<div class="cal-nav"><button onclick="prevM()">‹</button><span>'+MONTHS[calM]+' '+calY+'</span><button onclick="nextM()">›</button></div>';
+  h += '<div class="cal-head">';
+  var dns = ["Su","Mo","Tu","We","Th","Fr","Sa"];
+  var dnc = ["#bbb","#1d4ed8","#15803d","#1d4ed8","#15803d","#1d4ed8","#bbb"];
+  for(var i=0;i<7;i++) h += '<div class="cal-dn" style="color:'+dnc[i]+'">'+dns[i]+'</div>';
+  h += '</div><div class="cal-grid">';
+  for(var i=0;i<first;i++) h += '<div></div>';
+  for(var d=1;d<=dim;d++){
+    var dt = new Date(calY,calM,d); dt.setHours(0,0,0,0);
+    var dow = dt.getDay();
+    var ds = calY+"-"+("0"+(calM+1)).slice(-2)+"-"+("0"+d).slice(-2);
+    var past = dt < today;
+    var isH = dow===1||dow===3||dow===5;
+    var isS = dow===2||dow===4;
+    var isSel = selDate===ds;
+    var cls = "cd ";
+    var click = "";
+    if(isSel) cls += "sel";
+    else if(past||(!isH&&!isS)) cls += "off";
+    else if(isH){ cls+="hair"; click='onclick="setDate(\''+ds+'\')"'; }
+    else if(isS){ cls+="spa"; click='onclick="setDate(\''+ds+'\')"'; }
+    h += '<div class="'+cls+'" '+click+'>'+d+'</div>';
   }
+  h += '</div><div class="cal-legend"><span><span class="leg-h"></span><span style="color:#1d4ed8;">✂️ Hair Mon·Wed·Fri</span></span><span><span class="leg-s"></span><span style="color:#15803d;">🌿 Spa Tue·Thu</span></span></div>';
+  document.getElementById("calgrid").innerHTML = h;
+
+  var ts = document.getElementById("timesec");
+  if(selDate){
+    var dn = DNAMES[new Date(selDate+"T12:00:00").getDay()];
+    var slots = SLOTS[dn]||[];
+    var th = '<div class="stitle" style="margin-top:14px;margin-bottom:8px;">Times — '+dn+', '+selDate+'</div><div class="tgrid">';
+    slots.forEach(function(t){
+      th += '<button class="tim'+(selTime===t?" on":"")+'" onclick="setTime(this)">'+t+'</button>';
+    });
+    th += '</div>';
+    ts.innerHTML = th;
+  } else {
+    ts.innerHTML = '<div class="namb" style="margin-top:12px;"><span>📅</span><span>Select a date from the calendar above.</span></div>';
+  }
+  document.getElementById("btn2").disabled = !selTime;
 }
 
-// ── PAGE 2 — CALENDAR ──
-function initP2() {
-  const cal = document.getElementById("cal-grid");
-  const today = new Date();
-  let curYear = today.getFullYear();
-  let curMonth = today.getMonth();
+function prevM(){ calM--; if(calM<0){calM=11;calY--;} renderCal(); }
+function nextM(){ calM++; if(calM>11){calM=0;calY++;} renderCal(); }
+function setDate(ds){ selDate=ds; selTime=""; renderCal(); }
+function setTime(el){ selTime=el.textContent.trim(); renderCal(); }
 
-  function isAvailable(d) {
-    const day = d.getDay(); // 0=Sun,1=Mon,2=Tue,3=Wed,4=Thu,5=Fri,6=Sat
-    return [1,2,3,4,5].includes(day); // Mon~Fri only
-  }
-
-  function isSpa(d) {
-    const day = d.getDay();
-    return day === 2 || day === 4; // Tue, Thu
-  }
-
-  function isHair(d) {
-    const day = d.getDay();
-    return day === 1 || day === 3 || day === 5; // Mon, Wed, Fri
-  }
-
-  function renderCal(year, month) {
-    const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-    const firstDay = new Date(year, month, 1).getDay();
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
-    const todayStr = `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}`;
-
-    let html = `
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-        <button onclick="prevMonth()" style="background:none;border:1.5px solid #e0e0e0;border-radius:10px;width:34px;height:34px;cursor:pointer;font-size:16px;">‹</button>
-        <span style="font-size:15px;font-weight:700;">${monthNames[month]} ${year}</span>
-        <button onclick="nextMonth()" style="background:none;border:1.5px solid #e0e0e0;border-radius:10px;width:34px;height:34px;cursor:pointer;font-size:16px;">›</button>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:6px;">
-        ${["Su","Mo","Tu","We","Th","Fr","Sa"].map((d,i) => {
-          let color = "#999";
-          if (i===1||i===3||i===5) color = "#1a1a1a";
-          if (i===2||i===4) color = "#0d7055";
-          return `<div style="text-align:center;font-size:11px;font-weight:700;color:${color};padding:4px 0;">${d}</div>`;
-        }).join("")}
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;">`;
-
-    for (let i = 0; i < firstDay; i++) html += `<div></div>`;
-
-    for (let d = 1; d <= daysInMonth; d++) {
-      const date = new Date(year, month, d);
-      const isPast = date < new Date(today.getFullYear(), today.getMonth(), today.getDate());
-      const avail = isAvailable(date) && !isPast;
-      const dateStr = `${year}-${String(month+1).padStart(2,"0")}-${String(d).padStart(2,"0")}`;
-      const isSelected = selDateStr === dateStr;
-      const spa = isSpa(date);
-      const hair = isHair(date);
-
-      let bg = "#f5f5f5";
-      let color = "#ccc";
-      let cursor = "default";
-      let border = "1.5px solid transparent";
-
-      if (avail) {
-        bg = spa ? "#e8f5e9" : "#e3f2fd";
-        color = spa ? "#2e7d32" : "#1565c0";
-        cursor = "pointer";
-        border = spa ? "1.5px solid #a5d6a7" : "1.5px solid #90caf9";
-      }
-      if (isSelected) {
-        bg = "#1a1a1a";
-        color = "#fff";
-        border = "1.5px solid #1a1a1a";
-      }
-
-      html += `<div onclick="${avail ? `pickDate('${dateStr}')` : ''}"
-        style="text-align:center;padding:8px 2px;border-radius:10px;font-size:13px;font-weight:600;
-        background:${bg};color:${color};cursor:${cursor};border:${border};transition:.15s;">
-        ${d}
-      </div>`;
-    }
-
-    html += `</div>
-      <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap;">
-        <span style="display:flex;align-items:center;gap:5px;font-size:11px;color:#1565c0;"><span style="width:10px;height:10px;border-radius:3px;background:#e3f2fd;border:1px solid #90caf9;display:inline-block;"></span>✂️ Hair (Mon·Wed·Fri)</span>
-        <span style="display:flex;align-items:center;gap:5px;font-size:11px;color:#2e7d32;"><span style="width:10px;height:10px;border-radius:3px;background:#e8f5e9;border:1px solid #a5d6a7;display:inline-block;"></span>🌿 Head Spa (Tue·Thu)</span>
-      </div>`;
-
-    cal.innerHTML = html;
-
-    // Times
-    const ts = document.getElementById("time-section");
-    if (selDateStr) {
-      const d = new Date(selDateStr + "T12:00:00");
-      const dayName = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][d.getDay()];
-      const slots = SLOTS[dayName] || [];
-      ts.innerHTML = `
-        <div class="sec-title" style="margin-top:14px;margin-bottom:8px;">
-          Available Times — ${dayName}, ${selDateStr}
-        </div>
-        <div class="times">${slots.map(t =>
-          `<button class="tim${selTime===t?" on":""}" onclick="pickTime(event)">${t}</button>`
-        ).join("")}</div>`;
-    } else {
-      ts.innerHTML = `<div style="background:#fff8e1;color:#e65100;border-radius:12px;padding:10px 14px;font-size:13px;display:flex;gap:8px;margin-top:12px;"><span>📅</span><span>Please select a date from the calendar above.</span></div>`;
-    }
-
-    document.getElementById("btn2").disabled = !selTime;
-  }
-
-  window.prevMonth = () => {
-    curMonth--;
-    if (curMonth < 0) { curMonth = 11; curYear--; }
-    renderCal(curYear, curMonth);
-  };
-  window.nextMonth = () => {
-    curMonth++;
-    if (curMonth > 11) { curMonth = 0; curYear++; }
-    renderCal(curYear, curMonth);
-  };
-  window.pickDate = (ds) => {
-    selDateStr = ds;
-    selTime = "";
-    renderCal(curYear, curMonth);
-  };
-
-  renderCal(curYear, curMonth);
-}
-
-function pickTime(e) {
-  selTime = e.currentTarget.textContent.trim();
-  document.getElementById("btn2").disabled = false;
-  // re-highlight selected time
-  document.querySelectorAll(".tim").forEach(t => t.classList.remove("on"));
-  e.currentTarget.classList.add("on");
-}
-
-// ── PAGE 3 ──
-function checkStep3() {
-  const name = document.getElementById("f-name").value.trim();
-  const phone = document.getElementById("f-phone").value.trim();
-  if (!name || !phone) { alert("Please enter your name and phone number."); return; }
-  const svc = allSvcs().find(s => s.id === selSvc);
-  const addonTotal = selAddons.reduce((s, id) => s + (ADDONS.find(a => a.id === id)?.price || 0), 0);
-  const d = new Date(selDateStr + "T12:00:00");
-  selDay = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][d.getDay()];
-  document.getElementById("total-notice").textContent =
-    `Full payment of ${fmt(svc.price + addonTotal)}+ collected at the shop. Final price may vary based on hair length and thickness.`;
+function doStep3(){
+  var name = document.getElementById("fn").value.trim();
+  var phone = document.getElementById("fp").value.trim();
+  if(!name||!phone){ alert("Please enter your name and phone number."); return; }
+  var svc = allS().filter(function(s){ return s.id===selSvc; })[0];
+  var at = 0;
+  selAddons.forEach(function(id){ var a=ADDONS.filter(function(x){return x.id===id;})[0]; if(a)at+=a.price; });
+  document.getElementById("totnotice").textContent = "Full payment of "+fmt(svc.price+at)+"+ collected at the shop. Final price may vary by hair.";
   goTo("p4");
 }
 
-// ── PAGE 4 ──
-function fmtCardNum(el) {
-  el.value = el.value.replace(/\D/g, "").slice(0, 16).replace(/(.{4})/g, "$1 ").trim();
-}
-function fmtExp(el) {
-  const d = el.value.replace(/\D/g, "").slice(0, 4);
-  el.value = d.length > 2 ? d.slice(0, 2) + "/" + d.slice(2) : d;
+function fmtCN(el){ el.value = el.value.replace(/\D/g,"").slice(0,16).replace(/(.{4})/g,"$1 ").trim(); }
+function fmtEX(el){ var d=el.value.replace(/\D/g,"").slice(0,4); el.value=d.length>2?d.slice(0,2)+"/"+d.slice(2):d; }
+
+function showErr(eid, msg){
+  var el = document.getElementById(eid);
+  el.classList.add("err");
+  var ep = document.getElementById("err-"+eid);
+  ep.textContent = "❌ " + msg;
+  ep.style.display = "block";
+  el.focus();
 }
 
-// Luhn algorithm check
-function luhn(n) {
-  let s = 0, alt = false;
-  for (let i = n.length - 1; i >= 0; i--) {
-    let d = parseInt(n[i]);
-    if (alt) { d *= 2; if (d > 9) d -= 9; }
-    s += d; alt = !alt;
+function clearErr(eid){
+  var el = document.getElementById(eid);
+  if(el) el.classList.remove("err");
+  var ep = document.getElementById("err-"+eid);
+  if(ep) ep.style.display="none";
+}
+
+function luhn(n){
+  var s=0;
+  for(var i=0;i<n.length;i++){
+    var d=parseInt(n[n.length-1-i]);
+    if(i%2===1){d*=2;if(d>9)d-=9;}
+    s+=d;
   }
-  return s % 10 === 0;
+  return s%10===0;
 }
 
-function confirmBooking() {
-  const num = document.getElementById("c-num").value.replace(/\s/g, "");
-  const exp = document.getElementById("c-exp").value;
-  const cvc = document.getElementById("c-cvc").value;
-  const agreed = document.getElementById("c-agree").checked;
+function doConfirm(){
+  clearErr("cnum"); clearErr("cexp"); clearErr("ccvc");
+  document.getElementById("err-cagr").style.display="none";
 
-  // 카드 번호 검증
-  if (num.length !== 16) { alert("Please enter a valid 16-digit card number."); return; }
-  if (!luhn(num)) { alert("Invalid card number. Please check and try again."); return; }
+  var cn = document.getElementById("cnum").value.replace(/\s/g,"");
+  var ce = document.getElementById("cexp").value.trim();
+  var cv = document.getElementById("ccvc").value.trim();
+  var agreed = document.getElementById("cagr").checked;
 
-  // 만료일 검증
-  if (exp.length < 5) { alert("Please enter a valid expiry date (MM/YY)."); return; }
-  const [mm, yy] = exp.split("/").map(Number);
-  if (mm < 1 || mm > 12) { alert("Invalid expiry month. Please check your card."); return; }
-  const now = new Date();
-  const expDate = new Date(2000 + yy, mm - 1, 1);
-  if (expDate < new Date(now.getFullYear(), now.getMonth(), 1)) { alert("Your card has expired. Please use a different card."); return; }
+  if(cn.length!==16||!/^\d{16}$/.test(cn)){
+    showErr("cnum","Card number must be 16 digits."); return;
+  }
+  if(!luhn(cn)){
+    showErr("cnum","Invalid card number. Please check your card."); return;
+  }
+  if(!/^\d{2}\/\d{2}$/.test(ce)){
+    showErr("cexp","Enter expiry as MM/YY e.g. 12/26"); return;
+  }
+  var em=parseInt(ce.slice(0,2),10);
+  var ey=parseInt(ce.slice(3),10);
+  if(em<1||em>12){
+    showErr("cexp","Invalid month. Must be 01–12."); return;
+  }
+  var nowDate = new Date();
+  var expDate = new Date(2000+ey, em-1, 1);
+  var thisMonth = new Date(nowDate.getFullYear(), nowDate.getMonth(), 1);
+  if(expDate < thisMonth){
+    showErr("cexp","This card has expired. Use a different card."); return;
+  }
+  if(!/^\d{3,4}$/.test(cv)){
+    showErr("ccvc","CVC must be 3 or 4 digits."); return;
+  }
+  if(!agreed){
+    document.getElementById("err-cagr").textContent = "❌ Please agree to the no-show policy.";
+    document.getElementById("err-cagr").style.display = "block";
+    return;
+  }
 
-  // CVC 검증
-  if (cvc.length < 3) { alert("Please enter a valid CVC (3-4 digits)."); return; }
-  if (!agreed) { alert("Please agree to the no-show policy."); return; }
+  var name = document.getElementById("fn").value.trim();
+  var phone = document.getElementById("fp").value.trim();
+  var svc = allS().filter(function(s){ return s.id===selSvc; })[0];
+  var at = 0;
+  selAddons.forEach(function(id){ var a=ADDONS.filter(function(x){return x.id===id;})[0]; if(a)at+=a.price; });
+  var total = svc.price + at;
+  var last4 = cn.slice(-4);
+  var dn = DNAMES[new Date(selDate+"T12:00:00").getDay()];
 
-  const name = document.getElementById("f-name").value.trim();
-  const phone = document.getElementById("f-phone").value.trim();
-  const svc = allSvcs().find(s => s.id === selSvc);
-  const addonTotal = selAddons.reduce((s, id) => s + (ADDONS.find(a => a.id === id)?.price || 0), 0);
-  const total = svc.price + addonTotal;
-  const last4 = num.slice(-4);
+  bookings.unshift({id:Date.now(),name:name,phone:phone,service:svc.name,time:selTime,price:total,status:"confirmed",card:last4});
 
-  bookings.unshift({ id: Date.now(), name, phone, service: svc.name, time: selTime, price: total, status: "confirmed", card: last4 });
-
-  document.getElementById("conf-sub").textContent = `Confirmation text sent to ${phone}`;
-  document.getElementById("conf-grid").innerHTML = [
-    ["Service", svc.name], ["When", `${selDay} · ${selTime}`],
-    ["Guest", name], ["Contact", phone]
-  ].map(([l,v]) => `<div class="conf-item"><div class="ci-lbl">${l}</div><div class="ci-val">${v}</div></div>`).join("");
-  document.getElementById("conf-sum").innerHTML = `
-    <div class="sumrow"><span class="sumlbl">Service starting price</span><span>${fmt(total)}</span></div>
-    <div class="sumrow" style="color:#e65100;font-size:12px;"><span class="sumlbl">Final price may vary by hair length/thickness</span><span>at shop</span></div>
-    <div class="sumrow tot"><span>Pay at shop after service</span><span>${fmt(total)}+</span></div>`;
-  document.getElementById("conf-card").textContent = `Card •••• ${last4} saved for no-show protection · $50 fee if missed without 24hr notice`;
-
-  // Late policy notice
-  document.getElementById("late-policy").style.display = "flex";
+  document.getElementById("csub").textContent = "Confirmation text sent to "+phone;
+  var pairs = [["Service",svc.name],["When",dn+" "+selDate+" · "+selTime],["Guest",name],["Contact",phone]];
+  document.getElementById("cgrid").innerHTML = pairs.map(function(p){
+    return '<div class="ci"><div class="cil">'+p[0]+'</div><div class="civ">'+p[1]+'</div></div>';
+  }).join("");
+  document.getElementById("csum").innerHTML =
+    '<div class="srow"><span class="slbl">Service starting price</span><span>'+fmt(total)+'</span></div>'+
+    '<div class="srow" style="color:#d97706;font-size:12px;"><span class="slbl">Final price may vary by hair</span><span>+$25 up</span></div>'+
+    '<div class="srow tot"><span>Pay at shop after service</span><span>'+fmt(total)+'+</span></div>';
+  document.getElementById("ccard").textContent = "Card •••• "+last4+" saved for no-show protection only · $50 fee if missed without 24hr notice";
   goTo("p5");
 }
 
-function resetAll() {
-  selSvc = null; selAddons = []; selDateStr = ""; selDay = ""; selTime = ""; tipPct = null;
-  selCat = "⭐ Quick Pick";
-  ["f-name","f-phone","f-email","f-hair","f-notes","c-num","c-exp","c-cvc"].forEach(id => {
-    const el = document.getElementById(id); if (el) el.value = "";
+function doReset(){
+  selSvc=null; selAddons=[]; selDate=""; selTime=""; tipPct=null; selCat="⭐ Quick Pick";
+  ["fn","fp","fe","fh","fo","cnum","cexp","ccvc"].forEach(function(id){ var e=document.getElementById(id); if(e)e.value=""; });
+  var ag=document.getElementById("cagr"); if(ag)ag.checked=false;
+  initP1(); renderCal(); goTo("p1");
+}
+
+function renderAdmin(){
+  var done = bookings.filter(function(b){ return b.status==="completed"; });
+  var rev = 0; done.forEach(function(b){ rev+=b.price; });
+  var ns = bookings.filter(function(b){ return b.status==="noshow"; }).length;
+  var h = '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">'+
+    '<h2 style="font-size:18px;font-weight:800;">📊 Today\'s Dashboard</h2>'+
+    '<span style="font-size:11px;background:#f0fdf4;color:#15803d;padding:4px 12px;border-radius:100px;font-weight:700;">Admin</span></div>'+
+    '<div class="sgrid">'+
+    '<div class="sc"><div class="sv">'+bookings.length+'</div><div class="sl">Bookings</div></div>'+
+    '<div class="sc"><div class="sv">'+done.length+'</div><div class="sl">Completed</div></div>'+
+    '<div class="sc"><div class="sv" style="color:#15803d;">'+fmt(rev)+'</div><div class="sl">Revenue</div></div>'+
+    '<div class="sc"><div class="sv" style="color:#dc2626;">'+ns+'</div><div class="sl">No-Shows</div></div>'+
+    '</div><div class="stitle">Schedule</div>';
+  bookings.forEach(function(b){
+    var bc = b.status==="completed"?"bd":b.status==="noshow"?"bn":"bc";
+    var bl = b.status==="completed"?"✓ Done":b.status==="noshow"?"No-Show":"Confirmed";
+    h += '<div class="bk"><div class="bktop"><div><div class="bkn">'+b.name+'</div><div class="bks">'+b.service+' · '+b.time+'</div></div>'+
+      '<span class="badge '+bc+'">'+bl+'</span></div>'+
+      '<div style="font-size:12px;color:#999;margin-bottom:7px;">Total: <strong style="color:#111;">'+fmt(b.price)+'</strong> · Pay at shop · Card ••••'+b.card+'</div>'+
+      '<div class="bkacts">';
+    if(b.status==="confirmed") h += '<button class="ba baco" onclick="openCo('+b.id+')">💰 Checkout</button><button class="ba bans" onclick="openNS('+b.id+')">No-Show</button>';
+    if(b.status==="completed") h += '<span style="font-size:12px;color:#15803d;font-weight:700;">✓ Payment Complete</span>';
+    if(b.status==="noshow") h += '<span style="font-size:12px;color:#dc2626;font-weight:700;">$50 Charged</span>';
+    h += '<button class="ba basm" onclick="alert(\'SMS sent!\')">📱 SMS</button></div></div>';
   });
-  const ag = document.getElementById("c-agree"); if (ag) ag.checked = false;
-  initP1(); initP2(); goTo("p1");
+  document.getElementById("admindash").innerHTML = h;
 }
 
-// ── ADMIN ──
-function showLogin() { document.getElementById("modal-login").classList.add("show"); }
-function closeLogin() {
-  document.getElementById("modal-login").classList.remove("show");
-  document.getElementById("pw").value = "";
-  document.getElementById("pw-err").style.display = "none";
-}
-function togglePw() { const i = document.getElementById("pw"); i.type = i.type === "password" ? "text" : "password"; }
-function tryLogin() {
-  if (document.getElementById("pw").value === ADMIN_PW) { closeLogin(); showAdmin(); }
-  else { document.getElementById("pw-err").style.display = "block"; document.getElementById("pw").value = ""; }
-}
-function showAdmin() {
-  document.getElementById("booking").style.display = "none";
-  document.getElementById("admin").style.display = "block";
-  renderAdmin();
-}
-function showBooking() {
-  document.getElementById("booking").style.display = "block";
-  document.getElementById("admin").style.display = "none";
-}
-
-function renderAdmin() {
-  const done = bookings.filter(b => b.status === "completed");
-  const rev = done.reduce((s, b) => s + b.price, 0);
-  const ns = bookings.filter(b => b.status === "noshow").length;
-  document.getElementById("admin-dash").innerHTML = `
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
-      <h2 style="font-size:18px;font-weight:800;">📊 Today's Dashboard</h2>
-      <span style="font-size:11px;background:#e8f5e9;color:#2e7d32;padding:3px 10px;border-radius:100px;font-weight:600;">Admin</span>
-    </div>
-    <div class="stat-grid">
-      <div class="stat"><div class="stat-v">${bookings.length}</div><div class="stat-l">Bookings</div></div>
-      <div class="stat"><div class="stat-v">${done.length}</div><div class="stat-l">Completed</div></div>
-      <div class="stat"><div class="stat-v" style="color:#2e7d32;">${fmt(rev)}</div><div class="stat-l">Revenue</div></div>
-      <div class="stat"><div class="stat-v" style="color:#e53935;">${ns}</div><div class="stat-l">No-Shows</div></div>
-    </div>
-    <div class="sec-title">Schedule</div>
-    ${bookings.map(b => `
-      <div class="bk">
-        <div class="bk-top">
-          <div><div class="bk-name">${b.name}</div><div class="bk-svc">${b.service} · ${b.time}</div></div>
-          <span class="bk-badge ${b.status === "completed" ? "bd" : b.status === "noshow" ? "bn" : "bc"}">
-            ${b.status === "completed" ? "✓ Done" : b.status === "noshow" ? "No-Show" : "Confirmed"}
-          </span>
-        </div>
-        <div style="font-size:12px;color:#888;margin-bottom:6px;">Total: <strong style="color:#1a1a1a;">${fmt(b.price)}</strong> · Pay at shop · Card ••••${b.card}</div>
-        <div class="bk-acts">
-          ${b.status === "confirmed" ? `<button class="ba ba-co" onclick="openCo(${b.id})">💰 Checkout</button><button class="ba ba-ns" onclick="openNs(${b.id})">No-Show</button>` : ""}
-          ${b.status === "completed" ? '<span style="font-size:12px;color:#2e7d32;font-weight:600;">✓ Payment Complete</span>' : ""}
-          ${b.status === "noshow" ? '<span style="font-size:12px;color:#e53935;font-weight:600;">$50 Charged</span>' : ""}
-          <button class="ba ba-sm" onclick="alert('SMS sent to ${b.phone}!')">📱 SMS</button>
-        </div>
-      </div>`).join("")}`;
-}
-
-// ── CHECKOUT ──
-function openCo(id) {
-  coTarget = bookings.find(b => b.id === id);
+function openCo(id){
+  coTarget = bookings.filter(function(b){ return b.id===id; })[0];
   tipPct = null;
-  document.getElementById("co-sum").innerHTML = `
-    <div class="sumrow"><span class="sumlbl">${coTarget.service}</span><span>${fmt(coTarget.price)}</span></div>
-    <div class="sumrow tot"><span>Service Total</span><span>${fmt(coTarget.price)}</span></div>`;
-  document.getElementById("co-tips").innerHTML = [15, 20, 30].map(t =>
-    `<div class="tip" onclick="pickTip(${t}, ${coTarget.price}, this)">
-      <span class="tip-p">${t}%</span>
-      <span class="tip-a">${fmt(coTarget.price * t / 100)}</span>
-    </div>`).join("");
-  document.getElementById("co-total").textContent = "Select tip";
-  document.getElementById("co-btn").disabled = true;
-  document.getElementById("modal-co").classList.add("show");
+  document.getElementById("cosum").innerHTML =
+    '<div class="srow"><span class="slbl">'+coTarget.service+'</span><span>'+fmt(coTarget.price)+'</span></div>'+
+    '<div class="srow tot"><span>Service Total</span><span>'+fmt(coTarget.price)+'</span></div>';
+  var tips = [15,20,30];
+  document.getElementById("cotips").innerHTML = tips.map(function(t){
+    return '<div class="tip" onclick="pickTip('+t+','+coTarget.price+',this)"><span class="tp">'+t+'%</span><span class="ta">'+fmt(coTarget.price*t/100)+'</span></div>';
+  }).join("");
+  document.getElementById("cotot").textContent = "Select tip";
+  document.getElementById("cobtn").disabled = true;
+  document.getElementById("mco").classList.add("show");
 }
 
-function pickTip(pct, total, el) {
-  tipPct = pct;
-  document.querySelectorAll(".tip").forEach(t => t.classList.remove("on"));
+function pickTip(p, tot, el){
+  tipPct = p;
+  document.querySelectorAll(".tip").forEach(function(t){ t.classList.remove("on"); });
   el.classList.add("on");
-  document.getElementById("co-total").textContent = fmt(total + total * pct / 100);
-  document.getElementById("co-btn").disabled = false;
+  document.getElementById("cotot").textContent = fmt(tot + tot*p/100);
+  document.getElementById("cobtn").disabled = false;
 }
 
-function doCheckout() {
-  bookings = bookings.map(b => b.id === coTarget.id ? {...b, status: "completed"} : b);
-  closeCo(); renderAdmin();
+function doCheckout(){
+  bookings = bookings.map(function(b){ return b.id===coTarget.id ? Object.assign({},b,{status:"completed"}) : b; });
+  closeModal("mco"); renderAdmin();
 }
-function closeCo() { document.getElementById("modal-co").classList.remove("show"); }
 
-// ── NO SHOW ──
-function openNs(id) {
-  nsTarget = bookings.find(b => b.id === id);
-  document.getElementById("ns-info").innerHTML = `<span><strong>${nsTarget.name}</strong> · ${nsTarget.service}</span><span>Card ••••${nsTarget.card}</span>`;
-  document.getElementById("modal-ns").classList.add("show");
+function openNS(id){
+  nsTarget = bookings.filter(function(b){ return b.id===id; })[0];
+  document.getElementById("nsinfo").innerHTML =
+    '<span><strong>'+nsTarget.name+'</strong> · '+nsTarget.service+'</span><span>Card ••••'+nsTarget.card+'</span>';
+  document.getElementById("mns").classList.add("show");
 }
-function doNoShow() {
-  bookings = bookings.map(b => b.id === nsTarget.id ? {...b, status: "noshow"} : b);
-  closeNs(); renderAdmin();
-}
-function closeNs() { document.getElementById("modal-ns").classList.remove("show"); }
 
-// ── INIT ──
+function doNS(){
+  bookings = bookings.map(function(b){ return b.id===nsTarget.id ? Object.assign({},b,{status:"noshow"}) : b; });
+  closeModal("mns"); renderAdmin();
+}
+
 initP1();
-initP2();
+initCal();
 </script>
 </body>
 </html>
