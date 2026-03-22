@@ -5,317 +5,336 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Hair by Chenny</title>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap');
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Segoe UI',system-ui,sans-serif;background:#f2f2ef;color:#1a1a1a;min-height:100vh;}
-.wrap{max-width:600px;margin:0 auto;padding:20px 16px 60px;}
-.hdr{text-align:center;margin-bottom:16px;}
-.logo{display:inline-flex;align-items:center;gap:8px;background:#111;color:#fff;padding:8px 20px;border-radius:100px;font-size:13px;font-weight:700;margin-bottom:10px;}
-.hdr h1{font-size:26px;font-weight:800;letter-spacing:-1px;margin-bottom:5px;}
-.hdr p{color:#777;font-size:13px;}
-.tags{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:8px;}
-.tag{background:#fff;border:1px solid #e4e4e4;border-radius:100px;padding:4px 14px;font-size:12px;color:#555;font-weight:500;}
-.banner{background:#1a1a2e;border-radius:18px;padding:16px 20px;margin-bottom:14px;text-align:center;}
-.banner .bt{font-size:10px;font-weight:800;color:#ffd700;letter-spacing:2px;text-transform:uppercase;margin-bottom:5px;}
-.banner h3{font-size:18px;font-weight:800;color:#fff;margin-bottom:3px;}
-.banner p{font-size:12px;color:#bbb;}
-.contact-box{background:#fff;border-radius:18px;padding:16px;margin-bottom:14px;box-shadow:0 1px 8px rgba(0,0,0,.07);}
-.stitle{font-size:11px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px;}
-.contact-box .row{font-size:13px;color:#444;line-height:2.1;}
-.contact-box a{color:#111;font-weight:700;text-decoration:none;}
-.cnote{margin-top:10px;background:#eff3ff;border-radius:10px;padding:8px 12px;font-size:12px;color:#3949ab;font-weight:500;}
-.card{background:#fff;border-radius:20px;padding:20px;box-shadow:0 1px 8px rgba(0,0,0,.07);margin-bottom:12px;}
-.pg{display:none;}.pg.on{display:block;}
+body{font-family:'Jost',sans-serif;background:#f9f6f1;color:#3a3028;min-height:100vh;}
+.wrap{max-width:620px;margin:0 auto;padding:0 0 60px;}
 
-/* SEGMENT TABS */
-.seg{display:flex;background:#f0f0ed;border-radius:14px;padding:4px;margin-bottom:16px;gap:2px;overflow-x:auto;}
-.seg button{flex:1;min-width:fit-content;white-space:nowrap;padding:8px 12px;border-radius:11px;font-size:12px;font-weight:600;border:none;background:transparent;cursor:pointer;color:#888;font-family:inherit;}
-.seg button.on{background:#fff;color:#111;box-shadow:0 1px 6px rgba(0,0,0,.12);}
+header{background:#f2ece3;border-bottom:1px solid #e5ddd3;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:#3a3028;}
+.logo span{color:#a07850;}
+.tagline{font-size:.68rem;letter-spacing:2px;text-transform:uppercase;color:#a07850;margin-top:2px;}
 
-/* SERVICE */
-.svc{border:1.5px solid #ececec;border-radius:16px;padding:14px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;background:#fafafa;}
-.svc:hover{border-color:#bbb;background:#fff;box-shadow:0 3px 14px rgba(0,0,0,.08);}
-.svc.on{background:#111;color:#fff;border-color:#111;box-shadow:0 4px 18px rgba(0,0,0,.22);}
-.svc-name{font-size:14px;font-weight:600;margin-bottom:3px;}
-.svc-meta{font-size:12px;color:#999;}
-.svc.on .svc-meta{color:#aaa;}
-.svc-price{font-size:15px;font-weight:700;text-align:right;}
-.svc-sub{font-size:11px;color:#bbb;margin-top:1px;text-align:right;}
-.pkg-lbl{font-size:11px;color:#9c27b0;font-weight:700;margin-bottom:3px;}
-.save-pill{background:#dcfce7;color:#15803d;font-size:10px;font-weight:700;padding:2px 7px;border-radius:100px;margin-left:5px;vertical-align:middle;}
-.orig-p{font-size:11px;text-decoration:line-through;color:#bbb;text-align:right;}
+.hero{background:linear-gradient(160deg,#ede5d8,#d9cfc3);text-align:center;padding:48px 24px 40px;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:500;margin-bottom:8px;}
+.hero p{font-size:.8rem;color:#7a6858;letter-spacing:1.5px;text-transform:uppercase;}
+.hero-line{width:40px;height:1px;background:#a07850;margin:12px auto;}
+.tags{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px;}
+.tag{background:rgba(255,255,255,.6);border:1px solid #d8c8b0;border-radius:100px;padding:5px 16px;font-size:.75rem;color:#7a5535;font-weight:500;}
 
-/* ADDONS */
+.banner{background:#2d2420;padding:14px 24px;text-align:center;}
+.banner .bt{font-size:.65rem;font-weight:700;color:#c8a878;letter-spacing:3px;text-transform:uppercase;margin-bottom:4px;}
+.banner h3{font-size:1rem;font-weight:600;color:#fff;margin-bottom:2px;}
+.banner p{font-size:.75rem;color:#a09080;}
+
+.content{padding:20px 20px 0;}
+
+.contact-box{background:#fff;border-radius:16px;padding:18px 20px;margin-bottom:14px;border:1px solid #ede5d8;}
+.stitle{font-size:.68rem;font-weight:700;color:#b0a090;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;}
+.contact-box .row div{font-size:.83rem;color:#6a5848;line-height:2.1;}
+.contact-box a{color:#a07850;font-weight:600;text-decoration:none;}
+.cnote{margin-top:10px;background:#fdf7f0;border-radius:8px;padding:8px 12px;font-size:.75rem;color:#a07850;font-weight:500;}
+
+.tabs{display:flex;margin-bottom:16px;gap:10px;}
+.tab{flex:1;padding:14px 10px;border-radius:14px;font-size:.85rem;font-weight:700;border:2px solid transparent;cursor:pointer;font-family:'Jost',sans-serif;transition:all .25s;letter-spacing:.3px;}
+#tab-hair{background:#f7f0e8;color:#c4a882;border-color:#e8d8c4;}
+#tab-hair.on{background:linear-gradient(135deg,#a07850,#7a5535);color:#fff;border-color:transparent;box-shadow:0 6px 20px rgba(160,120,80,.35);}
+#tab-spa{background:#f0f5ee;color:#9ab090;border-color:#c8dcc0;}
+#tab-spa.on{background:linear-gradient(135deg,#7a9070,#4a6840);color:#fff;border-color:transparent;box-shadow:0 6px 20px rgba(122,144,112,.35);}
+
+.svc{border:1.5px solid #ede5d8;border-radius:14px;padding:14px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;background:#fdf9f5;transition:all .2s;}
+.svc:hover{border-color:#c4a882;background:#fff;box-shadow:0 3px 14px rgba(160,120,80,.1);}
+.svc.on{background:#3a3028;color:#fff;border-color:#3a3028;}
+.svc-name{font-size:.88rem;font-weight:600;margin-bottom:3px;}
+.svc-meta{font-size:.75rem;color:#b0a090;}
+.svc.on .svc-meta{color:#c0b0a0;}
+.svc-price{font-size:.95rem;font-weight:700;text-align:right;color:#a07850;}
+.svc.on .svc-price{color:#d4a870;}
+.svc-sub{font-size:.68rem;color:#c0b0a0;margin-top:1px;text-align:right;}
+.pkg-lbl{font-size:.68rem;color:#9c27b0;font-weight:700;margin-bottom:3px;}
+.save-pill{background:#dcfce7;color:#15803d;font-size:.62rem;font-weight:700;padding:2px 7px;border-radius:100px;margin-left:5px;}
+.orig-p{font-size:.68rem;text-decoration:line-through;color:#c0b0a0;text-align:right;}
+
 .adns{display:flex;flex-wrap:wrap;gap:8px;}
-.adn{display:inline-flex;align-items:center;gap:5px;padding:8px 16px;border-radius:100px;font-size:12px;font-weight:600;border:1.5px solid #e4e4e4;cursor:pointer;background:#fff;color:#555;}
-.adn:hover{border-color:#999;}
-.adn.on{background:#111;color:#fff;border-color:#111;}
+.adn{display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border-radius:100px;font-size:.75rem;font-weight:600;border:1.5px solid #e5ddd3;cursor:pointer;background:#fdf9f5;color:#7a6858;transition:all .2s;}
+.adn:hover{border-color:#c4a882;}
+.adn.on{background:#3a3028;color:#fff;border-color:#3a3028;}
 
-/* PRICE NOTICE */
-.pbox{background:#fffbeb;border:1.5px solid #fde68a;border-radius:16px;padding:14px 16px;margin-bottom:14px;}
-.pt{font-size:13px;font-weight:700;color:#d97706;margin-bottom:10px;}
+.pbox{background:#fffbeb;border:1.5px solid #fde68a;border-radius:14px;padding:13px 16px;margin-bottom:14px;}
+.pt{font-size:.8rem;font-weight:700;color:#d97706;margin-bottom:8px;}
 .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
-.pi{background:#fff;border-radius:10px;padding:8px 10px;border:1px solid #fde68a;}
-.pil{font-size:11px;color:#999;margin-bottom:2px;}
-.piv{font-size:13px;font-weight:700;}
+.pi{background:#fff;border-radius:8px;padding:8px 10px;border:1px solid #fde68a;}
+.pil{font-size:.68rem;color:#b0a090;margin-bottom:2px;}
+.piv{font-size:.82rem;font-weight:700;}
 
-/* CALENDAR */
-.cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
-.cal-nav button{background:#f5f5f5;border:none;border-radius:10px;width:36px;height:36px;cursor:pointer;font-size:16px;font-weight:700;}
-.cal-nav span{font-size:16px;font-weight:700;}
-.cal-head{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:4px;}
-.cal-dn{text-align:center;font-size:11px;font-weight:700;padding:4px 0;}
-.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;}
-.cd{text-align:center;padding:9px 2px;border-radius:11px;font-size:13px;font-weight:600;border:1.5px solid transparent;}
-.cd.hair{background:#eff6ff;color:#1d4ed8;border-color:#bfdbfe;cursor:pointer;}
-.cd.hair:hover{background:#dbeafe;}
-.cd.spa{background:#f0fdf4;color:#15803d;border-color:#bbf7d0;cursor:pointer;}
-.cd.spa:hover{background:#dcfce7;}
-.cd.off{background:#f9f9f9;color:#ddd;}
-.cd.sel{background:#111!important;color:#fff!important;border-color:#111!important;}
-.cal-legend{display:flex;gap:14px;margin-top:12px;flex-wrap:wrap;}
-.cal-legend span{font-size:11px;display:flex;align-items:center;gap:5px;font-weight:500;}
-.leg-h{width:10px;height:10px;border-radius:3px;background:#eff6ff;border:1px solid #bfdbfe;display:inline-block;}
-.leg-s{width:10px;height:10px;border-radius:3px;background:#f0fdf4;border:1px solid #bbf7d0;display:inline-block;}
+.nok{background:#f0fdf4;color:#166534;border:1px solid #bbf7d0;border-radius:12px;padding:11px 14px;font-size:.8rem;display:flex;gap:9px;margin-bottom:12px;}
+.nerr{background:#fef2f2;color:#991b1b;border:1px solid #fecaca;border-radius:12px;padding:11px 14px;font-size:.8rem;display:flex;gap:9px;margin-bottom:12px;}
+.ngray{background:#f9fafb;color:#374151;border:1px solid #e5e7eb;border-radius:12px;padding:11px 14px;font-size:.8rem;display:flex;gap:9px;margin-bottom:12px;}
 
-/* TIMES */
-.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:4px;}
-.tim{padding:12px;border-radius:14px;border:1.5px solid #ececec;background:#fafafa;cursor:pointer;text-align:center;font-size:13px;font-weight:600;}
-.tim:hover{border-color:#bbb;background:#fff;}
-.tim.on{background:#111;color:#fff;border-color:#111;}
+.book-btn{display:block;width:100%;padding:15px;border-radius:13px;border:none;font-family:'Jost',sans-serif;font-size:.88rem;font-weight:600;cursor:pointer;transition:all .25s;margin-top:6px;letter-spacing:.8px;text-transform:uppercase;}
+.book-btn:disabled{background:#e8e0d8;color:#c0b0a0;cursor:not-allowed;}
+.book-btn.hair{background:linear-gradient(135deg,#a07850,#7a5535);color:#fff;}
+.book-btn.hair:not(:disabled):hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(160,120,80,.3);}
+.book-btn.spa{background:linear-gradient(135deg,#7a9070,#4a6840);color:#fff;}
+.book-btn.spa:not(:disabled):hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(122,144,112,.3);}
+.hint{text-align:center;font-size:.72rem;color:#c0b0a0;margin-top:7px;letter-spacing:.5px;}
+
+.card{background:#fff;border-radius:18px;padding:20px;border:1px solid #ede5d8;margin-bottom:12px;}
 
 /* FORM */
 .fg{margin-bottom:13px;}
-.fg label{display:block;font-size:12px;font-weight:700;color:#555;margin-bottom:5px;}
-.req{color:#ef4444;}
-.fi{width:100%;height:48px;border:1.5px solid #e4e4e4;border-radius:13px;padding:0 14px;font-size:15px;font-family:inherit;color:#1a1a1a;background:#fafafa;}
-.fi:focus{outline:none;border-color:#111;background:#fff;}
+.fg label{display:block;font-size:.72rem;font-weight:700;color:#a09080;margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px;}
+.fi{width:100%;height:46px;border:1.5px solid #e5ddd3;border-radius:12px;padding:0 14px;font-size:.9rem;font-family:'Jost',sans-serif;color:#3a3028;background:#fdf9f5;}
+.fi:focus{outline:none;border-color:#a07850;background:#fff;}
 .fi.err{border-color:#ef4444!important;background:#fff5f5!important;}
-textarea.fi{height:80px;padding:12px 14px;resize:none;line-height:1.5;}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.ferr{color:#ef4444;font-size:12px;font-weight:600;margin-top:5px;}
+.ferr{color:#ef4444;font-size:.72rem;font-weight:600;margin-top:4px;display:none;}
+.req{color:#ef4444;}
+.chk{display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:.8rem;color:#6a5848;line-height:1.6;margin-bottom:14px;}
+.chk input{margin-top:2px;width:18px;height:18px;flex-shrink:0;accent-color:#3a3028;cursor:pointer;}
+.pwrap{position:relative;}
+.peye{position:absolute;right:13px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:1rem;}
 
-/* NOTICES */
-.nok{background:#f0fdf4;color:#166534;border:1px solid #bbf7d0;border-radius:13px;padding:12px 14px;font-size:13px;display:flex;gap:9px;margin-bottom:12px;align-items:flex-start;}
-.nerr{background:#fef2f2;color:#991b1b;border:1px solid #fecaca;border-radius:13px;padding:12px 14px;font-size:13px;display:flex;gap:9px;margin-bottom:12px;align-items:flex-start;}
-.nblue{background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;border-radius:13px;padding:12px 14px;font-size:13px;display:flex;gap:9px;margin-bottom:12px;align-items:flex-start;}
-.ngray{background:#f9fafb;color:#374151;border:1px solid #e5e7eb;border-radius:13px;padding:12px 14px;font-size:13px;display:flex;gap:9px;margin-bottom:12px;align-items:flex-start;}
-.namb{background:#fffbeb;color:#92400e;border:1px solid #fde68a;border-radius:13px;padding:12px 14px;font-size:13px;display:flex;gap:9px;margin-bottom:12px;align-items:flex-start;}
-.nlate{background:#fff7ed;color:#c2410c;border:1px solid #fed7aa;border-radius:13px;padding:12px 14px;font-size:13px;display:flex;gap:9px;margin-bottom:12px;align-items:flex-start;}
-
-/* CHECKBOX */
-.chk{display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:13px;color:#555;line-height:1.6;margin-bottom:14px;}
-.chk input{margin-top:2px;width:18px;height:18px;flex-shrink:0;accent-color:#111;cursor:pointer;}
-
-/* BUTTONS */
-.btn{width:100%;padding:15px;border-radius:15px;font-size:15px;font-weight:700;cursor:pointer;border:none;font-family:inherit;margin-top:8px;}
-.btn-blk{background:#111;color:#fff;}
-.btn-blk:hover{background:#333;}
-.btn-blk:disabled{background:#e0e0e0;color:#aaa;cursor:not-allowed;}
-.btn-out{background:#fff;color:#111;border:1.5px solid #e0e0e0;}
-.btn-out:hover{border-color:#999;}
+.pg{display:none;}.pg.on{display:block;}
 
 /* CONFIRM */
-.cico{width:72px;height:72px;background:#f0fdf4;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 16px;border:3px solid #bbf7d0;}
+.cico{width:64px;height:64px;background:#f0fdf4;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 14px;border:2px solid #bbf7d0;}
 .cgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;}
-.ci{background:#f9f9f9;border-radius:13px;padding:12px 14px;}
-.cil{font-size:11px;color:#999;margin-bottom:2px;font-weight:600;}
-.civ{font-size:14px;font-weight:700;}
-.sumbox{background:#f9f9f9;border-radius:14px;padding:14px;margin-bottom:12px;}
-.srow{display:flex;justify-content:space-between;font-size:14px;padding:4px 0;}
-.srow.tot{font-weight:700;border-top:1px solid #e8e8e8;margin-top:7px;padding-top:10px;font-size:15px;}
-.slbl{color:#777;}
+.ci{background:#f9f6f1;border-radius:12px;padding:11px 13px;}
+.cil{font-size:.68rem;color:#b0a090;margin-bottom:2px;font-weight:600;text-transform:uppercase;}
+.civ{font-size:.85rem;font-weight:700;}
+.sumbox{background:#f9f6f1;border-radius:12px;padding:14px;margin-bottom:12px;}
+.srow{display:flex;justify-content:space-between;font-size:.83rem;padding:4px 0;}
+.srow.tot{font-weight:700;border-top:1px solid #e8ddd0;margin-top:7px;padding-top:10px;font-size:.9rem;}
+.slbl{color:#a09080;}
 
-/* ADMIN LINK */
-.adminlnk{text-align:center;margin-top:24px;padding-top:20px;border-top:1px solid #e8e8e8;}
-.adminlnk button{background:#111;border:none;font-size:13px;color:#fff;cursor:pointer;font-family:inherit;padding:11px 28px;border-radius:100px;font-weight:700;display:inline-flex;align-items:center;gap:7px;}
-.adminlnk button:hover{background:#333;}
-
-/* MODALS */
-.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:100;align-items:center;justify-content:center;padding:16px;}
-.overlay.show{display:flex;}
-.modal{background:#fff;border-radius:24px;padding:26px;max-width:340px;width:100%;max-height:90vh;overflow-y:auto;}
-.modal h2{font-size:18px;font-weight:800;margin-bottom:4px;}
-.modal > p{font-size:13px;color:#777;margin-bottom:16px;}
+/* ADMIN */
+.adminlnk{text-align:center;margin-top:24px;padding-top:20px;border-top:1px solid #e8ddd0;}
+.adminlnk button{background:#3a3028;border:none;font-size:.8rem;color:#fff;cursor:pointer;font-family:'Jost',sans-serif;padding:10px 26px;border-radius:100px;font-weight:600;}
+.back-btn{background:none;border:none;font-size:.8rem;color:#a09080;cursor:pointer;margin-bottom:12px;font-family:'Jost',sans-serif;font-weight:600;}
 .sgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;}
-.sc{background:#f9f9f9;border-radius:13px;padding:13px;}
-.sv{font-size:22px;font-weight:800;margin-bottom:2px;}
-.sl{font-size:11px;color:#999;font-weight:600;}
-.bk{border:1.5px solid #ececec;border-radius:15px;padding:13px;margin-bottom:9px;background:#fafafa;}
+.sc{background:#f9f6f1;border-radius:12px;padding:13px;}
+.sv{font-size:1.4rem;font-weight:800;margin-bottom:2px;}
+.sl{font-size:.68rem;color:#b0a090;font-weight:600;text-transform:uppercase;}
+.bk{border:1.5px solid #ede5d8;border-radius:14px;padding:13px;margin-bottom:9px;background:#fdf9f5;}
 .bktop{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:7px;}
-.bkn{font-size:14px;font-weight:700;}
-.bks{font-size:12px;color:#999;margin-top:1px;}
-.badge{font-size:11px;font-weight:700;padding:4px 11px;border-radius:100px;white-space:nowrap;}
-.bc{background:#eff6ff;color:#1d4ed8;}
-.bd{background:#f0fdf4;color:#15803d;}
-.bn{background:#fef2f2;color:#991b1b;}
+.bkn{font-size:.88rem;font-weight:700;}
+.bks{font-size:.75rem;color:#b0a090;margin-top:1px;}
+.badge{font-size:.68rem;font-weight:700;padding:4px 11px;border-radius:100px;white-space:nowrap;}
+.bc{background:#eff6ff;color:#1d4ed8;}.bd{background:#f0fdf4;color:#15803d;}.bn{background:#fef2f2;color:#991b1b;}
 .bkacts{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px;}
-.ba{padding:7px 13px;border-radius:9px;font-size:12px;font-weight:700;cursor:pointer;border:1.5px solid;font-family:inherit;}
-.baco{background:#111;color:#fff;border-color:#111;}
+.ba{padding:7px 13px;border-radius:9px;font-size:.72rem;font-weight:700;cursor:pointer;border:1.5px solid;font-family:'Jost',sans-serif;}
+.baco{background:#3a3028;color:#fff;border-color:#3a3028;}
 .bans{background:#fef2f2;color:#991b1b;border-color:#fecaca;}
-.basm{background:#fff;color:#555;border-color:#e0e0e0;}
+.basm{background:#fff;color:#7a6858;border-color:#e0d8d0;}
+
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:100;align-items:center;justify-content:center;padding:16px;}
+.overlay.show{display:flex;}
+.modal{background:#fff;border-radius:22px;padding:24px;max-width:340px;width:100%;max-height:90vh;overflow-y:auto;}
+.modal h2{font-size:1.1rem;font-weight:700;margin-bottom:4px;}
+.modal > p{font-size:.8rem;color:#b0a090;margin-bottom:16px;}
 .tipgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px;}
-.tip{padding:13px;border-radius:13px;border:1.5px solid #ececec;background:#fafafa;cursor:pointer;text-align:center;}
-.tip:hover{border-color:#bbb;background:#fff;}
-.tip.on{background:#111;color:#fff;border-color:#111;}
-.tp{font-size:19px;font-weight:800;display:block;}
-.ta{font-size:12px;color:#aaa;display:block;margin-top:1px;}
-.tip.on .ta{color:#aaa;}
-.totbox{background:#111;color:#fff;border-radius:13px;padding:15px;display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
-.back-btn{background:none;border:none;font-size:13px;color:#999;cursor:pointer;margin-bottom:12px;font-family:inherit;font-weight:600;}
-.pwrap{position:relative;}
-.peye{position:absolute;right:13px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:16px;}
+.tip{padding:13px;border-radius:12px;border:1.5px solid #ede5d8;background:#fdf9f5;cursor:pointer;text-align:center;transition:all .2s;}
+.tip:hover{border-color:#c4a882;}
+.tip.on{background:#3a3028;color:#fff;border-color:#3a3028;}
+.tp{font-size:1.1rem;font-weight:800;display:block;}
+.ta{font-size:.72rem;color:#b0a090;display:block;margin-top:1px;}
+.tip.on .ta{color:#c0b0a0;}
+.totbox{background:#3a3028;color:#fff;border-radius:12px;padding:14px;display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
+.btn{width:100%;padding:14px;border-radius:13px;font-size:.88rem;font-weight:700;cursor:pointer;border:none;font-family:'Jost',sans-serif;margin-top:8px;}
+.btn-blk{background:#3a3028;color:#fff;}
+.btn-blk:hover{background:#5a4838;}
+.btn-blk:disabled{background:#e0d8d0;color:#b0a090;cursor:not-allowed;}
+.btn-out{background:#fff;color:#3a3028;border:1.5px solid #e0d8d0;}
+
+footer{background:#f2ece3;border-top:1px solid #e5ddd3;text-align:center;padding:24px;}
+footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="hdr">
-    <div class="logo">✂️ Hair by Chenny</div>
-    <h1>Book Your Appointment</h1>
-    <p>Premium Korean Hair & Head Spa · Fairfax, VA</p>
-    <div class="tags">
-      <span class="tag">✂️ Hair: Mon · Wed · Fri</span>
-      <span class="tag">🌿 Head Spa: Tue · Thu</span>
+
+<header>
+  <div>
+    <div class="logo">Hair by <span>Chenny</span></div>
+    <div class="tagline">Hair & Head Spa Studio</div>
+  </div>
+  <span style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#a07850">✦</span>
+</header>
+
+<div class="hero">
+  <h1>Book Your Appointment</h1>
+  <div class="hero-line"></div>
+  <p>Premium Korean Hair & Head Spa · Fairfax, VA</p>
+  <div class="tags">
+    <span class="tag">✂️ Hair: Mon · Wed · Fri</span>
+    <span class="tag">🌿 Head Spa: Tue · Thu</span>
+  </div>
+</div>
+
+<div class="banner">
+  <div class="bt">🎊 Grand Opening</div>
+  <h3>K-Head Spa Now Open!</h3>
+  <p>Experience premium Korean scalp care in Fairfax, VA</p>
+</div>
+
+<div class="content">
+<div style="height:16px;"></div>
+
+<div class="contact-box">
+  <div class="stitle">📍 Salon Info</div>
+  <div class="row">
+    <div>🏢 <strong>Sola Salon</strong> — University Mall, Fairfax</div>
+    <div>📌 10621 Braddock Road, Suite K, Studio #17, Fairfax, VA 22032</div>
+    <div>📞 <a href="tel:7034988836">703-498-8836</a></div>
+    <div>✉️ <a href="mailto:hairbychenny@gmail.com">hairbychenny@gmail.com</a></div>
+  </div>
+  <div class="cnote">💬 For questions or consultations, please call or email us directly.</div>
+</div>
+
+<div id="booking">
+
+  <!-- STEP 1: 서비스 선택 -->
+  <div class="pg on" id="p1">
+    <div class="tabs">
+      <button class="tab on" id="tab-hair" onclick="switchTab('hair')">✂️ Hair Services</button>
+      <button class="tab" id="tab-spa" onclick="switchTab('spa')">🌿 K-Head Spa</button>
     </div>
-  </div>
 
-  <div class="banner">
-    <div class="bt">🎊 Grand Opening</div>
-    <h3>K-Head Spa Now Open!</h3>
-    <p>Experience premium Korean scalp care in Fairfax, VA</p>
-  </div>
-
-  <div class="contact-box">
-    <div class="stitle">📍 Salon Info</div>
-    <div class="row">
-      <div>🏢 <strong>Sola Salon</strong> — University Mall, Fairfax</div>
-      <div>📌 10621 Braddock Road, Suite K, Studio #17, Fairfax, VA 22032</div>
-      <div>📞 <a href="tel:7034988836">703-498-8836</a></div>
-      <div>✉️ <a href="mailto:hairbychenny@gmail.com">hairbychenny@gmail.com</a></div>
-    </div>
-    <div class="cnote">💬 For questions or consultations, please call or email us directly.</div>
-  </div>
-
-  <div id="booking">
-    <!-- P1 -->
-    <div class="pg on" id="p1">
+    <!-- HAIR -->
+    <div class="pg on" id="panel-hair">
       <div class="card">
-        <div class="stitle">1. Choose a Service</div>
-        <div class="seg" id="cattabs"></div>
-        <div id="svclist"></div>
-        <div style="border-top:1px solid #f0f0f0;margin-top:14px;padding-top:14px;">
+        <div class="stitle" style="margin-bottom:12px;">Select a Service</div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;" id="hair-cattabs"></div>
+        <div id="hair-svclist"></div>
+        <div style="border-top:1px solid #f0ebe4;margin-top:14px;padding-top:14px;">
           <div class="stitle" style="margin-bottom:10px;">Add-ons (optional)</div>
-          <div class="adns" id="adnlist"></div>
+          <div class="adns" id="hair-adnlist"></div>
         </div>
-      </div>
-      <button class="btn btn-blk" id="btn1" disabled onclick="goTo('p2')">Next — Pick Date & Time →</button>
-    </div>
-
-    <!-- P2 -->
-    <div class="pg" id="p2">
-      <div class="card">
-        <div class="stitle">2. Pick Date & Time</div>
-        <div class="pbox">
+        <div class="pbox" style="margin-top:14px;">
           <div class="pt">💡 Additional charges may apply</div>
           <div class="pgrid">
             <div class="pi"><div class="pil">✂️ Hair Length</div><div class="piv">+$25 up</div></div>
             <div class="pi"><div class="pil">🌀 Curl / Wave</div><div class="piv">+$25 up</div></div>
             <div class="pi"><div class="pil">💇 Thickness</div><div class="piv">+$25 up</div></div>
-            <div class="pi"><div class="pil">📋 Final price</div><div class="piv">Confirmed at shop</div></div>
+            <div class="pi"><div class="pil">📋 Final price</div><div class="piv">At shop</div></div>
           </div>
         </div>
-        <div id="calgrid"></div>
-        <div id="timesec"></div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;">
+          <div style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f7f0e8;color:#a07850;">Monday</div>
+          <div style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f0ebe4;color:#c0b0a0;">Tuesday</div>
+          <div style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f7f0e8;color:#a07850;">Wednesday</div>
+          <div style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f0ebe4;color:#c0b0a0;">Thursday</div>
+          <div style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f7f0e8;color:#a07850;">Friday</div>
+        </div>
       </div>
-      <button class="btn btn-blk" id="btn2" disabled onclick="goTo('p3')">Next — Your Info →</button>
-      <button class="btn btn-out" onclick="goTo('p1')">← Back</button>
+      <button class="book-btn hair" id="btn-hair" disabled onclick="goCard('hair')">Next — Card on File →</button>
+      <p class="hint" id="hint-hair">Please select a service above</p>
     </div>
 
-    <!-- P3 -->
-    <div class="pg" id="p3">
+    <!-- SPA -->
+    <div class="pg" id="panel-spa">
       <div class="card">
-        <div class="stitle">3. Your Information</div>
-        <div class="fg"><label>Full Name <span class="req">*</span></label><input class="fi" id="fn" placeholder="Your name" type="text"/></div>
-        <div class="fg"><label>Phone <span class="req">*</span></label><input class="fi" id="fp" placeholder="(703) 555-0000" type="tel"/></div>
-        <div class="fg"><label>Email</label><input class="fi" id="fe" placeholder="you@email.com" type="email"/></div>
-        <div class="fg"><label>Hair Length & Type <span style="color:#d97706;font-size:11px;font-weight:600;">(helps estimate final price)</span></label>
-          <input class="fi" id="fh" placeholder="e.g. Long, thick, curly..."/></div>
-        <div class="fg"><label>Notes (optional)</label><textarea class="fi" id="fo" placeholder="Scalp concerns, allergies, inspiration photos..."></textarea></div>
-        <div class="nblue"><span>💬</span><span>Confirmation text sent to your phone after booking.</span></div>
+        <div class="stitle" style="margin-bottom:12px;">Select Duration</div>
+        <div id="spa-svclist"></div>
+        <div style="border-top:1px solid #f0ebe4;margin-top:14px;padding-top:14px;">
+          <div class="stitle" style="margin-bottom:10px;">Add-ons (optional)</div>
+          <div class="adns" id="spa-adnlist"></div>
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:14px;">
+          <div style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f0ebe4;color:#c0b0a0;">Monday</div>
+          <div style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f0f5ee;color:#7a9070;">Tuesday</div>
+          <div style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f0ebe4;color:#c0b0a0;">Wednesday</div>
+          <div style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f0f5ee;color:#7a9070;">Thursday</div>
+          <div style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f0ebe4;color:#c0b0a0;">Friday</div>
+        </div>
+        <div style="font-size:.72rem;color:#b0a090;margin-top:6px;">Scalp scaling included with all sessions</div>
       </div>
-      <button class="btn btn-blk" onclick="doStep3()">Next — Card on File →</button>
-      <button class="btn btn-out" onclick="goTo('p2')">← Back</button>
+      <button class="book-btn spa" id="btn-spa" disabled onclick="goCard('spa')">Next — Card on File →</button>
+      <p class="hint" id="hint-spa">Please select a duration above</p>
     </div>
+  </div>
 
-    <!-- P4 -->
-    <div class="pg" id="p4">
-      <div class="card">
-        <div class="stitle">4. Card on File</div>
-        <div class="nok"><span>✅</span><div><strong>No charge today</strong><br/><span id="totnotice" style="font-size:12px;color:#166534;"></span></div></div>
-        <div class="nerr"><span>⚠️</span><div><strong>No-Show Policy</strong><br/>Cancel 24hrs in advance. No-show or late cancel = <strong>$50 fee</strong>.</div></div>
+  <!-- STEP 2: 카드 정보 -->
+  <div class="pg" id="p2">
+    <div class="card">
+      <div class="stitle" style="margin-bottom:4px;">Card on File</div>
+      <p style="font-size:.75rem;color:#b0a090;margin-bottom:14px;" id="p2-svc-label"></p>
+      <div class="nok"><span>✅</span><div><strong>No charge today</strong><br/><span style="font-size:.72rem;color:#166534;" id="totnotice"></span></div></div>
+      <div class="nerr"><span>⚠️</span><div><strong>No-Show Policy</strong><br/>Cancel 24hrs in advance. No-show or late cancel = <strong>$50 fee</strong>.</div></div>
+      <div class="fg">
+        <label>Card Number</label>
+        <input class="fi" id="cnum" placeholder="4242 4242 4242 4242" maxlength="19" style="font-family:monospace;letter-spacing:2px;" oninput="fmtCN(this)"/>
+        <p class="ferr" id="err-cnum"></p>
+      </div>
+      <div class="two">
         <div class="fg">
-          <label>Card Number</label>
-          <input class="fi" id="cnum" placeholder="4242 4242 4242 4242" maxlength="19" style="font-family:monospace;letter-spacing:2px;" oninput="fmtCN(this)"/>
-          <p class="ferr" id="err-cnum" style="display:none;"></p>
+          <label>Expiry (MM/YY)</label>
+          <input class="fi" id="cexp" placeholder="12/26" maxlength="5" style="font-family:monospace;" oninput="fmtEX(this)"/>
+          <p class="ferr" id="err-cexp"></p>
         </div>
-        <div class="two">
-          <div class="fg">
-            <label>Expiry (MM/YY)</label>
-            <input class="fi" id="cexp" placeholder="12/26" maxlength="5" style="font-family:monospace;" oninput="fmtEX(this)"/>
-            <p class="ferr" id="err-cexp" style="display:none;"></p>
-          </div>
-          <div class="fg">
-            <label>CVC</label>
-            <input class="fi" id="ccvc" placeholder="123" maxlength="4" style="font-family:monospace;" oninput="this.value=this.value.replace(/\D/g,'').slice(0,4)"/>
-            <p class="ferr" id="err-ccvc" style="display:none;"></p>
-          </div>
+        <div class="fg">
+          <label>CVC</label>
+          <input class="fi" id="ccvc" placeholder="123" maxlength="4" style="font-family:monospace;" oninput="this.value=this.value.replace(/\D/g,'').slice(0,4)"/>
+          <p class="ferr" id="err-ccvc"></p>
         </div>
-        <div class="ngray"><span>🔒</span><span>Encrypted via Stripe. No charge until service is complete at the shop.</span></div>
-        <label class="chk"><input type="checkbox" id="cagr"/><span>I agree to the no-show policy. A <strong>$50 fee</strong> will only be charged if I miss my appointment without 24-hour notice.</span></label>
-        <p class="ferr" id="err-cagr" style="display:none;"></p>
       </div>
-      <button class="btn btn-blk" onclick="doConfirm()">✓ Confirm Booking</button>
-      <button class="btn btn-out" onclick="goTo('p3')">← Back</button>
+      <div class="ngray"><span>🔒</span><span>Encrypted & secure. Card only charged for no-show without 24hr notice.</span></div>
+      <label class="chk"><input type="checkbox" id="cagr"/><span>I agree to the no-show policy. A <strong>$50 fee</strong> will be charged if I miss without 24-hour notice.</span></label>
+      <p class="ferr" id="err-cagr"></p>
     </div>
-
-    <!-- P5 -->
-    <div class="pg" id="p5">
-      <div class="card" style="text-align:center;">
-        <div class="cico">🎉</div>
-        <h2 style="font-size:22px;font-weight:800;margin-bottom:6px;">Booking Confirmed!</h2>
-        <p id="csub" style="color:#888;font-size:14px;margin-bottom:18px;"></p>
-        <div class="cgrid" id="cgrid"></div>
-        <div class="sumbox" id="csum"></div>
-        <div class="nerr" style="text-align:left;"><span>🔒</span><span id="ccard" style="font-size:12px;"></span></div>
-        <div class="nlate" style="text-align:left;"><span>⏰</span><div style="font-size:12px;"><strong>Late Arrival Policy</strong><br/>If you arrive <strong>15+ minutes late</strong>, a <strong>$20 credit</strong> will be given to the next waiting client. Please text us if running late.</div></div>
-      </div>
-      <button class="btn btn-blk" onclick="doReset()">Book Another Appointment</button>
-    </div>
-
-    <div class="adminlnk"><button onclick="openLogin()">🔒 Admin Login</button></div>
+    <button class="book-btn hair" onclick="doConfirm()" style="background:linear-gradient(135deg,#a07850,#7a5535);">✓ Confirm & Select Date on Calendly →</button>
+    <button class="btn btn-out" style="margin-top:8px;" onclick="goTo('p1')">← Back</button>
   </div>
 
-  <div id="admin" style="display:none;">
-    <button class="back-btn" onclick="closeAdmin()">← Back to Booking</button>
-    <div class="card" id="admindash"></div>
+  <!-- STEP 3: 완료 -->
+  <div class="pg" id="p3">
+    <div class="card" style="text-align:center;">
+      <div class="cico">🎉</div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;margin-bottom:6px;">Card Saved!</h2>
+      <p style="color:#b0a090;font-size:.8rem;margin-bottom:18px;">Calendly가 새 탭에서 열렸어요 — 날짜와 시간을 선택해주세요 📅</p>
+      <div class="cgrid" id="cgrid"></div>
+      <div class="sumbox" id="csum"></div>
+      <div class="nerr" style="text-align:left;"><span>🔒</span><span id="ccard" style="font-size:.75rem;"></span></div>
+      <div style="background:#f0f5ee;border:1px solid #c8dcc0;border-radius:12px;padding:12px 14px;font-size:.8rem;color:#4a6840;display:flex;gap:9px;text-align:left;">
+        <span>📅</span><span>Calendly 탭을 닫으면 이 페이지로 돌아와요. 예약이 완료되면 이메일로 확인서가 발송돼요!</span>
+      </div>
+    </div>
+    <button class="book-btn hair" onclick="reopenCalendly()" style="background:linear-gradient(135deg,#a07850,#7a5535);margin-top:4px;">📅 Calendly 다시 열기</button>
+    <button class="btn btn-out" style="margin-top:8px;" onclick="doReset()">← 처음으로</button>
   </div>
+
+  <div class="adminlnk"><button onclick="openLogin()">🔒 Admin Login</button></div>
+</div>
+
+<div id="admin" style="display:none;">
+  <button class="back-btn" onclick="closeAdmin()">← Back to Booking</button>
+  <div class="card" id="admindash"></div>
+</div>
+</div>
+
+<footer>
+  <p>📍 10621 Braddock Road, Suite K, Studio #17, Fairfax VA 22032</p>
+  <p style="margin-top:4px;">© 2025 Hair by Chenny · All rights reserved</p>
+</footer>
 </div>
 
 <!-- LOGIN MODAL -->
 <div class="overlay" id="mlogin">
   <div class="modal">
     <div style="text-align:center;margin-bottom:16px;">
-      <div style="font-size:32px;margin-bottom:8px;">🔒</div>
+      <div style="font-size:2rem;margin-bottom:8px;">🔒</div>
       <h2>Admin Access</h2>
       <p>Hair by Chenny · Owner Only</p>
     </div>
     <div class="fg">
-      <label style="font-size:12px;font-weight:700;color:#555;display:block;margin-bottom:5px;">Password</label>
+      <label style="font-size:.72rem;font-weight:700;color:#a09080;display:block;margin-bottom:5px;text-transform:uppercase;">Password</label>
       <div class="pwrap">
         <input type="password" id="pwi" class="fi" placeholder="Enter password" onkeydown="if(event.key==='Enter')doLogin()"/>
         <button class="peye" onclick="togglePw()">👁</button>
       </div>
-      <p id="pwerr" style="color:#ef4444;font-size:12px;margin-top:5px;display:none;">❌ Incorrect password.</p>
-      <p style="font-size:11px;color:#bbb;margin-top:5px;">Demo: chenny2026</p>
+      <p id="pwerr" style="color:#dc2626;font-size:.72rem;margin-top:5px;display:none;">❌ Incorrect password.</p>
+      <p style="font-size:.68rem;color:#c0b0a0;margin-top:5px;">Demo: chenny2026</p>
     </div>
     <button class="btn btn-blk" onclick="doLogin()">Log In</button>
     <button class="btn btn-out" onclick="closeModal('mlogin')">Cancel</button>
@@ -326,11 +345,11 @@ textarea.fi{height:80px;padding:12px 14px;resize:none;line-height:1.5;}
 <div class="overlay" id="mco">
   <div class="modal">
     <h2>💰 In-Shop Checkout</h2>
-    <p>Tip is based on the full service total</p>
+    <p>Tip based on full service total</p>
     <div class="sumbox" id="cosum"></div>
     <div class="stitle" style="margin-bottom:8px;">Select Tip</div>
     <div class="tipgrid" id="cotips"></div>
-    <div class="totbox"><span style="color:#aaa;font-size:14px;">Total to charge</span><strong style="font-size:21px;" id="cotot">Select tip</strong></div>
+    <div class="totbox"><span style="color:#c0b0a0;font-size:.83rem;">Total to charge</span><strong style="font-size:1.3rem;" id="cotot">Select tip</strong></div>
     <button class="btn btn-blk" id="cobtn" disabled onclick="doCheckout()">Confirm Payment</button>
     <button class="btn btn-out" onclick="closeModal('mco')">Cancel</button>
   </div>
@@ -341,384 +360,236 @@ textarea.fi{height:80px;padding:12px 14px;resize:none;line-height:1.5;}
   <div class="modal">
     <h2>⚠️ Mark as No-Show?</h2>
     <p>$50 will be charged to the client's card on file.</p>
-    <div style="background:#fef2f2;border:1px solid #fecaca;border-radius:12px;padding:12px 14px;font-size:13px;color:#991b1b;display:flex;justify-content:space-between;margin-bottom:16px;" id="nsinfo"></div>
+    <div style="background:#fef2f2;border:1px solid #fecaca;border-radius:12px;padding:12px 14px;font-size:.8rem;color:#991b1b;display:flex;justify-content:space-between;margin-bottom:16px;" id="nsinfo"></div>
     <button class="btn btn-blk" style="background:#dc2626;" onclick="doNS()">Charge $50.00</button>
     <button class="btn btn-out" onclick="closeModal('mns')">Cancel</button>
   </div>
 </div>
 
 <script>
-var SVCS = {
+var HAIR_CATS={
   "⭐ Quick Pick":[
-    {id:"sig",name:"Chenny's Signature Cut",mins:45,price:68,days:"Mon·Wed·Fri"},
-    {id:"cc",name:"Color & Cut Combo",mins:150,price:194,days:"Mon·Wed·Fri"},
-    {id:"mt",name:"Men's Texture Cut",mins:35,price:48,days:"Mon·Wed·Fri"}
-  ],
-  "🌿 K-Head Spa":[
-    {id:"s30",name:"K-Scalp Detox 30",mins:30,price:70,days:"Tue·Thu"},
-    {id:"s50",name:"K-Scalp Deep Care 50",mins:50,price:100,days:"Tue·Thu"},
-    {id:"s80",name:"K-Head Spa Full 80",mins:80,price:130,days:"Tue·Thu"},
-    {id:"pk1",name:"📦 5-Session — Scalp Detox 30",mins:30,price:300,days:"Tue·Thu",pkg:true,orig:350},
-    {id:"pk2",name:"📦 5-Session — Deep Care 50",mins:50,price:450,days:"Tue·Thu",pkg:true,orig:500},
-    {id:"pk3",name:"📦 5-Session — Full Spa 80",mins:80,price:650,days:"Tue·Thu",pkg:true,orig:650}
+    {id:"sig",name:"Chenny's Signature Cut",mins:45,price:68},
+    {id:"cc",name:"Color & Cut Combo",mins:150,price:194},
+    {id:"mt",name:"Men's Texture Cut",mins:35,price:48}
   ],
   "✂️ Color & Perm":[
-    {id:"fc",name:"Full Color + Toner",mins:150,price:185,days:"Mon·Wed·Fri"},
-    {id:"rg",name:"Root Touch-Up + Gloss",mins:120,price:155,days:"Mon·Wed·Fri"},
-    {id:"dp",name:"Korean Digital Perm",mins:180,price:250,days:"Mon·Wed·Fri"},
-    {id:"rp",name:"Regular Perm",mins:120,price:165,days:"Mon·Wed·Fri"},
-    {id:"rvp",name:"Root Volume Perm",mins:90,price:105,days:"Mon·Wed·Fri"},
-    {id:"mpe",name:"Men's Perm Package",mins:120,price:177,days:"Mon·Wed·Fri"},
-    {id:"bt",name:"Bleach & Tone",mins:180,price:220,days:"Mon·Wed·Fri"},
-    {id:"rct",name:"Recovery Treatment (Keratin-like)",mins:120,price:200,days:"Mon·Wed·Fri"}
+    {id:"fc",name:"Full Color + Toner",mins:150,price:185},
+    {id:"rg",name:"Root Touch-Up + Gloss",mins:120,price:155},
+    {id:"dp",name:"Korean Digital Perm",mins:180,price:250},
+    {id:"rp",name:"Regular Perm",mins:120,price:165},
+    {id:"rvp",name:"Root Volume Perm",mins:90,price:105},
+    {id:"mpe",name:"Men's Perm Package",mins:120,price:177},
+    {id:"bt",name:"Bleach & Tone",mins:180,price:220},
+    {id:"rct",name:"Recovery Treatment",mins:120,price:200}
   ],
   "👨 Men's":[
-    {id:"mc",name:"Men's Haircut",mins:45,price:48,days:"Mon·Wed·Fri"},
-    {id:"mcol",name:"Men's Color",mins:45,price:85,days:"Mon·Wed·Fri"},
-    {id:"msp",name:"Men's Cut + Scalp + Head Spa",mins:75,price:135,days:"Mon·Wed·Fri"}
+    {id:"mc",name:"Men's Haircut",mins:45,price:48},
+    {id:"mcol",name:"Men's Color",mins:45,price:85},
+    {id:"msp",name:"Men's Cut + Scalp + Head Spa",mins:75,price:135}
   ]
 };
-
-var ADDONS = [
+var SPA_SVCS=[
+  {id:"s30",name:"K-Scalp Detox 30",mins:30,price:70,desc:"Express scalp care"},
+  {id:"s50",name:"K-Scalp Deep Care 50",mins:50,price:100,desc:"Signature head spa"},
+  {id:"s80",name:"K-Head Spa Full 80",mins:80,price:130,desc:"Full deep treatment"},
+  {id:"pk1",name:"📦 5-Session — Scalp Detox 30",mins:30,price:300,pkg:true,orig:350,desc:"5 sessions · Use anytime"},
+  {id:"pk2",name:"📦 5-Session — Deep Care 50",mins:50,price:450,pkg:true,orig:500,desc:"5 sessions · Use anytime"},
+  {id:"pk3",name:"📦 5-Session — Full Spa 80",mins:80,price:600,pkg:true,orig:650,desc:"5 sessions · Use anytime"}
+];
+var ADDONS=[
   {id:"amp",name:"Scalp Care Ampoule",price:45},
   {id:"trt",name:"Hair Treatment",price:40},
   {id:"blo",name:"Blowdry Add-on",price:35},
-  {id:"adp",name:"Down Perm",price:55},
-  {id:"arp",name:"Root Volume Perm",price:105}
+  {id:"adp",name:"Down Perm",price:55}
 ];
+function fmt(n){return"$"+Number(n).toFixed(2);}
+function allSvcs(){var r=[];Object.keys(HAIR_CATS).forEach(function(k){HAIR_CATS[k].forEach(function(s){r.push(s);});});SPA_SVCS.forEach(function(s){r.push(s);});return r;}
 
-var SLOTS = {
-  Monday:["10:00 AM","11:00 AM","12:30 PM","2:00 PM","3:30 PM"],
-  Wednesday:["10:00 AM","11:15 AM","12:30 PM","2:00 PM","3:30 PM","5:00 PM"],
-  Friday:["10:00 AM","11:00 AM","12:15 PM","1:45 PM","3:15 PM","4:45 PM"],
-  Tuesday:["10:00 AM","11:30 AM","1:00 PM","2:30 PM","4:00 PM"],
-  Thursday:["10:00 AM","11:30 AM","1:00 PM","2:30 PM","4:00 PM"]
-};
-
-var DNAMES = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-var MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-
-function fmt(n){ return "$" + Number(n).toFixed(2); }
-function allS(){ var r=[]; Object.keys(SVCS).forEach(function(k){ SVCS[k].forEach(function(s){ r.push(s); }); }); return r; }
-
-var selCat = "⭐ Quick Pick";
-var selSvc = null;
-var selAddons = [];
-var selDate = "";
-var selTime = "";
-var calY, calM;
-var coTarget = null;
-var nsTarget = null;
-var tipPct = null;
-
-var bookings = [
+var selHairCat="⭐ Quick Pick",selHair=null,selSpa=null,selAddons=[],curType="hair",calendlyUrl="";
+var coTarget=null,nsTarget=null,tipPct=null;
+var bookings=[
   {id:1,name:"Sarah Kim",phone:"(703)555-0101",service:"Color & Cut Combo",time:"10:00 AM",price:194,status:"confirmed",card:"4242"},
   {id:2,name:"Jennifer P.",phone:"(571)555-0202",service:"K-Scalp Deep Care 50",time:"11:30 AM",price:100,status:"confirmed",card:"1234"},
   {id:3,name:"Mike Lee",phone:"(703)555-0303",service:"Men's Texture Cut",time:"12:30 PM",price:48,status:"completed",card:"5678"}
 ];
 
 function goTo(p){
-  document.querySelectorAll(".pg").forEach(function(x){ x.classList.remove("on"); });
+  document.querySelectorAll("#booking > .pg").forEach(function(x){x.classList.remove("on");});
   document.getElementById(p).classList.add("on");
   window.scrollTo(0,0);
 }
 
-function closeModal(id){ document.getElementById(id).classList.remove("show"); }
-function openLogin(){ document.getElementById("mlogin").classList.add("show"); }
-function togglePw(){ var i=document.getElementById("pwi"); i.type = i.type==="password"?"text":"password"; }
+function initHair(){
+  var cats=Object.keys(HAIR_CATS);
+  document.getElementById("hair-cattabs").innerHTML=cats.map(function(c){
+    return'<button style="padding:6px 14px;border-radius:100px;font-size:.72rem;font-weight:600;border:1.5px solid '+(c===selHairCat?"#a07850":"#e5ddd3")+';background:'+(c===selHairCat?"#f7f0e8":"#fff")+';color:'+(c===selHairCat?"#a07850":"#a09080")+';cursor:pointer;font-family:Jost,sans-serif;" onclick="setHairCat(this)">'+c+'</button>';
+  }).join("");
+  document.getElementById("hair-svclist").innerHTML=HAIR_CATS[selHairCat].map(function(s){
+    return'<div class="svc'+(selHair===s.id?" on":"")+'" data-id="'+s.id+'" onclick="setSvc(this,\'hair\')">'+
+      '<div><div class="svc-name">'+s.name+'</div><div class="svc-meta">⏱ '+s.mins+'min · Mon·Wed·Fri</div></div>'+
+      '<div style="text-align:right;flex-shrink:0;margin-left:12px;"><div class="svc-price">'+fmt(s.price)+'</div><div class="svc-sub">starting price</div></div></div>';
+  }).join("");
+  document.getElementById("hair-adnlist").innerHTML=ADDONS.map(function(a){
+    var on=selAddons.indexOf(a.id)>=0;
+    return'<div class="adn'+(on?" on":"")+'" data-id="'+a.id+'" onclick="togAddon(this)">'+(on?"✓ ":"+ ")+a.name+' ('+fmt(a.price)+')</div>';
+  }).join("");
+  document.getElementById("btn-hair").disabled=!selHair;
+  document.getElementById("hint-hair").style.display=selHair?"none":"block";
+}
 
+function initSpa(){
+  document.getElementById("spa-svclist").innerHTML=SPA_SVCS.map(function(s){
+    var hasSave=s.pkg&&s.orig>s.price;
+    return'<div class="svc'+(selSpa===s.id?" on":"")+'" data-id="'+s.id+'" onclick="setSvc(this,\'spa\')"'+(s.pkg?' style="border-color:#e9d5ff;"':'')+'>'+
+      '<div>'+(s.pkg?'<div class="pkg-lbl">Package · Pay once, use anytime</div>':'')+
+      '<div class="svc-name">'+s.name+(hasSave?'<span class="save-pill">Save '+fmt(s.orig-s.price)+'</span>':'')+
+      '</div><div class="svc-meta">⏱ '+s.mins+'min · '+s.desc+'</div></div>'+
+      '<div style="text-align:right;flex-shrink:0;margin-left:12px;">'+
+      (hasSave?'<div class="orig-p">'+fmt(s.orig)+'</div>':'')+
+      '<div class="svc-price">'+fmt(s.price)+'</div>'+
+      '<div class="svc-sub">'+(s.pkg?"package":"starting")+' price</div></div></div>';
+  }).join("");
+  document.getElementById("spa-adnlist").innerHTML=ADDONS.map(function(a){
+    var on=selAddons.indexOf(a.id)>=0;
+    return'<div class="adn'+(on?" on":"")+'" data-id="'+a.id+'" onclick="togAddon(this)">'+(on?"✓ ":"+ ")+a.name+' ('+fmt(a.price)+')</div>';
+  }).join("");
+  document.getElementById("btn-spa").disabled=!selSpa;
+  document.getElementById("hint-spa").style.display=selSpa?"none":"block";
+}
+
+function setHairCat(el){selHairCat=el.textContent;initHair();}
+function setSvc(el,type){if(type==="hair")selHair=el.dataset.id;else selSpa=el.dataset.id;if(type==="hair")initHair();else initSpa();}
+function togAddon(el){var id=el.dataset.id,idx=selAddons.indexOf(id);if(idx>=0)selAddons.splice(idx,1);else selAddons.push(id);initHair();initSpa();}
+function switchTab(type){
+  curType=type;
+  document.getElementById("panel-hair").className="pg"+(type==="hair"?" on":"");
+  document.getElementById("panel-spa").className="pg"+(type==="spa"?" on":"");
+  document.getElementById("tab-hair").className="tab"+(type==="hair"?" on":"");
+  document.getElementById("tab-spa").className="tab"+(type==="spa"?" on":"");
+}
+
+function goCard(type){
+  curType=type;
+  var selId=type==="hair"?selHair:selSpa;
+  var svc=allSvcs().find(function(s){return s.id===selId;});
+  var at=0;selAddons.forEach(function(id){var a=ADDONS.find(function(x){return x.id===id;});if(a)at+=a.price;});
+  document.getElementById("p2-svc-label").textContent="Service: "+svc.name+" · "+fmt(svc.price+(at||0));
+  document.getElementById("totnotice").textContent="Full payment of "+fmt(svc.price+at)+"+ collected at the shop.";
+  goTo("p2");
+}
+
+function fmtCN(el){el.value=el.value.replace(/\D/g,"").slice(0,16).replace(/(.{4})/g,"$1 ").trim();}
+function fmtEX(el){var d=el.value.replace(/\D/g,"").slice(0,4);el.value=d.length>2?d.slice(0,2)+"/"+d.slice(2):d;}
+function clearErrs(){["cnum","cexp","ccvc"].forEach(function(id){var el=document.getElementById(id);if(el)el.classList.remove("err");var ep=document.getElementById("err-"+id);if(ep)ep.style.display="none";});document.getElementById("err-cagr").style.display="none";}
+function showErr(id,msg){document.getElementById(id).classList.add("err");var ep=document.getElementById("err-"+id);ep.textContent="❌ "+msg;ep.style.display="block";}
+function luhn(n){var s=0;for(var i=0;i<n.length;i++){var d=parseInt(n[n.length-1-i]);if(i%2===1){d*=2;if(d>9)d-=9;}s+=d;}return s%10===0;}
+
+function doConfirm(){
+  clearErrs();
+  var cn=document.getElementById("cnum").value.replace(/\s/g,"");
+  var ce=document.getElementById("cexp").value.trim();
+  var cv=document.getElementById("ccvc").value.trim();
+  var agreed=document.getElementById("cagr").checked;
+  if(cn.length!==16||!/^\d{16}$/.test(cn)){showErr("cnum","Card number must be 16 digits.");return;}
+  if(!luhn(cn)){showErr("cnum","Invalid card number.");return;}
+  if(!/^\d{2}\/\d{2}$/.test(ce)){showErr("cexp","Enter expiry as MM/YY");return;}
+  var em=parseInt(ce.slice(0,2)),ey=parseInt(ce.slice(3));
+  if(em<1||em>12){showErr("cexp","Invalid month.");return;}
+  var now=new Date(),exp=new Date(2000+ey,em-1,1),thisM=new Date(now.getFullYear(),now.getMonth(),1);
+  if(exp<thisM){showErr("cexp","Card has expired.");return;}
+  if(!/^\d{3,4}$/.test(cv)){showErr("ccvc","CVC must be 3-4 digits.");return;}
+  if(!agreed){document.getElementById("err-cagr").textContent="❌ Please agree to the no-show policy.";document.getElementById("err-cagr").style.display="block";return;}
+
+  var selId=curType==="hair"?selHair:selSpa;
+  var svc=allSvcs().find(function(s){return s.id===selId;});
+  var at=0;selAddons.forEach(function(id){var a=ADDONS.find(function(x){return x.id===id;});if(a)at+=a.price;});
+  var total=svc.price+at;
+  var last4=cn.slice(-4);
+
+  bookings.unshift({id:Date.now(),name:"New Client",phone:"—",service:svc.name,time:"TBD",price:total,status:"confirmed",card:last4});
+
+  document.getElementById("cgrid").innerHTML=[["Service",svc.name],["Price",fmt(total)+(at?(" incl. add-ons"):"")],["Card","•••• "+last4],["Status","Card Saved ✓"]].map(function(p){
+    return'<div class="ci"><div class="cil">'+p[0]+'</div><div class="civ">'+p[1]+'</div></div>';
+  }).join("");
+  document.getElementById("csum").innerHTML=
+    '<div class="srow"><span class="slbl">'+svc.name+'</span><span>'+fmt(svc.price)+'</span></div>'+
+    (at?'<div class="srow"><span class="slbl">Add-ons</span><span>'+fmt(at)+'</span></div>':'')+
+    '<div class="srow" style="color:#d97706;font-size:.72rem;"><span class="slbl">Final price may vary</span><span>+$25 up</span></div>'+
+    '<div class="srow tot"><span>Pay at shop after service</span><span>'+fmt(total)+'+</span></div>';
+  document.getElementById("ccard").textContent="Card •••• "+last4+" saved · $50 no-show fee if missed without 24hr notice";
+
+  goTo("p3");
+
+  // Calendly 새 탭으로 열기
+  calendlyUrl=curType==="hair"
+    ?"https://calendly.com/hairbychenny/30min"
+    :"https://calendly.com/hairbychenny/head-spa-appointment-tue-thur";
+  window.open(calendlyUrl,"_blank");
+}
+
+function reopenCalendly(){window.open(calendlyUrl,"_blank");}
+
+function doReset(){
+  selHair=null;selSpa=null;selAddons=[];curType="hair";calendlyUrl="";
+  ["cnum","cexp","ccvc"].forEach(function(id){var e=document.getElementById(id);if(e)e.value="";});
+  var ag=document.getElementById("cagr");if(ag)ag.checked=false;
+  initHair();initSpa();switchTab("hair");goTo("p1");
+}
+
+function openLogin(){document.getElementById("mlogin").classList.add("show");}
+function closeModal(id){document.getElementById(id).classList.remove("show");}
+function togglePw(){var i=document.getElementById("pwi");i.type=i.type==="password"?"text":"password";}
 function doLogin(){
-  if(document.getElementById("pwi").value === "chenny2026"){
+  if(document.getElementById("pwi").value==="chenny2026"){
     closeModal("mlogin");
     document.getElementById("booking").style.display="none";
     document.getElementById("admin").style.display="block";
     renderAdmin();
-  } else {
-    document.getElementById("pwerr").style.display="block";
-    document.getElementById("pwi").value="";
-  }
+  }else{document.getElementById("pwerr").style.display="block";document.getElementById("pwi").value="";}
 }
-
-function closeAdmin(){
-  document.getElementById("booking").style.display="block";
-  document.getElementById("admin").style.display="none";
-}
-
-function initP1(){
-  var cats = Object.keys(SVCS);
-  document.getElementById("cattabs").innerHTML = cats.map(function(c){
-    return '<button class="'+(c===selCat?"on":"")+'" onclick="setCat(this)">'+c+'</button>';
-  }).join("");
-
-  document.getElementById("svclist").innerHTML = SVCS[selCat].map(function(s){
-    var hasSave = s.pkg && s.orig > s.price;
-    return '<div class="svc'+(selSvc===s.id?" on":"")+'" data-id="'+s.id+'" onclick="setSvc(this)"'+(s.pkg?' style="border-color:#e9d5ff;"':'')+'>'+
-      '<div class="svc-l">'+
-        (s.pkg?'<div class="pkg-lbl">5 sessions · Pay once, use anytime</div>':'')+
-        '<div class="svc-name">'+s.name+(hasSave?'<span class="save-pill">Save '+fmt(s.orig-s.price)+'</span>':'')+
-        '</div><div class="svc-meta">⏱ '+s.mins+'min · '+s.days+'</div>'+
-      '</div>'+
-      '<div style="text-align:right;flex-shrink:0;margin-left:12px;">'+
-        (hasSave?'<div class="orig-p">'+fmt(s.orig)+'</div>':'')+
-        '<div class="svc-price">'+fmt(s.price)+'</div>'+
-        '<div class="svc-sub">'+(s.pkg?"package":"starting")+' price</div>'+
-      '</div></div>';
-  }).join("");
-
-  document.getElementById("adnlist").innerHTML = ADDONS.map(function(a){
-    var on = selAddons.indexOf(a.id) >= 0;
-    return '<div class="adn'+(on?" on":"")+'" data-id="'+a.id+'" onclick="togAddon(this)">'+(on?"✓ ":"+ ")+a.name+' ('+fmt(a.price)+')</div>';
-  }).join("");
-
-  document.getElementById("btn1").disabled = !selSvc;
-}
-
-function setCat(el){ selCat = el.textContent; initP1(); }
-function setSvc(el){ selSvc = el.dataset.id; initP1(); }
-function togAddon(el){
-  var id = el.dataset.id;
-  var idx = selAddons.indexOf(id);
-  if(idx >= 0) selAddons.splice(idx,1); else selAddons.push(id);
-  initP1();
-}
-
-function initCal(){
-  var t = new Date();
-  calY = t.getFullYear();
-  calM = t.getMonth();
-  renderCal();
-}
-
-function renderCal(){
-  var today = new Date(); today.setHours(0,0,0,0);
-  var first = new Date(calY,calM,1).getDay();
-  var dim = new Date(calY,calM+1,0).getDate();
-  var h = '<div class="cal-nav"><button onclick="prevM()">‹</button><span>'+MONTHS[calM]+' '+calY+'</span><button onclick="nextM()">›</button></div>';
-  h += '<div class="cal-head">';
-  var dns = ["Su","Mo","Tu","We","Th","Fr","Sa"];
-  var dnc = ["#bbb","#1d4ed8","#15803d","#1d4ed8","#15803d","#1d4ed8","#bbb"];
-  for(var i=0;i<7;i++) h += '<div class="cal-dn" style="color:'+dnc[i]+'">'+dns[i]+'</div>';
-  h += '</div><div class="cal-grid">';
-  for(var i=0;i<first;i++) h += '<div></div>';
-  for(var d=1;d<=dim;d++){
-    var dt = new Date(calY,calM,d); dt.setHours(0,0,0,0);
-    var dow = dt.getDay();
-    var ds = calY+"-"+("0"+(calM+1)).slice(-2)+"-"+("0"+d).slice(-2);
-    var past = dt < today;
-    var isH = dow===1||dow===3||dow===5;
-    var isS = dow===2||dow===4;
-    var isSel = selDate===ds;
-    var cls = "cd ";
-    var click = "";
-    if(isSel) cls += "sel";
-    else if(past||(!isH&&!isS)) cls += "off";
-    else if(isH){ cls+="hair"; click='onclick="setDate(\''+ds+'\')"'; }
-    else if(isS){ cls+="spa"; click='onclick="setDate(\''+ds+'\')"'; }
-    h += '<div class="'+cls+'" '+click+'>'+d+'</div>';
-  }
-  h += '</div><div class="cal-legend"><span><span class="leg-h"></span><span style="color:#1d4ed8;">✂️ Hair Mon·Wed·Fri</span></span><span><span class="leg-s"></span><span style="color:#15803d;">🌿 Spa Tue·Thu</span></span></div>';
-  document.getElementById("calgrid").innerHTML = h;
-
-  var ts = document.getElementById("timesec");
-  if(selDate){
-    var dn = DNAMES[new Date(selDate+"T12:00:00").getDay()];
-    var slots = SLOTS[dn]||[];
-    var th = '<div class="stitle" style="margin-top:14px;margin-bottom:8px;">Times — '+dn+', '+selDate+'</div><div class="tgrid">';
-    slots.forEach(function(t){
-      th += '<button class="tim'+(selTime===t?" on":"")+'" onclick="setTime(this)">'+t+'</button>';
-    });
-    th += '</div>';
-    ts.innerHTML = th;
-  } else {
-    ts.innerHTML = '<div class="namb" style="margin-top:12px;"><span>📅</span><span>Select a date from the calendar above.</span></div>';
-  }
-  document.getElementById("btn2").disabled = !selTime;
-}
-
-function prevM(){ calM--; if(calM<0){calM=11;calY--;} renderCal(); }
-function nextM(){ calM++; if(calM>11){calM=0;calY++;} renderCal(); }
-function setDate(ds){ selDate=ds; selTime=""; renderCal(); }
-function setTime(el){ selTime=el.textContent.trim(); renderCal(); }
-
-function doStep3(){
-  var name = document.getElementById("fn").value.trim();
-  var phone = document.getElementById("fp").value.trim();
-  if(!name||!phone){ alert("Please enter your name and phone number."); return; }
-  var svc = allS().filter(function(s){ return s.id===selSvc; })[0];
-  var at = 0;
-  selAddons.forEach(function(id){ var a=ADDONS.filter(function(x){return x.id===id;})[0]; if(a)at+=a.price; });
-  document.getElementById("totnotice").textContent = "Full payment of "+fmt(svc.price+at)+"+ collected at the shop. Final price may vary by hair.";
-  goTo("p4");
-}
-
-function fmtCN(el){ el.value = el.value.replace(/\D/g,"").slice(0,16).replace(/(.{4})/g,"$1 ").trim(); }
-function fmtEX(el){ var d=el.value.replace(/\D/g,"").slice(0,4); el.value=d.length>2?d.slice(0,2)+"/"+d.slice(2):d; }
-
-function showErr(eid, msg){
-  var el = document.getElementById(eid);
-  el.classList.add("err");
-  var ep = document.getElementById("err-"+eid);
-  ep.textContent = "❌ " + msg;
-  ep.style.display = "block";
-  el.focus();
-}
-
-function clearErr(eid){
-  var el = document.getElementById(eid);
-  if(el) el.classList.remove("err");
-  var ep = document.getElementById("err-"+eid);
-  if(ep) ep.style.display="none";
-}
-
-function luhn(n){
-  var s=0;
-  for(var i=0;i<n.length;i++){
-    var d=parseInt(n[n.length-1-i]);
-    if(i%2===1){d*=2;if(d>9)d-=9;}
-    s+=d;
-  }
-  return s%10===0;
-}
-
-function doConfirm(){
-  clearErr("cnum"); clearErr("cexp"); clearErr("ccvc");
-  document.getElementById("err-cagr").style.display="none";
-
-  var cn = document.getElementById("cnum").value.replace(/\s/g,"");
-  var ce = document.getElementById("cexp").value.trim();
-  var cv = document.getElementById("ccvc").value.trim();
-  var agreed = document.getElementById("cagr").checked;
-
-  if(cn.length!==16||!/^\d{16}$/.test(cn)){
-    showErr("cnum","Card number must be 16 digits."); return;
-  }
-  if(!luhn(cn)){
-    showErr("cnum","Invalid card number. Please check your card."); return;
-  }
-  if(!/^\d{2}\/\d{2}$/.test(ce)){
-    showErr("cexp","Enter expiry as MM/YY e.g. 12/26"); return;
-  }
-  var em=parseInt(ce.slice(0,2),10);
-  var ey=parseInt(ce.slice(3),10);
-  if(em<1||em>12){
-    showErr("cexp","Invalid month. Must be 01–12."); return;
-  }
-  var nowDate = new Date();
-  var expDate = new Date(2000+ey, em-1, 1);
-  var thisMonth = new Date(nowDate.getFullYear(), nowDate.getMonth(), 1);
-  if(expDate < thisMonth){
-    showErr("cexp","This card has expired. Use a different card."); return;
-  }
-  if(!/^\d{3,4}$/.test(cv)){
-    showErr("ccvc","CVC must be 3 or 4 digits."); return;
-  }
-  if(!agreed){
-    document.getElementById("err-cagr").textContent = "❌ Please agree to the no-show policy.";
-    document.getElementById("err-cagr").style.display = "block";
-    return;
-  }
-
-  var name = document.getElementById("fn").value.trim();
-  var phone = document.getElementById("fp").value.trim();
-  var svc = allS().filter(function(s){ return s.id===selSvc; })[0];
-  var at = 0;
-  selAddons.forEach(function(id){ var a=ADDONS.filter(function(x){return x.id===id;})[0]; if(a)at+=a.price; });
-  var total = svc.price + at;
-  var last4 = cn.slice(-4);
-  var dn = DNAMES[new Date(selDate+"T12:00:00").getDay()];
-
-  bookings.unshift({id:Date.now(),name:name,phone:phone,service:svc.name,time:selTime,price:total,status:"confirmed",card:last4});
-
-  document.getElementById("csub").textContent = "Confirmation text sent to "+phone;
-  var pairs = [["Service",svc.name],["When",dn+" "+selDate+" · "+selTime],["Guest",name],["Contact",phone]];
-  document.getElementById("cgrid").innerHTML = pairs.map(function(p){
-    return '<div class="ci"><div class="cil">'+p[0]+'</div><div class="civ">'+p[1]+'</div></div>';
-  }).join("");
-  document.getElementById("csum").innerHTML =
-    '<div class="srow"><span class="slbl">Service starting price</span><span>'+fmt(total)+'</span></div>'+
-    '<div class="srow" style="color:#d97706;font-size:12px;"><span class="slbl">Final price may vary by hair</span><span>+$25 up</span></div>'+
-    '<div class="srow tot"><span>Pay at shop after service</span><span>'+fmt(total)+'+</span></div>';
-  document.getElementById("ccard").textContent = "Card •••• "+last4+" saved for no-show protection only · $50 fee if missed without 24hr notice";
-  goTo("p5");
-}
-
-function doReset(){
-  selSvc=null; selAddons=[]; selDate=""; selTime=""; tipPct=null; selCat="⭐ Quick Pick";
-  ["fn","fp","fe","fh","fo","cnum","cexp","ccvc"].forEach(function(id){ var e=document.getElementById(id); if(e)e.value=""; });
-  var ag=document.getElementById("cagr"); if(ag)ag.checked=false;
-  initP1(); renderCal(); goTo("p1");
-}
+function closeAdmin(){document.getElementById("booking").style.display="block";document.getElementById("admin").style.display="none";}
 
 function renderAdmin(){
-  var done = bookings.filter(function(b){ return b.status==="completed"; });
-  var rev = 0; done.forEach(function(b){ rev+=b.price; });
-  var ns = bookings.filter(function(b){ return b.status==="noshow"; }).length;
-  var h = '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">'+
-    '<h2 style="font-size:18px;font-weight:800;">📊 Today\'s Dashboard</h2>'+
-    '<span style="font-size:11px;background:#f0fdf4;color:#15803d;padding:4px 12px;border-radius:100px;font-weight:700;">Admin</span></div>'+
+  var done=bookings.filter(function(b){return b.status==="completed";});
+  var rev=0;done.forEach(function(b){rev+=b.price;});
+  var ns=bookings.filter(function(b){return b.status==="noshow";}).length;
+  var h='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;"><h2 style="font-size:1.1rem;font-weight:800;">📊 Today\'s Dashboard</h2><span style="font-size:.68rem;background:#f0fdf4;color:#15803d;padding:4px 12px;border-radius:100px;font-weight:700;">Admin</span></div>'+
     '<div class="sgrid">'+
     '<div class="sc"><div class="sv">'+bookings.length+'</div><div class="sl">Bookings</div></div>'+
     '<div class="sc"><div class="sv">'+done.length+'</div><div class="sl">Completed</div></div>'+
-    '<div class="sc"><div class="sv" style="color:#15803d;">'+fmt(rev)+'</div><div class="sl">Revenue</div></div>'+
+    '<div class="sc"><div class="sv" style="color:#7a9070;">'+fmt(rev)+'</div><div class="sl">Revenue</div></div>'+
     '<div class="sc"><div class="sv" style="color:#dc2626;">'+ns+'</div><div class="sl">No-Shows</div></div>'+
     '</div><div class="stitle">Schedule</div>';
   bookings.forEach(function(b){
-    var bc = b.status==="completed"?"bd":b.status==="noshow"?"bn":"bc";
-    var bl = b.status==="completed"?"✓ Done":b.status==="noshow"?"No-Show":"Confirmed";
-    h += '<div class="bk"><div class="bktop"><div><div class="bkn">'+b.name+'</div><div class="bks">'+b.service+' · '+b.time+'</div></div>'+
-      '<span class="badge '+bc+'">'+bl+'</span></div>'+
-      '<div style="font-size:12px;color:#999;margin-bottom:7px;">Total: <strong style="color:#111;">'+fmt(b.price)+'</strong> · Pay at shop · Card ••••'+b.card+'</div>'+
+    var bc=b.status==="completed"?"bd":b.status==="noshow"?"bn":"bc";
+    var bl=b.status==="completed"?"✓ Done":b.status==="noshow"?"No-Show":"Confirmed";
+    h+='<div class="bk"><div class="bktop"><div><div class="bkn">'+b.name+'</div><div class="bks">'+b.service+' · '+b.time+'</div></div><span class="badge '+bc+'">'+bl+'</span></div>'+
+      '<div style="font-size:.72rem;color:#b0a090;margin-bottom:7px;">Total: <strong style="color:#3a3028;">'+fmt(b.price)+'</strong> · Card ••••'+b.card+'</div>'+
       '<div class="bkacts">';
-    if(b.status==="confirmed") h += '<button class="ba baco" onclick="openCo('+b.id+')">💰 Checkout</button><button class="ba bans" onclick="openNS('+b.id+')">No-Show</button>';
-    if(b.status==="completed") h += '<span style="font-size:12px;color:#15803d;font-weight:700;">✓ Payment Complete</span>';
-    if(b.status==="noshow") h += '<span style="font-size:12px;color:#dc2626;font-weight:700;">$50 Charged</span>';
-    h += '<button class="ba basm" onclick="alert(\'SMS sent!\')">📱 SMS</button></div></div>';
+    if(b.status==="confirmed")h+='<button class="ba baco" onclick="openCo('+b.id+')">💰 Checkout</button><button class="ba bans" onclick="openNS('+b.id+')">No-Show</button>';
+    if(b.status==="completed")h+='<span style="font-size:.72rem;color:#15803d;font-weight:700;">✓ Payment Complete</span>';
+    if(b.status==="noshow")h+='<span style="font-size:.72rem;color:#dc2626;font-weight:700;">$50 Charged</span>';
+    h+='<button class="ba basm" onclick="alert(\'SMS sent!\')">📱 SMS</button></div></div>';
   });
-  document.getElementById("admindash").innerHTML = h;
+  document.getElementById("admindash").innerHTML=h;
 }
 
 function openCo(id){
-  coTarget = bookings.filter(function(b){ return b.id===id; })[0];
-  tipPct = null;
-  document.getElementById("cosum").innerHTML =
-    '<div class="srow"><span class="slbl">'+coTarget.service+'</span><span>'+fmt(coTarget.price)+'</span></div>'+
-    '<div class="srow tot"><span>Service Total</span><span>'+fmt(coTarget.price)+'</span></div>';
-  var tips = [15,20,30];
-  document.getElementById("cotips").innerHTML = tips.map(function(t){
-    return '<div class="tip" onclick="pickTip('+t+','+coTarget.price+',this)"><span class="tp">'+t+'%</span><span class="ta">'+fmt(coTarget.price*t/100)+'</span></div>';
+  coTarget=bookings.find(function(b){return b.id===id;});tipPct=null;
+  document.getElementById("cosum").innerHTML='<div class="srow"><span class="slbl">'+coTarget.service+'</span><span>'+fmt(coTarget.price)+'</span></div><div class="srow tot"><span>Service Total</span><span>'+fmt(coTarget.price)+'</span></div>';
+  document.getElementById("cotips").innerHTML=[15,20,30].map(function(t){
+    return'<div class="tip" onclick="pickTip('+t+','+coTarget.price+',this)"><span class="tp">'+t+'%</span><span class="ta">'+fmt(coTarget.price*t/100)+'</span></div>';
   }).join("");
-  document.getElementById("cotot").textContent = "Select tip";
-  document.getElementById("cobtn").disabled = true;
+  document.getElementById("cotot").textContent="Select tip";document.getElementById("cobtn").disabled=true;
   document.getElementById("mco").classList.add("show");
 }
+function pickTip(p,tot,el){tipPct=p;document.querySelectorAll(".tip").forEach(function(t){t.classList.remove("on");});el.classList.add("on");document.getElementById("cotot").textContent=fmt(tot+tot*p/100);document.getElementById("cobtn").disabled=false;}
+function doCheckout(){bookings=bookings.map(function(b){return b.id===coTarget.id?Object.assign({},b,{status:"completed"}):b;});closeModal("mco");renderAdmin();}
+function openNS(id){nsTarget=bookings.find(function(b){return b.id===id;});document.getElementById("nsinfo").innerHTML='<span><strong>'+nsTarget.name+'</strong> · '+nsTarget.service+'</span><span>Card ••••'+nsTarget.card+'</span>';document.getElementById("mns").classList.add("show");}
+function doNS(){bookings=bookings.map(function(b){return b.id===nsTarget.id?Object.assign({},b,{status:"noshow"}):b;});closeModal("mns");renderAdmin();}
 
-function pickTip(p, tot, el){
-  tipPct = p;
-  document.querySelectorAll(".tip").forEach(function(t){ t.classList.remove("on"); });
-  el.classList.add("on");
-  document.getElementById("cotot").textContent = fmt(tot + tot*p/100);
-  document.getElementById("cobtn").disabled = false;
-}
-
-function doCheckout(){
-  bookings = bookings.map(function(b){ return b.id===coTarget.id ? Object.assign({},b,{status:"completed"}) : b; });
-  closeModal("mco"); renderAdmin();
-}
-
-function openNS(id){
-  nsTarget = bookings.filter(function(b){ return b.id===id; })[0];
-  document.getElementById("nsinfo").innerHTML =
-    '<span><strong>'+nsTarget.name+'</strong> · '+nsTarget.service+'</span><span>Card ••••'+nsTarget.card+'</span>';
-  document.getElementById("mns").classList.add("show");
-}
-
-function doNS(){
-  bookings = bookings.map(function(b){ return b.id===nsTarget.id ? Object.assign({},b,{status:"noshow"}) : b; });
-  closeModal("mns"); renderAdmin();
-}
-
-initP1();
-initCal();
+initHair();initSpa();
 </script>
 </body>
 </html>
