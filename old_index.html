@@ -370,17 +370,17 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
 var HAIR_CATS={
   "⭐ Quick Pick":[
     {id:"sig",name:"Chenny's Signature Cut",mins:45,price:68},
-    {id:"cc",name:"Color & Cut Combo",mins:150,price:194},
     {id:"mt",name:"Men's Texture Cut",mins:35,price:48}
   ],
   "✂️ Color & Perm":[
-    {id:"fc",name:"Full Color + Toner",mins:150,price:185},
-    {id:"rg",name:"Root Touch-Up + Gloss",mins:120,price:155},
+    {id:"fc",name:"Double Color (Whole Hair Cover)",mins:150,price:130},
+    {id:"rg",name:"Root Touch (Gray Hair Cover)",mins:120,price:95},
     {id:"dp",name:"Korean Digital Perm",mins:180,price:250},
-    {id:"rp",name:"Regular Perm",mins:120,price:165},
+    {id:"rp",name:"Women's Regular Perm",mins:120,price:150},
     {id:"rvp",name:"Root Volume Perm",mins:90,price:105},
-    {id:"mpe",name:"Men's Perm Package",mins:120,price:177},
-    {id:"bt",name:"Bleach & Tone",mins:180,price:220},
+    {id:"mpe",name:"Men's Perm",mins:120,price:125},
+    {id:"bt1",name:"Partial Highlights",mins:120,price:125},
+    {id:"bt2",name:"Full Foil Highlights",mins:180,price:155},
     {id:"rct",name:"Recovery Treatment",mins:120,price:200}
   ],
   "👨 Men's":[
@@ -401,7 +401,9 @@ var ADDONS=[
   {id:"amp",name:"Scalp Care Ampoule",price:45},
   {id:"trt",name:"Hair Treatment",price:40},
   {id:"blo",name:"Blowdry Add-on",price:35},
-  {id:"adp",name:"Down Perm",price:55}
+  {id:"adp",name:"Down Perm",price:55},
+  {id:"mhc",name:"Men's Haircut",price:48},
+  {id:"whc",name:"Women's Haircut",price:68}
 ];
 function fmt(n){return"$"+Number(n).toFixed(2);}
 function allSvcs(){var r=[];Object.keys(HAIR_CATS).forEach(function(k){HAIR_CATS[k].forEach(function(s){r.push(s);});});SPA_SVCS.forEach(function(s){r.push(s);});return r;}
