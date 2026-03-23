@@ -403,7 +403,8 @@ var ADDONS=[
   {id:"blo",name:"Blowdry Add-on",price:35},
   {id:"adp",name:"Down Perm",price:55},
   {id:"mhc",name:"Men's Haircut",price:48},
-  {id:"whc",name:"Women's Haircut",price:68}
+  {id:"whc",name:"Women's Haircut",price:68},
+  {id:"fhs",name:"Fresh Head Spa",price:100}
 ];
 function fmt(n){return"$"+Number(n).toFixed(2);}
 function allSvcs(){var r=[];Object.keys(HAIR_CATS).forEach(function(k){HAIR_CATS[k].forEach(function(s){r.push(s);});});SPA_SVCS.forEach(function(s){r.push(s);});return r;}
