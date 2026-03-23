@@ -523,10 +523,16 @@ function doConfirm(){
 
   goTo("p3");
 
-  // Calendly 새 탭으로 열기
+  // Calendly 새 탭으로 열기 + 서비스 정보 전달
   calendlyUrl=curType==="hair"
     ?"https://calendly.com/hairbychenny/30min"
     :"https://calendly.com/hairbychenny/head-spa-appointment-tue-thur";
+  
+  // 선택한 서비스 + 가격 + 시간 정보 추가
+  var addonNames=selAddons.map(function(id){var a=ADDONS.find(function(x){return x.id===id;});return a?a.name:"";}).filter(Boolean).join(", ");
+  var notes="Service: "+svc.name+" ("+svc.mins+"min / "+fmt(svc.price)+")"+(addonNames?" | Add-ons: "+addonNames:"");
+  calendlyUrl+="?a1="+encodeURIComponent(notes);
+  
   window.open(calendlyUrl,"_blank");
 }
 
