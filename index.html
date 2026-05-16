@@ -4,6 +4,8 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Hair by Chenny</title>
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap');
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -342,17 +344,17 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
 var HAIR_SVCS=[
   {id:"sig",name:"Chenny's Signature Cut",mins:45,price:68,cal:"https://calendly.com/hairbychenny/30min"},
   {id:"mc",name:"Men's Haircut",mins:35,price:48,cal:"https://calendly.com/hairbychenny/30min"},
-  {id:"fc",name:"Double Color (Whole Hair Cover)",mins:120,price:130,cal:"https://calendly.com/hairbychenny/120min"},
-  {id:"rg",name:"Root Touch (Gray Hair & Grown-Out Roots)",mins:120,price:95,cal:"https://calendly.com/hairbychenny/120min"},
-  {id:"bt1",name:"Partial Highlights",mins:120,price:125,cal:"https://calendly.com/hairbychenny/120min"},
-  {id:"bt2",name:"Full Foil Highlights",mins:120,price:155,cal:"https://calendly.com/hairbychenny/120min"},
-  {id:"dp",name:"Korean Digital Perm",mins:120,price:250,cal:"https://calendly.com/hairbychenny/120min"},
-  {id:"rp",name:"Women's Regular Perm",mins:120,price:150,cal:"https://calendly.com/hairbychenny/120min"},
-  {id:"rvp",name:"Root Volume Perm",mins:120,price:105,cal:"https://calendly.com/hairbychenny/120min"},
-  {id:"mpe",name:"Men's Perm",mins:120,price:125,cal:"https://calendly.com/hairbychenny/120min"},
-  {id:"rct",name:"Recovery Treatment",mins:120,price:200,cal:"https://calendly.com/hairbychenny/120min"},
-  {id:"mcol",name:"Men's Color",mins:120,price:85,cal:"https://calendly.com/hairbychenny/120min"},
-  {id:"msp",name:"Men's Cut + Scalp + Head Spa",mins:120,price:135,cal:"https://calendly.com/hairbychenny/120min"}
+  {id:"fc",name:"Double Color (Whole Hair Cover)",mins:120,price:130,cal:"https://calendly.com/hairbychenny/hair-color-perm"},
+  {id:"rg",name:"Root Touch (Gray Hair & Grown-Out Roots)",mins:120,price:95,cal:"https://calendly.com/hairbychenny/hair-color-perm"},
+  {id:"bt1",name:"Partial Highlights",mins:120,price:125,cal:"https://calendly.com/hairbychenny/hair-color-perm"},
+  {id:"bt2",name:"Full Foil Highlights",mins:150,price:155,cal:"https://calendly.com/hairbychenny/hair-color-perm"},
+  {id:"dp",name:"Korean Digital Perm",mins:180,price:250,cal:"https://calendly.com/hairbychenny/hair-color-perm"},
+  {id:"rp",name:"Women's Regular Perm",mins:120,price:150,cal:"https://calendly.com/hairbychenny/hair-color-perm"},
+  {id:"rvp",name:"Root Volume Perm",mins:90,price:105,cal:"https://calendly.com/hairbychenny/hair-color-perm"},
+  {id:"mpe",name:"Men's Perm",mins:90,price:125,cal:"https://calendly.com/hairbychenny/hair-color-perm"},
+  {id:"rct",name:"Recovery Treatment",mins:120,price:200,cal:"https://calendly.com/hairbychenny/hair-color-perm"},
+  {id:"mcol",name:"Men's Color",mins:90,price:85,cal:"https://calendly.com/hairbychenny/hair-color-perm"},
+  {id:"msp",name:"Men's Cut + Scalp + Head Spa",mins:120,price:135,cal:"https://calendly.com/hairbychenny/hair-color-perm"}
 ];
 
 var SPA_SVCS=[
@@ -489,8 +491,7 @@ function doConfirm(){
   document.getElementById("ccard").textContent="Card •••• "+last4+" saved · $50 no-show fee if missed without 24hr notice";
 
   goTo("p3");
-  calendlyUrl=svc.cal||(curType==="hair"?"https://calendly.com/hairbychenny/30min":"https://calendly.com/hairbychenny/head-spa-appointment-tue-thur");
-  var addonNames=selAddons.map(function(id){var a=ADDONS.find(function(x){return x.id===id;});return a?a.name:"";}).filter(Boolean).join(", ");
+  calendlyUrl=svc.cal||(curType==="hair"?"https://calendly.com/hairbychenny/30min":"https://calendly.com/hairbychenny/head-spa-appointment-tue-thur");  var addonNames=selAddons.map(function(id){var a=ADDONS.find(function(x){return x.id===id;});return a?a.name:"";}).filter(Boolean).join(", ");
   var notes="Service: "+svc.name+" ("+svc.mins+"min / "+fmt(svc.price)+")"+(addonNames?" | Add-ons: "+addonNames:"");
   calendlyUrl+="?a1="+encodeURIComponent(notes);
   window.open(calendlyUrl,"_blank");
