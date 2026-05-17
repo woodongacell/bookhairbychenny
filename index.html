@@ -31,10 +31,12 @@ header{background:#f2ece3;border-bottom:1px solid #e5ddd3;padding:18px 24px;disp
 .contact-box .row div{font-size:.83rem;color:#6a5848;line-height:2.1;}
 .contact-box a{color:#a07850;font-weight:600;text-decoration:none;}
 .cnote{margin-top:10px;background:#fdf7f0;border-radius:8px;padding:8px 12px;font-size:.75rem;color:#a07850;font-weight:500;}
-.tabs{display:flex;margin-bottom:16px;gap:10px;}
-.tab{flex:1;padding:14px 10px;border-radius:14px;font-size:.85rem;font-weight:700;border:2px solid transparent;cursor:pointer;font-family:'Jost',sans-serif;transition:all .25s;letter-spacing:.3px;}
-#tab-hair{background:#f7f0e8;color:#c4a882;border-color:#e8d8c4;}
-#tab-hair.on{background:linear-gradient(135deg,#a07850,#7a5535);color:#fff;border-color:transparent;box-shadow:0 6px 20px rgba(160,120,80,.35);}
+.tabs{display:flex;margin-bottom:16px;gap:8px;}
+.tab{flex:1;padding:12px 6px;border-radius:14px;font-size:.78rem;font-weight:700;border:2px solid transparent;cursor:pointer;font-family:'Jost',sans-serif;transition:all .25s;text-align:center;}
+#tab-cut{background:#f7f0e8;color:#c4a882;border-color:#e8d8c4;}
+#tab-cut.on{background:linear-gradient(135deg,#a07850,#7a5535);color:#fff;border-color:transparent;box-shadow:0 6px 20px rgba(160,120,80,.35);}
+#tab-color{background:#f5eef8;color:#b08ab8;border-color:#e0c8e8;}
+#tab-color.on{background:linear-gradient(135deg,#9b59b6,#7d3c98);color:#fff;border-color:transparent;box-shadow:0 6px 20px rgba(155,89,182,.35);}
 #tab-spa{background:#f0f5ee;color:#9ab090;border-color:#c8dcc0;}
 #tab-spa.on{background:linear-gradient(135deg,#7a9070,#4a6840);color:#fff;border-color:transparent;box-shadow:0 6px 20px rgba(122,144,112,.35);}
 .svc{border:1.5px solid #ede5d8;border-radius:14px;padding:14px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;background:#fdf9f5;transition:all .2s;}
@@ -53,21 +55,19 @@ header{background:#f2ece3;border-bottom:1px solid #e5ddd3;padding:18px 24px;disp
 .adn:hover{border-color:#c4a882;}
 .adn.on{background:#3a3028;color:#fff;border-color:#3a3028;}
 .add-charges{background:#fffbeb;border:1.5px solid #fde68a;border-radius:14px;padding:14px 16px;margin:14px 0;}
-.add-charges .ac-title{font-size:.75rem;font-weight:700;color:#d97706;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px;}
+.ac-title{font-size:.75rem;font-weight:700;color:#d97706;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px;}
 .ac-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
 .ac-item{background:#fff;border-radius:8px;padding:8px 10px;border:1px solid #fde68a;}
 .ac-label{font-size:.68rem;color:#b0a090;margin-bottom:2px;}
 .ac-val{font-size:.82rem;font-weight:700;}
 .nok{background:#f0fdf4;color:#166534;border:1px solid #bbf7d0;border-radius:12px;padding:11px 14px;font-size:.8rem;display:flex;gap:9px;margin-bottom:12px;}
 .nerr{background:#fef2f2;color:#991b1b;border:1px solid #fecaca;border-radius:12px;padding:11px 14px;font-size:.8rem;display:flex;gap:9px;margin-bottom:12px;}
-.ngray{background:#f9fafb;color:#374151;border:1px solid #e5e7eb;border-radius:12px;padding:11px 14px;font-size:.8rem;display:flex;gap:9px;margin-bottom:12px;}
 .book-btn{display:block;width:100%;padding:15px;border-radius:13px;border:none;font-family:'Jost',sans-serif;font-size:.88rem;font-weight:600;cursor:pointer;transition:all .25s;margin-top:6px;letter-spacing:.8px;text-transform:uppercase;}
 .book-btn:disabled{background:#e8e0d8;color:#c0b0a0;cursor:not-allowed;}
-.book-btn.hair{background:linear-gradient(135deg,#a07850,#7a5535);color:#fff;}
-.book-btn.hair:not(:disabled):hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(160,120,80,.3);}
+.book-btn.cut{background:linear-gradient(135deg,#a07850,#7a5535);color:#fff;}
+.book-btn.color{background:linear-gradient(135deg,#9b59b6,#7d3c98);color:#fff;}
 .book-btn.spa{background:linear-gradient(135deg,#7a9070,#4a6840);color:#fff;}
-.book-btn.spa:not(:disabled):hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(122,144,112,.3);}
-.hint{text-align:center;font-size:.72rem;color:#c0b0a0;margin-top:7px;letter-spacing:.5px;}
+.hint{text-align:center;font-size:.72rem;color:#c0b0a0;margin-top:7px;}
 .card{background:#fff;border-radius:18px;padding:20px;border:1px solid #ede5d8;margin-bottom:12px;}
 .fg{margin-bottom:13px;}
 .fg label{display:block;font-size:.72rem;font-weight:700;color:#a09080;margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px;}
@@ -115,7 +115,6 @@ header{background:#f2ece3;border-bottom:1px solid #e5ddd3;padding:18px 24px;disp
 .modal>p{font-size:.8rem;color:#b0a090;margin-bottom:16px;}
 .tipgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px;}
 .tip{padding:13px;border-radius:12px;border:1.5px solid #ede5d8;background:#fdf9f5;cursor:pointer;text-align:center;transition:all .2s;}
-.tip:hover{border-color:#c4a882;}
 .tip.on{background:#3a3028;color:#fff;border-color:#3a3028;}
 .tp{font-size:1.1rem;font-weight:800;display:block;}
 .ta{font-size:.72rem;color:#b0a090;display:block;margin-top:1px;}
@@ -123,7 +122,6 @@ header{background:#f2ece3;border-bottom:1px solid #e5ddd3;padding:18px 24px;disp
 .totbox{background:#3a3028;color:#fff;border-radius:12px;padding:14px;display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
 .btn{width:100%;padding:14px;border-radius:13px;font-size:.88rem;font-weight:700;cursor:pointer;border:none;font-family:'Jost',sans-serif;margin-top:8px;}
 .btn-blk{background:#3a3028;color:#fff;}
-.btn-blk:hover{background:#5a4838;}
 .btn-blk:disabled{background:#e0d8d0;color:#b0a090;cursor:not-allowed;}
 .btn-out{background:#fff;color:#3a3028;border:1.5px solid #e0d8d0;}
 footer{background:#f2ece3;border-top:1px solid #e5ddd3;text-align:center;padding:24px;}
@@ -146,7 +144,8 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
   <div class="hero-line"></div>
   <p>Premium Korean Hair & Head Spa · Fairfax, VA</p>
   <div class="tags">
-    <span class="tag">✂️ Hair: Mon · Wed · Fri</span>
+    <span class="tag">✂️ Haircut: Mon · Wed · Fri</span>
+    <span class="tag">🎨 Color & Perm: Mon · Wed · Fri</span>
     <span class="tag">🌿 Head Spa: Tue · Thu</span>
   </div>
 </div>
@@ -172,30 +171,44 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
 </div>
 
 <div id="booking">
-  <a href="https://calendly.com/hairbychenny/30min" target="_blank" rel="noopener noreferrer">
-    Book Haircut
-  </a>
-  <a href="https://calendly.com/hairbychenny/head-spa-appointment-tue-thur" target="_blank" rel="noopener noreferrer">
-    Book Head Spa
-  </a>
-  <a href="https://calendly.com/hairbychenny/hair-color-perm" target="_blank" rel="noopener noreferrer">
-    Book Color / Perm
-  </a>
-  <!-- STEP 1 -->
+
+  <!-- STEP 1: 서비스 선택 -->
   <div class="pg on" id="p1">
     <div class="tabs">
-      <button class="tab on" id="tab-hair" onclick="switchTab('hair')">✂️ Hair Services</button>
-      <button class="tab" id="tab-spa" onclick="switchTab('spa')">🌿 K-Head Spa</button>
+      <button class="tab on" id="tab-cut" onclick="switchTab('cut')">✂️ Haircut</button>
+      <button class="tab" id="tab-color" onclick="switchTab('color')">🎨 Color & Perm</button>
+      <button class="tab" id="tab-spa" onclick="switchTab('spa')">🌿 Head Spa</button>
     </div>
 
-    <!-- HAIR -->
-    <div class="pg on" id="panel-hair">
+    <!-- HAIRCUT -->
+    <div class="pg on" id="panel-cut">
       <div class="card">
         <div class="stitle" style="margin-bottom:12px;">Select a Service</div>
-        <div id="hair-svclist"></div>
+        <div id="cut-svclist"></div>
         <div style="border-top:1px solid #f0ebe4;margin-top:14px;padding-top:14px;">
           <div class="stitle" style="margin-bottom:10px;">Add-ons (optional)</div>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;" id="hair-adnlist"></div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;" id="cut-adnlist"></div>
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:12px;">
+          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f7f0e8;color:#a07850;">Monday</span>
+          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f0ebe4;color:#c0b0a0;">Tuesday</span>
+          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f7f0e8;color:#a07850;">Wednesday</span>
+          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f0ebe4;color:#c0b0a0;">Thursday</span>
+          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f7f0e8;color:#a07850;">Friday</span>
+        </div>
+      </div>
+      <button class="book-btn cut" id="btn-cut" disabled onclick="goCard('cut')">Next — Card on File →</button>
+      <p class="hint" id="hint-cut">Please select a service above</p>
+    </div>
+
+    <!-- COLOR & PERM -->
+    <div class="pg" id="panel-color">
+      <div class="card">
+        <div class="stitle" style="margin-bottom:12px;">Select a Service</div>
+        <div id="color-svclist"></div>
+        <div style="border-top:1px solid #f0ebe4;margin-top:14px;padding-top:14px;">
+          <div class="stitle" style="margin-bottom:10px;">Add-ons (optional)</div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;" id="color-adnlist"></div>
         </div>
         <div class="add-charges" style="margin-top:14px;">
           <div class="ac-title">⚡ Additional Charges May Apply</div>
@@ -207,28 +220,32 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
           </div>
         </div>
         <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:12px;">
-          <div style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f7f0e8;color:#a07850;">Monday</div>
-          <div style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f0ebe4;color:#c0b0a0;">Tuesday</div>
-          <div style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f7f0e8;color:#a07850;">Wednesday</div>
-          <div style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f0ebe4;color:#c0b0a0;">Thursday</div>
-          <div style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f7f0e8;color:#a07850;">Friday</div>
+          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f5eef8;color:#9b59b6;">Monday</span>
+          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f0ebe4;color:#c0b0a0;">Tuesday</span>
+          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f5eef8;color:#9b59b6;">Wednesday</span>
+          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f0ebe4;color:#c0b0a0;">Thursday</span>
+          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f5eef8;color:#9b59b6;">Friday</span>
         </div>
       </div>
-      <button class="book-btn hair" id="btn-hair" disabled onclick="goCard('hair')">Next — Card on File →</button>
-      <p class="hint" id="hint-hair">Please select a service above</p>
+      <button class="book-btn color" id="btn-color" disabled onclick="goCard('color')">Next — Card on File →</button>
+      <p class="hint" id="hint-color">Please select a service above</p>
     </div>
 
-    <!-- SPA -->
+    <!-- HEAD SPA -->
     <div class="pg" id="panel-spa">
       <div class="card">
         <div class="stitle" style="margin-bottom:12px;">Select Duration</div>
         <div id="spa-svclist"></div>
+        <div style="border-top:1px solid #f0ebe4;margin-top:14px;padding-top:14px;">
+          <div class="stitle" style="margin-bottom:10px;">Add-ons (optional)</div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;" id="spa-adnlist"></div>
+        </div>
         <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:14px;">
-          <div style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f0ebe4;color:#c0b0a0;">Monday</div>
-          <div style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f0f5ee;color:#7a9070;">Tuesday</div>
-          <div style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f0ebe4;color:#c0b0a0;">Wednesday</div>
-          <div style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f0f5ee;color:#7a9070;">Thursday</div>
-          <div style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f0ebe4;color:#c0b0a0;">Friday</div>
+          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f0ebe4;color:#c0b0a0;">Monday</span>
+          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f0f5ee;color:#7a9070;">Tuesday</span>
+          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f0ebe4;color:#c0b0a0;">Wednesday</span>
+          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f0f5ee;color:#7a9070;">Thursday</span>
+          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f0ebe4;color:#c0b0a0;">Friday</span>
         </div>
         <div style="font-size:.72rem;color:#b0a090;margin-top:6px;">Scalp scaling included with all sessions</div>
       </div>
@@ -237,13 +254,24 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
     </div>
   </div>
 
-  <!-- STEP 2 -->
+  <!-- STEP 2: 카드 정보 -->
   <div class="pg" id="p2">
     <div class="card">
       <div class="stitle" style="margin-bottom:4px;">Card on File</div>
       <p style="font-size:.75rem;color:#b0a090;margin-bottom:14px;" id="p2-svc-label"></p>
       <div class="nok"><span>✅</span><div><strong>No charge today</strong><br/><span style="font-size:.72rem;color:#166534;" id="totnotice"></span></div></div>
       <div class="nerr"><span>⚠️</span><div><strong>No-Show Policy</strong><br/>Cancel 24hrs in advance. No-show or late cancel = <strong>$50 fee</strong>.</div></div>
+
+      <div class="fg">
+        <label>Full Name <span style="color:#ef4444;">*</span></label>
+        <input class="fi" id="fname" placeholder="Your full name" type="text"/>
+        <p class="ferr" id="err-fname"></p>
+      </div>
+      <div class="fg">
+        <label>Phone Number <span style="color:#ef4444;">*</span></label>
+        <input class="fi" id="fphone" placeholder="(703) 555-0000" type="tel"/>
+        <p class="ferr" id="err-fphone"></p>
+      </div>
       <div class="fg">
         <label>Card Number</label>
         <input class="fi" id="cnum" placeholder="4242 4242 4242 4242" maxlength="19" style="font-family:monospace;letter-spacing:2px;" oninput="fmtCN(this)"/>
@@ -261,15 +289,14 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
           <p class="ferr" id="err-ccvc"></p>
         </div>
       </div>
-      <div class="ngray"><span>🔒</span><span>Encrypted & secure. Card only charged for no-show without 24hr notice.</span></div>
       <label class="chk"><input type="checkbox" id="cagr"/><span>I agree to the no-show policy. A <strong>$50 fee</strong> will be charged if I miss without 24-hour notice.</span></label>
       <p class="ferr" id="err-cagr"></p>
     </div>
-    <button class="book-btn hair" onclick="doConfirm()" style="background:linear-gradient(135deg,#a07850,#7a5535);">✓ Confirm & Select Date on Calendly →</button>
+    <button class="book-btn cut" id="confirm-btn" onclick="doConfirm()">✓ Confirm & Select Date on Calendly →</button>
     <button class="btn btn-out" style="margin-top:8px;" onclick="goTo('p1')">← Back</button>
   </div>
 
-  <!-- STEP 3 -->
+  <!-- STEP 3: 완료 -->
   <div class="pg" id="p3">
     <div class="card" style="text-align:center;">
       <div class="cico">🎉</div>
@@ -282,7 +309,7 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
         <span>📅</span><span>Once you complete booking on Calendly, a confirmation email will be sent to you!</span>
       </div>
     </div>
-    <button class="book-btn hair" onclick="reopenCalendly()" style="background:linear-gradient(135deg,#a07850,#7a5535);margin-top:4px;">📅 Reopen Calendly</button>
+    <button class="book-btn cut" onclick="reopenCalendly()" style="margin-top:4px;">📅 Reopen Calendly</button>
     <button class="btn btn-out" style="margin-top:8px;" onclick="doReset()">← Back to Home</button>
   </div>
 
@@ -349,22 +376,23 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
 </div>
 
 <script>
-var HAIR_SVCS=[
-  {id:"sig",name:"Chenny's Signature Cut",mins:45,price:68,cal:"https://calendly.com/hairbychenny/30min"},
-  {id:"mc",name:"Men's Haircut",mins:35,price:48,cal:"https://calendly.com/hairbychenny/30min"},
-  {id:"fc",name:"Double Color (Whole Hair Cover)",mins:120,price:130,cal:"https://calendly.com/hairbychenny/hair-color-perm"},
-  {id:"rg",name:"Root Touch (Gray Hair & Grown-Out Roots)",mins:120,price:95,cal:"https://calendly.com/hairbychenny/hair-color-perm"},
-  {id:"bt1",name:"Partial Highlights",mins:120,price:125,cal:"https://calendly.com/hairbychenny/hair-color-perm"},
-  {id:"bt2",name:"Full Foil Highlights",mins:150,price:155,cal:"https://calendly.com/hairbychenny/hair-color-perm"},
-  {id:"dp",name:"Korean Digital Perm",mins:180,price:250,cal:"https://calendly.com/hairbychenny/hair-color-perm"},
-  {id:"rp",name:"Women's Regular Perm",mins:120,price:150,cal:"https://calendly.com/hairbychenny/hair-color-perm"},
-  {id:"rvp",name:"Root Volume Perm",mins:90,price:105,cal:"https://calendly.com/hairbychenny/hair-color-perm"},
-  {id:"mpe",name:"Men's Perm",mins:90,price:125,cal:"https://calendly.com/hairbychenny/hair-color-perm"},
-  {id:"rct",name:"Recovery Treatment",mins:120,price:200,cal:"https://calendly.com/hairbychenny/hair-color-perm"},
-  {id:"mcol",name:"Men's Color",mins:90,price:85,cal:"https://calendly.com/hairbychenny/hair-color-perm"},
-  {id:"msp",name:"Men's Cut + Scalp + Head Spa",mins:120,price:135,cal:"https://calendly.com/hairbychenny/hair-color-perm"}
+var CUT_SVCS=[
+  {id:"sig",name:"Chenny's Signature Cut",mins:45,price:68},
+  {id:"mc",name:"Men's Haircut",mins:35,price:48},
+  {id:"msp",name:"Men's Cut + Scalp + Head Spa",mins:120,price:135}
 ];
-
+var COLOR_SVCS=[
+  {id:"fc",name:"Double Color (Whole Hair Cover)",mins:120,price:130},
+  {id:"rg",name:"Root Touch (Gray Hair & Grown-Out Roots)",mins:120,price:95},
+  {id:"bt1",name:"Partial Highlights",mins:120,price:125},
+  {id:"bt2",name:"Full Foil Highlights",mins:150,price:155},
+  {id:"dp",name:"Korean Digital Perm",mins:180,price:250},
+  {id:"rp",name:"Women's Regular Perm",mins:120,price:150},
+  {id:"rvp",name:"Root Volume Perm",mins:90,price:105},
+  {id:"mpe",name:"Men's Perm",mins:90,price:125},
+  {id:"rct",name:"Recovery Treatment",mins:120,price:200},
+  {id:"mcol",name:"Men's Color",mins:90,price:85}
+];
 var SPA_SVCS=[
   {id:"s30",name:"K-Scalp Detox 30",mins:30,price:70,desc:"Express scalp care"},
   {id:"s50",name:"K-Scalp Deep Care 50",mins:50,price:100,desc:"Signature head spa"},
@@ -373,21 +401,23 @@ var SPA_SVCS=[
   {id:"pk2",name:"📦 5-Session — Deep Care 50",mins:50,price:450,pkg:true,orig:500,desc:"5 sessions · Use anytime"},
   {id:"pk3",name:"📦 5-Session — Full Spa 90",mins:90,price:700,pkg:true,orig:750,desc:"5 sessions · Use anytime"}
 ];
-
 var ADDONS=[
   {id:"amp",name:"Scalp Care Ampoule",price:45},
   {id:"trt",name:"Hair Treatment",price:40},
   {id:"blo",name:"Blowdry Add-on",price:35},
   {id:"adp",name:"Down Perm",price:55},
-  {id:"mhc",name:"Men's Haircut",price:48},
-  {id:"whc",name:"Women's Haircut",price:68},
   {id:"fhs",name:"Fresh Head Spa",price:100}
 ];
+var CAL={
+  cut:"https://calendly.com/hairbychenny/30min",
+  color:"https://calendly.com/hairbychenny/hair-color-perm",
+  spa:"https://calendly.com/hairbychenny/head-spa-appointment-tue-thur"
+};
 
 function fmt(n){return"$"+Number(n).toFixed(2);}
-function allSvcs(){return HAIR_SVCS.concat(SPA_SVCS);}
+function allSvcs(){return CUT_SVCS.concat(COLOR_SVCS,SPA_SVCS);}
 
-var selHair=null,selSpa=null,selAddons=[],curType="hair",calendlyUrl="";
+var selCut=null,selColor=null,selSpa=null,selAddons=[],curType="cut",calendlyUrl="";
 var coTarget=null,nsTarget=null,tipPct=null;
 var bookings=[
   {id:1,name:"Sarah Kim",phone:"(703)555-0101",service:"Double Color",time:"10:00 AM",price:130,status:"confirmed",card:"4242"},
@@ -396,80 +426,111 @@ var bookings=[
 ];
 
 function goTo(p){
-  document.querySelectorAll("#booking > .pg").forEach(function(x){x.classList.remove("on");});
+  document.querySelectorAll("#booking>.pg").forEach(function(x){x.classList.remove("on");});
   document.getElementById(p).classList.add("on");
   window.scrollTo(0,0);
 }
 
-function initHair(){
-  document.getElementById("hair-svclist").innerHTML=HAIR_SVCS.map(function(s){
-    return'<div class="svc'+(selHair===s.id?" on":"")+'" data-id="'+s.id+'" onclick="setSvc(this,\'hair\')">'+
-      '<div><div class="svc-name">'+s.name+'</div><div class="svc-meta">⏱ '+s.mins+'min</div></div>'+
-      '<div style="text-align:right;flex-shrink:0;margin-left:12px;"><div class="svc-price">'+fmt(s.price)+'</div><div class="svc-sub">starting price</div></div></div>';
-  }).join("");
-  document.getElementById("hair-adnlist").innerHTML=ADDONS.map(function(a){
-    var on=selAddons.indexOf(a.id)>=0;
-    return'<div class="adn'+(on?" on":"")+'" data-id="'+a.id+'" onclick="togAddon(this)">'+(on?"✓ ":"+ ")+a.name+' ('+fmt(a.price)+')</div>';
-  }).join("");
-  document.getElementById("btn-hair").disabled=!selHair;
-  document.getElementById("hint-hair").style.display=selHair?"none":"block";
-}
-
-function initSpa(){
-  document.getElementById("spa-svclist").innerHTML=SPA_SVCS.map(function(s){
+function renderSvcs(list,selId,type,gridId){
+  document.getElementById(gridId).innerHTML=list.map(function(s){
     var hasSave=s.pkg&&s.orig>s.price;
-    return'<div class="svc'+(selSpa===s.id?" on":"")+'" data-id="'+s.id+'" onclick="setSvc(this,\'spa\')"'+(s.pkg?' style="border-color:#e9d5ff;"':'')+'>'+
+    return'<div class="svc'+(selId===s.id?" on":"")+'" data-id="'+s.id+'" onclick="setSvc(this,\''+type+'\')">'+
       '<div>'+(s.pkg?'<div class="pkg-lbl">Package · Pay once, use anytime</div>':'')+
       '<div class="svc-name">'+s.name+(hasSave?'<span class="save-pill">Save '+fmt(s.orig-s.price)+'</span>':'')+
-      '</div><div class="svc-meta">⏱ '+s.mins+'min · '+s.desc+'</div></div>'+
+      '</div><div class="svc-meta">⏱ '+s.mins+'min'+(s.desc?' · '+s.desc:'')+'</div></div>'+
       '<div style="text-align:right;flex-shrink:0;margin-left:12px;">'+
       (hasSave?'<div class="orig-p">'+fmt(s.orig)+'</div>':'')+
       '<div class="svc-price">'+fmt(s.price)+'</div>'+
       '<div class="svc-sub">'+(s.pkg?"package":"starting")+' price</div></div></div>';
   }).join("");
+}
+
+function renderAddons(adnId){
+  document.getElementById(adnId).innerHTML=ADDONS.map(function(a){
+    var on=selAddons.indexOf(a.id)>=0;
+    return'<div class="adn'+(on?" on":"")+'" data-id="'+a.id+'" onclick="togAddon(this)">'+(on?"✓ ":"+ ")+a.name+' ('+fmt(a.price)+')</div>';
+  }).join("");
+}
+
+function initAll(){
+  renderSvcs(CUT_SVCS,selCut,"cut","cut-svclist");
+  renderSvcs(COLOR_SVCS,selColor,"color","color-svclist");
+  renderSvcs(SPA_SVCS,selSpa,"spa","spa-svclist");
+  renderAddons("cut-adnlist");
+  renderAddons("color-adnlist");
+  renderAddons("spa-adnlist");
+  document.getElementById("btn-cut").disabled=!selCut;
+  document.getElementById("btn-color").disabled=!selColor;
   document.getElementById("btn-spa").disabled=!selSpa;
+  document.getElementById("hint-cut").style.display=selCut?"none":"block";
+  document.getElementById("hint-color").style.display=selColor?"none":"block";
   document.getElementById("hint-spa").style.display=selSpa?"none":"block";
 }
 
 function setSvc(el,type){
-  if(type==="hair")selHair=el.dataset.id;else selSpa=el.dataset.id;
-  if(type==="hair")initHair();else initSpa();
+  if(type==="cut")selCut=el.dataset.id;
+  else if(type==="color")selColor=el.dataset.id;
+  else selSpa=el.dataset.id;
+  initAll();
 }
+
 function togAddon(el){
   var id=el.dataset.id,idx=selAddons.indexOf(id);
   if(idx>=0)selAddons.splice(idx,1);else selAddons.push(id);
-  initHair();
+  initAll();
 }
+
 function switchTab(type){
   curType=type;
-  document.getElementById("panel-hair").className="pg"+(type==="hair"?" on":"");
-  document.getElementById("panel-spa").className="pg"+(type==="spa"?" on":"");
-  document.getElementById("tab-hair").className="tab"+(type==="hair"?" on":"");
-  document.getElementById("tab-spa").className="tab"+(type==="spa"?" on":"");
+  ["cut","color","spa"].forEach(function(t){
+    document.getElementById("panel-"+t).className="pg"+(t===type?" on":"");
+    document.getElementById("tab-"+t).className="tab"+(t===type?" on":"");
+  });
 }
 
 function goCard(type){
   curType=type;
-  var selId=type==="hair"?selHair:selSpa;
+  var selId=type==="cut"?selCut:type==="color"?selColor:selSpa;
   var svc=allSvcs().find(function(s){return s.id===selId;});
-  var at=0;selAddons.forEach(function(id){var a=ADDONS.find(function(x){return x.id===id;});if(a)at+=a.price;});
-  document.getElementById("p2-svc-label").textContent="Service: "+svc.name+(at?" + add-ons":"")+' · '+fmt(svc.price+at);
+  var at=0;
+  selAddons.forEach(function(id){var a=ADDONS.find(function(x){return x.id===id;});if(a)at+=a.price;});
+  document.getElementById("p2-svc-label").textContent="Service: "+svc.name+(at?" + add-ons":"")+" · "+fmt(svc.price+at);
   document.getElementById("totnotice").textContent="Full payment of "+fmt(svc.price+at)+"+ collected at the shop.";
+  // confirm 버튼 색상 맞추기
+  var btn=document.getElementById("confirm-btn");
+  btn.className="book-btn "+type;
   goTo("p2");
 }
 
 function fmtCN(el){el.value=el.value.replace(/\D/g,"").slice(0,16).replace(/(.{4})/g,"$1 ").trim();}
 function fmtEX(el){var d=el.value.replace(/\D/g,"").slice(0,4);el.value=d.length>2?d.slice(0,2)+"/"+d.slice(2):d;}
-function clearErrs(){["cnum","cexp","ccvc"].forEach(function(id){var el=document.getElementById(id);if(el)el.classList.remove("err");var ep=document.getElementById("err-"+id);if(ep)ep.style.display="none";});document.getElementById("err-cagr").style.display="none";}
-function showErr(id,msg){document.getElementById(id).classList.add("err");var ep=document.getElementById("err-"+id);ep.textContent="❌ "+msg;ep.style.display="block";}
+
+function clearErrs(){
+  ["fname","fphone","cnum","cexp","ccvc"].forEach(function(id){
+    var el=document.getElementById(id);if(el)el.classList.remove("err");
+    var ep=document.getElementById("err-"+id);if(ep)ep.style.display="none";
+  });
+  document.getElementById("err-cagr").style.display="none";
+}
+function showErr(id,msg){
+  var el=document.getElementById(id);if(el)el.classList.add("err");
+  var ep=document.getElementById("err-"+id);if(ep){ep.textContent="❌ "+msg;ep.style.display="block";}
+}
 function luhn(n){var s=0;for(var i=0;i<n.length;i++){var d=parseInt(n[n.length-1-i]);if(i%2===1){d*=2;if(d>9)d-=9;}s+=d;}return s%10===0;}
 
 function doConfirm(){
   clearErrs();
+  var fname=document.getElementById("fname").value.trim();
+  var fphone=document.getElementById("fphone").value.trim();
   var cn=document.getElementById("cnum").value.replace(/\s/g,"");
   var ce=document.getElementById("cexp").value.trim();
   var cv=document.getElementById("ccvc").value.trim();
   var agreed=document.getElementById("cagr").checked;
+
+  var ok=true;
+  if(!fname){showErr("fname","Please enter your full name.");ok=false;}
+  if(!fphone){showErr("fphone","Please enter your phone number.");ok=false;}
+  if(!ok)return;
   if(cn.length!==16||!/^\d{16}$/.test(cn)){showErr("cnum","Card number must be 16 digits.");return;}
   if(!luhn(cn)){showErr("cnum","Invalid card number.");return;}
   if(!/^\d{2}\/\d{2}$/.test(ce)){showErr("cexp","Enter expiry as MM/YY");return;}
@@ -478,17 +539,20 @@ function doConfirm(){
   var now=new Date(),exp=new Date(2000+ey,em-1,1),thisM=new Date(now.getFullYear(),now.getMonth(),1);
   if(exp<thisM){showErr("cexp","Card has expired.");return;}
   if(!/^\d{3,4}$/.test(cv)){showErr("ccvc","CVC must be 3-4 digits.");return;}
-  if(!agreed){document.getElementById("err-cagr").textContent="❌ Please agree to the no-show policy.";document.getElementById("err-cagr").style.display="block";return;}
+  if(!agreed){showErr("cagr","Please agree to the no-show policy.");return;}
 
-  var selId=curType==="hair"?selHair:selSpa;
+  var selId=curType==="cut"?selCut:curType==="color"?selColor:selSpa;
   var svc=allSvcs().find(function(s){return s.id===selId;});
-  var at=0;selAddons.forEach(function(id){var a=ADDONS.find(function(x){return x.id===id;});if(a)at+=a.price;});
+  var at=0;
+  selAddons.forEach(function(id){var a=ADDONS.find(function(x){return x.id===id;});if(a)at+=a.price;});
   var total=svc.price+at;
   var last4=cn.slice(-4);
 
-  bookings.unshift({id:Date.now(),name:"New Client",phone:"—",service:svc.name,time:"TBD",price:total,status:"confirmed",card:last4});
+  bookings.unshift({id:Date.now(),name:fname,phone:fphone,service:svc.name,time:"TBD",price:total,status:"confirmed",card:last4});
 
-  document.getElementById("cgrid").innerHTML=[["Service",svc.name],["Duration",svc.mins+"min"],["Price",fmt(total)],["Card","•••• "+last4]].map(function(p){
+  document.getElementById("cgrid").innerHTML=[
+    ["Name",fname],["Phone",fphone],["Service",svc.name],["Card","•••• "+last4]
+  ].map(function(p){
     return'<div class="ci"><div class="cil">'+p[0]+'</div><div class="civ">'+p[1]+'</div></div>';
   }).join("");
   document.getElementById("csum").innerHTML=
@@ -499,19 +563,21 @@ function doConfirm(){
   document.getElementById("ccard").textContent="Card •••• "+last4+" saved · $50 no-show fee if missed without 24hr notice";
 
   goTo("p3");
-  calendlyUrl=svc.cal||(curType==="hair"?"https://calendly.com/hairbychenny/30min":"https://calendly.com/hairbychenny/head-spa-appointment-tue-thur");  var addonNames=selAddons.map(function(id){var a=ADDONS.find(function(x){return x.id===id;});return a?a.name:"";}).filter(Boolean).join(", ");
+
+  // Calendly에 이름, 전화번호, 서비스 정보 자동 전달
+  var addonNames=selAddons.map(function(id){var a=ADDONS.find(function(x){return x.id===id;});return a?a.name:"";}).filter(Boolean).join(", ");
   var notes="Service: "+svc.name+" ("+svc.mins+"min / "+fmt(svc.price)+")"+(addonNames?" | Add-ons: "+addonNames:"");
-  calendlyUrl+="?a1="+encodeURIComponent(notes);
+  calendlyUrl=CAL[curType]+"?name="+encodeURIComponent(fname)+"&a1="+encodeURIComponent(notes)+"&a2="+encodeURIComponent(fphone);
   window.open(calendlyUrl,"_blank");
 }
 
 function reopenCalendly(){window.open(calendlyUrl,"_blank");}
 
 function doReset(){
-  selHair=null;selSpa=null;selAddons=[];curType="hair";calendlyUrl="";
-  ["cnum","cexp","ccvc"].forEach(function(id){var e=document.getElementById(id);if(e)e.value="";});
+  selCut=null;selColor=null;selSpa=null;selAddons=[];curType="cut";calendlyUrl="";
+  ["fname","fphone","cnum","cexp","ccvc"].forEach(function(id){var e=document.getElementById(id);if(e)e.value="";});
   var ag=document.getElementById("cagr");if(ag)ag.checked=false;
-  initHair();initSpa();switchTab("hair");goTo("p1");
+  initAll();switchTab("cut");goTo("p1");
 }
 
 function openLogin(){document.getElementById("mlogin").classList.add("show");}
@@ -531,8 +597,11 @@ function renderAdmin(){
   var done=bookings.filter(function(b){return b.status==="completed";});
   var rev=0;done.forEach(function(b){rev+=b.price;});
   var ns=bookings.filter(function(b){return b.status==="noshow";}).length;
-  var h='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;"><h2 style="font-size:1.1rem;font-weight:800;">📊 Today\'s Dashboard</h2><span style="font-size:.68rem;background:#f0fdf4;color:#15803d;padding:4px 12px;border-radius:100px;font-weight:700;">Admin</span></div>'+
-    '<div class="sgrid"><div class="sc"><div class="sv">'+bookings.length+'</div><div class="sl">Bookings</div></div>'+
+  var h='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">'+
+    '<h2 style="font-size:1.1rem;font-weight:800;">📊 Today\'s Dashboard</h2>'+
+    '<span style="font-size:.68rem;background:#f0fdf4;color:#15803d;padding:4px 12px;border-radius:100px;font-weight:700;">Admin</span></div>'+
+    '<div class="sgrid">'+
+    '<div class="sc"><div class="sv">'+bookings.length+'</div><div class="sl">Bookings</div></div>'+
     '<div class="sc"><div class="sv">'+done.length+'</div><div class="sl">Completed</div></div>'+
     '<div class="sc"><div class="sv" style="color:#7a9070;">'+fmt(rev)+'</div><div class="sl">Revenue</div></div>'+
     '<div class="sc"><div class="sv" style="color:#dc2626;">'+ns+'</div><div class="sl">No-Shows</div></div></div>'+
@@ -540,8 +609,11 @@ function renderAdmin(){
   bookings.forEach(function(b){
     var bc=b.status==="completed"?"bd":b.status==="noshow"?"bn":"bc";
     var bl=b.status==="completed"?"✓ Done":b.status==="noshow"?"No-Show":"Confirmed";
-    h+='<div class="bk"><div class="bktop"><div><div class="bkn">'+b.name+'</div><div class="bks">'+b.service+' · '+b.time+'</div></div><span class="badge '+bc+'">'+bl+'</span></div>'+
-      '<div style="font-size:.72rem;color:#b0a090;margin-bottom:7px;">Total: <strong style="color:#3a3028;">'+fmt(b.price)+'</strong> · Card ••••'+b.card+'</div>'+
+    h+='<div class="bk"><div class="bktop"><div><div class="bkn">'+b.name+'</div>'+
+      '<div class="bks">'+b.service+' · '+b.time+'</div></div>'+
+      '<span class="badge '+bc+'">'+bl+'</span></div>'+
+      '<div style="font-size:.72rem;color:#b0a090;margin-bottom:7px;">'+
+      'Phone: <strong>'+b.phone+'</strong> · Total: <strong style="color:#3a3028;">'+fmt(b.price)+'</strong> · Card ••••'+b.card+'</div>'+
       '<div class="bkacts">';
     if(b.status==="confirmed")h+='<button class="ba baco" onclick="openCo('+b.id+')">💰 Checkout</button><button class="ba bans" onclick="openNS('+b.id+')">No-Show</button>';
     if(b.status==="completed")h+='<span style="font-size:.72rem;color:#15803d;font-weight:700;">✓ Payment Complete</span>';
@@ -553,19 +625,38 @@ function renderAdmin(){
 
 function openCo(id){
   coTarget=bookings.find(function(b){return b.id===id;});tipPct=null;
-  document.getElementById("cosum").innerHTML='<div class="srow"><span class="slbl">'+coTarget.service+'</span><span>'+fmt(coTarget.price)+'</span></div><div class="srow tot"><span>Service Total</span><span>'+fmt(coTarget.price)+'</span></div>';
+  document.getElementById("cosum").innerHTML=
+    '<div class="srow"><span class="slbl">'+coTarget.service+'</span><span>'+fmt(coTarget.price)+'</span></div>'+
+    '<div class="srow tot"><span>Service Total</span><span>'+fmt(coTarget.price)+'</span></div>';
   document.getElementById("cotips").innerHTML=[15,20,30].map(function(t){
     return'<div class="tip" onclick="pickTip('+t+','+coTarget.price+',this)"><span class="tp">'+t+'%</span><span class="ta">'+fmt(coTarget.price*t/100)+'</span></div>';
   }).join("");
-  document.getElementById("cotot").textContent="Select tip";document.getElementById("cobtn").disabled=true;
+  document.getElementById("cotot").textContent="Select tip";
+  document.getElementById("cobtn").disabled=true;
   document.getElementById("mco").classList.add("show");
 }
-function pickTip(p,tot,el){tipPct=p;document.querySelectorAll(".tip").forEach(function(t){t.classList.remove("on");});el.classList.add("on");document.getElementById("cotot").textContent=fmt(tot+tot*p/100);document.getElementById("cobtn").disabled=false;}
-function doCheckout(){bookings=bookings.map(function(b){return b.id===coTarget.id?Object.assign({},b,{status:"completed"}):b;});closeModal("mco");renderAdmin();}
-function openNS(id){nsTarget=bookings.find(function(b){return b.id===id;});document.getElementById("nsinfo").innerHTML='<span><strong>'+nsTarget.name+'</strong> · '+nsTarget.service+'</span><span>Card ••••'+nsTarget.card+'</span>';document.getElementById("mns").classList.add("show");}
-function doNS(){bookings=bookings.map(function(b){return b.id===nsTarget.id?Object.assign({},b,{status:"noshow"}):b;});closeModal("mns");renderAdmin();}
+function pickTip(p,tot,el){
+  tipPct=p;
+  document.querySelectorAll(".tip").forEach(function(t){t.classList.remove("on");});
+  el.classList.add("on");
+  document.getElementById("cotot").textContent=fmt(tot+tot*p/100);
+  document.getElementById("cobtn").disabled=false;
+}
+function doCheckout(){
+  bookings=bookings.map(function(b){return b.id===coTarget.id?Object.assign({},b,{status:"completed"}):b;});
+  closeModal("mco");renderAdmin();
+}
+function openNS(id){
+  nsTarget=bookings.find(function(b){return b.id===id;});
+  document.getElementById("nsinfo").innerHTML='<span><strong>'+nsTarget.name+'</strong> · '+nsTarget.service+'</span><span>Card ••••'+nsTarget.card+'</span>';
+  document.getElementById("mns").classList.add("show");
+}
+function doNS(){
+  bookings=bookings.map(function(b){return b.id===nsTarget.id?Object.assign({},b,{status:"noshow"}):b;});
+  closeModal("mns");renderAdmin();
+}
 
-initHair();initSpa();
+initAll();
 </script>
 </body>
 </html>
