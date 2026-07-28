@@ -56,7 +56,7 @@ header{background:#f2ece3;border-bottom:1px solid #e5ddd3;padding:18px 24px;disp
 .svc.promo.sel{background:#1b4332;border-color:#1b4332;}
 .svc-name{font-size:.88rem;font-weight:600;margin-bottom:3px;}
 .svc-meta{font-size:.75rem;color:#b0a090;}
-.svc.sel .svc-meta,.svc.promo.sel .svc-meta{color:#c0b0a0;}
+.svc.sel .svc-meta{color:#c0b0a0;}
 .svc-price{font-size:.95rem;font-weight:700;text-align:right;color:#a07850;}
 .svc.sel .svc-price{color:#d4a870;}
 .svc.promo .svc-price{color:#2d6a4f;}
@@ -82,7 +82,7 @@ header{background:#f2ece3;border-bottom:1px solid #e5ddd3;padding:18px 24px;disp
 .hint{text-align:center;font-size:.72rem;color:#c0b0a0;margin-top:7px;}
 .card{background:#fff;border-radius:18px;padding:20px;border:1px solid #ede5d8;margin-bottom:12px;}
 .pg{display:none;}.pg.on{display:block;}
-@keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(212,172,13,.5);border-color:#d4ac0d;}50%{box-shadow:0 0 0 6px rgba(212,172,13,0);border-color:#b8940a;}}
+@keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(212,172,13,.5);border-color:#d4ac0d;}50%{box-shadow:0 0 0 6px rgba(212,172,13,0);border-color:#f0c040;}}
 .promo-input{flex:1;height:46px;border:2.5px solid #d4ac0d;border-radius:10px;padding:0 14px;font-size:.9rem;font-family:'Jost',sans-serif;background:#fff;color:#1b4332;font-weight:600;outline:none;animation:glow 1.8s infinite;}
 .promo-apply{background:linear-gradient(135deg,#d4ac0d,#b8940a);color:#1b4332;border:none;border-radius:10px;padding:0 18px;height:46px;font-family:'Jost',sans-serif;font-weight:800;font-size:.82rem;cursor:pointer;white-space:nowrap;}
 .adminlnk{text-align:center;margin-top:24px;padding-top:20px;border-top:1px solid #e8ddd0;}
@@ -153,16 +153,8 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
   <div class="promo-title">Grand Opening Head Spa Promotion</div>
   <div class="promo-sub">Experience premium Korean scalp care at 20% off!</div>
   <div class="promo-prices">
-    <div class="promo-price">
-      <div class="orig">$100</div>
-      <div class="new">$80</div>
-      <div class="label">50 min</div>
-    </div>
-    <div class="promo-price">
-      <div class="orig">$150</div>
-      <div class="new">$120</div>
-      <div class="label">90 min</div>
-    </div>
+    <div class="promo-price"><div class="orig">$100</div><div class="new">$80</div><div class="label">50 min</div></div>
+    <div class="promo-price"><div class="orig">$150</div><div class="new">$120</div><div class="label">90 min</div></div>
   </div>
   <div class="promo-exp">⏰ August 1–31, 2025 only · Promo code required</div>
 </div>
@@ -249,19 +241,17 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
     <!-- HEAD SPA -->
     <div class="pg" id="panel-spa">
       <div class="card">
-        <!-- 프로모션 박스 + 코드 입력 -->
         <div style="background:linear-gradient(135deg,#1b4332,#2d6a4f);border-radius:14px;padding:16px;margin-bottom:16px;text-align:center;">
           <div style="font-size:.68rem;font-weight:800;color:#d4ac0d;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;">🎉 August Promotion</div>
           <div style="font-size:.92rem;font-weight:700;color:#fff;margin-bottom:2px;">20% OFF — 50min & 90min</div>
-          <div style="font-size:.72rem;color:rgba(255,255,255,.7);margin-bottom:14px;">August 1–31 only</div>
+          <div style="font-size:.72rem;color:rgba(255,255,255,.7);margin-bottom:14px;">August 1–31 only · Enter promo code to unlock</div>
           <div style="display:flex;gap:8px;max-width:320px;margin:0 auto;">
             <input id="promo-code" class="promo-input" placeholder="🎟 Enter promo code" onkeydown="if(event.key==='Enter')checkPromo()"/>
             <button class="promo-apply" onclick="checkPromo()">APPLY ✓</button>
           </div>
           <p id="promo-err" style="color:#ff6b6b;font-size:.75rem;margin-top:8px;display:none;">❌ Invalid code. Please try again.</p>
-          <p id="promo-ok" style="color:#d4ac0d;font-size:.75rem;font-weight:700;margin-top:8px;display:none;">✅ Code applied! Opening Calendly...</p>
+          <p id="promo-ok" style="color:#d4ac0d;font-size:.75rem;font-weight:700;margin-top:8px;display:none;">✅ Code applied! Select a duration below.</p>
         </div>
-
         <div class="stitle" style="margin-bottom:12px;">Select Duration</div>
         <div id="spa-svclist"></div>
         <div style="border-top:1px solid #f0ebe4;margin-top:14px;padding-top:14px;">
@@ -277,7 +267,7 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
         </div>
         <div style="font-size:.72rem;color:#b0a090;margin-top:6px;">Scalp scaling included with all sessions</div>
       </div>
-      <button class="book-btn spa" id="btn-spa" disabled onclick="goCalendly('spa')">Book & Start →</button>
+      <button class="book-btn spa" id="btn-spa" disabled onclick="spaBook()">Book & Start →</button>
       <p class="hint" id="hint-spa">Please select a duration above</p>
     </div>
   </div>
@@ -345,244 +335,307 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
 </div>
 
 <script>
-var CUT=[
-  {id:"sig",name:"Chenny's Signature Cut",mins:45,price:68},
-  {id:"mc",name:"Men's Haircut",mins:35,price:48},
-  {id:"msp",name:"Men's Cut + Scalp + Head Spa",mins:120,price:135}
+// ── 데이터 ──
+var CUT = [
+  {id:"sig", name:"Chenny's Signature Cut", mins:45, price:68, promo:false},
+  {id:"mc",  name:"Men's Haircut",          mins:35, price:48, promo:false},
+  {id:"msp", name:"Men's Cut + Scalp + Head Spa", mins:120, price:135, promo:false}
 ];
-var COLOR=[
-  {id:"fc",name:"Double Color (Whole Hair Cover)",mins:120,price:130},
-  {id:"rg",name:"Root Touch (Gray Hair & Grown-Out Roots)",mins:120,price:115},
-  {id:"bt1",name:"Partial Highlights",mins:120,price:125},
-  {id:"bt2",name:"Full Foil Highlights",mins:150,price:155},
-  {id:"dp",name:"Korean Digital Perm",mins:180,price:250},
-  {id:"rp",name:"Women's Regular Perm",mins:120,price:150},
-  {id:"rvp",name:"Root Volume Perm",mins:90,price:105},
-  {id:"mpe",name:"Men's Perm",mins:90,price:125},
-  {id:"rct",name:"Recovery Treatment",mins:120,price:200},
-  {id:"mcol",name:"Men's Color",mins:90,price:85}
+var COLOR = [
+  {id:"fc",  name:"Double Color (Whole Hair Cover)",       mins:120, price:130, promo:false},
+  {id:"rg",  name:"Root Touch (Gray Hair & Grown-Out Roots)", mins:120, price:115, promo:false},
+  {id:"bt1", name:"Partial Highlights",                    mins:120, price:125, promo:false},
+  {id:"bt2", name:"Full Foil Highlights",                  mins:150, price:155, promo:false},
+  {id:"dp",  name:"Korean Digital Perm",                   mins:180, price:250, promo:false},
+  {id:"rp",  name:"Women's Regular Perm",                  mins:120, price:150, promo:false},
+  {id:"rvp", name:"Root Volume Perm",                      mins:90,  price:105, promo:false},
+  {id:"mpe", name:"Men's Perm",                            mins:90,  price:125, promo:false},
+  {id:"rct", name:"Recovery Treatment",                    mins:120, price:200, promo:false},
+  {id:"mcol",name:"Men's Color",                           mins:90,  price:85,  promo:false}
 ];
-var SPA=[
-  {id:"s30",name:"K-Scalp Detox 30",mins:30,price:70,desc:"Express scalp care",promo:false},
-  {id:"s50",name:"K-Scalp Deep Care 50",mins:50,price:100,promoPrice:80,desc:"Signature head spa",promo:true},
-  {id:"s90",name:"K-Head Spa Full 90",mins:90,price:150,promoPrice:120,desc:"Full deep treatment",promo:true},
-  {id:"pk1",name:"5-Session Scalp Detox 30",mins:30,price:300,pkg:true,orig:350,desc:"5 sessions · Use anytime",promo:false},
-  {id:"pk2",name:"5-Session Deep Care 50",mins:50,price:450,pkg:true,orig:500,desc:"5 sessions · Use anytime",promo:false},
-  {id:"pk3",name:"5-Session Full Spa 90",mins:90,price:700,pkg:true,orig:750,desc:"5 sessions · Use anytime",promo:false}
+var SPA = [
+  {id:"s30", name:"K-Scalp Detox 30",          mins:30, price:70,  promoPrice:70,  desc:"Express scalp care",   promo:false},
+  {id:"s50", name:"K-Scalp Deep Care 50",       mins:50, price:100, promoPrice:80,  desc:"Signature head spa",   promo:true},
+  {id:"s90", name:"K-Head Spa Full 90",         mins:90, price:150, promoPrice:120, desc:"Full deep treatment",  promo:true},
+  {id:"pk1", name:"5-Session Scalp Detox 30",   mins:30, price:300, promoPrice:300, desc:"5 sessions · Use anytime", promo:false, pkg:true, orig:350},
+  {id:"pk2", name:"5-Session Deep Care 50",     mins:50, price:450, promoPrice:450, desc:"5 sessions · Use anytime", promo:false, pkg:true, orig:500},
+  {id:"pk3", name:"5-Session Full Spa 90",      mins:90, price:700, promoPrice:700, desc:"5 sessions · Use anytime", promo:false, pkg:true, orig:750}
 ];
-var ADDONS=[
-  {id:"amp",name:"Scalp Care Ampoule",price:45},
-  {id:"trt",name:"Hair Treatment",price:40},
-  {id:"blo",name:"Blowdry Add-on",price:35},
-  {id:"adp",name:"Down Perm",price:55},
-  {id:"fhs",name:"Fresh Head Spa",price:100}
+var ADDONS = [
+  {id:"amp", name:"Scalp Care Ampoule", price:45},
+  {id:"trt", name:"Hair Treatment",     price:40},
+  {id:"blo", name:"Blowdry Add-on",     price:35},
+  {id:"adp", name:"Down Perm",          price:55},
+  {id:"fhs", name:"Fresh Head Spa",     price:100}
 ];
-var CAL={
-  cut:"https://calendly.com/hairbychenny/30min",
-  color:"https://calendly.com/hairbychenny/hair-color-perm",
-  spa:"https://calendly.com/hairbychenny/head-spa-appointment-tue-thur"
+var CAL = {
+  cut:   "https://calendly.com/hairbychenny/30min",
+  color: "https://calendly.com/hairbychenny/hair-color-perm",
+  spa:   "https://calendly.com/hairbychenny/head-spa-appointment-tue-thur"
 };
-var PROMO="HEADSPA20";
-var promoUnlocked=false;
+var PROMO_CODE = "HEADSPA20";
 
-function fmt(n){return"$"+Number(n).toFixed(2);}
-
-var selCut=null,selColor=null,selSpa=null,selAddons=[];
-var coTarget=null,nsTarget=null,tipPct=null;
-var bookings=[
-  {id:1,name:"Sarah Kim",service:"Double Color",time:"10:00 AM",price:130,status:"confirmed",card:"4242"},
-  {id:2,name:"Jennifer P.",service:"K-Head Spa Full 90",time:"11:30 AM",price:120,status:"confirmed",card:"1234"},
-  {id:3,name:"Mike Lee",service:"Men's Haircut",time:"12:30 PM",price:48,status:"completed",card:"5678"}
+// ── 상태 ──
+var selCut = null, selColor = null, selSpa = null;
+var selAddons = [];
+var promoUnlocked = false;
+var coTarget = null, nsTarget = null, tipPct = null;
+var bookings = [
+  {id:1, name:"Sarah Kim",  service:"Double Color",       time:"10:00 AM", price:130, status:"confirmed", card:"4242"},
+  {id:2, name:"Jennifer P.",service:"K-Head Spa Full 90", time:"11:30 AM", price:120, status:"confirmed", card:"1234"},
+  {id:3, name:"Mike Lee",   service:"Men's Haircut",      time:"12:30 PM", price:48,  status:"completed", card:"5678"}
 ];
 
-function renderList(list,selId,type,el){
-  document.getElementById(el).innerHTML=list.map(function(s){
-    var isPromo=s.promo&&promoUnlocked;
-    var displayPrice=isPromo?s.promoPrice:s.price;
-    var hasSave=s.pkg&&s.orig>s.price;
-    return '<div class="svc'+(selId===s.id?" sel":"")+(s.promo?" promo":"")+'" data-id="'+s.id+'" onclick="pick(this,\''+type+'\')">'+
-      '<div>'+(s.pkg?'<div class="pkg-lbl">📦 Package · Pay once, use anytime</div>':'')+
-      '<div class="svc-name">'+s.name+(s.promo?'<span class="promo-pill">20% OFF</span>':'')+(hasSave?'<span class="save-pill">Save '+fmt(s.orig-s.price)+'</span>':'')+'</div>'+
-      '<div class="svc-meta">⏱ '+s.mins+'min'+(s.desc?' · '+s.desc:'')+'</div></div>'+
-      '<div style="text-align:right;flex-shrink:0;margin-left:12px;">'+
-      (s.promo&&promoUnlocked?'<div class="orig-p">'+fmt(s.price)+'</div>':'')+
-      (hasSave?'<div class="orig-p">'+fmt(s.orig)+'</div>':'')+
-      '<div class="svc-price">'+fmt(displayPrice)+'</div>'+
-      '<div class="svc-sub">'+(s.pkg?"package":"starting")+' price</div></div></div>';
-  }).join("");
+function fmt(n) { return "$" + Number(n).toFixed(2); }
+
+function findById(list, id) {
+  for (var i = 0; i < list.length; i++) {
+    if (list[i].id === id) return list[i];
+  }
+  return null;
 }
 
-function renderAddons(el){
-  document.getElementById(el).innerHTML=ADDONS.map(function(a){
-    var on=selAddons.indexOf(a.id)>=0;
-    return '<div class="adn'+(on?" on":"")+'" data-id="'+a.id+'" onclick="togAddon(this)">'+(on?"✓ ":"+ ")+a.name+' ('+fmt(a.price)+')</div>';
-  }).join("");
+// ── 렌더링 ──
+function renderList(list, selId, type, elId) {
+  var html = "";
+  for (var i = 0; i < list.length; i++) {
+    var s = list[i];
+    var isPromo = s.promo && promoUnlocked;
+    var displayPrice = isPromo ? s.promoPrice : s.price;
+    var hasSave = s.pkg && s.orig > s.price;
+    var cls = "svc" + (selId === s.id ? " sel" : "") + (s.promo ? " promo" : "");
+    html += '<div class="' + cls + '" data-id="' + s.id + '" onclick="pick(this,\'' + type + '\')">';
+    html += '<div>';
+    if (s.pkg) html += '<div class="pkg-lbl">📦 Package · Pay once, use anytime</div>';
+    html += '<div class="svc-name">' + s.name;
+    if (s.promo) html += '<span class="promo-pill">20% OFF</span>';
+    if (hasSave) html += '<span class="save-pill">Save ' + fmt(s.orig - s.price) + '</span>';
+    html += '</div>';
+    html += '<div class="svc-meta">⏱ ' + s.mins + 'min' + (s.desc ? ' · ' + s.desc : '') + '</div>';
+    html += '</div>';
+    html += '<div style="text-align:right;flex-shrink:0;margin-left:12px;">';
+    if (isPromo) html += '<div class="orig-p">' + fmt(s.price) + '</div>';
+    if (hasSave) html += '<div class="orig-p">' + fmt(s.orig) + '</div>';
+    html += '<div class="svc-price">' + fmt(displayPrice) + '</div>';
+    html += '<div class="svc-sub">' + (s.pkg ? "package" : "starting") + ' price</div>';
+    html += '</div></div>';
+  }
+  document.getElementById(elId).innerHTML = html;
 }
 
-function initAll(){
-  renderList(CUT,selCut,"cut","cut-svclist");
-  renderList(COLOR,selColor,"color","color-svclist");
-  renderList(SPA,selSpa,"spa","spa-svclist");
+function renderAddons(elId) {
+  var html = "";
+  for (var i = 0; i < ADDONS.length; i++) {
+    var a = ADDONS[i];
+    var on = selAddons.indexOf(a.id) >= 0;
+    html += '<div class="adn' + (on ? " on" : "") + '" data-id="' + a.id + '" onclick="togAddon(this)">' + (on ? "✓ " : "+ ") + a.name + ' (' + fmt(a.price) + ')</div>';
+  }
+  document.getElementById(elId).innerHTML = html;
+}
+
+function initAll() {
+  renderList(CUT,   selCut,   "cut",   "cut-svclist");
+  renderList(COLOR, selColor, "color", "color-svclist");
+  renderList(SPA,   selSpa,   "spa",   "spa-svclist");
   renderAddons("cut-adnlist");
   renderAddons("color-adnlist");
   renderAddons("spa-adnlist");
-  document.getElementById("btn-cut").disabled=!selCut;
-  document.getElementById("btn-color").disabled=!selColor;
-  document.getElementById("btn-spa").disabled=!selSpa;
-  document.getElementById("hint-cut").style.display=selCut?"none":"block";
-  document.getElementById("hint-color").style.display=selColor?"none":"block";
-  document.getElementById("hint-spa").style.display=selSpa?"none":"block";
+  document.getElementById("btn-cut").disabled   = !selCut;
+  document.getElementById("btn-color").disabled = !selColor;
+  document.getElementById("btn-spa").disabled   = !selSpa;
+  document.getElementById("hint-cut").style.display   = selCut   ? "none" : "block";
+  document.getElementById("hint-color").style.display = selColor ? "none" : "block";
+  document.getElementById("hint-spa").style.display   = selSpa   ? "none" : "block";
 }
 
-function pick(el,type){
-  if(type==="cut")selCut=el.dataset.id;
-  else if(type==="color")selColor=el.dataset.id;
-  else selSpa=el.dataset.id;
+function pick(el, type) {
+  if (type === "cut")        selCut   = el.dataset.id;
+  else if (type === "color") selColor = el.dataset.id;
+  else                       selSpa   = el.dataset.id;
   initAll();
 }
 
-function togAddon(el){
-  var id=el.dataset.id,idx=selAddons.indexOf(id);
-  if(idx>=0)selAddons.splice(idx,1);else selAddons.push(id);
+function togAddon(el) {
+  var id  = el.dataset.id;
+  var idx = selAddons.indexOf(id);
+  if (idx >= 0) selAddons.splice(idx, 1);
+  else selAddons.push(id);
   initAll();
 }
 
-function switchTab(type){
-  ["cut","color","spa"].forEach(function(t){
-    document.getElementById("panel-"+t).className="pg"+(t===type?" on":"");
-    document.getElementById("tab-"+t).className="tab"+(t===type?" on":"");
-  });
-}
-
-function checkPromo(){
-  var code=document.getElementById("promo-code").value.trim().toUpperCase();
-  document.getElementById("promo-err").style.display="none";
-  document.getElementById("promo-ok").style.display="none";
-  if(code===PROMO){
-    promoUnlocked=true;
-    initAll();
-    if(selSpa){
-      document.getElementById("promo-ok").style.display="block";
-      setTimeout(function(){goCalendly("spa");},1200);
-    } else {
-      document.getElementById("promo-ok").textContent="✅ Code applied! Now select a duration below.";
-      document.getElementById("promo-ok").style.display="block";
-    }
-  } else {
-    document.getElementById("promo-err").style.display="block";
+function switchTab(type) {
+  var types = ["cut", "color", "spa"];
+  for (var i = 0; i < types.length; i++) {
+    var t = types[i];
+    document.getElementById("panel-" + t).className = "pg" + (t === type ? " on" : "");
+    document.getElementById("tab-"   + t).className = "tab" + (t === type ? " on" : "");
   }
 }
 
-function goCalendly(type){
-  var list=type==="cut"?CUT:type==="color"?COLOR:SPA;
-  var selId=type==="cut"?selCut:type==="color"?selColor:selSpa;
-  var svc=null;
-  for(var i=0;i<list.length;i++){if(list[i].id===selId){svc=list[i];break;}}
-  if(!svc)return;
-  var displayPrice=(svc.promo&&promoUnlocked)?svc.promoPrice:svc.price;
-  var addonNames=selAddons.map(function(id){
-    for(var i=0;i<ADDONS.length;i++){if(ADDONS[i].id===id)return ADDONS[i].name;}
-    return "";
-  }).filter(Boolean).join(", ");
-  var notes="Service: "+svc.name+(svc.promo&&promoUnlocked?" (Aug Promo 20% OFF)":"")+" ("+svc.mins+"min / "+fmt(displayPrice)+")"+(addonNames?" | Add-ons: "+addonNames:"");
-  var url=CAL[type]+"?a1="+encodeURIComponent(notes);
-  var a=document.createElement("a");
-  a.href=url;
-  a.target="_blank";
-  a.rel="noopener noreferrer";
+// ── 프로모 코드 ──
+function checkPromo() {
+  var inp  = document.getElementById("promo-code");
+  var code = inp.value.trim().toUpperCase();
+  document.getElementById("promo-err").style.display = "none";
+  document.getElementById("promo-ok").style.display  = "none";
+
+  if (code === PROMO_CODE) {
+    promoUnlocked = true;
+    initAll();
+    if (selSpa) {
+      document.getElementById("promo-ok").textContent = "✅ Code applied! Opening Calendly...";
+      document.getElementById("promo-ok").style.display = "block";
+      setTimeout(function() { goCalendly("spa"); }, 1200);
+    } else {
+      document.getElementById("promo-ok").textContent = "✅ Code applied! Now select a duration below.";
+      document.getElementById("promo-ok").style.display = "block";
+    }
+  } else {
+    document.getElementById("promo-err").style.display = "block";
+  }
+}
+
+// ── 헤드스파 Book 버튼 (코드 필수) ──
+function spaBook() {
+  if (!promoUnlocked) {
+    var inp = document.getElementById("promo-code");
+    document.getElementById("promo-err").textContent = "❌ Please enter promo code first!";
+    document.getElementById("promo-err").style.display = "block";
+    inp.focus();
+    return;
+  }
+  goCalendly("spa");
+}
+
+// ── Calendly 이동 ──
+function goCalendly(type) {
+  var list  = type === "cut" ? CUT : type === "color" ? COLOR : SPA;
+  var selId = type === "cut" ? selCut : type === "color" ? selColor : selSpa;
+  var svc   = findById(list, selId);
+  if (!svc) return;
+
+  var displayPrice = (svc.promo && promoUnlocked) ? svc.promoPrice : svc.price;
+  var addonNames   = [];
+  for (var i = 0; i < selAddons.length; i++) {
+    var a = findById(ADDONS, selAddons[i]);
+    if (a) addonNames.push(a.name);
+  }
+  var notes = "Service: " + svc.name +
+    (svc.promo && promoUnlocked ? " (Aug Promo 20% OFF)" : "") +
+    " (" + svc.mins + "min / " + fmt(displayPrice) + ")" +
+    (addonNames.length ? " | Add-ons: " + addonNames.join(", ") : "");
+
+  var url = CAL[type] + "?a1=" + encodeURIComponent(notes);
+  var a = document.createElement("a");
+  a.href = url;
+  a.target = "_blank";
+  a.rel = "noopener noreferrer";
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
 }
 
-function openLogin(){document.getElementById("mlogin").classList.add("show");}
-function closeModal(id){document.getElementById(id).classList.remove("show");}
-function togglePw(){var i=document.getElementById("pwi");i.type=i.type==="password"?"text":"password";}
+// ── Admin ──
+function openLogin()  { document.getElementById("mlogin").classList.add("show"); }
+function closeModal(id) { document.getElementById(id).classList.remove("show"); }
+function togglePw()   { var i = document.getElementById("pwi"); i.type = i.type === "password" ? "text" : "password"; }
 
-function doLogin(){
-  if(document.getElementById("pwi").value==="chenny2026"){
+function doLogin() {
+  if (document.getElementById("pwi").value === "chenny2026") {
     closeModal("mlogin");
-    document.getElementById("booking").style.display="none";
-    document.getElementById("admin").style.display="block";
+    document.getElementById("booking").style.display = "none";
+    document.getElementById("admin").style.display   = "block";
     renderAdmin();
   } else {
-    document.getElementById("pwerr").style.display="block";
-    document.getElementById("pwi").value="";
+    document.getElementById("pwerr").style.display = "block";
+    document.getElementById("pwi").value = "";
   }
 }
 
-function closeAdmin(){
-  document.getElementById("booking").style.display="block";
-  document.getElementById("admin").style.display="none";
+function closeAdmin() {
+  document.getElementById("booking").style.display = "block";
+  document.getElementById("admin").style.display   = "none";
 }
 
-function renderAdmin(){
-  var done=bookings.filter(function(b){return b.status==="completed";});
-  var rev=0;done.forEach(function(b){rev+=b.price;});
-  var ns=bookings.filter(function(b){return b.status==="noshow";}).length;
-  var h='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">'+
-    '<h2 style="font-size:1.1rem;font-weight:800;">📊 Today\'s Dashboard</h2>'+
-    '<span style="font-size:.68rem;background:#f0fdf4;color:#15803d;padding:4px 12px;border-radius:100px;font-weight:700;">Admin</span></div>'+
-    '<div class="sgrid">'+
-    '<div class="sc"><div class="sv">'+bookings.length+'</div><div class="sl">Bookings</div></div>'+
-    '<div class="sc"><div class="sv">'+done.length+'</div><div class="sl">Completed</div></div>'+
-    '<div class="sc"><div class="sv" style="color:#2d6a4f;">'+fmt(rev)+'</div><div class="sl">Revenue</div></div>'+
-    '<div class="sc"><div class="sv" style="color:#dc2626;">'+ns+'</div><div class="sl">No-Shows</div></div></div>'+
+function renderAdmin() {
+  var done = [], rev = 0, ns = 0;
+  for (var i = 0; i < bookings.length; i++) {
+    if (bookings[i].status === "completed") { done.push(bookings[i]); rev += bookings[i].price; }
+    if (bookings[i].status === "noshow") ns++;
+  }
+  var h = '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">' +
+    '<h2 style="font-size:1.1rem;font-weight:800;">📊 Today\'s Dashboard</h2>' +
+    '<span style="font-size:.68rem;background:#f0fdf4;color:#15803d;padding:4px 12px;border-radius:100px;font-weight:700;">Admin</span></div>' +
+    '<div class="sgrid">' +
+    '<div class="sc"><div class="sv">' + bookings.length + '</div><div class="sl">Bookings</div></div>' +
+    '<div class="sc"><div class="sv">' + done.length + '</div><div class="sl">Completed</div></div>' +
+    '<div class="sc"><div class="sv" style="color:#2d6a4f;">' + fmt(rev) + '</div><div class="sl">Revenue</div></div>' +
+    '<div class="sc"><div class="sv" style="color:#dc2626;">' + ns + '</div><div class="sl">No-Shows</div></div></div>' +
     '<div class="stitle">Schedule</div>';
-  bookings.forEach(function(b){
-    var bc=b.status==="completed"?"bd":b.status==="noshow"?"bn":"bc";
-    var bl=b.status==="completed"?"✓ Done":b.status==="noshow"?"No-Show":"Confirmed";
-    h+='<div class="bk"><div class="bktop"><div><div class="bkn">'+b.name+'</div>'+
-      '<div class="bks">'+b.service+' · '+b.time+'</div></div>'+
-      '<span class="badge '+bc+'">'+bl+'</span></div>'+
-      '<div style="font-size:.72rem;color:#b0a090;margin-bottom:7px;">Total: <strong style="color:#3a3028;">'+fmt(b.price)+'</strong> · Card ••••'+b.card+'</div>'+
+
+  for (var i = 0; i < bookings.length; i++) {
+    var b  = bookings[i];
+    var bc = b.status === "completed" ? "bd" : b.status === "noshow" ? "bn" : "bc";
+    var bl = b.status === "completed" ? "✓ Done" : b.status === "noshow" ? "No-Show" : "Confirmed";
+    h += '<div class="bk"><div class="bktop"><div><div class="bkn">' + b.name + '</div>' +
+      '<div class="bks">' + b.service + ' · ' + b.time + '</div></div>' +
+      '<span class="badge ' + bc + '">' + bl + '</span></div>' +
+      '<div style="font-size:.72rem;color:#b0a090;margin-bottom:7px;">Total: <strong style="color:#3a3028;">' + fmt(b.price) + '</strong> · Card ••••' + b.card + '</div>' +
       '<div class="bkacts">';
-    if(b.status==="confirmed")h+='<button class="ba baco" onclick="openCo('+b.id+')">💰 Checkout</button><button class="ba bans" onclick="openNS('+b.id+')">No-Show</button>';
-    if(b.status==="completed")h+='<span style="font-size:.72rem;color:#15803d;font-weight:700;">✓ Payment Complete</span>';
-    if(b.status==="noshow")h+='<span style="font-size:.72rem;color:#dc2626;font-weight:700;">$50 Charged</span>';
-    h+='<button class="ba basm" onclick="alert(\'SMS sent!\')">📱 SMS</button></div></div>';
-  });
-  document.getElementById("admindash").innerHTML=h;
+    if (b.status === "confirmed") h += '<button class="ba baco" onclick="openCo(' + b.id + ')">💰 Checkout</button><button class="ba bans" onclick="openNS(' + b.id + ')">No-Show</button>';
+    if (b.status === "completed") h += '<span style="font-size:.72rem;color:#15803d;font-weight:700;">✓ Payment Complete</span>';
+    if (b.status === "noshow")    h += '<span style="font-size:.72rem;color:#dc2626;font-weight:700;">$50 Charged</span>';
+    h += '<button class="ba basm" onclick="alert(\'SMS sent!\')">📱 SMS</button></div></div>';
+  }
+  document.getElementById("admindash").innerHTML = h;
 }
 
-function openCo(id){
-  coTarget=null;
-  for(var i=0;i<bookings.length;i++){if(bookings[i].id===id){coTarget=bookings[i];break;}}
-  if(!coTarget)return;
-  tipPct=null;
-  document.getElementById("cosum").innerHTML='<div class="srow"><span class="slbl">'+coTarget.service+'</span><span>'+fmt(coTarget.price)+'</span></div><div class="srow tot"><span>Service Total</span><span>'+fmt(coTarget.price)+'</span></div>';
-  document.getElementById("cotips").innerHTML=[15,20,30].map(function(t){
-    return '<div class="tip" onclick="pickTip('+t+','+coTarget.price+',this)"><span class="tp">'+t+'%</span><span class="ta">'+fmt(coTarget.price*t/100)+'</span></div>';
+function openCo(id) {
+  coTarget = findById(bookings, id);
+  if (!coTarget) return;
+  tipPct = null;
+  document.getElementById("cosum").innerHTML =
+    '<div class="srow"><span class="slbl">' + coTarget.service + '</span><span>' + fmt(coTarget.price) + '</span></div>' +
+    '<div class="srow tot"><span>Service Total</span><span>' + fmt(coTarget.price) + '</span></div>';
+  document.getElementById("cotips").innerHTML = [15,20,30].map(function(t) {
+    return '<div class="tip" onclick="pickTip(' + t + ',' + coTarget.price + ',this)"><span class="tp">' + t + '%</span><span class="ta">' + fmt(coTarget.price * t / 100) + '</span></div>';
   }).join("");
-  document.getElementById("cotot").textContent="Select tip";
-  document.getElementById("cobtn").disabled=true;
+  document.getElementById("cotot").textContent = "Select tip";
+  document.getElementById("cobtn").disabled = true;
   document.getElementById("mco").classList.add("show");
 }
 
-function pickTip(p,tot,el){
-  tipPct=p;
-  document.querySelectorAll(".tip").forEach(function(t){t.classList.remove("on");});
+function pickTip(p, tot, el) {
+  tipPct = p;
+  var tips = document.querySelectorAll(".tip");
+  for (var i = 0; i < tips.length; i++) tips[i].classList.remove("on");
   el.classList.add("on");
-  document.getElementById("cotot").textContent=fmt(tot+tot*p/100);
-  document.getElementById("cobtn").disabled=false;
+  document.getElementById("cotot").textContent = fmt(tot + tot * p / 100);
+  document.getElementById("cobtn").disabled = false;
 }
 
-function doCheckout(){
-  bookings=bookings.map(function(b){return b.id===coTarget.id?Object.assign({},b,{status:"completed"}):b;});
-  closeModal("mco");renderAdmin();
+function doCheckout() {
+  for (var i = 0; i < bookings.length; i++) {
+    if (bookings[i].id === coTarget.id) { bookings[i].status = "completed"; break; }
+  }
+  closeModal("mco");
+  renderAdmin();
 }
 
-function openNS(id){
-  nsTarget=null;
-  for(var i=0;i<bookings.length;i++){if(bookings[i].id===id){nsTarget=bookings[i];break;}}
-  if(!nsTarget)return;
-  document.getElementById("nsinfo").innerHTML='<span><strong>'+nsTarget.name+'</strong> · '+nsTarget.service+'</span><span>Card ••••'+nsTarget.card+'</span>';
+function openNS(id) {
+  nsTarget = findById(bookings, id);
+  if (!nsTarget) return;
+  document.getElementById("nsinfo").innerHTML =
+    '<span><strong>' + nsTarget.name + '</strong> · ' + nsTarget.service + '</span><span>Card ••••' + nsTarget.card + '</span>';
   document.getElementById("mns").classList.add("show");
 }
 
-function doNS(){
-  bookings=bookings.map(function(b){return b.id===nsTarget.id?Object.assign({},b,{status:"noshow"}):b;});
-  closeModal("mns");renderAdmin();
+function doNS() {
+  for (var i = 0; i < bookings.length; i++) {
+    if (bookings[i].id === nsTarget.id) { bookings[i].status = "noshow"; break; }
+  }
+  closeModal("mns");
+  renderAdmin();
 }
 
 initAll();
