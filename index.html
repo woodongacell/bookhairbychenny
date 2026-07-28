@@ -19,11 +19,9 @@ header{background:#f2ece3;border-bottom:1px solid #e5ddd3;padding:18px 24px;disp
 .hero-line{width:40px;height:1px;background:#a07850;margin:12px auto;}
 .tags{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px;}
 .tag{background:rgba(255,255,255,.6);border:1px solid #d8c8b0;border-radius:100px;padding:5px 16px;font-size:.75rem;color:#7a5535;font-weight:500;}
-
-/* 프로모션 배너 */
 .promo-banner{background:linear-gradient(135deg,#2d6a4f,#1b4332);padding:18px 24px;text-align:center;position:relative;overflow:hidden;}
-.promo-banner::before{content:'✦';position:absolute;left:20px;top:50%;transform:translateY(-50%);font-size:1.5rem;color:rgba(255,255,255,.2);}
-.promo-banner::after{content:'✦';position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:1.5rem;color:rgba(255,255,255,.2);}
+.promo-banner::before{content:'✦';position:absolute;left:20px;top:50%;transform:translateY(-50%);font-size:1.5rem;color:rgba(255,255,255,.15);}
+.promo-banner::after{content:'✦';position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:1.5rem;color:rgba(255,255,255,.15);}
 .promo-badge{display:inline-block;background:#d4ac0d;color:#1b4332;font-size:.65rem;font-weight:800;padding:3px 12px;border-radius:100px;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
 .promo-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:#fff;margin-bottom:4px;}
 .promo-sub{font-size:.78rem;color:rgba(255,255,255,.8);margin-bottom:10px;}
@@ -33,7 +31,6 @@ header{background:#f2ece3;border-bottom:1px solid #e5ddd3;padding:18px 24px;disp
 .promo-price .new{font-size:1.1rem;font-weight:700;color:#d4ac0d;}
 .promo-price .label{font-size:.7rem;color:rgba(255,255,255,.8);}
 .promo-exp{font-size:.7rem;color:rgba(255,255,255,.6);margin-top:8px;}
-
 .banner{background:#2d2420;padding:14px 24px;text-align:center;}
 .banner .bt{font-size:.65rem;font-weight:700;color:#c8a878;letter-spacing:3px;text-transform:uppercase;margin-bottom:4px;}
 .banner h3{font-size:1rem;font-weight:600;color:#fff;margin-bottom:2px;}
@@ -53,23 +50,22 @@ header{background:#f2ece3;border-bottom:1px solid #e5ddd3;padding:18px 24px;disp
 #tab-spa{background:#f0f5ee;color:#9ab090;border-color:#c8dcc0;}
 #tab-spa.on{background:linear-gradient(135deg,#2d6a4f,#1b4332);color:#fff;border-color:transparent;box-shadow:0 6px 20px rgba(45,106,79,.35);}
 .svc{border:1.5px solid #ede5d8;border-radius:14px;padding:14px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;background:#fdf9f5;transition:all .2s;}
-.svc:hover{border-color:#c4a882;background:#fff;box-shadow:0 3px 14px rgba(160,120,80,.1);}
-.svc.on{background:#3a3028;color:#fff;border-color:#3a3028;}
+.svc:hover{border-color:#c4a882;background:#fff;}
+.svc.sel{background:#3a3028;color:#fff;border-color:#3a3028;}
 .svc.promo{border-color:#2d6a4f;background:#f0f8f4;}
-.svc.promo.on{background:#1b4332;border-color:#1b4332;}
+.svc.promo.sel{background:#1b4332;border-color:#1b4332;}
 .svc-name{font-size:.88rem;font-weight:600;margin-bottom:3px;}
 .svc-meta{font-size:.75rem;color:#b0a090;}
-.svc.on .svc-meta{color:#c0b0a0;}
+.svc.sel .svc-meta,.svc.promo.sel .svc-meta{color:#c0b0a0;}
 .svc-price{font-size:.95rem;font-weight:700;text-align:right;color:#a07850;}
-.svc.on .svc-price{color:#d4a870;}
+.svc.sel .svc-price{color:#d4a870;}
 .svc.promo .svc-price{color:#2d6a4f;}
-.svc.promo.on .svc-price{color:#d4ac0d;}
+.svc.promo.sel .svc-price{color:#d4ac0d;}
 .svc-sub{font-size:.68rem;color:#c0b0a0;margin-top:1px;text-align:right;}
-.orig-price{font-size:.68rem;text-decoration:line-through;color:#b0a090;text-align:right;}
+.orig-p{font-size:.68rem;text-decoration:line-through;color:#b0a090;text-align:right;}
 .promo-pill{display:inline-block;background:#d4ac0d;color:#1b4332;font-size:.6rem;font-weight:800;padding:2px 7px;border-radius:100px;margin-left:5px;vertical-align:middle;}
 .pkg-lbl{font-size:.68rem;color:#9c27b0;font-weight:700;margin-bottom:3px;}
 .save-pill{background:#dcfce7;color:#15803d;font-size:.62rem;font-weight:700;padding:2px 7px;border-radius:100px;margin-left:5px;}
-.orig-p{font-size:.68rem;text-decoration:line-through;color:#c0b0a0;text-align:right;}
 .adn{display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border-radius:100px;font-size:.75rem;font-weight:600;border:1.5px solid #e5ddd3;cursor:pointer;background:#fdf9f5;color:#7a6858;transition:all .2s;margin-bottom:6px;}
 .adn.on{background:#3a3028;color:#fff;border-color:#3a3028;}
 .add-charges{background:#fffbeb;border:1.5px solid #fde68a;border-radius:14px;padding:14px 16px;margin:14px 0;}
@@ -78,7 +74,6 @@ header{background:#f2ece3;border-bottom:1px solid #e5ddd3;padding:18px 24px;disp
 .ac-item{background:#fff;border-radius:8px;padding:8px 10px;border:1px solid #fde68a;}
 .ac-label{font-size:.68rem;color:#b0a090;margin-bottom:2px;}
 .ac-val{font-size:.82rem;font-weight:700;}
-.nerr{background:#fef2f2;color:#991b1b;border:1px solid #fecaca;border-radius:12px;padding:11px 14px;font-size:.8rem;display:flex;gap:9px;margin-bottom:12px;}
 .book-btn{display:block;width:100%;padding:15px;border-radius:13px;border:none;font-family:'Jost',sans-serif;font-size:.88rem;font-weight:600;cursor:pointer;transition:all .25s;margin-top:6px;letter-spacing:.8px;text-transform:uppercase;}
 .book-btn:disabled{background:#e8e0d8;color:#c0b0a0;cursor:not-allowed;}
 .book-btn.cut{background:linear-gradient(135deg,#a07850,#7a5535);color:#fff;}
@@ -87,6 +82,9 @@ header{background:#f2ece3;border-bottom:1px solid #e5ddd3;padding:18px 24px;disp
 .hint{text-align:center;font-size:.72rem;color:#c0b0a0;margin-top:7px;}
 .card{background:#fff;border-radius:18px;padding:20px;border:1px solid #ede5d8;margin-bottom:12px;}
 .pg{display:none;}.pg.on{display:block;}
+@keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(212,172,13,.5);border-color:#d4ac0d;}50%{box-shadow:0 0 0 6px rgba(212,172,13,0);border-color:#b8940a;}}
+.promo-input{flex:1;height:46px;border:2.5px solid #d4ac0d;border-radius:10px;padding:0 14px;font-size:.9rem;font-family:'Jost',sans-serif;background:#fff;color:#1b4332;font-weight:600;outline:none;animation:glow 1.8s infinite;}
+.promo-apply{background:linear-gradient(135deg,#d4ac0d,#b8940a);color:#1b4332;border:none;border-radius:10px;padding:0 18px;height:46px;font-family:'Jost',sans-serif;font-weight:800;font-size:.82rem;cursor:pointer;white-space:nowrap;}
 .adminlnk{text-align:center;margin-top:24px;padding-top:20px;border-top:1px solid #e8ddd0;}
 .adminlnk button{background:#3a3028;border:none;font-size:.8rem;color:#fff;cursor:pointer;font-family:'Jost',sans-serif;padding:10px 26px;border-radius:100px;font-weight:600;}
 .back-btn{background:none;border:none;font-size:.8rem;color:#a09080;cursor:pointer;margin-bottom:12px;font-family:'Jost',sans-serif;font-weight:600;}
@@ -111,11 +109,10 @@ header{background:#f2ece3;border-bottom:1px solid #e5ddd3;padding:18px 24px;disp
 .modal h2{font-size:1.1rem;font-weight:700;margin-bottom:4px;}
 .modal>p{font-size:.8rem;color:#b0a090;margin-bottom:16px;}
 .tipgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px;}
-.tip{padding:13px;border-radius:12px;border:1.5px solid #ede5d8;background:#fdf9f5;cursor:pointer;text-align:center;transition:all .2s;}
+.tip{padding:13px;border-radius:12px;border:1.5px solid #ede5d8;background:#fdf9f5;cursor:pointer;text-align:center;}
 .tip.on{background:#3a3028;color:#fff;border-color:#3a3028;}
 .tp{font-size:1.1rem;font-weight:800;display:block;}
 .ta{font-size:.72rem;color:#b0a090;display:block;margin-top:1px;}
-.tip.on .ta{color:#c0b0a0;}
 .totbox{background:#3a3028;color:#fff;border-radius:12px;padding:14px;display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
 .sumbox{background:#f9f6f1;border-radius:12px;padding:14px;margin-bottom:12px;}
 .srow{display:flex;justify-content:space-between;font-size:.83rem;padding:4px 0;}
@@ -151,19 +148,23 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
   </div>
 </div>
 
-<!-- 프로모션 배너 -->
 <div class="promo-banner">
   <div class="promo-badge">🎉 August Special</div>
   <div class="promo-title">Grand Opening Head Spa Promotion</div>
   <div class="promo-sub">Experience premium Korean scalp care at 20% off!</div>
   <div class="promo-prices">
     <div class="promo-price">
+      <div class="orig">$100</div>
+      <div class="new">$80</div>
+      <div class="label">50 min</div>
+    </div>
+    <div class="promo-price">
       <div class="orig">$150</div>
       <div class="new">$120</div>
       <div class="label">90 min</div>
     </div>
   </div>
-  <div class="promo-exp">⏰ August 1–31, 2025 only · Limited availability</div>
+  <div class="promo-exp">⏰ August 1–31, 2025 only · Promo code required</div>
 </div>
 
 <div class="banner">
@@ -204,14 +205,14 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
           <div style="display:flex;flex-wrap:wrap;gap:6px;" id="cut-adnlist"></div>
         </div>
         <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:12px;">
-          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f7f0e8;color:#a07850;">Monday</span>
-          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f0ebe4;color:#c0b0a0;">Tuesday</span>
-          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f7f0e8;color:#a07850;">Wednesday</span>
-          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f0ebe4;color:#c0b0a0;">Thursday</span>
-          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f7f0e8;color:#a07850;">Friday</span>
+          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f7f0e8;color:#a07850;">Monday</span>
+          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f0ebe4;color:#c0b0a0;">Tuesday</span>
+          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f7f0e8;color:#a07850;">Wednesday</span>
+          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f0ebe4;color:#c0b0a0;">Thursday</span>
+          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f7f0e8;color:#a07850;">Friday</span>
         </div>
       </div>
-      <button class="book-btn cut" id="btn-cut" disabled onclick="openCalendly('cut')">Book & Start →</button>
+      <button class="book-btn cut" id="btn-cut" disabled onclick="goCalendly('cut')">Book & Start →</button>
       <p class="hint" id="hint-cut">Please select a service above</p>
     </div>
 
@@ -234,26 +235,33 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
           </div>
         </div>
         <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:12px;">
-          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f5eef8;color:#9b59b6;">Monday</span>
-          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f0ebe4;color:#c0b0a0;">Tuesday</span>
-          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f5eef8;color:#9b59b6;">Wednesday</span>
-          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f0ebe4;color:#c0b0a0;">Thursday</span>
-          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f5eef8;color:#9b59b6;">Friday</span>
+          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f5eef8;color:#9b59b6;">Monday</span>
+          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f0ebe4;color:#c0b0a0;">Tuesday</span>
+          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f5eef8;color:#9b59b6;">Wednesday</span>
+          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f0ebe4;color:#c0b0a0;">Thursday</span>
+          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f5eef8;color:#9b59b6;">Friday</span>
         </div>
       </div>
-      <button class="book-btn color" id="btn-color" disabled onclick="openCalendly('color')">Book & Start →</button>
+      <button class="book-btn color" id="btn-color" disabled onclick="goCalendly('color')">Book & Start →</button>
       <p class="hint" id="hint-color">Please select a service above</p>
     </div>
 
     <!-- HEAD SPA -->
     <div class="pg" id="panel-spa">
       <div class="card">
-        <!-- 프로모션 안내 -->
-        <div style="background:linear-gradient(135deg,#f0f8f4,#e8f5ee);border:1.5px solid #2d6a4f;border-radius:12px;padding:12px 16px;margin-bottom:14px;text-align:center;">
-          <div style="font-size:.7rem;font-weight:800;color:#2d6a4f;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px;">🎉 August Promotion</div>
-          <div style="font-size:.85rem;font-weight:600;color:#1b4332;">20% OFF — 90min only</div>
-          <div style="font-size:.72rem;color:#5a8a6a;margin-top:2px;">Limited time · August 1–31</div>
+        <!-- 프로모션 박스 + 코드 입력 -->
+        <div style="background:linear-gradient(135deg,#1b4332,#2d6a4f);border-radius:14px;padding:16px;margin-bottom:16px;text-align:center;">
+          <div style="font-size:.68rem;font-weight:800;color:#d4ac0d;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;">🎉 August Promotion</div>
+          <div style="font-size:.92rem;font-weight:700;color:#fff;margin-bottom:2px;">20% OFF — 50min & 90min</div>
+          <div style="font-size:.72rem;color:rgba(255,255,255,.7);margin-bottom:14px;">August 1–31 only</div>
+          <div style="display:flex;gap:8px;max-width:320px;margin:0 auto;">
+            <input id="promo-code" class="promo-input" placeholder="🎟 Enter promo code" onkeydown="if(event.key==='Enter')checkPromo()"/>
+            <button class="promo-apply" onclick="checkPromo()">APPLY ✓</button>
+          </div>
+          <p id="promo-err" style="color:#ff6b6b;font-size:.75rem;margin-top:8px;display:none;">❌ Invalid code. Please try again.</p>
+          <p id="promo-ok" style="color:#d4ac0d;font-size:.75rem;font-weight:700;margin-top:8px;display:none;">✅ Code applied! Opening Calendly...</p>
         </div>
+
         <div class="stitle" style="margin-bottom:12px;">Select Duration</div>
         <div id="spa-svclist"></div>
         <div style="border-top:1px solid #f0ebe4;margin-top:14px;padding-top:14px;">
@@ -261,15 +269,15 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
           <div style="display:flex;flex-wrap:wrap;gap:6px;" id="spa-adnlist"></div>
         </div>
         <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:14px;">
-          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f0ebe4;color:#c0b0a0;">Monday</span>
-          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f0f8f4;color:#2d6a4f;">Tuesday</span>
-          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f0ebe4;color:#c0b0a0;">Wednesday</span>
-          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f0f8f4;color:#2d6a4f;">Thursday</span>
-          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;font-weight:500;background:#f0ebe4;color:#c0b0a0;">Friday</span>
+          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f0ebe4;color:#c0b0a0;">Monday</span>
+          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f0f8f4;color:#2d6a4f;">Tuesday</span>
+          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f0ebe4;color:#c0b0a0;">Wednesday</span>
+          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f0f8f4;color:#2d6a4f;">Thursday</span>
+          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f0ebe4;color:#c0b0a0;">Friday</span>
         </div>
         <div style="font-size:.72rem;color:#b0a090;margin-top:6px;">Scalp scaling included with all sessions</div>
       </div>
-      <button class="book-btn spa" id="btn-spa" disabled onclick="openCalendly('spa')">Book & Start →</button>
+      <button class="book-btn spa" id="btn-spa" disabled onclick="goCalendly('spa')">Book & Start →</button>
       <p class="hint" id="hint-spa">Please select a duration above</p>
     </div>
   </div>
@@ -337,12 +345,12 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
 </div>
 
 <script>
-var CUT_SVCS=[
+var CUT=[
   {id:"sig",name:"Chenny's Signature Cut",mins:45,price:68},
   {id:"mc",name:"Men's Haircut",mins:35,price:48},
   {id:"msp",name:"Men's Cut + Scalp + Head Spa",mins:120,price:135}
 ];
-var COLOR_SVCS=[
+var COLOR=[
   {id:"fc",name:"Double Color (Whole Hair Cover)",mins:120,price:130},
   {id:"rg",name:"Root Touch (Gray Hair & Grown-Out Roots)",mins:120,price:115},
   {id:"bt1",name:"Partial Highlights",mins:120,price:125},
@@ -354,13 +362,13 @@ var COLOR_SVCS=[
   {id:"rct",name:"Recovery Treatment",mins:120,price:200},
   {id:"mcol",name:"Men's Color",mins:90,price:85}
 ];
-var SPA_SVCS=[
-  {id:"s30",name:"K-Scalp Detox 30",mins:30,price:70,desc:"Express scalp care"},
-  {id:"s50",name:"K-Scalp Deep Care 50",mins:50,price:100,desc:"Signature head spa"},
+var SPA=[
+  {id:"s30",name:"K-Scalp Detox 30",mins:30,price:70,desc:"Express scalp care",promo:false},
+  {id:"s50",name:"K-Scalp Deep Care 50",mins:50,price:100,promoPrice:80,desc:"Signature head spa",promo:true},
   {id:"s90",name:"K-Head Spa Full 90",mins:90,price:150,promoPrice:120,desc:"Full deep treatment",promo:true},
-  {id:"pk1",name:"📦 5-Session — Scalp Detox 30",mins:30,price:300,pkg:true,orig:350,desc:"5 sessions · Use anytime"},
-  {id:"pk2",name:"📦 5-Session — Deep Care 50",mins:50,price:450,pkg:true,orig:500,desc:"5 sessions · Use anytime"},
-  {id:"pk3",name:"📦 5-Session — Full Spa 90",mins:90,price:700,pkg:true,orig:750,desc:"5 sessions · Use anytime"}
+  {id:"pk1",name:"5-Session Scalp Detox 30",mins:30,price:300,pkg:true,orig:350,desc:"5 sessions · Use anytime",promo:false},
+  {id:"pk2",name:"5-Session Deep Care 50",mins:50,price:450,pkg:true,orig:500,desc:"5 sessions · Use anytime",promo:false},
+  {id:"pk3",name:"5-Session Full Spa 90",mins:90,price:700,pkg:true,orig:750,desc:"5 sessions · Use anytime",promo:false}
 ];
 var ADDONS=[
   {id:"amp",name:"Scalp Care Ampoule",price:45},
@@ -374,48 +382,47 @@ var CAL={
   color:"https://calendly.com/hairbychenny/hair-color-perm",
   spa:"https://calendly.com/hairbychenny/head-spa-appointment-tue-thur"
 };
+var PROMO="HEADSPA20";
+var promoUnlocked=false;
 
 function fmt(n){return"$"+Number(n).toFixed(2);}
-function allSvcs(){return CUT_SVCS.concat(COLOR_SVCS,SPA_SVCS);}
 
 var selCut=null,selColor=null,selSpa=null,selAddons=[];
 var coTarget=null,nsTarget=null,tipPct=null;
 var bookings=[
-  {id:1,name:"Sarah Kim",phone:"(703)555-0101",service:"Double Color",time:"10:00 AM",price:130,status:"confirmed",card:"4242"},
-  {id:2,name:"Jennifer P.",phone:"(571)555-0202",service:"K-Head Spa Full 90",time:"11:30 AM",price:120,status:"confirmed",card:"1234"},
-  {id:3,name:"Mike Lee",phone:"(703)555-0303",service:"Men's Haircut",time:"12:30 PM",price:48,status:"completed",card:"5678"}
+  {id:1,name:"Sarah Kim",service:"Double Color",time:"10:00 AM",price:130,status:"confirmed",card:"4242"},
+  {id:2,name:"Jennifer P.",service:"K-Head Spa Full 90",time:"11:30 AM",price:120,status:"confirmed",card:"1234"},
+  {id:3,name:"Mike Lee",service:"Men's Haircut",time:"12:30 PM",price:48,status:"completed",card:"5678"}
 ];
 
-function renderSvcs(list,selId,type,gridId){
-  document.getElementById(gridId).innerHTML=list.map(function(s){
-    var hasSave=s.pkg&&s.orig>s.price;
-    var isPromo=s.promo;
+function renderList(list,selId,type,el){
+  document.getElementById(el).innerHTML=list.map(function(s){
+    var isPromo=s.promo&&promoUnlocked;
     var displayPrice=isPromo?s.promoPrice:s.price;
-    return'<div class="svc'+(selId===s.id?" on":"")+(isPromo?" promo":"")+(s.pkg?' style="border-color:#e9d5ff;"':'')+'" data-id="'+s.id+'" onclick="setSvc(this,\''+type+'\')">'+
-      '<div>'+(s.pkg?'<div class="pkg-lbl">Package · Pay once, use anytime</div>':'')+
-      '<div class="svc-name">'+s.name+
-      (isPromo?'<span class="promo-pill">20% OFF</span>':'')+
-      (hasSave?'<span class="save-pill">Save '+fmt(s.orig-s.price)+'</span>':'')+
-      '</div><div class="svc-meta">⏱ '+s.mins+'min'+(s.desc?' · '+s.desc:'')+'</div></div>'+
+    var hasSave=s.pkg&&s.orig>s.price;
+    return '<div class="svc'+(selId===s.id?" sel":"")+(s.promo?" promo":"")+'" data-id="'+s.id+'" onclick="pick(this,\''+type+'\')">'+
+      '<div>'+(s.pkg?'<div class="pkg-lbl">📦 Package · Pay once, use anytime</div>':'')+
+      '<div class="svc-name">'+s.name+(s.promo?'<span class="promo-pill">20% OFF</span>':'')+(hasSave?'<span class="save-pill">Save '+fmt(s.orig-s.price)+'</span>':'')+'</div>'+
+      '<div class="svc-meta">⏱ '+s.mins+'min'+(s.desc?' · '+s.desc:'')+'</div></div>'+
       '<div style="text-align:right;flex-shrink:0;margin-left:12px;">'+
-      (isPromo?'<div class="orig-p">'+fmt(s.price)+'</div>':'')+
+      (s.promo&&promoUnlocked?'<div class="orig-p">'+fmt(s.price)+'</div>':'')+
       (hasSave?'<div class="orig-p">'+fmt(s.orig)+'</div>':'')+
       '<div class="svc-price">'+fmt(displayPrice)+'</div>'+
       '<div class="svc-sub">'+(s.pkg?"package":"starting")+' price</div></div></div>';
   }).join("");
 }
 
-function renderAddons(adnId){
-  document.getElementById(adnId).innerHTML=ADDONS.map(function(a){
+function renderAddons(el){
+  document.getElementById(el).innerHTML=ADDONS.map(function(a){
     var on=selAddons.indexOf(a.id)>=0;
-    return'<div class="adn'+(on?" on":"")+'" data-id="'+a.id+'" onclick="togAddon(this)">'+(on?"✓ ":"+ ")+a.name+' ('+fmt(a.price)+')</div>';
+    return '<div class="adn'+(on?" on":"")+'" data-id="'+a.id+'" onclick="togAddon(this)">'+(on?"✓ ":"+ ")+a.name+' ('+fmt(a.price)+')</div>';
   }).join("");
 }
 
 function initAll(){
-  renderSvcs(CUT_SVCS,selCut,"cut","cut-svclist");
-  renderSvcs(COLOR_SVCS,selColor,"color","color-svclist");
-  renderSvcs(SPA_SVCS,selSpa,"spa","spa-svclist");
+  renderList(CUT,selCut,"cut","cut-svclist");
+  renderList(COLOR,selColor,"color","color-svclist");
+  renderList(SPA,selSpa,"spa","spa-svclist");
   renderAddons("cut-adnlist");
   renderAddons("color-adnlist");
   renderAddons("spa-adnlist");
@@ -427,7 +434,7 @@ function initAll(){
   document.getElementById("hint-spa").style.display=selSpa?"none":"block";
 }
 
-function setSvc(el,type){
+function pick(el,type){
   if(type==="cut")selCut=el.dataset.id;
   else if(type==="color")selColor=el.dataset.id;
   else selSpa=el.dataset.id;
@@ -447,28 +454,67 @@ function switchTab(type){
   });
 }
 
-function openCalendly(type){
+function checkPromo(){
+  var code=document.getElementById("promo-code").value.trim().toUpperCase();
+  document.getElementById("promo-err").style.display="none";
+  document.getElementById("promo-ok").style.display="none";
+  if(code===PROMO){
+    promoUnlocked=true;
+    initAll();
+    if(selSpa){
+      document.getElementById("promo-ok").style.display="block";
+      setTimeout(function(){goCalendly("spa");},1200);
+    } else {
+      document.getElementById("promo-ok").textContent="✅ Code applied! Now select a duration below.";
+      document.getElementById("promo-ok").style.display="block";
+    }
+  } else {
+    document.getElementById("promo-err").style.display="block";
+  }
+}
+
+function goCalendly(type){
+  var list=type==="cut"?CUT:type==="color"?COLOR:SPA;
   var selId=type==="cut"?selCut:type==="color"?selColor:selSpa;
-  var svc=allSvcs().find(function(s){return s.id===selId;});
-  var addonNames=selAddons.map(function(id){var a=ADDONS.find(function(x){return x.id===id;});return a?a.name:"";}).filter(Boolean).join(", ");
-  var displayPrice=svc.promo?svc.promoPrice:svc.price;
-  var notes="Service: "+svc.name+(svc.promo?" (Aug Promo 20% OFF)":"")+" ("+svc.mins+"min / "+fmt(displayPrice)+")"+(addonNames?" | Add-ons: "+addonNames:"");
+  var svc=null;
+  for(var i=0;i<list.length;i++){if(list[i].id===selId){svc=list[i];break;}}
+  if(!svc)return;
+  var displayPrice=(svc.promo&&promoUnlocked)?svc.promoPrice:svc.price;
+  var addonNames=selAddons.map(function(id){
+    for(var i=0;i<ADDONS.length;i++){if(ADDONS[i].id===id)return ADDONS[i].name;}
+    return "";
+  }).filter(Boolean).join(", ");
+  var notes="Service: "+svc.name+(svc.promo&&promoUnlocked?" (Aug Promo 20% OFF)":"")+" ("+svc.mins+"min / "+fmt(displayPrice)+")"+(addonNames?" | Add-ons: "+addonNames:"");
   var url=CAL[type]+"?a1="+encodeURIComponent(notes);
-  window.open(url,"_blank");
+  var a=document.createElement("a");
+  a.href=url;
+  a.target="_blank";
+  a.rel="noopener noreferrer";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
 }
 
 function openLogin(){document.getElementById("mlogin").classList.add("show");}
 function closeModal(id){document.getElementById(id).classList.remove("show");}
 function togglePw(){var i=document.getElementById("pwi");i.type=i.type==="password"?"text":"password";}
+
 function doLogin(){
   if(document.getElementById("pwi").value==="chenny2026"){
     closeModal("mlogin");
     document.getElementById("booking").style.display="none";
     document.getElementById("admin").style.display="block";
     renderAdmin();
-  }else{document.getElementById("pwerr").style.display="block";document.getElementById("pwi").value="";}
+  } else {
+    document.getElementById("pwerr").style.display="block";
+    document.getElementById("pwi").value="";
+  }
 }
-function closeAdmin(){document.getElementById("booking").style.display="block";document.getElementById("admin").style.display="none";}
+
+function closeAdmin(){
+  document.getElementById("booking").style.display="block";
+  document.getElementById("admin").style.display="none";
+}
 
 function renderAdmin(){
   var done=bookings.filter(function(b){return b.status==="completed";});
@@ -489,8 +535,7 @@ function renderAdmin(){
     h+='<div class="bk"><div class="bktop"><div><div class="bkn">'+b.name+'</div>'+
       '<div class="bks">'+b.service+' · '+b.time+'</div></div>'+
       '<span class="badge '+bc+'">'+bl+'</span></div>'+
-      '<div style="font-size:.72rem;color:#b0a090;margin-bottom:7px;">'+
-      'Total: <strong style="color:#3a3028;">'+fmt(b.price)+'</strong> · Card ••••'+b.card+'</div>'+
+      '<div style="font-size:.72rem;color:#b0a090;margin-bottom:7px;">Total: <strong style="color:#3a3028;">'+fmt(b.price)+'</strong> · Card ••••'+b.card+'</div>'+
       '<div class="bkacts">';
     if(b.status==="confirmed")h+='<button class="ba baco" onclick="openCo('+b.id+')">💰 Checkout</button><button class="ba bans" onclick="openNS('+b.id+')">No-Show</button>';
     if(b.status==="completed")h+='<span style="font-size:.72rem;color:#15803d;font-weight:700;">✓ Payment Complete</span>';
@@ -501,17 +546,19 @@ function renderAdmin(){
 }
 
 function openCo(id){
-  coTarget=bookings.find(function(b){return b.id===id;});tipPct=null;
-  document.getElementById("cosum").innerHTML=
-    '<div class="srow"><span class="slbl">'+coTarget.service+'</span><span>'+fmt(coTarget.price)+'</span></div>'+
-    '<div class="srow tot"><span>Service Total</span><span>'+fmt(coTarget.price)+'</span></div>';
+  coTarget=null;
+  for(var i=0;i<bookings.length;i++){if(bookings[i].id===id){coTarget=bookings[i];break;}}
+  if(!coTarget)return;
+  tipPct=null;
+  document.getElementById("cosum").innerHTML='<div class="srow"><span class="slbl">'+coTarget.service+'</span><span>'+fmt(coTarget.price)+'</span></div><div class="srow tot"><span>Service Total</span><span>'+fmt(coTarget.price)+'</span></div>';
   document.getElementById("cotips").innerHTML=[15,20,30].map(function(t){
-    return'<div class="tip" onclick="pickTip('+t+','+coTarget.price+',this)"><span class="tp">'+t+'%</span><span class="ta">'+fmt(coTarget.price*t/100)+'</span></div>';
+    return '<div class="tip" onclick="pickTip('+t+','+coTarget.price+',this)"><span class="tp">'+t+'%</span><span class="ta">'+fmt(coTarget.price*t/100)+'</span></div>';
   }).join("");
   document.getElementById("cotot").textContent="Select tip";
   document.getElementById("cobtn").disabled=true;
   document.getElementById("mco").classList.add("show");
 }
+
 function pickTip(p,tot,el){
   tipPct=p;
   document.querySelectorAll(".tip").forEach(function(t){t.classList.remove("on");});
@@ -519,15 +566,20 @@ function pickTip(p,tot,el){
   document.getElementById("cotot").textContent=fmt(tot+tot*p/100);
   document.getElementById("cobtn").disabled=false;
 }
+
 function doCheckout(){
   bookings=bookings.map(function(b){return b.id===coTarget.id?Object.assign({},b,{status:"completed"}):b;});
   closeModal("mco");renderAdmin();
 }
+
 function openNS(id){
-  nsTarget=bookings.find(function(b){return b.id===id;});
+  nsTarget=null;
+  for(var i=0;i<bookings.length;i++){if(bookings[i].id===id){nsTarget=bookings[i];break;}}
+  if(!nsTarget)return;
   document.getElementById("nsinfo").innerHTML='<span><strong>'+nsTarget.name+'</strong> · '+nsTarget.service+'</span><span>Card ••••'+nsTarget.card+'</span>';
   document.getElementById("mns").classList.add("show");
 }
+
 function doNS(){
   bookings=bookings.map(function(b){return b.id===nsTarget.id?Object.assign({},b,{status:"noshow"}):b;});
   closeModal("mns");renderAdmin();
