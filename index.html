@@ -426,11 +426,11 @@ var SPA = [
   {id:"pk3", name:"5-Session Full Spa 90",  mins:90, price:700, desc:"5 sessions · Use anytime", pkg:true, orig:750}
 ];
 var ADDONS = [
-  {id:"amp", name:"Scalp Care Ampoule", price:45},
-  {id:"trt", name:"Hair Treatment",     price:40},
-  {id:"blo", name:"Blowdry Add-on",     price:35},
-  {id:"adp", name:"Down Perm",          price:55},
-  {id:"fhs", name:"Fresh Head Spa",     price:100}
+  {id:"amp", name:"Scalp Care Ampoule", price:45,  mins:30},
+  {id:"trt", name:"Hair Treatment",     price:40,  mins:30},
+  {id:"blo", name:"Blowdry Add-on",     price:35,  mins:20},
+  {id:"adp", name:"Down Perm",          price:55,  mins:15},
+  {id:"fhs", name:"Fresh Head Spa",     price:100, mins:50}
 ];
 var CAL = {
   cut:   "https://calendly.com/hairbychenny/30min",
@@ -601,8 +601,10 @@ function doConfirm(){
     '<div class="srow tot"><span>Pay at shop after service</span><span>'+fmt(total)+'+</span></div>';
   document.getElementById("ccard").textContent="Card •••• "+last4+" saved · 50% no-show fee if missed without notice";
 
-  var addonNames=selAddons.map(function(id){var a=findById(ADDONS,id);return a?a.name:"";}).filter(Boolean).join(", ");
-  var notes="Service: "+svc.name+" ("+svc.mins+"min / "+fmt(svc.price)+")"+(addonNames?" + Add-ons: "+addonNames:"");
+  var addonMins=0;
+  var addonNames=selAddons.map(function(id){var a=findById(ADDONS,id);if(a)addonMins+=a.mins;return a?a.name+"(+"+a.mins+"min)":"";}).filter(Boolean).join(", ");
+  var totalMins=svc.mins+addonMins;
+  var notes="Service: "+svc.name+" ("+svc.mins+"min / "+fmt(svc.price)+")"+(addonNames?" + Add-ons: "+addonNames+" | Total: "+totalMins+"min":"");
   calendlyUrl=CAL[curType]+"?name="+encodeURIComponent(fname)+"&a1="+encodeURIComponent(notes);
 
   goTo("p3");
