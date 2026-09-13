@@ -602,7 +602,7 @@ function doConfirm(){
   document.getElementById("ccard").textContent="Card •••• "+last4+" saved · 50% no-show fee if missed without notice";
 
   var addonNames=selAddons.map(function(id){var a=findById(ADDONS,id);return a?a.name:"";}).filter(Boolean).join(", ");
-  var notes="Service: "+svc.name+" ("+svc.mins+"min / "+fmt(svc.price)+")"+(addonNames?" | Add-ons: "+addonNames:"");
+  var notes="Service: "+svc.name+" ("+svc.mins+"min / "+fmt(svc.price)+")"+(addonNames?" + Add-ons: "+addonNames:"");
   calendlyUrl=CAL[curType]+"?name="+encodeURIComponent(fname)+"&a1="+encodeURIComponent(notes);
 
   goTo("p3");
