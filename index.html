@@ -200,10 +200,7 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
       <div class="card">
         <div class="stitle" style="margin-bottom:12px;">Select a Service</div>
         <div id="cut-svclist"></div>
-        <div style="border-top:1px solid #f0ebe4;margin-top:14px;padding-top:14px;">
-          <div class="stitle" style="margin-bottom:10px;">Add-ons (optional)</div>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;" id="cut-adnlist"></div>
-        </div>
+
         <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:12px;">
           <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f7f0e8;color:#a07850;">Monday</span>
           <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f0ebe4;color:#c0b0a0;">Tuesday</span>
@@ -221,10 +218,7 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
       <div class="card">
         <div class="stitle" style="margin-bottom:12px;">Select a Service</div>
         <div id="color-svclist"></div>
-        <div style="border-top:1px solid #f0ebe4;margin-top:14px;padding-top:14px;">
-          <div class="stitle" style="margin-bottom:10px;">Add-ons (optional)</div>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;" id="color-adnlist"></div>
-        </div>
+
         <div class="add-charges" style="margin-top:14px;">
           <div class="ac-title">⚡ Additional Charges May Apply</div>
           <div class="ac-grid">
@@ -251,10 +245,7 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
       <div class="card">
         <div class="stitle" style="margin-bottom:12px;">Select Duration</div>
         <div id="spa-svclist"></div>
-        <div style="border-top:1px solid #f0ebe4;margin-top:14px;padding-top:14px;">
-          <div class="stitle" style="margin-bottom:10px;">Add-ons (optional)</div>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;" id="spa-adnlist"></div>
-        </div>
+
         <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:14px;">
           <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f0ebe4;color:#c0b0a0;">Monday</span>
           <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f0f5ee;color:#7a9070;">Tuesday</span>
@@ -401,9 +392,10 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
 
 <script>
 var CUT = [
-  {id:"sig", name:"Chenny's Signature Cut",       mins:45,  price:68},
-  {id:"mc",  name:"Men's Haircut",                mins:35,  price:48},
-  {id:"msp", name:"Men's Cut + Scalp + Head Spa", mins:120, price:135}
+  {id:"sig", name:"Chenny's Signature Cut",              mins:45,  price:68},
+  {id:"mc",  name:"Men's Haircut",                       mins:35,  price:48},
+  {id:"msp", name:"Men's Cut + Scalp + Head Spa",        mins:120, price:135},
+  {id:"mdp", name:"Men's Haircut + Side & Back Down Perm", mins:60, price:103}
 ];
 var COLOR = [
   {id:"fc",  name:"Double Color (Whole Hair Cover)",          mins:120, price:130},
