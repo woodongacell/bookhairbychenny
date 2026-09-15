@@ -483,9 +483,6 @@ function initAll(){
   renderList(CUT,   selCut,   "cut-svclist");
   renderList(COLOR, selColor, "color-svclist");
   renderList(SPA,   selSpa,   "spa-svclist");
-  renderAddons("cut-adnlist");
-  renderAddons("color-adnlist");
-  renderAddons("spa-adnlist");
   document.getElementById("btn-cut").disabled   = !selCut;
   document.getElementById("btn-color").disabled = !selColor;
   document.getElementById("btn-spa").disabled   = !selSpa;
@@ -495,7 +492,9 @@ function initAll(){
 }
 
 function pick(el){
-  var type=el.closest(".pg").id.replace("panel-","");
+  var panelId=el.parentElement;
+  while(panelId&&!panelId.id.startsWith("panel-")){panelId=panelId.parentElement;}
+  var type=panelId?panelId.id.replace("panel-",""):"cut";
   if(type==="cut")selCut=el.dataset.id;
   else if(type==="color")selColor=el.dataset.id;
   else selSpa=el.dataset.id;
