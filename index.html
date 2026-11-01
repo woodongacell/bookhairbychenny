@@ -3,143 +3,146 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="theme-color" content="#f4f1ec"/>
 <title>Hair by Chenny</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap');
+:root{--bg:#f4f1ec;--card:#fff;--ink:#2b3a55;--mute:#8a847b;--line:#e8e3db;--soft:#faf8f5;--acc:#d4859a;--lilac:#8b7bd8;--sage:#5b9a86;}
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Jost',sans-serif;background:#f9f6f1;color:#3a3028;min-height:100vh;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;-webkit-font-smoothing:antialiased;}
 .wrap{max-width:620px;margin:0 auto;padding:0 0 60px;}
-header{background:#f2ece3;border-bottom:1px solid #e5ddd3;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;}
-.logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:#3a3028;}
-.logo span{color:#a07850;}
-.tagline{font-size:.68rem;letter-spacing:2px;text-transform:uppercase;color:#a07850;margin-top:2px;}
-.hero{background:linear-gradient(160deg,#ede5d8,#d9cfc3);text-align:center;padding:48px 24px 40px;}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:500;margin-bottom:8px;}
-.hero p{font-size:.8rem;color:#7a6858;letter-spacing:1.5px;text-transform:uppercase;}
-.hero-line{width:40px;height:1px;background:#a07850;margin:12px auto;}
-.tags{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px;}
-.tag{background:rgba(255,255,255,.6);border:1px solid #d8c8b0;border-radius:100px;padding:5px 16px;font-size:.75rem;color:#7a5535;font-weight:500;}
-.banner{background:#2d2420;padding:14px 24px;text-align:center;}
-.banner .bt{font-size:.65rem;font-weight:700;color:#c8a878;letter-spacing:3px;text-transform:uppercase;margin-bottom:4px;}
-.banner h3{font-size:1rem;font-weight:600;color:#fff;margin-bottom:2px;}
-.banner p{font-size:.75rem;color:#a09080;}
-.content{padding:20px 20px 0;}
-.contact-box{background:#fff;border-radius:16px;padding:18px 20px;margin-bottom:14px;border:1px solid #ede5d8;}
-.stitle{font-size:.68rem;font-weight:700;color:#b0a090;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;}
-.contact-box .row div{font-size:.83rem;color:#6a5848;line-height:2.1;}
-.contact-box a{color:#a07850;font-weight:600;text-decoration:none;}
-.cnote{margin-top:10px;background:#fdf7f0;border-radius:8px;padding:8px 12px;font-size:.75rem;color:#a07850;font-weight:500;}
+header{background:transparent;padding:22px 24px 6px;display:flex;align-items:center;justify-content:space-between;}
+.logo{font-family:'Fraunces',serif;font-size:1.55rem;font-weight:600;color:var(--ink);letter-spacing:-.5px;}
+.logo span{color:var(--acc);font-style:italic;}
+.tagline{font-size:.62rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--mute);margin-top:3px;font-weight:500;}
+.hero{background:linear-gradient(145deg,#f3e4e4,#e6e1f4 55%,#dcebe5);color:var(--ink);text-align:left;margin:14px 16px 0;border-radius:28px;padding:36px 26px 30px;position:relative;overflow:hidden;}
+.hero:before{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,#f5c6d0 0%,rgba(245,198,208,0) 70%);opacity:.8;}
+.hero:after{content:"";position:absolute;left:-50px;bottom:-80px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,#c9c0f0 0%,rgba(201,192,240,0) 70%);opacity:.7;}
+.hero>*{position:relative;z-index:1;}
+.hero h1{font-family:'Fraunces',serif;font-size:2.3rem;font-weight:500;line-height:1.1;letter-spacing:-1px;margin-bottom:10px;}
+.hero p{font-size:.72rem;color:#5d6a82;letter-spacing:1.8px;text-transform:uppercase;font-weight:500;}
+.hero-line{width:36px;height:3px;border-radius:3px;background:var(--acc);margin:0 0 14px;}
+.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:18px;}
+.tag{background:rgba(255,255,255,.75);border:1px solid rgba(43,58,85,.1);border-radius:100px;padding:6px 13px;font-size:.7rem;color:var(--ink);font-weight:500;}
+.banner{background:linear-gradient(90deg,#d4859a,#b79be0);margin:12px 16px 0;border-radius:18px;padding:14px 20px;text-align:left;}
+.banner .bt{font-size:.6rem;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:3px;}
+.banner h3{font-size:1rem;font-weight:700;color:#fff;margin-bottom:1px;}
+.banner p{font-size:.74rem;color:rgba(255,255,255,.85);}
+.content{padding:16px 16px 0;}
+.contact-box{background:var(--card);border-radius:22px;padding:20px;margin-bottom:14px;border:1px solid var(--line);}
+.stitle{font-size:.66rem;font-weight:700;color:var(--mute);text-transform:uppercase;letter-spacing:1.4px;margin-bottom:10px;}
+.contact-box .row div{font-size:.82rem;color:#4a453f;line-height:2.1;}
+.contact-box a{color:var(--acc);font-weight:600;text-decoration:none;}
+.cnote{margin-top:10px;background:var(--soft);border-radius:12px;padding:10px 12px;font-size:.75rem;color:#6b655d;font-weight:500;}
 
-/* 노쇼 폴리시 */
-.policy-box{background:#fff;border-radius:16px;border:1.5px solid #e5ddd3;margin-bottom:16px;overflow:hidden;}
-.policy-header{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;cursor:pointer;background:#fdf9f5;}
-.policy-header:hover{background:#f9f5f0;}
-.policy-title{font-size:.85rem;font-weight:700;color:#3a3028;display:flex;align-items:center;gap:8px;}
-.policy-arrow{font-size:.75rem;color:#a07850;transition:transform .3s;}
-.policy-arrow.open{transform:rotate(180deg);}
-.policy-body{display:none;padding:0 18px 16px;border-top:1px solid #f0ebe4;}
-.policy-body.show{display:block;}
-.policy-item{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f0ea;font-size:.8rem;color:#6a5848;line-height:1.6;}
-.policy-item:last-child{border-bottom:none;}
-.policy-icon{font-size:1rem;flex-shrink:0;margin-top:1px;}
+.tabs{display:flex;margin-bottom:14px;gap:6px;background:#e9e4dc;padding:5px;border-radius:20px;}
+.tab{flex:1;padding:12px 4px;border-radius:15px;font-size:.76rem;font-weight:600;border:none;cursor:pointer;font-family:'Inter',sans-serif;transition:all .25s;text-align:center;background:transparent;color:#7a746b;}
+#tab-cut.on{background:var(--ink);color:#fff;box-shadow:0 6px 16px rgba(43,58,85,.28);}
+#tab-color.on{background:var(--lilac);color:#fff;box-shadow:0 6px 16px rgba(124,92,255,.35);}
+#tab-spa.on{background:var(--sage);color:#fff;box-shadow:0 6px 16px rgba(63,125,92,.35);}
 
-.tabs{display:flex;margin-bottom:16px;gap:8px;}
-.tab{flex:1;padding:12px 6px;border-radius:14px;font-size:.78rem;font-weight:700;border:2px solid transparent;cursor:pointer;font-family:'Jost',sans-serif;transition:all .25s;text-align:center;}
-#tab-cut{background:#f7f0e8;color:#c4a882;border-color:#e8d8c4;}
-#tab-cut.on{background:linear-gradient(135deg,#a07850,#7a5535);color:#fff;border-color:transparent;box-shadow:0 6px 20px rgba(160,120,80,.35);}
-#tab-color{background:#f5eef8;color:#b08ab8;border-color:#e0c8e8;}
-#tab-color.on{background:linear-gradient(135deg,#9b59b6,#7d3c98);color:#fff;border-color:transparent;box-shadow:0 6px 20px rgba(155,89,182,.35);}
-#tab-spa{background:#f0f5ee;color:#9ab090;border-color:#c8dcc0;}
-#tab-spa.on{background:linear-gradient(135deg,#7a9070,#4a6840);color:#fff;border-color:transparent;box-shadow:0 6px 20px rgba(122,144,112,.35);}
-.svc{border:1.5px solid #ede5d8;border-radius:14px;padding:14px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;background:#fdf9f5;transition:all .2s;}
-.svc:hover{border-color:#c4a882;background:#fff;}
-.svc.sel{background:#3a3028;color:#fff;border-color:#3a3028;}
-.svc-name{font-size:.88rem;font-weight:600;margin-bottom:3px;}
-.svc-meta{font-size:.75rem;color:#b0a090;}
-.svc.sel .svc-meta{color:#c0b0a0;}
-.svc-price{font-size:.95rem;font-weight:700;text-align:right;color:#a07850;}
-.svc.sel .svc-price{color:#d4a870;}
-.svc-sub{font-size:.68rem;color:#c0b0a0;margin-top:1px;text-align:right;}
-.orig-p{font-size:.68rem;text-decoration:line-through;color:#b0a090;text-align:right;}
-.pkg-lbl{font-size:.68rem;color:#9c27b0;font-weight:700;margin-bottom:3px;}
-.save-pill{background:#dcfce7;color:#15803d;font-size:.62rem;font-weight:700;padding:2px 7px;border-radius:100px;margin-left:5px;}
-.adn{display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border-radius:100px;font-size:.75rem;font-weight:600;border:1.5px solid #e5ddd3;cursor:pointer;background:#fdf9f5;color:#7a6858;transition:all .2s;margin-bottom:6px;}
-.adn.on{background:#3a3028;color:#fff;border-color:#3a3028;}
-.add-charges{background:#fffbeb;border:1.5px solid #fde68a;border-radius:14px;padding:14px 16px;margin:14px 0;}
-.ac-title{font-size:.75rem;font-weight:700;color:#d97706;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px;}
+.svc{border:1.5px solid var(--line);border-radius:18px;padding:15px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;margin-bottom:9px;background:var(--soft);transition:all .2s;}
+.svc:hover{border-color:var(--ink);background:#fff;transform:translateY(-1px);}
+.svc.sel{background:var(--ink);color:#fff;border-color:var(--ink);box-shadow:0 8px 22px rgba(43,58,85,.22);}
+.svc-name{font-size:.9rem;font-weight:600;margin-bottom:3px;letter-spacing:-.1px;}
+.svc-meta{font-size:.74rem;color:var(--mute);}
+.svc.sel .svc-meta{color:rgba(255,255,255,.65);}
+.svc-price{font-size:1rem;font-weight:700;text-align:right;color:var(--ink);}
+.svc.sel .svc-price{color:#f5c6d0;}
+.svc-sub{font-size:.68rem;color:var(--mute);margin-top:1px;text-align:right;}
+.orig-p{font-size:.68rem;text-decoration:line-through;color:var(--mute);text-align:right;}
+.save-pill{white-space:nowrap;display:inline-block;margin-top:3px;background:#fde4ea;color:#b04a65;font-size:.62rem;font-weight:700;padding:2px 8px;border-radius:100px;margin-left:5px;}
+
+.adn{display:inline-flex;align-items:center;gap:5px;padding:8px 15px;border-radius:100px;font-size:.76rem;font-weight:600;border:1.5px solid var(--line);cursor:pointer;background:var(--soft);color:#4a453f;transition:all .2s;margin-bottom:6px;}
+.adn:hover{border-color:var(--ink);}
+.adn.on{background:var(--acc);color:#fff;border-color:var(--acc);}
+.addon-wrap{border-top:1px dashed var(--line);margin-top:14px;padding-top:14px;}
+.addon-list{display:flex;flex-wrap:wrap;gap:6px;}
+
+.add-charges{background:#fff6e5;border:1.5px solid #f6dfae;border-radius:18px;padding:14px 16px;margin:14px 0;}
+.ac-title{font-size:.72rem;font-weight:700;color:#b36b00;margin-bottom:10px;text-transform:uppercase;letter-spacing:.6px;}
 .ac-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
-.ac-item{background:#fff;border-radius:8px;padding:8px 10px;border:1px solid #fde68a;}
-.ac-label{font-size:.68rem;color:#b0a090;margin-bottom:2px;}
+.ac-item{background:#fff;border-radius:12px;padding:9px 11px;border:1px solid #f6dfae;}
+.ac-label{font-size:.68rem;color:var(--mute);margin-bottom:2px;}
 .ac-val{font-size:.82rem;font-weight:700;}
-.book-btn{display:block;width:100%;padding:15px;border-radius:13px;border:none;font-family:'Jost',sans-serif;font-size:.88rem;font-weight:600;cursor:pointer;transition:all .25s;margin-top:6px;letter-spacing:.8px;text-transform:uppercase;}
-.book-btn:disabled{background:#e8e0d8;color:#c0b0a0;cursor:not-allowed;}
-.book-btn.cut{background:linear-gradient(135deg,#a07850,#7a5535);color:#fff;}
-.book-btn.color{background:linear-gradient(135deg,#9b59b6,#7d3c98);color:#fff;}
-.book-btn.spa{background:linear-gradient(135deg,#7a9070,#4a6840);color:#fff;}
-.hint{text-align:center;font-size:.72rem;color:#c0b0a0;margin-top:7px;}
-.card{background:#fff;border-radius:18px;padding:20px;border:1px solid #ede5d8;margin-bottom:12px;}
+
+.days{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px;}
+.day{padding:6px 12px;border-radius:100px;font-size:.7rem;font-weight:500;background:var(--ink);color:#fff;}
+.day.h,.day.c,.day.s{background:var(--ink);color:#fff;}
+.note-s{font-size:.72rem;color:var(--mute);margin-top:8px;}
+
+.book-btn{display:block;width:100%;padding:17px;border-radius:100px;border:none;font-family:'Inter',sans-serif;font-size:.84rem;font-weight:700;cursor:pointer;transition:all .25s;margin-top:6px;letter-spacing:.6px;text-transform:uppercase;}
+.book-btn:hover:not(:disabled){transform:translateY(-1px);}
+.book-btn:disabled{background:#e4dfd7;color:#b3ada3;cursor:not-allowed;}
+.book-btn.cut{background:var(--ink);color:#fff;box-shadow:0 10px 24px rgba(43,58,85,.25);}
+.book-btn.color{background:var(--lilac);color:#fff;box-shadow:0 10px 24px rgba(124,92,255,.32);}
+.book-btn.spa{background:var(--sage);color:#fff;box-shadow:0 10px 24px rgba(63,125,92,.32);}
+.book-btn:disabled{box-shadow:none;}
+.hint{text-align:center;font-size:.72rem;color:var(--mute);margin-top:9px;}
+.card{background:var(--card);border-radius:26px;padding:20px;border:1px solid var(--line);margin-bottom:12px;}
 .pg{display:none;}.pg.on{display:block;}
 
-/* 카드 입력 */
 .fg{margin-bottom:13px;}
-.fg label{display:block;font-size:.72rem;font-weight:700;color:#a09080;margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px;}
-.fi{width:100%;height:46px;border:1.5px solid #e5ddd3;border-radius:12px;padding:0 14px;font-size:.9rem;font-family:'Jost',sans-serif;color:#3a3028;background:#fdf9f5;}
-.fi:focus{outline:none;border-color:#a07850;background:#fff;}
+.fg label{display:block;font-size:.68rem;font-weight:700;color:var(--mute);margin-bottom:6px;text-transform:uppercase;letter-spacing:.8px;}
+.fi{width:100%;height:50px;border:1.5px solid var(--line);border-radius:16px;padding:0 15px;font-size:.92rem;font-family:'Inter',sans-serif;color:var(--ink);background:var(--soft);}
+.fi:focus{outline:none;border-color:var(--ink);background:#fff;box-shadow:0 0 0 4px rgba(29,27,25,.06);}
 .fi.err{border-color:#ef4444!important;background:#fff5f5!important;}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
 .ferr{color:#ef4444;font-size:.72rem;font-weight:600;margin-top:4px;display:none;}
-.chk{display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:.8rem;color:#6a5848;line-height:1.6;margin-bottom:14px;}
-.chk input{margin-top:2px;width:18px;height:18px;flex-shrink:0;accent-color:#3a3028;cursor:pointer;}
-.nok{background:#f0fdf4;color:#166534;border:1px solid #bbf7d0;border-radius:12px;padding:11px 14px;font-size:.8rem;display:flex;gap:9px;margin-bottom:12px;}
-.nerr{background:#fef2f2;color:#991b1b;border:1px solid #fecaca;border-radius:12px;padding:11px 14px;font-size:.8rem;display:flex;gap:9px;margin-bottom:12px;}
-.ngray{background:#f9fafb;color:#374151;border:1px solid #e5e7eb;border-radius:12px;padding:11px 14px;font-size:.8rem;display:flex;gap:9px;margin-bottom:12px;}
+.chk{display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:.8rem;color:#4a453f;line-height:1.6;margin-bottom:14px;}
+.chk input{margin-top:2px;width:18px;height:18px;flex-shrink:0;accent-color:var(--acc);cursor:pointer;}
+.nok{background:#e9f6ee;color:#166534;border:1px solid #c5e6d1;border-radius:16px;padding:12px 14px;font-size:.8rem;display:flex;gap:9px;margin-bottom:12px;}
+.nerr{background:#fdecec;color:#991b1b;border:1px solid #f6c9c9;border-radius:16px;padding:12px 14px;font-size:.8rem;display:flex;gap:9px;margin-bottom:12px;}
+.ngray{background:var(--soft);color:#4a453f;border:1px solid var(--line);border-radius:16px;padding:12px 14px;font-size:.8rem;display:flex;gap:9px;margin-bottom:12px;}
+.policy{background:#f7f1f8;border:1.5px solid #e4d8ea;border-radius:20px;padding:16px;margin-bottom:14px;}
+.policy-t{font-size:.8rem;font-weight:700;color:var(--ink);margin-bottom:10px;}
+.policy-b{font-size:.8rem;color:#4a453f;line-height:2;}
 
-/* 완료 */
-.cico{width:64px;height:64px;background:#f0fdf4;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 14px;border:2px solid #bbf7d0;}
+.cico{width:68px;height:68px;background:#e9f6ee;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 14px;border:2px solid #c5e6d1;}
 .cgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;}
-.ci{background:#f9f6f1;border-radius:12px;padding:11px 13px;}
-.cil{font-size:.68rem;color:#b0a090;margin-bottom:2px;font-weight:600;text-transform:uppercase;}
+.ci{background:var(--soft);border-radius:16px;padding:12px 14px;}
+.cil{font-size:.66rem;color:var(--mute);margin-bottom:2px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;}
 .civ{font-size:.85rem;font-weight:700;}
-.sumbox{background:#f9f6f1;border-radius:12px;padding:14px;margin-bottom:12px;}
+.sumbox{background:var(--soft);border-radius:16px;padding:14px;margin-bottom:12px;}
 .srow{display:flex;justify-content:space-between;font-size:.83rem;padding:4px 0;}
-.srow.tot{font-weight:700;border-top:1px solid #e8ddd0;margin-top:7px;padding-top:10px;font-size:.9rem;}
-.slbl{color:#a09080;}
+.srow.tot{font-weight:700;border-top:1px dashed var(--line);margin-top:7px;padding-top:10px;font-size:.92rem;}
+.slbl{color:var(--mute);}
 
-.adminlnk{text-align:center;margin-top:24px;padding-top:20px;border-top:1px solid #e8ddd0;}
-.adminlnk button{background:#3a3028;border:none;font-size:.8rem;color:#fff;cursor:pointer;font-family:'Jost',sans-serif;padding:10px 26px;border-radius:100px;font-weight:600;}
-.back-btn{background:none;border:none;font-size:.8rem;color:#a09080;cursor:pointer;margin-bottom:12px;font-family:'Jost',sans-serif;font-weight:600;}
+.adminlnk{text-align:center;margin-top:24px;padding-top:20px;border-top:1px dashed var(--line);}
+.adminlnk button{background:transparent;border:1.5px solid var(--line);font-size:.76rem;color:var(--mute);cursor:pointer;font-family:'Inter',sans-serif;padding:9px 22px;border-radius:100px;font-weight:600;}
+.back-btn{background:none;border:none;font-size:.8rem;color:var(--mute);cursor:pointer;margin-bottom:12px;font-family:'Inter',sans-serif;font-weight:600;}
 .sgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;}
-.sc{background:#f9f6f1;border-radius:12px;padding:13px;}
+.sc{background:var(--soft);border-radius:16px;padding:14px;}
 .sv{font-size:1.4rem;font-weight:800;margin-bottom:2px;}
-.sl{font-size:.68rem;color:#b0a090;font-weight:600;text-transform:uppercase;}
-.bk{border:1.5px solid #ede5d8;border-radius:14px;padding:13px;margin-bottom:9px;background:#fdf9f5;}
+.sl{font-size:.66rem;color:var(--mute);font-weight:600;text-transform:uppercase;letter-spacing:.6px;}
+.bk{border:1.5px solid var(--line);border-radius:18px;padding:14px;margin-bottom:9px;background:var(--soft);}
 .bktop{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:7px;}
 .bkn{font-size:.88rem;font-weight:700;}
-.bks{font-size:.75rem;color:#b0a090;margin-top:1px;}
+.bks{font-size:.75rem;color:var(--mute);margin-top:1px;}
 .badge{font-size:.68rem;font-weight:700;padding:4px 11px;border-radius:100px;white-space:nowrap;}
-.bc{background:#eff6ff;color:#1d4ed8;}.bd{background:#f0fdf4;color:#15803d;}.bn{background:#fef2f2;color:#991b1b;}
+.bc{background:#e8efff;color:#2f4fd1;}.bd{background:#e9f6ee;color:#15803d;}.bn{background:#fdecec;color:#991b1b;}
 .bkacts{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px;}
-.ba{padding:7px 13px;border-radius:9px;font-size:.72rem;font-weight:700;cursor:pointer;border:1.5px solid;font-family:'Jost',sans-serif;}
-.baco{background:#3a3028;color:#fff;border-color:#3a3028;}
-.bans{background:#fef2f2;color:#991b1b;border-color:#fecaca;}
-.basm{background:#fff;color:#7a6858;border-color:#e0d8d0;}
-.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:100;align-items:center;justify-content:center;padding:16px;}
+.ba{padding:8px 14px;border-radius:100px;font-size:.72rem;font-weight:700;cursor:pointer;border:1.5px solid;font-family:'Inter',sans-serif;}
+.baco{background:var(--ink);color:#fff;border-color:var(--ink);}
+.bans{background:#fdecec;color:#991b1b;border-color:#f6c9c9;}
+.basm{background:#fff;color:#4a453f;border-color:var(--line);}
+.overlay{display:none;position:fixed;inset:0;background:rgba(20,18,16,.6);backdrop-filter:blur(4px);z-index:100;align-items:center;justify-content:center;padding:16px;}
 .overlay.show{display:flex;}
-.modal{background:#fff;border-radius:22px;padding:24px;max-width:340px;width:100%;max-height:90vh;overflow-y:auto;}
+.modal{background:#fff;border-radius:28px;padding:24px;max-width:340px;width:100%;max-height:90vh;overflow-y:auto;}
 .modal h2{font-size:1.1rem;font-weight:700;margin-bottom:4px;}
-.modal>p{font-size:.8rem;color:#b0a090;margin-bottom:16px;}
+.modal>p{font-size:.8rem;color:var(--mute);margin-bottom:16px;}
 .tipgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px;}
-.tip{padding:13px;border-radius:12px;border:1.5px solid #ede5d8;background:#fdf9f5;cursor:pointer;text-align:center;}
-.tip.on{background:#3a3028;color:#fff;border-color:#3a3028;}
+.tip{padding:13px;border-radius:16px;border:1.5px solid var(--line);background:var(--soft);cursor:pointer;text-align:center;}
+.tip.on{background:var(--ink);color:#fff;border-color:var(--ink);}
 .tp{font-size:1.1rem;font-weight:800;display:block;}
-.ta{font-size:.72rem;color:#b0a090;display:block;margin-top:1px;}
-.totbox{background:#3a3028;color:#fff;border-radius:12px;padding:14px;display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
-.btn{width:100%;padding:14px;border-radius:13px;font-size:.88rem;font-weight:700;cursor:pointer;border:none;font-family:'Jost',sans-serif;margin-top:8px;}
-.btn-blk{background:#3a3028;color:#fff;}
-.btn-blk:disabled{background:#e0d8d0;color:#b0a090;cursor:not-allowed;}
-.btn-out{background:#fff;color:#3a3028;border:1.5px solid #e0d8d0;}
-footer{background:#f2ece3;border-top:1px solid #e5ddd3;text-align:center;padding:24px;}
-footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
+.ta{font-size:.72rem;color:var(--mute);display:block;margin-top:1px;}
+.totbox{background:var(--ink);color:#fff;border-radius:16px;padding:14px;display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
+.btn{width:100%;padding:15px;border-radius:100px;font-size:.86rem;font-weight:700;cursor:pointer;border:none;font-family:'Inter',sans-serif;margin-top:8px;}
+.btn-blk{background:var(--ink);color:#fff;}
+.btn-blk:disabled{background:#e4dfd7;color:#b3ada3;cursor:not-allowed;}
+.btn-out{background:#fff;color:var(--ink);border:1.5px solid var(--line);}
+footer{background:transparent;text-align:center;padding:28px 24px 8px;}
+footer p{font-size:.72rem;color:var(--mute);letter-spacing:.4px;line-height:1.8;}
 </style>
 </head>
 <body>
@@ -148,19 +151,19 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
 <header>
   <div>
     <div class="logo">Hair by <span>Chenny</span></div>
-    <div class="tagline">Hair & Head Spa Studio</div>
+    <div class="tagline">Hair &amp; Head Spa Studio</div>
   </div>
-  <span style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#a07850">✦</span>
+  <span style="font-family:'Fraunces',serif;font-size:1.4rem;color:#d4859a">✦</span>
 </header>
 
 <div class="hero">
   <h1>Book Your Appointment</h1>
   <div class="hero-line"></div>
-  <p>Premium Korean Hair & Head Spa · Fairfax, VA</p>
+  <p>Premium Korean Hair &amp; Head Spa · Fairfax, VA</p>
   <div class="tags">
     <span class="tag">✂️ Haircut: Mon · Wed · Fri</span>
-    <span class="tag">🎨 Color & Perm: Mon · Wed · Fri</span>
-    <span class="tag">🌿 Head Spa: Tue · Thu</span>
+    <span class="tag">🎨 Color &amp; Perm: Mon · Wed · Fri</span>
+    <span class="tag">🌿 Head Spa: Mon – Fri</span>
   </div>
 </div>
 
@@ -184,14 +187,13 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
   <div class="cnote">💬 For questions or consultations, please call or email us directly.</div>
 </div>
 
-<!-- 노쇼 폴리시 클릭 박스 -->
-
-
 <div id="booking">
+
+  <!-- STEP 1: 서비스 선택 -->
   <div class="pg on" id="p1">
     <div class="tabs">
       <button class="tab on" id="tab-cut" onclick="switchTab('cut')">✂️ Haircut</button>
-      <button class="tab" id="tab-color" onclick="switchTab('color')">🎨 Color & Perm</button>
+      <button class="tab" id="tab-color" onclick="switchTab('color')">🎨 Color &amp; Perm</button>
       <button class="tab" id="tab-spa" onclick="switchTab('spa')">🌿 Head Spa</button>
     </div>
 
@@ -200,16 +202,15 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
       <div class="card">
         <div class="stitle" style="margin-bottom:12px;">Select a Service</div>
         <div id="cut-svclist"></div>
-
-        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:12px;">
-          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f7f0e8;color:#a07850;">Monday</span>
-          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f0ebe4;color:#c0b0a0;">Tuesday</span>
-          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f7f0e8;color:#a07850;">Wednesday</span>
-          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f0ebe4;color:#c0b0a0;">Thursday</span>
-          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f7f0e8;color:#a07850;">Friday</span>
+        <div class="addon-wrap">
+          <div class="stitle" style="margin-bottom:10px;">Add-ons (optional)</div>
+          <div class="addon-list" id="cut-adnlist"></div>
+        </div>
+        <div class="days">
+          <span class="day h">Monday</span><span class="day">Tuesday</span><span class="day h">Wednesday</span><span class="day">Thursday</span><span class="day h">Friday</span>
         </div>
       </div>
-      <button class="book-btn cut" id="btn-cut" disabled onclick="goCard('cut')">Book & Start →</button>
+      <button class="book-btn cut" id="btn-cut" disabled onclick="goCard('cut')">Book &amp; Start →</button>
       <p class="hint" id="hint-cut">Please select a service above</p>
     </div>
 
@@ -218,8 +219,11 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
       <div class="card">
         <div class="stitle" style="margin-bottom:12px;">Select a Service</div>
         <div id="color-svclist"></div>
-
-        <div class="add-charges" style="margin-top:14px;">
+        <div class="addon-wrap">
+          <div class="stitle" style="margin-bottom:10px;">Add-ons (optional)</div>
+          <div class="addon-list" id="color-adnlist"></div>
+        </div>
+        <div class="add-charges">
           <div class="ac-title">⚡ Additional Charges May Apply</div>
           <div class="ac-grid">
             <div class="ac-item"><div class="ac-label">✂️ Hair Length</div><div class="ac-val">+$25 up</div></div>
@@ -228,15 +232,11 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
             <div class="ac-item"><div class="ac-label">📋 Final price</div><div class="ac-val">At shop</div></div>
           </div>
         </div>
-        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:12px;">
-          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f5eef8;color:#9b59b6;">Monday</span>
-          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f0ebe4;color:#c0b0a0;">Tuesday</span>
-          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f5eef8;color:#9b59b6;">Wednesday</span>
-          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f0ebe4;color:#c0b0a0;">Thursday</span>
-          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f5eef8;color:#9b59b6;">Friday</span>
+        <div class="days">
+          <span class="day c">Monday</span><span class="day">Tuesday</span><span class="day c">Wednesday</span><span class="day">Thursday</span><span class="day c">Friday</span>
         </div>
       </div>
-      <button class="book-btn color" id="btn-color" disabled onclick="goCard('color')">Book & Start →</button>
+      <button class="book-btn color" id="btn-color" disabled onclick="goCard('color')">Book &amp; Start →</button>
       <p class="hint" id="hint-color">Please select a service above</p>
     </div>
 
@@ -245,17 +245,12 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
       <div class="card">
         <div class="stitle" style="margin-bottom:12px;">Select Duration</div>
         <div id="spa-svclist"></div>
-
-        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:14px;">
-          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f0ebe4;color:#c0b0a0;">Monday</span>
-          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f0f5ee;color:#7a9070;">Tuesday</span>
-          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f0ebe4;color:#c0b0a0;">Wednesday</span>
-          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f0f5ee;color:#7a9070;">Thursday</span>
-          <span style="padding:5px 13px;border-radius:7px;font-size:.72rem;background:#f0ebe4;color:#c0b0a0;">Friday</span>
+        <div class="days">
+          <span class="day s">Monday</span><span class="day s">Tuesday</span><span class="day s">Wednesday</span><span class="day s">Thursday</span><span class="day s">Friday</span>
         </div>
-        <div style="font-size:.72rem;color:#b0a090;margin-top:6px;">Scalp scaling included with all sessions</div>
+        <div class="note-s">Scalp scaling included with all sessions</div>
       </div>
-      <button class="book-btn spa" id="btn-spa" disabled onclick="goCard('spa')">Book & Start →</button>
+      <button class="book-btn spa" id="btn-spa" disabled onclick="goCard('spa')">Book &amp; Start →</button>
       <p class="hint" id="hint-spa">Please select a duration above</p>
     </div>
   </div>
@@ -265,8 +260,8 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
     <div class="card">
       <div class="stitle" style="margin-bottom:4px;">Card on File</div>
       <p style="font-size:.75rem;color:#b0a090;margin-bottom:14px;" id="p2-svc-label"></p>
+      <div class="ngray"><span>🙏</span><span>We know asking for card details before you see the schedule is inconvenient. Sorry for the extra step — it helps us hold your time slot.</span></div>
       <div class="nok"><span>✅</span><div><strong>No charge today</strong><br/><span style="font-size:.72rem;color:#166534;" id="totnotice"></span></div></div>
-
       <div class="fg">
         <label>Full Name <span style="color:#ef4444;">*</span></label>
         <input class="fi" id="fname" placeholder="Your full name" type="text"/>
@@ -294,20 +289,20 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
           <p class="ferr" id="err-ccvc"></p>
         </div>
       </div>
-      <div class="ngray"><span>🔒</span><span>Card info is encrypted & secure. Only used if appointment is missed without notice.</span></div>
-      <div style="background:#fff8f0;border:1.5px solid #e8d8c4;border-radius:14px;padding:16px;margin-bottom:14px;">
-        <div style="font-size:.78rem;font-weight:700;color:#3a3028;margin-bottom:10px;">⏰ Cancellation & No-Show Policy</div>
-        <div style="font-size:.8rem;color:#6a5848;line-height:2;">
+      <div class="ngray"><span>🔒</span><span>Card info is encrypted &amp; secure. Only used if appointment is missed without notice.</span></div>
+      <div class="policy">
+        <div class="policy-t">⏰ Cancellation &amp; No-Show Policy</div>
+        <div class="policy-b">
           🤝 We all value each other's time — please be considerate.<br/>
-          📱 A reminder is sent via <strong>email & text 48 hours before</strong> your appointment.<br/>
+          📱 A reminder is sent via <strong>email &amp; text 48 hours before</strong> your appointment.<br/>
           ⚠️ No-show or last-minute cancellation = <strong>50% of your reserved service fee will be charged.</strong><br/>
           💛 Just reach out when you get the reminder — that's all we ask!
         </div>
       </div>
-      <label class="chk"><input type="checkbox" id="cagr"/><span>I have read and agree to the cancellation & no-show policy above.</span></label>
+      <label class="chk"><input type="checkbox" id="cagr"/><span>I have read and agree to the cancellation &amp; no-show policy above.</span></label>
       <p class="ferr" id="err-cagr"></p>
     </div>
-    <button class="book-btn cut" id="confirm-btn" onclick="doConfirm()">✓ Confirm & Select Date on Calendly →</button>
+    <button class="book-btn cut" id="confirm-btn" onclick="doConfirm()">✓ Confirm &amp; Select Date on Calendly →</button>
     <button class="btn btn-out" style="margin-top:8px;" onclick="goTo('p1')">← Back</button>
   </div>
 
@@ -315,8 +310,8 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
   <div class="pg" id="p3">
     <div class="card" style="text-align:center;">
       <div class="cico">🎉</div>
-      <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;margin-bottom:6px;">Card Saved!</h2>
-      <p style="color:#b0a090;font-size:.8rem;margin-bottom:18px;">Calendly opened in a new tab — please select your date & time 📅</p>
+      <h2 style="font-family:'Fraunces',serif;font-size:1.6rem;font-weight:600;margin-bottom:6px;">Card Saved!</h2>
+      <p style="color:#b0a090;font-size:.8rem;margin-bottom:18px;">Calendly opened in a new tab — please select your date &amp; time 📅</p>
       <div class="cgrid" id="cgrid"></div>
       <div class="sumbox" id="csum"></div>
       <div class="nerr" style="text-align:left;"><span>🔒</span><span id="ccard" style="font-size:.75rem;"></span></div>
@@ -354,7 +349,7 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
     <div style="margin-bottom:13px;">
       <label style="font-size:.72rem;font-weight:700;color:#a09080;display:block;margin-bottom:5px;text-transform:uppercase;">Password</label>
       <div style="position:relative;">
-        <input type="password" id="pwi" style="width:100%;height:46px;border:1.5px solid #e5ddd3;border-radius:12px;padding:0 14px;font-size:.9rem;font-family:'Jost',sans-serif;background:#fdf9f5;" placeholder="Enter password" onkeydown="if(event.key==='Enter')doLogin()"/>
+        <input type="password" id="pwi" style="width:100%;height:46px;border:1.5px solid #e5ddd3;border-radius:12px;padding:0 14px;font-size:.9rem;font-family:'Inter',sans-serif;background:#fdf9f5;" placeholder="Enter password" onkeydown="if(event.key==='Enter')doLogin()"/>
         <button style="position:absolute;right:13px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;" onclick="togglePw()">👁</button>
       </div>
       <p id="pwerr" style="color:#dc2626;font-size:.72rem;margin-top:5px;display:none;">❌ Incorrect password.</p>
@@ -391,11 +386,20 @@ footer p{font-size:.72rem;color:#b0a090;letter-spacing:.5px;line-height:1.8;}
 </div>
 
 <script>
+// ── Calendly 링크 ──
+var CAL = {
+  cut:   "https://calendly.com/hairbychenny/30min",
+  color: "https://calendly.com/hairbychenny/hair-color-perm",
+  spa:   "https://calendly.com/hairbychenny/head-spa-appointment-tue-thur"
+};
+
+// ── 메뉴 데이터 ──
 var CUT = [
-  {id:"sig", name:"Chenny's Signature Cut",              mins:45,  price:68},
-  {id:"mc",  name:"Men's Haircut",                       mins:35,  price:48},
-  {id:"msp", name:"Men's Cut + Scalp + Head Spa",        mins:120, price:178},
-  {id:"mdp", name:"Men's Haircut + Side & Back Down Perm", mins:60, price:103}
+  {id:"sig", name:"Chenny's Signature Cut",                mins:45,  price:68},
+  {id:"mc",  name:"Men's Haircut",                         mins:35,  price:48},
+  {id:"mdp", name:"Men's Haircut + Side & Back Down Perm", mins:60,  price:103},
+  {id:"wsp", name:"Women's Cut + Head Spa 50",             mins:95,  price:160, orig:168, desc:"Cut 45min + Head Spa 50min", cal:CAL.color},
+  {id:"msp", name:"Men's Cut + Scalp + Head Spa",          mins:120, price:178}
 ];
 var COLOR = [
   {id:"fc",  name:"Double Color (Whole Hair Cover)",          mins:120, price:130},
@@ -410,61 +414,53 @@ var COLOR = [
   {id:"mcol",name:"Men's Color",                              mins:90,  price:85}
 ];
 var SPA = [
-  {id:"s30", name:"K-Scalp Detox 30",       mins:30, price:70,  desc:"Express scalp care"},
-  {id:"s50", name:"K-Scalp Deep Care 50",   mins:50, price:100, desc:"Signature head spa"},
-  {id:"s90", name:"K-Head Spa Full 90",     mins:90, price:150, desc:"Full deep treatment"},
-  {id:"pk1", name:"5-Session Scalp Detox",  mins:30, price:300, desc:"5 sessions · Use anytime", pkg:true, orig:350},
-  {id:"pk2", name:"5-Session Deep Care 50", mins:50, price:450, desc:"5 sessions · Use anytime", pkg:true, orig:500},
-  {id:"pk3", name:"5-Session Full Spa 90",  mins:90, price:700, desc:"5 sessions · Use anytime", pkg:true, orig:750}
+  {id:"s50", name:"K-Scalp Deep Care 50", mins:50, price:105, desc:"Signature head spa"}
 ];
 var ADDONS = [
-  {id:"amp", name:"Scalp Care Ampoule", price:45,  mins:30},
-  {id:"trt", name:"Hair Treatment",     price:40,  mins:30},
-  {id:"blo", name:"Blowdry Add-on",     price:35,  mins:20},
-  {id:"adp", name:"Down Perm",          price:55,  mins:15},
-  {id:"fhs", name:"Fresh Head Spa",     price:100, mins:50}
+  {id:"hs50", name:"Head Spa 50min", price:100, mins:50}
 ];
-var CAL = {
-  cut:   "https://calendly.com/hairbychenny/30min",
-  color: "https://calendly.com/hairbychenny/hair-color-perm",
-  spa:   "https://calendly.com/hairbychenny/head-spa-appointment-tue-thur"
-};
 
+// ── 상태 ──
 var selCut=null, selColor=null, selSpa=null, selAddons=[], curType="cut", calendlyUrl="";
-var coTarget=null, nsTarget=null, tipPct=null;
+var coTarget=null, nsTarget=null;
 var bookings=[
   {id:1,name:"Sarah Kim",  service:"Double Color",       time:"10:00 AM",price:130,status:"confirmed",card:"4242"},
-  {id:2,name:"Jennifer P.",service:"K-Head Spa Full 90", time:"11:30 AM",price:150,status:"confirmed",card:"1234"},
+  {id:2,name:"Jennifer P.",service:"K-Scalp Deep Care 50",time:"11:30 AM",price:105,status:"confirmed",card:"1234"},
   {id:3,name:"Mike Lee",   service:"Men's Haircut",      time:"12:30 PM",price:48, status:"completed",card:"5678"}
 ];
 
-function fmt(n){return "$"+Number(n).toFixed(2);}
-function findById(list,id){for(var i=0;i<list.length;i++){if(list[i].id===id)return list[i];}return null;}
-function allSvcs(){return CUT.concat(COLOR,SPA);}
+function fmt(n){ return "$"+Number(n).toFixed(2); }
+function findById(list,id){
+  for(var i=0;i<list.length;i++){ if(list[i].id===id) return list[i]; }
+  return null;
+}
+function listFor(type){ return type==="cut" ? CUT : type==="color" ? COLOR : SPA; }
+function selFor(type){ return type==="cut" ? selCut : type==="color" ? selColor : selSpa; }
 
-function togglePolicy(){
-  var body=document.getElementById("policy-body");
-  var arrow=document.getElementById("policy-arrow");
-  if(body.classList.contains("show")){body.classList.remove("show");arrow.classList.remove("open");}
-  else{body.classList.add("show");arrow.classList.add("open");}
+// 헤드스파 탭에서는 add-on 적용 안 함 (헤어 탭에서 고른 add-on이 섞이는 것 방지)
+function activeAddons(type){
+  var out=[];
+  if(type==="spa") return out;
+  for(var i=0;i<selAddons.length;i++){
+    var a=findById(ADDONS,selAddons[i]);
+    if(a) out.push(a);
+  }
+  return out;
 }
 
-function renderList(list,selId,elId){
+// ── 렌더링 ──
+function renderList(list, selId, type, elId){
   var html="";
   for(var i=0;i<list.length;i++){
     var s=list[i];
-    var hasSave=s.pkg&&s.orig>s.price;
-    html+='<div class="svc'+(selId===s.id?" sel":"")+'" data-id="'+s.id+'" onclick="pick(this)">';
-    html+='<div>';
-    if(s.pkg)html+='<div class="pkg-lbl">📦 Package · Pay once, use anytime</div>';
-    html+='<div class="svc-name">'+s.name+(hasSave?'<span class="save-pill">Save '+fmt(s.orig-s.price)+'</span>':'')+'</div>';
-    html+='<div class="svc-meta">⏱ '+s.mins+'min'+(s.desc?' · '+s.desc:'')+'</div>';
-    html+='</div>';
-    html+='<div style="text-align:right;flex-shrink:0;margin-left:12px;">';
-    if(hasSave)html+='<div class="orig-p">'+fmt(s.orig)+'</div>';
-    html+='<div class="svc-price">'+fmt(s.price)+'</div>';
-    html+='<div class="svc-sub">'+(s.pkg?"package":"starting")+' price</div>';
-    html+='</div></div>';
+    var hasSave = s.orig && s.orig > s.price;
+    html += '<div class="svc'+(selId===s.id?" sel":"")+'" onclick="pick(\''+type+'\',\''+s.id+'\')">';
+    html += '<div><div class="svc-name">'+s.name;
+    if(hasSave) html += '<span class="save-pill">Save '+fmt(s.orig-s.price)+'</span>';
+    html += '</div><div class="svc-meta">⏱ '+s.mins+'min'+(s.desc?' · '+s.desc:'')+'</div></div>';
+    html += '<div style="text-align:right;flex-shrink:0;margin-left:12px;">';
+    if(hasSave) html += '<div class="orig-p">'+fmt(s.orig)+'</div>';
+    html += '<div class="svc-price">'+fmt(s.price)+'</div><div class="svc-sub">starting price</div></div></div>';
   }
   document.getElementById(elId).innerHTML=html;
 }
@@ -474,82 +470,105 @@ function renderAddons(elId){
   for(var i=0;i<ADDONS.length;i++){
     var a=ADDONS[i];
     var on=selAddons.indexOf(a.id)>=0;
-    html+='<div class="adn'+(on?" on":"")+'" data-id="'+a.id+'" onclick="togAddon(this)">'+(on?"✓ ":"+ ")+a.name+' ('+fmt(a.price)+')</div>';
+    html += '<div class="adn'+(on?" on":"")+'" onclick="togAddon(\''+a.id+'\')">'+(on?"✓ ":"+ ")+a.name+' ('+fmt(a.price)+' · +'+a.mins+'min)</div>';
   }
   document.getElementById(elId).innerHTML=html;
 }
 
 function initAll(){
-  renderList(CUT,   selCut,   "cut-svclist");
-  renderList(COLOR, selColor, "color-svclist");
-  renderList(SPA,   selSpa,   "spa-svclist");
+  renderList(CUT,   selCut,   "cut",   "cut-svclist");
+  renderList(COLOR, selColor, "color", "color-svclist");
+  renderList(SPA,   selSpa,   "spa",   "spa-svclist");
+  renderAddons("cut-adnlist");
+  renderAddons("color-adnlist");
   document.getElementById("btn-cut").disabled   = !selCut;
   document.getElementById("btn-color").disabled = !selColor;
   document.getElementById("btn-spa").disabled   = !selSpa;
-  document.getElementById("hint-cut").style.display   = selCut   ?"none":"block";
-  document.getElementById("hint-color").style.display = selColor ?"none":"block";
-  document.getElementById("hint-spa").style.display   = selSpa   ?"none":"block";
+  document.getElementById("hint-cut").style.display   = selCut   ? "none" : "block";
+  document.getElementById("hint-color").style.display = selColor ? "none" : "block";
+  document.getElementById("hint-spa").style.display   = selSpa   ? "none" : "block";
 }
 
-function pick(el){
-  var panelId=el.parentElement;
-  while(panelId&&!panelId.id.startsWith("panel-")){panelId=panelId.parentElement;}
-  var type=panelId?panelId.id.replace("panel-",""):"cut";
-  if(type==="cut")selCut=el.dataset.id;
-  else if(type==="color")selColor=el.dataset.id;
-  else selSpa=el.dataset.id;
+function pick(type,id){
+  if(type==="cut") selCut=id;
+  else if(type==="color") selColor=id;
+  else selSpa=id;
   initAll();
 }
 
-function togAddon(el){
-  var id=el.dataset.id,idx=selAddons.indexOf(id);
-  if(idx>=0)selAddons.splice(idx,1);else selAddons.push(id);
+function togAddon(id){
+  var idx=selAddons.indexOf(id);
+  if(idx>=0) selAddons.splice(idx,1);
+  else selAddons.push(id);
   initAll();
 }
 
 function switchTab(type){
-  ["cut","color","spa"].forEach(function(t){
+  var types=["cut","color","spa"];
+  for(var i=0;i<types.length;i++){
+    var t=types[i];
     document.getElementById("panel-"+t).className="pg"+(t===type?" on":"");
     document.getElementById("tab-"+t).className="tab"+(t===type?" on":"");
-  });
+  }
   curType=type;
 }
 
 function goTo(p){
-  document.querySelectorAll("#booking>.pg").forEach(function(x){x.classList.remove("on");});
+  var pages=document.querySelectorAll("#booking > .pg");
+  for(var i=0;i<pages.length;i++) pages[i].classList.remove("on");
   document.getElementById(p).classList.add("on");
   window.scrollTo(0,0);
 }
 
+// ── 카드 입력 단계로 ──
 function goCard(type){
   curType=type;
-  var selId=type==="cut"?selCut:type==="color"?selColor:selSpa;
-  var svc=findById(allSvcs(),selId);
-  var at=0;
-  selAddons.forEach(function(id){var a=findById(ADDONS,id);if(a)at+=a.price;});
-  document.getElementById("p2-svc-label").textContent="Service: "+svc.name+(at?" + add-ons":"")+" · "+fmt(svc.price+at);
-  document.getElementById("totnotice").textContent="Full payment of "+fmt(svc.price+at)+"+ collected at the shop.";
-  var btn=document.getElementById("confirm-btn");
-  btn.className="book-btn "+type;
+  var svc=findById(listFor(type), selFor(type));
+  if(!svc) return;
+  var adds=activeAddons(type);
+  var addTotal=0;
+  for(var i=0;i<adds.length;i++) addTotal+=adds[i].price;
+  document.getElementById("p2-svc-label").textContent="Service: "+svc.name+(adds.length?" + add-ons":"")+" · "+fmt(svc.price+addTotal);
+  document.getElementById("totnotice").textContent="Full payment of "+fmt(svc.price+addTotal)+"+ collected at the shop.";
+  document.getElementById("confirm-btn").className="book-btn "+type;
   goTo("p2");
 }
 
-function fmtCN(el){el.value=el.value.replace(/\D/g,"").slice(0,16).replace(/(.{4})/g,"$1 ").trim();}
-function fmtEX(el){var d=el.value.replace(/\D/g,"").slice(0,4);el.value=d.length>2?d.slice(0,2)+"/"+d.slice(2):d;}
+function fmtCN(el){ el.value=el.value.replace(/\D/g,"").slice(0,16).replace(/(.{4})/g,"$1 ").trim(); }
+function fmtEX(el){ var d=el.value.replace(/\D/g,"").slice(0,4); el.value=d.length>2?d.slice(0,2)+"/"+d.slice(2):d; }
 
 function clearErrs(){
-  ["fname","fphone","cnum","cexp","ccvc"].forEach(function(id){
-    var el=document.getElementById(id);if(el)el.classList.remove("err");
-    var ep=document.getElementById("err-"+id);if(ep)ep.style.display="none";
-  });
+  var ids=["fname","fphone","cnum","cexp","ccvc"];
+  for(var i=0;i<ids.length;i++){
+    var el=document.getElementById(ids[i]); if(el) el.classList.remove("err");
+    var ep=document.getElementById("err-"+ids[i]); if(ep) ep.style.display="none";
+  }
   document.getElementById("err-cagr").style.display="none";
 }
 function showErr(id,msg){
-  var el=document.getElementById(id);if(el)el.classList.add("err");
-  var ep=document.getElementById("err-"+id);if(ep){ep.textContent="❌ "+msg;ep.style.display="block";}
+  var el=document.getElementById(id); if(el) el.classList.add("err");
+  var ep=document.getElementById("err-"+id);
+  if(ep){ ep.textContent="❌ "+msg; ep.style.display="block"; }
 }
-function luhn(n){var s=0;for(var i=0;i<n.length;i++){var d=parseInt(n[n.length-1-i]);if(i%2===1){d*=2;if(d>9)d-=9;}s+=d;}return s%10===0;}
+function luhn(n){
+  var s=0;
+  for(var i=0;i<n.length;i++){
+    var d=parseInt(n[n.length-1-i],10);
+    if(i%2===1){ d*=2; if(d>9) d-=9; }
+    s+=d;
+  }
+  return s%10===0;
+}
 
+function openLink(url){
+  var a=document.createElement("a");
+  a.href=url; a.target="_blank"; a.rel="noopener noreferrer";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
+// ── 확인 → Calendly ──
 function doConfirm(){
   clearErrs();
   var fname=document.getElementById("fname").value.trim();
@@ -558,95 +577,104 @@ function doConfirm(){
   var ce=document.getElementById("cexp").value.trim();
   var cv=document.getElementById("ccvc").value.trim();
   var agreed=document.getElementById("cagr").checked;
-  var ok=true;
-  if(!fname){showErr("fname","Please enter your full name.");ok=false;}
-  if(!fphone){showErr("fphone","Please enter your phone number.");ok=false;}
-  if(!ok)return;
-  if(cn.length!==16||!/^\d{16}$/.test(cn)){showErr("cnum","Card number must be 16 digits.");return;}
-  if(!luhn(cn)){showErr("cnum","Invalid card number.");return;}
-  if(!/^\d{2}\/\d{2}$/.test(ce)){showErr("cexp","Enter expiry as MM/YY");return;}
-  var em=parseInt(ce.slice(0,2)),ey=parseInt(ce.slice(3));
-  if(em<1||em>12){showErr("cexp","Invalid month.");return;}
-  var now=new Date(),exp=new Date(2000+ey,em-1,1),thisM=new Date(now.getFullYear(),now.getMonth(),1);
-  if(exp<thisM){showErr("cexp","Card has expired.");return;}
-  if(!/^\d{3,4}$/.test(cv)){showErr("ccvc","CVC must be 3-4 digits.");return;}
-  if(!agreed){showErr("cagr","Please agree to the no-show policy.");return;}
 
-  var selId=curType==="cut"?selCut:curType==="color"?selColor:selSpa;
-  var svc=findById(allSvcs(),selId);
-  var at=0;selAddons.forEach(function(id){var a=findById(ADDONS,id);if(a)at+=a.price;});
-  var total=svc.price+at;
+  var ok=true;
+  if(!fname){ showErr("fname","Please enter your full name."); ok=false; }
+  if(!fphone){ showErr("fphone","Please enter your phone number."); ok=false; }
+  if(!ok) return;
+  if(!/^\d{16}$/.test(cn)){ showErr("cnum","Card number must be 16 digits."); return; }
+  if(!luhn(cn)){ showErr("cnum","Invalid card number."); return; }
+  if(!/^\d{2}\/\d{2}$/.test(ce)){ showErr("cexp","Enter expiry as MM/YY"); return; }
+  var em=parseInt(ce.slice(0,2),10), ey=parseInt(ce.slice(3),10);
+  if(em<1||em>12){ showErr("cexp","Invalid month."); return; }
+  var now=new Date();
+  if(new Date(2000+ey,em-1,1) < new Date(now.getFullYear(),now.getMonth(),1)){ showErr("cexp","Card has expired."); return; }
+  if(!/^\d{3,4}$/.test(cv)){ showErr("ccvc","CVC must be 3-4 digits."); return; }
+  if(!agreed){ showErr("cagr","Please agree to the no-show policy."); return; }
+
+  var svc=findById(listFor(curType), selFor(curType));
+  if(!svc) return;
+  var adds=activeAddons(curType);
+  var addTotal=0, addMins=0, addNames=[];
+  for(var i=0;i<adds.length;i++){
+    addTotal+=adds[i].price;
+    addMins+=adds[i].mins;
+    addNames.push(adds[i].name+"(+"+adds[i].mins+"min)");
+  }
+  var total=svc.price+addTotal;
+  var totalMins=svc.mins+addMins;
   var last4=cn.slice(-4);
 
-  bookings.unshift({id:Date.now(),name:fname,service:svc.name,time:"TBD",price:total,status:"confirmed",card:last4});
+  bookings.unshift({id:Date.now(),name:fname,service:svc.name+(adds.length?" + "+addNames.join(", "):""),time:"TBD",price:total,status:"confirmed",card:last4});
 
-  document.getElementById("cgrid").innerHTML=[
-    ["Name",fname],["Phone",fphone],["Service",svc.name],["Card","•••• "+last4]
-  ].map(function(p){
-    return'<div class="ci"><div class="cil">'+p[0]+'</div><div class="civ">'+p[1]+'</div></div>';
-  }).join("");
+  var cg=[["Name",fname],["Phone",fphone],["Service",svc.name],["Card","•••• "+last4]];
+  var cgHtml="";
+  for(var j=0;j<cg.length;j++){
+    cgHtml+='<div class="ci"><div class="cil">'+cg[j][0]+'</div><div class="civ">'+cg[j][1]+'</div></div>';
+  }
+  document.getElementById("cgrid").innerHTML=cgHtml;
   document.getElementById("csum").innerHTML=
     '<div class="srow"><span class="slbl">'+svc.name+'</span><span>'+fmt(svc.price)+'</span></div>'+
-    (at?'<div class="srow"><span class="slbl">Add-ons</span><span>'+fmt(at)+'</span></div>':'')+
+    (adds.length?'<div class="srow"><span class="slbl">Add-ons: '+addNames.join(", ")+'</span><span>'+fmt(addTotal)+'</span></div>':'')+
     '<div class="srow" style="color:#d97706;font-size:.72rem;"><span class="slbl">Final price may vary</span><span>+$25 up</span></div>'+
     '<div class="srow tot"><span>Pay at shop after service</span><span>'+fmt(total)+'+</span></div>';
   document.getElementById("ccard").textContent="Card •••• "+last4+" saved · 50% no-show fee if missed without notice";
 
-  var addonMins=0;
-  var addonNames=selAddons.map(function(id){var a=findById(ADDONS,id);if(a)addonMins+=a.mins;return a?a.name+"(+"+a.mins+"min)":"";}).filter(Boolean).join(", ");
-  var totalMins=svc.mins+addonMins;
-  var notes="Service: "+svc.name+" ("+svc.mins+"min / "+fmt(svc.price)+")"+(addonNames?" + Add-ons: "+addonNames+" | Total: "+totalMins+"min":"");
-  calendlyUrl=CAL[curType]+"?name="+encodeURIComponent(fname)+"&a1="+encodeURIComponent(notes);
+  var notes="Service: "+svc.name+" ("+svc.mins+"min / "+fmt(svc.price)+")"+(adds.length?" + Add-ons: "+addNames.join(", ")+" | Total: "+totalMins+"min":"");
+  calendlyUrl=(svc.cal||CAL[curType])+"?name="+encodeURIComponent(fname)+"&a1="+encodeURIComponent(notes);
 
   goTo("p3");
-  var a=document.createElement("a");
-  a.href=calendlyUrl;a.target="_blank";a.rel="noopener noreferrer";
-  document.body.appendChild(a);a.click();document.body.removeChild(a);
+  openLink(calendlyUrl);
 }
 
-function reopenCalendly(){
-  var a=document.createElement("a");
-  a.href=calendlyUrl;a.target="_blank";a.rel="noopener noreferrer";
-  document.body.appendChild(a);a.click();document.body.removeChild(a);
-}
+function reopenCalendly(){ if(calendlyUrl) openLink(calendlyUrl); }
 
 function doReset(){
-  selCut=null;selColor=null;selSpa=null;selAddons=[];curType="cut";calendlyUrl="";
-  ["fname","fphone","cnum","cexp","ccvc"].forEach(function(id){var e=document.getElementById(id);if(e)e.value="";});
-  var ag=document.getElementById("cagr");if(ag)ag.checked=false;
-  initAll();switchTab("cut");goTo("p1");
+  selCut=null; selColor=null; selSpa=null; selAddons=[]; curType="cut"; calendlyUrl="";
+  var ids=["fname","fphone","cnum","cexp","ccvc"];
+  for(var i=0;i<ids.length;i++){ var e=document.getElementById(ids[i]); if(e) e.value=""; }
+  document.getElementById("cagr").checked=false;
+  initAll(); switchTab("cut"); goTo("p1");
 }
 
-function openLogin(){document.getElementById("mlogin").classList.add("show");}
-function closeModal(id){document.getElementById(id).classList.remove("show");}
-function togglePw(){var i=document.getElementById("pwi");i.type=i.type==="password"?"text":"password";}
+// ── Admin ──
+function openLogin(){ document.getElementById("mlogin").classList.add("show"); }
+function closeModal(id){ document.getElementById(id).classList.remove("show"); }
+function togglePw(){ var i=document.getElementById("pwi"); i.type=i.type==="password"?"text":"password"; }
+
 function doLogin(){
   if(document.getElementById("pwi").value==="chenny2026"){
     closeModal("mlogin");
     document.getElementById("booking").style.display="none";
     document.getElementById("admin").style.display="block";
     renderAdmin();
-  }else{document.getElementById("pwerr").style.display="block";document.getElementById("pwi").value="";}
+  } else {
+    document.getElementById("pwerr").style.display="block";
+    document.getElementById("pwi").value="";
+  }
 }
-function closeAdmin(){document.getElementById("booking").style.display="block";document.getElementById("admin").style.display="none";}
+function closeAdmin(){
+  document.getElementById("booking").style.display="block";
+  document.getElementById("admin").style.display="none";
+}
 
 function renderAdmin(){
-  var done=[],rev=0,ns=0;
+  var doneCount=0, rev=0, ns=0;
   for(var i=0;i<bookings.length;i++){
-    if(bookings[i].status==="completed"){done.push(bookings[i]);rev+=bookings[i].price;}
-    if(bookings[i].status==="noshow")ns++;
+    if(bookings[i].status==="completed"){ doneCount++; rev+=bookings[i].price; }
+    if(bookings[i].status==="noshow") ns++;
   }
   var h='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">'+
     '<h2 style="font-size:1.1rem;font-weight:800;">📊 Today\'s Dashboard</h2>'+
     '<span style="font-size:.68rem;background:#f0fdf4;color:#15803d;padding:4px 12px;border-radius:100px;font-weight:700;">Admin</span></div>'+
     '<div class="sgrid">'+
     '<div class="sc"><div class="sv">'+bookings.length+'</div><div class="sl">Bookings</div></div>'+
-    '<div class="sc"><div class="sv">'+done.length+'</div><div class="sl">Completed</div></div>'+
+    '<div class="sc"><div class="sv">'+doneCount+'</div><div class="sl">Completed</div></div>'+
     '<div class="sc"><div class="sv" style="color:#7a9070;">'+fmt(rev)+'</div><div class="sl">Revenue</div></div>'+
     '<div class="sc"><div class="sv" style="color:#dc2626;">'+ns+'</div><div class="sl">No-Shows</div></div></div>'+
     '<div class="stitle">Schedule</div>';
-  for(var i=0;i<bookings.length;i++){
-    var b=bookings[i];
+  for(var j=0;j<bookings.length;j++){
+    var b=bookings[j];
     var bc=b.status==="completed"?"bd":b.status==="noshow"?"bn":"bc";
     var bl=b.status==="completed"?"✓ Done":b.status==="noshow"?"No-Show":"Confirmed";
     h+='<div class="bk"><div class="bktop"><div><div class="bkn">'+b.name+'</div>'+
@@ -654,44 +682,49 @@ function renderAdmin(){
       '<span class="badge '+bc+'">'+bl+'</span></div>'+
       '<div style="font-size:.72rem;color:#b0a090;margin-bottom:7px;">Total: <strong style="color:#3a3028;">'+fmt(b.price)+'</strong> · Card ••••'+b.card+'</div>'+
       '<div class="bkacts">';
-    if(b.status==="confirmed")h+='<button class="ba baco" onclick="openCo('+b.id+')">💰 Checkout</button><button class="ba bans" onclick="openNS('+b.id+')">No-Show</button>';
-    if(b.status==="completed")h+='<span style="font-size:.72rem;color:#15803d;font-weight:700;">✓ Payment Complete</span>';
-    if(b.status==="noshow")h+='<span style="font-size:.72rem;color:#dc2626;font-weight:700;">50% Charged</span>';
+    if(b.status==="confirmed") h+='<button class="ba baco" onclick="openCo('+b.id+')">💰 Checkout</button><button class="ba bans" onclick="openNS('+b.id+')">No-Show</button>';
+    if(b.status==="completed") h+='<span style="font-size:.72rem;color:#15803d;font-weight:700;">✓ Payment Complete</span>';
+    if(b.status==="noshow")    h+='<span style="font-size:.72rem;color:#dc2626;font-weight:700;">50% Charged</span>';
     h+='<button class="ba basm" onclick="alert(\'SMS sent!\')">📱 SMS</button></div></div>';
   }
   document.getElementById("admindash").innerHTML=h;
 }
 
 function openCo(id){
-  coTarget=findById(bookings,id);if(!coTarget)return;
-  tipPct=null;
-  document.getElementById("cosum").innerHTML='<div class="srow"><span class="slbl">'+coTarget.service+'</span><span>'+fmt(coTarget.price)+'</span></div><div class="srow tot"><span>Service Total</span><span>'+fmt(coTarget.price)+'</span></div>';
-  document.getElementById("cotips").innerHTML=[15,20,30].map(function(t){
-    return'<div class="tip" onclick="pickTip('+t+','+coTarget.price+',this)"><span class="tp">'+t+'%</span><span class="ta">'+fmt(coTarget.price*t/100)+'</span></div>';
-  }).join("");
+  coTarget=findById(bookings,id);
+  if(!coTarget) return;
+  document.getElementById("cosum").innerHTML=
+    '<div class="srow"><span class="slbl">'+coTarget.service+'</span><span>'+fmt(coTarget.price)+'</span></div>'+
+    '<div class="srow tot"><span>Service Total</span><span>'+fmt(coTarget.price)+'</span></div>';
+  var tips=[15,20,30], th="";
+  for(var i=0;i<tips.length;i++){
+    th+='<div class="tip" onclick="pickTip('+tips[i]+','+coTarget.price+',this)"><span class="tp">'+tips[i]+'%</span><span class="ta">'+fmt(coTarget.price*tips[i]/100)+'</span></div>';
+  }
+  document.getElementById("cotips").innerHTML=th;
   document.getElementById("cotot").textContent="Select tip";
   document.getElementById("cobtn").disabled=true;
   document.getElementById("mco").classList.add("show");
 }
 function pickTip(p,tot,el){
-  tipPct=p;
-  document.querySelectorAll(".tip").forEach(function(t){t.classList.remove("on");});
+  var all=document.querySelectorAll(".tip");
+  for(var i=0;i<all.length;i++) all[i].classList.remove("on");
   el.classList.add("on");
   document.getElementById("cotot").textContent=fmt(tot+tot*p/100);
   document.getElementById("cobtn").disabled=false;
 }
 function doCheckout(){
-  for(var i=0;i<bookings.length;i++){if(bookings[i].id===coTarget.id){bookings[i].status="completed";break;}}
-  closeModal("mco");renderAdmin();
+  for(var i=0;i<bookings.length;i++){ if(bookings[i].id===coTarget.id){ bookings[i].status="completed"; break; } }
+  closeModal("mco"); renderAdmin();
 }
 function openNS(id){
-  nsTarget=findById(bookings,id);if(!nsTarget)return;
+  nsTarget=findById(bookings,id);
+  if(!nsTarget) return;
   document.getElementById("nsinfo").innerHTML='<span><strong>'+nsTarget.name+'</strong> · '+nsTarget.service+'</span><span>Card ••••'+nsTarget.card+'</span>';
   document.getElementById("mns").classList.add("show");
 }
 function doNS(){
-  for(var i=0;i<bookings.length;i++){if(bookings[i].id===nsTarget.id){bookings[i].status="noshow";break;}}
-  closeModal("mns");renderAdmin();
+  for(var i=0;i<bookings.length;i++){ if(bookings[i].id===nsTarget.id){ bookings[i].status="noshow"; break; } }
+  closeModal("mns"); renderAdmin();
 }
 
 initAll();
